@@ -32,3 +32,5 @@ Copy `.env.example` and customize:
 - `MAX_RETRIES`
 - `REQUEST_DELAY_MS`
 - `CONCURRENCY`
+
+- `MIN_MARKDOWN_LENGTH`
