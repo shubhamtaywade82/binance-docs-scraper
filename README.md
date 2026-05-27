@@ -10,6 +10,7 @@ Deterministic Binance docs synchronization + semantic extraction pipeline for US
 - GFM markdown output with code-fence language preservation + frontmatter.
 - Semantic outputs: page classification, raw+normalized API schema JSON, chunk JSON.
 - Semantic registry compiler for endpoint/capability/relationship graph outputs.
+- Runtime safety primitives: order constraint checks, registry integrity validation, semantic diffs, query helpers.
 - Asset mirroring, failure persistence, and crawl-run observability manifests.
 
 ## Output
@@ -19,6 +20,8 @@ Deterministic Binance docs synchronization + semantic extraction pipeline for US
 - `docs/_chunks/*.json` — semantic chunks for embedding/retrieval
 - `docs/_registry/endpoints/*.json` — exchange semantic registry nodes
 - `docs/_registry/relationships/graph.json` — endpoint relationship graph
+- `docs/_registry/diffs/*.json` — semantic schema diffs
+- `docs/_registry/integrity.json` — graph integrity validation report
 - `docs/_crawl_state.json` — incremental sync state
 - `docs/_runs/crawl-run-*.json` — crawl observability summaries
 - `docs/_failures/*.json` — persistent failure records
