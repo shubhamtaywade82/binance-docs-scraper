@@ -1,4 +1,5 @@
 const slugify = require('slugify');
+const { normalizeParams } = require('../runtime/normalization/normalizeParams');
 
 const ACTION_MAP = {
   POST: 'create',
@@ -31,7 +32,7 @@ function normalizeBinanceRestSchema(rawSchema) {
     method,
     auth: rawSchema.security,
     rateLimitWeight: rawSchema.weight,
-    parameters: rawSchema.parameters || [],
+    parameters: normalizeParams(rawSchema.parameters || []),
     responseExamples: rawSchema.response_examples || [],
     schemaVersion: 1,
     deprecated: false,

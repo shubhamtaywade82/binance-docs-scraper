@@ -7,3 +7,5 @@
 - Add crawl observability manifests (`docs/_runs/crawl-run-*.json`) and persistent failure logs (`docs/_failures/*.json`).
 - Add schema normalizer layer and semantic registry compiler (`docs/_registry`) for normalized endpoint models, inferred capabilities, and relationship graph output.
 - Add runtime safety foundations: order constraint validator, registry integrity validator, semantic diff generator, and semantic endpoint query helper.
+
+- Add typed parameter normalization, execution policy validator, and deterministic tool schema generator for runtime-safe endpoint execution.

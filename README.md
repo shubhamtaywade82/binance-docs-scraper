@@ -25,3 +25,5 @@ Deterministic Binance docs synchronization + semantic extraction pipeline for US
 - `docs/_crawl_state.json` — incremental sync state
 - `docs/_runs/crawl-run-*.json` — crawl observability summaries
 - `docs/_failures/*.json` — persistent failure records
+
+- Runtime typed parameter semantics and tool schema generation primitives.
