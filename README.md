@@ -1,36 +1,34 @@
 # binance-docs-scraper
 
-Recursive scraper for Binance USDⓈ-M Futures docs that renders pages with Playwright, extracts content with Cheerio, converts to Markdown with Turndown, and writes one `.md` file per page while preserving hierarchy.
+Deterministic Binance docs ingestion pipeline for USDⓈ-M Futures pages.
 
 ## Features
-
-- Starts from a seed URL.
-- Extracts title, content, and links (sidebar + next navigation).
-- Converts HTML to clean Markdown.
-- Saves one Markdown file per page under a folder hierarchy derived from URL paths.
-- Prevents loops with visited/enqueued sets.
-- Adds request delay and retry with exponential backoff.
-- Optionally generates a combined `docs/README.md` index.
+- Canonical URL normalization (drops query/hash, trims trailing slash).
+- Queue-based crawl with loop prevention.
+- Hybrid link discovery (sidebar `.menu__link` + filtered `a[href]`).
+- Aggressive DOM sanitization before markdown conversion.
+- GFM markdown conversion with code-fence language preservation.
+- Frontmatter in every markdown page for downstream RAG filters.
+- URL hierarchy-preserving output path (`docs/derivatives/.../*.md`).
+- Asset downloading into `docs/_assets` and metadata sidecars in `docs/_metadata`.
 
 ## Install
-
 ```bash
 npm install
 npx playwright install chromium
 ```
 
 ## Usage
-
 ```bash
 npm run scrape
 ```
 
-Optional environment variables:
-
-- `START_URL` (default: `https://developers.binance.com/docs/derivatives/change-log`)
-- `ALLOWED_PATH_PREFIX` (default: `/docs/derivatives`)
-- `OUTPUT_DIR` (default: `docs`)
-- `COMBINED_README` (default: `true`)
-- `MAX_RETRIES` (default: `3`)
-- `REQUEST_DELAY_MS` (default: `750`)
-- `CONCURRENCY` (default: `2`)
+## Environment
+Copy `.env.example` and customize:
+- `START_URL`
+- `ALLOWED_PATH_PREFIX`
+- `OUTPUT_DIR`
+- `COMBINED_README`
+- `MAX_RETRIES`
+- `REQUEST_DELAY_MS`
+- `CONCURRENCY`

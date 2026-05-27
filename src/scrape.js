@@ -1,6 +1,7 @@
 const { chromium } = require('playwright');
 const cheerio = require('cheerio');
 const TurndownService = require('turndown');
+const { gfm } = require('turndown-plugin-gfm');
 const fs = require('fs-extra');
 const path = require('path');
 const slugify = require('slugify');
@@ -10,79 +11,130 @@ const BASE_URL = 'https://developers.binance.com';
 const START_URL = process.env.START_URL || 'https://developers.binance.com/docs/derivatives/change-log';
 const ALLOWED_PATH_PREFIX = process.env.ALLOWED_PATH_PREFIX || '/docs/derivatives';
 const OUTPUT_DIR = path.resolve(process.env.OUTPUT_DIR || 'docs');
+const ASSET_DIR = path.join(OUTPUT_DIR, '_assets');
+const METADATA_DIR = path.join(OUTPUT_DIR, '_metadata');
 const COMBINED_README = (process.env.COMBINED_README || 'true').toLowerCase() === 'true';
 const MAX_RETRIES = Number(process.env.MAX_RETRIES || 3);
 const REQUEST_DELAY_MS = Number(process.env.REQUEST_DELAY_MS || 750);
 const CONCURRENCY = Number(process.env.CONCURRENCY || 2);
 
-const turndown = new TurndownService({
-  headingStyle: 'atx',
-  codeBlockStyle: 'fenced',
-  bulletListMarker: '-',
+const turndown = new TurndownService({ headingStyle: 'atx', codeBlockStyle: 'fenced', bulletListMarker: '-' });
+turndown.use(gfm);
+turndown.addRule('fencedCodeWithLanguage', {
+  filter: (node) => node.nodeName === 'PRE' && node.firstChild && node.firstChild.nodeName === 'CODE',
+  replacement: (content, node) => {
+    const className = node.firstChild.getAttribute('class') || '';
+    const lang = (className.match(/language-([\w-]+)/) || [])[1] || '';
+    const code = node.firstChild.textContent || '';
+    return `\n\n\`\`\`${lang}\n${code.replace(/\n$/, '')}\n\`\`\`\n\n`;
+  },
 });
 
 const visited = new Set();
 const enqueued = new Set();
 const pageResults = [];
-
 const limit = pLimit(CONCURRENCY);
 
-/**
- * Return an absolute URL if the link is a crawlable docs page.
- */
-function normalizeDocsUrl(href) {
-  if (!href) return null;
-  const trimmed = href.trim();
-  if (!trimmed || trimmed.startsWith('#') || trimmed.startsWith('mailto:') || trimmed.startsWith('javascript:')) {
-    return null;
+function normalizeUrl(raw) {
+  const url = new URL(raw, BASE_URL);
+  if (url.origin !== BASE_URL) return null;
+  if (!url.pathname.startsWith(ALLOWED_PATH_PREFIX)) return null;
+  url.hash = '';
+  url.search = '';
+  let normalized = url.toString();
+  if (normalized.endsWith('/')) normalized = normalized.slice(0, -1);
+  return normalized;
+}
+
+function buildOutputPath(url) {
+  const parsed = new URL(url);
+  let pathname = parsed.pathname.replace(/^\/docs\//, '');
+  if (pathname.endsWith('/')) pathname += 'index';
+  return path.join(OUTPUT_DIR, `${pathname}.md`);
+}
+
+function cleanDocument($) {
+  const selectorsToRemove = [
+    'nav', 'header', 'footer', 'script', 'style', '.navbar', '.pagination-nav', '.theme-doc-footer',
+    '.table-of-contents', '.breadcrumbs', '.menu', '.theme-edit-this-page', '.clean-btn', '.hash-link',
+    '.DocSearch', '.mobile-nav', '.theme-back-to-top-button'
+  ];
+  selectorsToRemove.forEach((selector) => $(selector).remove());
+}
+
+function selectMainContent($) {
+  const selectors = ['article', 'main article', '.theme-doc-markdown', 'main'];
+  let best = '';
+  for (const selector of selectors) {
+    const html = $(selector).first().html() || '';
+    const textLen = $(selector).first().text().trim().length;
+    if (textLen > 200 && html.length > best.length) best = html;
+  }
+  return best;
+}
+
+async function downloadAssets($, pageUrl) {
+  const assets = [];
+  const urls = new Set();
+  $('img[src], a[href]').each((_, el) => {
+    const attr = $(el).attr('src') ? 'src' : 'href';
+    const raw = $(el).attr(attr);
+    if (!raw) return;
+    const absolute = new URL(raw, pageUrl);
+    if (!absolute.pathname.includes('/assets/')) return;
+    urls.add(absolute.toString());
+  });
+
+  for (const assetUrl of urls) {
+    try {
+      const parsed = new URL(assetUrl);
+      const localPath = path.join(ASSET_DIR, parsed.pathname.replace(/^\//, ''));
+      await fs.ensureDir(path.dirname(localPath));
+      const res = await fetch(assetUrl);
+      if (!res.ok) continue;
+      const buf = Buffer.from(await res.arrayBuffer());
+      await fs.writeFile(localPath, buf);
+      assets.push({ remote: assetUrl, local: localPath });
+    } catch {
+      // ignore single asset failure
+    }
   }
 
-  const candidate = new URL(trimmed, BASE_URL);
-  if (candidate.origin !== BASE_URL) return null;
-  if (!candidate.pathname.startsWith(ALLOWED_PATH_PREFIX)) return null;
-
-  candidate.hash = '';
-  return candidate.toString();
-}
-
-function pathForPage(url, title) {
-  const urlObj = new URL(url);
-  const pathParts = urlObj.pathname
-    .replace(ALLOWED_PATH_PREFIX, '')
-    .split('/')
-    .filter(Boolean);
-
-  const fileSlug = slugify(pathParts[pathParts.length - 1] || title || 'index', { lower: true, strict: true }) || 'index';
-  const parentDirs = pathParts.slice(0, -1).map((part) => slugify(part, { lower: true, strict: true }));
-  return path.join(OUTPUT_DIR, ...parentDirs, `${fileSlug}.md`);
-}
-
-function cleanContent($) {
-  $('.pagination-nav, nav, .theme-doc-footer, .table-of-contents, script, style').remove();
-  return (
-    $('main article').first().html() ||
-    $('main').first().html() ||
-    $('.theme-doc-markdown').first().html() ||
-    $('article').first().html() ||
-    ''
-  );
+  return assets;
 }
 
 function extractLinks($, currentUrl) {
   const links = new Set();
-
-  $('.menu__link, a').each((_, el) => {
+  $('.menu__link').each((_, el) => {
     const href = $(el).attr('href');
-    const absolute = normalizeDocsUrl(href);
-    if (absolute) links.add(absolute);
+    if (!href) return;
+    const normalized = normalizeUrl(href);
+    if (normalized) links.add(normalized);
   });
 
-  const nextHref = $('a[rel="next"], .pagination-nav__link--next').first().attr('href');
-  const nextAbsolute = normalizeDocsUrl(nextHref);
-  if (nextAbsolute) links.add(nextAbsolute);
+  $('a[href]').each((_, el) => {
+    const href = $(el).attr('href');
+    if (!href) return;
+    const normalized = normalizeUrl(href);
+    if (normalized) links.add(normalized);
+  });
 
   links.delete(currentUrl);
   return [...links];
+}
+
+function extractApiMetadata(markdown) {
+  const endpointMatch = markdown.match(/\/(fapi|dapi)\/v1\/[\w/-]+/);
+  const methodMatch = markdown.match(/\b(GET|POST|PUT|DELETE|PATCH)\b/);
+  const weightMatch = markdown.match(/Request Weight\s*:?\s*(\d+)/i);
+  const permissionMatch = markdown.match(/\b(TRADE|USER_DATA|USER_STREAM|MARKET_DATA)\b/i);
+
+  return {
+    endpoint: endpointMatch ? endpointMatch[0] : null,
+    method: methodMatch ? methodMatch[1] : null,
+    weight: weightMatch ? Number(weightMatch[1]) : null,
+    security: permissionMatch ? permissionMatch[1] : null,
+  };
 }
 
 async function withRetry(fn, label) {
@@ -92,9 +144,8 @@ async function withRetry(fn, label) {
       return await fn();
     } catch (err) {
       lastErr = err;
-      const backoff = REQUEST_DELAY_MS * 2 ** (attempt - 1);
+      await new Promise((resolve) => setTimeout(resolve, REQUEST_DELAY_MS * 2 ** (attempt - 1)));
       console.warn(`[retry ${attempt}/${MAX_RETRIES}] ${label}: ${err.message}`);
-      await new Promise((resolve) => setTimeout(resolve, backoff));
     }
   }
   throw lastErr;
@@ -106,34 +157,48 @@ async function scrapeOne(browser, url) {
 
   const page = await browser.newPage();
   try {
-    console.log(`Scraping ${url}`);
-    await withRetry(
-      async () =>
-        page.goto(url, {
-          waitUntil: 'networkidle',
-          timeout: 60_000,
-        }),
-      `goto ${url}`,
-    );
-
+    await withRetry(async () => page.goto(url, { waitUntil: 'networkidle', timeout: 60_000 }), `goto ${url}`);
     await page.waitForTimeout(REQUEST_DELAY_MS);
+
     const html = await page.content();
     const $ = cheerio.load(html);
+    cleanDocument($);
 
     const title = $('h1').first().text().trim() || $('title').text().trim() || 'Untitled';
-    const bodyHtml = cleanContent($);
+    const contentHtml = selectMainContent($);
+    if (!contentHtml) return extractLinks($, url);
 
-    if (!bodyHtml) {
-      console.warn(`No content found for ${url}`);
-      return extractLinks($, url);
-    }
+    const pageContainer = cheerio.load(contentHtml);
+    const assets = await downloadAssets(pageContainer, url);
+    const markdownBody = turndown.turndown(contentHtml).trim();
 
-    const markdownBody = turndown.turndown(bodyHtml).trim();
-    const outPath = pathForPage(url, title);
+    const frontmatter = [
+      '---',
+      `title: "${title.replace(/"/g, '\\"')}"`,
+      `url: ${url}`,
+      'category: derivatives',
+      'source: binance',
+      `scraped_at: ${new Date().toISOString()}`,
+      '---',
+      '',
+    ].join('\n');
+
+    const finalMarkdown = `${frontmatter}# ${title}\n\n> Source: ${url}\n\n${markdownBody}\n`;
+    const outPath = buildOutputPath(url);
     await fs.ensureDir(path.dirname(outPath));
+    await fs.writeFile(outPath, finalMarkdown);
 
-    const pageMarkdown = [`# ${title}`, '', `> Source: ${url}`, '', markdownBody, ''].join('\n');
-    await fs.writeFile(outPath, pageMarkdown);
+    const metadata = {
+      title,
+      url,
+      output_path: path.relative(OUTPUT_DIR, outPath),
+      assets: assets.map((a) => ({ remote: a.remote, local: path.relative(OUTPUT_DIR, a.local) })),
+      extracted_at: new Date().toISOString(),
+      api: extractApiMetadata(markdownBody),
+    };
+    const metadataPath = path.join(METADATA_DIR, `${slugify(new URL(url).pathname, { lower: true, strict: true })}.json`);
+    await fs.ensureDir(path.dirname(metadataPath));
+    await fs.writeJson(metadataPath, metadata, { spaces: 2 });
 
     pageResults.push({ title, url, outPath });
     return extractLinks($, url);
@@ -143,48 +208,39 @@ async function scrapeOne(browser, url) {
 }
 
 async function writeReadme() {
-  const rel = (p) => `./${path.relative(OUTPUT_DIR, p).replace(/\\/g, '/')}`;
   const lines = ['# Binance USDⓈ-M Futures Docs', '', `Seed: ${START_URL}`, '', '## Pages', ''];
-
-  pageResults
-    .sort((a, b) => a.outPath.localeCompare(b.outPath))
-    .forEach((page) => lines.push(`- [${page.title}](${rel(page.outPath)})`));
-
+  pageResults.sort((a, b) => a.outPath.localeCompare(b.outPath)).forEach((page) => {
+    lines.push(`- [${page.title}](./${path.relative(OUTPUT_DIR, page.outPath).replace(/\\/g, '/')})`);
+  });
   lines.push('');
   await fs.writeFile(path.join(OUTPUT_DIR, 'README.md'), lines.join('\n'));
 }
 
 async function run() {
   await fs.ensureDir(OUTPUT_DIR);
-
   const browser = await chromium.launch({ headless: true });
-  const queue = [START_URL];
-  enqueued.add(START_URL);
+  const queue = [normalizeUrl(START_URL)];
+  enqueued.add(queue[0]);
 
   try {
     while (queue.length > 0) {
       const batch = queue.splice(0, CONCURRENCY);
-      const discoveredList = await Promise.all(batch.map((url) => limit(() => scrapeOne(browser, url))));
-
-      for (const discovered of discoveredList.flat()) {
-        if (!enqueued.has(discovered) && !visited.has(discovered)) {
-          enqueued.add(discovered);
-          queue.push(discovered);
-        }
+      const discoveredBatch = await Promise.all(batch.map((url) => limit(() => scrapeOne(browser, url))));
+      for (const discovered of discoveredBatch.flat()) {
+        if (!discovered || visited.has(discovered) || enqueued.has(discovered)) continue;
+        enqueued.add(discovered);
+        queue.push(discovered);
       }
     }
 
-    if (COMBINED_README) {
-      await writeReadme();
-    }
-
-    console.log(`Done. Scraped ${visited.size} pages. Output => ${OUTPUT_DIR}`);
+    if (COMBINED_README) await writeReadme();
+    console.log(`Done. Scraped ${visited.size} pages -> ${OUTPUT_DIR}`);
   } finally {
     await browser.close();
   }
 }
 
-run().catch((err) => {
-  console.error(err);
+run().catch((error) => {
+  console.error(error);
   process.exitCode = 1;
 });

@@ -6,7 +6,13 @@
   "scripts": {
     "scrape": "node src/scrape.js"
   },
-  "keywords": ["binance", "docs", "scraper", "playwright", "markdown"],
+  "keywords": [
+    "binance",
+    "docs",
+    "scraper",
+    "playwright",
+    "markdown"
+  ],
   "license": "MIT",
   "dependencies": {
     "cheerio": "^1.0.0",
@@ -14,6 +20,7 @@
     "p-limit": "^6.1.0",
     "playwright": "^1.54.0",
     "slugify": "^1.6.6",
-    "turndown": "^7.2.0"
+    "turndown": "^7.2.0",
+    "turndown-plugin-gfm": "^1.0.2"
   }
 }
