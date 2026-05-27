@@ -13,6 +13,10 @@ const ALLOWED_PATH_PREFIX = process.env.ALLOWED_PATH_PREFIX || '/docs/derivative
 const OUTPUT_DIR = path.resolve(process.env.OUTPUT_DIR || 'docs');
 const ASSET_DIR = path.join(OUTPUT_DIR, '_assets');
 const METADATA_DIR = path.join(OUTPUT_DIR, '_metadata');
+const SCHEMAS_DIR = path.join(OUTPUT_DIR, '_schemas');
+const CHUNKS_DIR = path.join(OUTPUT_DIR, '_chunks');
+const FAILURES_DIR = path.join(OUTPUT_DIR, '_failures');
+const RUNS_DIR = path.join(OUTPUT_DIR, '_runs');
 const STATE_FILE = path.join(OUTPUT_DIR, '_crawl_state.json');
 const COMBINED_README = (process.env.COMBINED_README || 'true').toLowerCase() === 'true';
 const MAX_RETRIES = Number(process.env.MAX_RETRIES || 3);
@@ -36,6 +40,15 @@ const visited = new Set();
 const enqueued = new Set();
 const pageResults = [];
 const crawlState = new Map();
+const runStats = {
+  startedAt: new Date().toISOString(),
+  finishedAt: null,
+  pagesVisited: 0,
+  pagesWritten: 0,
+  pagesSkipped: 0,
+  assetsDownloaded: 0,
+  failures: [],
+};
 
 function normalizeUrl(raw) {
   const url = new URL(raw, BASE_URL);
@@ -50,6 +63,17 @@ function buildOutputPath(url) {
   let pathname = parsed.pathname.replace(/^\/docs\//, '');
   if (pathname.endsWith('/')) pathname += 'index';
   return path.join(OUTPUT_DIR, `${pathname}.md`);
+}
+
+function classifyPage(markdown, url) {
+  const lower = markdown.toLowerCase();
+  if (/\/(fapi|dapi)\/v\d+\//.test(markdown) && /\b(get|post|put|delete|patch)\b/i.test(markdown)) return 'rest_endpoint';
+  if (lower.includes('websocket') || lower.includes('stream name')) return 'websocket_stream';
+  if (lower.includes('error code') || lower.includes('error codes')) return 'error_codes';
+  if (lower.includes('rate limit') || lower.includes('request weight')) return 'rate_limits';
+  if (lower.includes('authentication') || lower.includes('api key')) return 'auth';
+  if (url.includes('/change-log')) return 'changelog';
+  return 'examples';
 }
 
 function cleanDocument($) {
@@ -83,12 +107,51 @@ function extractLinks($, currentUrl) {
   return [...links];
 }
 
-function extractApiMetadata(markdown) {
+function extractApiSchema(markdown) {
   const endpoint = markdown.match(/\/(fapi|dapi)\/v1\/[\w/-]+/)?.[0] || null;
   const method = markdown.match(/\b(GET|POST|PUT|DELETE|PATCH)\b/)?.[1] || null;
   const weight = Number(markdown.match(/Request Weight\s*:?\s*(\d+)/i)?.[1] || NaN);
   const security = markdown.match(/\b(TRADE|USER_DATA|USER_STREAM|MARKET_DATA)\b/i)?.[1] || null;
-  return { endpoint, method, weight: Number.isFinite(weight) ? weight : null, security };
+
+  const parameters = [...markdown.matchAll(/^\|\s*([A-Za-z0-9_]+)\s*\|\s*([^|]*)\|\s*([^|]*)\|/gm)]
+    .map((m) => ({ name: m[1], type: m[2].trim(), description: m[3].trim() }))
+    .filter((p) => p.name.toLowerCase() !== 'name');
+
+  const responseExamples = [...markdown.matchAll(/```json\n([\s\S]*?)```/g)].map((m) => m[1].trim());
+
+  return {
+    id: endpoint && method ? slugify(`${method}-${endpoint}`, { lower: true, strict: true }) : null,
+    path: endpoint,
+    method,
+    security,
+    weight: Number.isFinite(weight) ? weight : null,
+    parameters,
+    response_examples: responseExamples,
+    errors: [],
+  };
+}
+
+function compileChunks(markdown, schema, url, title) {
+  const chunks = [];
+  if (schema.path && schema.method) {
+    chunks.push({
+      type: 'endpoint',
+      endpoint: schema.path,
+      method: schema.method,
+      content: markdown,
+      code_examples: schema.response_examples,
+      params: schema.parameters,
+      source_url: url,
+      title,
+    });
+  }
+
+  const headings = [...markdown.matchAll(/^##\s+(.+)$/gm)].map((m) => m[1].trim());
+  headings.forEach((heading) => {
+    chunks.push({ type: 'heading', heading, source_url: url, title });
+  });
+
+  return chunks;
 }
 
 function hashContent(input) {
@@ -110,6 +173,27 @@ async function loadState() {
 async function saveState() {
   const pages = [...crawlState.values()].sort((a, b) => a.url.localeCompare(b.url));
   await fs.writeJson(STATE_FILE, { updated_at: new Date().toISOString(), pages }, { spaces: 2 });
+}
+
+async function persistFailure(url, error, retryCount = MAX_RETRIES) {
+  const failure = {
+    url,
+    error: error.message,
+    stack: error.stack,
+    timestamp: new Date().toISOString(),
+    retry_count: retryCount,
+  };
+  runStats.failures.push(failure);
+  await fs.ensureDir(FAILURES_DIR);
+  const name = `${Date.now()}-${slugify(url, { lower: true, strict: true }).slice(0, 80)}.json`;
+  await fs.writeJson(path.join(FAILURES_DIR, name), failure, { spaces: 2 });
+}
+
+async function saveRunStats() {
+  runStats.finishedAt = new Date().toISOString();
+  await fs.ensureDir(RUNS_DIR);
+  const file = path.join(RUNS_DIR, `crawl-run-${runStats.startedAt.replace(/[:.]/g, '-')}.json`);
+  await fs.writeJson(file, runStats, { spaces: 2 });
 }
 
 async function withRetry(fn, label) {
@@ -146,6 +230,7 @@ async function downloadAssets($, pageUrl) {
       if (!res.ok) continue;
       await fs.writeFile(localPath, Buffer.from(await res.arrayBuffer()));
       assets.push({ remote: assetUrl, local: localPath });
+      runStats.assetsDownloaded += 1;
     } catch {
       // ignore single asset failure
     }
@@ -156,6 +241,7 @@ async function downloadAssets($, pageUrl) {
 async function scrapeOne(page, url) {
   if (visited.has(url)) return [];
   visited.add(url);
+  runStats.pagesVisited += 1;
 
   const response = await withRetry(async () => page.goto(url, { waitUntil: 'networkidle', timeout: 60_000 }), `goto ${url}`);
   await page.waitForTimeout(REQUEST_DELAY_MS);
@@ -179,33 +265,48 @@ async function scrapeOne(page, url) {
 
   if (prev && prev.contentHash === contentHash) {
     crawlState.set(url, { ...prev, etag, lastModified, unchanged_at: new Date().toISOString() });
+    runStats.pagesSkipped += 1;
     return links;
   }
 
   const outPath = buildOutputPath(url);
   await fs.ensureDir(path.dirname(outPath));
 
-  const frontmatter = ['---', `title: "${title.replace(/"/g, '\\"')}"`, `url: ${url}`, 'category: derivatives', 'source: binance', `scraped_at: ${new Date().toISOString()}`, '---', ''].join('\n');
+  const kind = classifyPage(markdownBody, url);
+  const frontmatter = ['---', `title: "${title.replace(/"/g, '\\"')}"`, `url: ${url}`, `kind: ${kind}`, 'category: derivatives', 'source: binance', `scraped_at: ${new Date().toISOString()}`, '---', ''].join('\n');
   const finalMarkdown = `${frontmatter}# ${title}\n\n> Source: ${url}\n\n${markdownBody}\n`;
   await fs.writeFile(outPath, finalMarkdown);
 
   const pageContainer = cheerio.load(contentHtml);
   const assets = await downloadAssets(pageContainer, url);
+  const schema = extractApiSchema(markdownBody);
+  const chunks = compileChunks(markdownBody, schema, url, title);
+
+  const schemaPath = path.join(SCHEMAS_DIR, `${slugify(new URL(url).pathname, { lower: true, strict: true })}.json`);
+  const chunksPath = path.join(CHUNKS_DIR, `${slugify(new URL(url).pathname, { lower: true, strict: true })}.json`);
+  await fs.ensureDir(path.dirname(schemaPath));
+  await fs.ensureDir(path.dirname(chunksPath));
+  await fs.writeJson(schemaPath, schema, { spaces: 2 });
+  await fs.writeJson(chunksPath, chunks, { spaces: 2 });
 
   const metadata = {
     title,
     url,
+    kind,
     output_path: path.relative(OUTPUT_DIR, outPath),
     extracted_at: new Date().toISOString(),
     assets: assets.map((a) => ({ remote: a.remote, local: path.relative(OUTPUT_DIR, a.local) })),
-    api: extractApiMetadata(markdownBody),
+    schema_path: path.relative(OUTPUT_DIR, schemaPath),
+    chunks_path: path.relative(OUTPUT_DIR, chunksPath),
   };
+
   const metadataPath = path.join(METADATA_DIR, `${slugify(new URL(url).pathname, { lower: true, strict: true })}.json`);
   await fs.ensureDir(path.dirname(metadataPath));
   await fs.writeJson(metadataPath, metadata, { spaces: 2 });
 
   crawlState.set(url, { url, etag, lastModified, contentHash, outputPath: path.relative(OUTPUT_DIR, outPath), updated_at: new Date().toISOString() });
   pageResults.push({ title, url, outPath });
+  runStats.pagesWritten += 1;
 
   return links;
 }
@@ -241,6 +342,7 @@ async function run() {
               queue.push(link);
             }
           } catch (error) {
+            await persistFailure(url, error);
             console.warn(`[skip] ${url}: ${error.message}`);
           }
         }
@@ -250,7 +352,8 @@ async function run() {
 
     if (COMBINED_README) await writeReadme();
     await saveState();
-    console.log(`Done. Scraped ${visited.size} pages -> ${OUTPUT_DIR}`);
+    await saveRunStats();
+    console.log(`Done. Visited=${runStats.pagesVisited} Written=${runStats.pagesWritten} Skipped=${runStats.pagesSkipped} Failures=${runStats.failures.length}`);
   } finally {
     await Promise.all(pages.map((p) => p.close()));
     await context.close();
@@ -258,7 +361,9 @@ async function run() {
   }
 }
 
-run().catch((error) => {
+run().catch(async (error) => {
+  await persistFailure(START_URL, error, MAX_RETRIES);
+  await saveRunStats();
   console.error(error);
   process.exitCode = 1;
 });
