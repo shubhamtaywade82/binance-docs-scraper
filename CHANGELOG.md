@@ -5,3 +5,4 @@
 - Add content quality validation and reusable Playwright page worker pool.
 - Add semantic extraction outputs (`docs/_schemas`, `docs/_chunks`) and page kind classification.
 - Add crawl observability manifests (`docs/_runs/crawl-run-*.json`) and persistent failure logs (`docs/_failures/*.json`).
+- Add schema normalizer layer and semantic registry compiler (`docs/_registry`) for normalized endpoint models, inferred capabilities, and relationship graph output.

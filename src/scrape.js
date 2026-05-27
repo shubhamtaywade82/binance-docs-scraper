@@ -6,6 +6,8 @@ const fs = require('fs-extra');
 const path = require('path');
 const crypto = require('crypto');
 const slugify = require('slugify');
+const { normalizeBinanceRestSchema } = require('./normalizers/binanceRest');
+const { buildRegistry } = require('./registry/buildRegistry');
 
 const BASE_URL = 'https://developers.binance.com';
 const START_URL = process.env.START_URL || 'https://developers.binance.com/docs/derivatives/change-log';
@@ -40,6 +42,8 @@ const visited = new Set();
 const enqueued = new Set();
 const pageResults = [];
 const crawlState = new Map();
+const normalizedSchemas = [];
+
 const runStats = {
   startedAt: new Date().toISOString(),
   finishedAt: null,
@@ -280,14 +284,17 @@ async function scrapeOne(page, url) {
   const pageContainer = cheerio.load(contentHtml);
   const assets = await downloadAssets(pageContainer, url);
   const schema = extractApiSchema(markdownBody);
+  const normalizedSchema = normalizeBinanceRestSchema(schema);
   const chunks = compileChunks(markdownBody, schema, url, title);
 
   const schemaPath = path.join(SCHEMAS_DIR, `${slugify(new URL(url).pathname, { lower: true, strict: true })}.json`);
   const chunksPath = path.join(CHUNKS_DIR, `${slugify(new URL(url).pathname, { lower: true, strict: true })}.json`);
   await fs.ensureDir(path.dirname(schemaPath));
   await fs.ensureDir(path.dirname(chunksPath));
-  await fs.writeJson(schemaPath, schema, { spaces: 2 });
+  await fs.writeJson(schemaPath, { raw: schema, normalized: normalizedSchema }, { spaces: 2 });
   await fs.writeJson(chunksPath, chunks, { spaces: 2 });
+
+  if (normalizedSchema.id) normalizedSchemas.push(normalizedSchema);
 
   const metadata = {
     title,
@@ -297,6 +304,7 @@ async function scrapeOne(page, url) {
     extracted_at: new Date().toISOString(),
     assets: assets.map((a) => ({ remote: a.remote, local: path.relative(OUTPUT_DIR, a.local) })),
     schema_path: path.relative(OUTPUT_DIR, schemaPath),
+    normalized_id: normalizedSchema.id,
     chunks_path: path.relative(OUTPUT_DIR, chunksPath),
   };
 
@@ -351,6 +359,7 @@ async function run() {
     }
 
     if (COMBINED_README) await writeReadme();
+    await buildRegistry({ outputDir: OUTPUT_DIR, normalizedRecords: normalizedSchemas });
     await saveState();
     await saveRunStats();
     console.log(`Done. Visited=${runStats.pagesVisited} Written=${runStats.pagesWritten} Skipped=${runStats.pagesSkipped} Failures=${runStats.failures.length}`);
