@@ -9,6 +9,9 @@ const slugify = require('slugify');
 const { normalizeBinanceRestSchema } = require('./normalizers/binanceRest');
 const { buildRegistry } = require('./registry/buildRegistry');
 const { getAdapter } = require('./core/getAdapter');
+const { extractWebsocketSchemas } = require('./websocket/extractors/extractWebsocketSchemas');
+const { normalizeWebsocketSchema } = require('./websocket/normalizers/normalizeWebsocketSchema');
+const { validateWebsocketStateModel } = require('./websocket/validators/validateWebsocketStateModel');
 
 const EXCHANGE = process.env.EXCHANGE || 'binance';
 const ADAPTER = getAdapter(EXCHANGE);
@@ -22,6 +25,7 @@ const SCHEMAS_DIR = path.join(OUTPUT_DIR, '_schemas');
 const CHUNKS_DIR = path.join(OUTPUT_DIR, '_chunks');
 const FAILURES_DIR = path.join(OUTPUT_DIR, '_failures');
 const RUNS_DIR = path.join(OUTPUT_DIR, '_runs');
+const WEBSOCKET_DIR = path.join(OUTPUT_DIR, '_websocket');
 const STATE_FILE = path.join(OUTPUT_DIR, '_crawl_state.json');
 const COMBINED_README = (process.env.COMBINED_README || 'true').toLowerCase() === 'true';
 const MAX_RETRIES = Number(process.env.MAX_RETRIES || 3);
@@ -278,6 +282,16 @@ async function scrapeOne(page, url) {
   const normalizedSchema = normalizeBinanceRestSchema(schema);
   const chunks = compileChunks(markdownBody, schema, url, title);
 
+  let websocketSchemas = [];
+  if (kind === 'websocket_stream') {
+    const extractedWs = extractWebsocketSchemas(markdownBody);
+    websocketSchemas = normalizeWebsocketSchema({ exchange: EXCHANGE, market: normalizedSchema.market || 'unknown', extracted: extractedWs });
+    websocketSchemas = websocketSchemas.filter((ws) => validateWebsocketStateModel(ws).valid);
+    const wsPath = path.join(WEBSOCKET_DIR, `${slugify(new URL(url).pathname, { lower: true, strict: true })}.json`);
+    await fs.ensureDir(path.dirname(wsPath));
+    await fs.writeJson(wsPath, websocketSchemas, { spaces: 2 });
+  }
+
   const schemaPath = path.join(SCHEMAS_DIR, `${slugify(new URL(url).pathname, { lower: true, strict: true })}.json`);
   const chunksPath = path.join(CHUNKS_DIR, `${slugify(new URL(url).pathname, { lower: true, strict: true })}.json`);
   await fs.ensureDir(path.dirname(schemaPath));
@@ -297,6 +311,7 @@ async function scrapeOne(page, url) {
     schema_path: path.relative(OUTPUT_DIR, schemaPath),
     normalized_id: normalizedSchema.id,
     chunks_path: path.relative(OUTPUT_DIR, chunksPath),
+    websocket_schemas: websocketSchemas.length > 0 ? websocketSchemas.length : 0,
   };
 
   const metadataPath = path.join(METADATA_DIR, `${slugify(new URL(url).pathname, { lower: true, strict: true })}.json`);

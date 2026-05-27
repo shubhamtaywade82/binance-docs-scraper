@@ -29,3 +29,5 @@ Deterministic Binance docs synchronization + semantic extraction pipeline for US
 - Runtime typed parameter semantics and tool schema generation primitives.
 
 - `EXCHANGE` (`binance`, `dhanhq`, `coindcx`)
+
+- `docs/_websocket/*.json` — normalized websocket stream/state schemas

@@ -11,3 +11,5 @@
 - Add typed parameter normalization, execution policy validator, and deterministic tool schema generator for runtime-safe endpoint execution.
 
 - Add exchange adapter plugin system (`binance`, `dhanhq`, `coindcx`) with core adapter selection and shared discovery/normalization contract.
+
+- Add websocket semantic extraction/normalization/validation pipeline with state synchronization semantics output (`docs/_websocket/*.json`).
