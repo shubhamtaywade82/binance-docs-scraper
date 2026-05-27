@@ -27,3 +27,5 @@ Deterministic Binance docs synchronization + semantic extraction pipeline for US
 - `docs/_failures/*.json` — persistent failure records
 
 - Runtime typed parameter semantics and tool schema generation primitives.
+
+- `EXCHANGE` (`binance`, `dhanhq`, `coindcx`)

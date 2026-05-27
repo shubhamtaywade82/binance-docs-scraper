@@ -9,3 +9,5 @@
 - Add runtime safety foundations: order constraint validator, registry integrity validator, semantic diff generator, and semantic endpoint query helper.
 
 - Add typed parameter normalization, execution policy validator, and deterministic tool schema generator for runtime-safe endpoint execution.
+
+- Add exchange adapter plugin system (`binance`, `dhanhq`, `coindcx`) with core adapter selection and shared discovery/normalization contract.

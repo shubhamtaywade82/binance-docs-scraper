@@ -8,10 +8,13 @@ const crypto = require('crypto');
 const slugify = require('slugify');
 const { normalizeBinanceRestSchema } = require('./normalizers/binanceRest');
 const { buildRegistry } = require('./registry/buildRegistry');
+const { getAdapter } = require('./core/getAdapter');
 
-const BASE_URL = 'https://developers.binance.com';
-const START_URL = process.env.START_URL || 'https://developers.binance.com/docs/derivatives/change-log';
-const ALLOWED_PATH_PREFIX = process.env.ALLOWED_PATH_PREFIX || '/docs/derivatives';
+const EXCHANGE = process.env.EXCHANGE || 'binance';
+const ADAPTER = getAdapter(EXCHANGE);
+const BASE_URL = ADAPTER.baseUrl;
+const START_URL = ADAPTER.startUrl;
+const ALLOWED_PATH_PREFIX = ADAPTER.allowedPathPrefix;
 const OUTPUT_DIR = path.resolve(process.env.OUTPUT_DIR || 'docs');
 const ASSET_DIR = path.join(OUTPUT_DIR, '_assets');
 const METADATA_DIR = path.join(OUTPUT_DIR, '_metadata');
@@ -55,11 +58,7 @@ const runStats = {
 };
 
 function normalizeUrl(raw) {
-  const url = new URL(raw, BASE_URL);
-  if (url.origin !== BASE_URL || !url.pathname.startsWith(ALLOWED_PATH_PREFIX)) return null;
-  url.hash = '';
-  url.search = '';
-  return url.toString().replace(/\/$/, '');
+  return ADAPTER.normalizeUrl(raw);
 }
 
 function buildOutputPath(url) {
@@ -100,15 +99,7 @@ function selectMainContent($) {
 }
 
 function extractLinks($, currentUrl) {
-  const links = new Set();
-  $('.menu__link, a[href]').each((_, el) => {
-    const href = $(el).attr('href');
-    if (!href) return;
-    const normalized = normalizeUrl(href);
-    if (normalized) links.add(normalized);
-  });
-  links.delete(currentUrl);
-  return [...links];
+  return ADAPTER.discoverLinks($, currentUrl);
 }
 
 function extractApiSchema(markdown) {
