@@ -95,52 +95,7 @@ function classifyPage(markdown, url) {
   return 'examples';
 }
 
-function cleanDocument($) {
-  [
-    'nav', 'header', 'footer', 'script', 'style', '.navbar', '.pagination-nav', '.theme-doc-footer',
-    '.table-of-contents', '.breadcrumbs', '.menu', '.theme-edit-this-page', '.clean-btn', '.hash-link',
-    '.DocSearch', '.mobile-nav', '.theme-back-to-top-button'
-  ].forEach((s) => $(s).remove());
-}
-
-function selectMainContent($) {
-  const selectors = ['article', 'main article', '.theme-doc-markdown', 'main'];
-  let best = '';
-  for (const selector of selectors) {
-    const el = $(selector).first();
-    const html = el.html() || '';
-    if (el.text().trim().length > 200 && html.length > best.length) best = html;
-  }
-  return best;
-}
-
-function extractLinks($, currentUrl) {
-  return ADAPTER.discoverLinks($, currentUrl);
-}
-
-function extractApiSchema(markdown) {
-  const endpoint = markdown.match(/\/(fapi|dapi)\/v1\/[\w/-]+/)?.[0] || null;
-  const method = markdown.match(/\b(GET|POST|PUT|DELETE|PATCH)\b/)?.[1] || null;
-  const weight = Number(markdown.match(/Request Weight\s*:?\s*(\d+)/i)?.[1] || NaN);
-  const security = markdown.match(/\b(TRADE|USER_DATA|USER_STREAM|MARKET_DATA)\b/i)?.[1] || null;
-
-  const parameters = [...markdown.matchAll(/^\|\s*([A-Za-z0-9_]+)\s*\|\s*([^|]*)\|\s*([^|]*)\|/gm)]
-    .map((m) => ({ name: m[1], type: m[2].trim(), description: m[3].trim() }))
-    .filter((p) => p.name.toLowerCase() !== 'name');
-
-  const responseExamples = [...markdown.matchAll(/```json\n([\s\S]*?)```/g)].map((m) => m[1].trim());
-
-  return {
-    id: endpoint && method ? slugify(`${method}-${endpoint}`, { lower: true, strict: true }) : null,
-    path: endpoint,
-    method,
-    security,
-    weight: Number.isFinite(weight) ? weight : null,
-    parameters,
-    response_examples: responseExamples,
-    errors: [],
-  };
-}
+// Hooks delegated to ADAPTER
 
 function compileChunks(markdown, schema, url, title) {
   const chunks = [];
@@ -262,13 +217,13 @@ async function scrapeOne(page, url) {
   await fs.ensureDir(path.dirname(rawPath));
   await fs.writeFile(rawPath, html);
   const $ = cheerio.load(html);
-  const links = extractLinks($, url);
+  const links = ADAPTER.discoverLinks($, url);
   const provider = detectProvider(html);
   const discoveredSpecs = discoverSpecUrls($, url);
-  cleanDocument($);
+  ADAPTER.cleanDocument($);
 
   const title = $('h1').first().text().trim() || $('title').text().trim() || 'Untitled';
-  const contentHtml = selectMainContent($);
+  const contentHtml = ADAPTER.selectMainContent($);
   if (!contentHtml) throw new Error('selector_failed: no_main_content');
 
   const markdownBody = turndown.turndown(contentHtml).trim();
@@ -287,7 +242,9 @@ async function scrapeOne(page, url) {
     if (await fs.pathExists(schemaPath)) {
       try {
         const existing = await fs.readJson(schemaPath);
-        if (existing?.normalized?.id) {
+        if (existing?.normalizedSchemas) {
+          normalizedSchemas.push(...existing.normalizedSchemas.filter(s => s.id));
+        } else if (existing?.normalized?.id) {
           normalizedSchemas.push(existing.normalized);
         }
       } catch (e) {}
@@ -306,14 +263,17 @@ async function scrapeOne(page, url) {
 
   const pageContainer = cheerio.load(contentHtml);
   const assets = await downloadAssets(pageContainer, url);
-  const schema = extractApiSchema(markdownBody);
-  const normalizedSchema = normalizeBinanceRestSchema(schema);
-  const chunks = compileChunks(markdownBody, schema, url, title);
+  const extractedSchemas = ADAPTER.extractApiSchemas(markdownBody, url);
+  const pageNormalizedSchemas = extractedSchemas.map(s => normalizeBinanceRestSchema(s));
+  
+  const chunks = extractedSchemas.length > 0 
+    ? extractedSchemas.flatMap(s => compileChunks(markdownBody, s, url, title))
+    : compileChunks(markdownBody, {}, url, title);
 
   let websocketSchemas = [];
   if (kind === 'websocket_stream') {
     const extractedWs = extractWebsocketSchemas(markdownBody);
-    websocketSchemas = normalizeWebsocketSchema({ exchange: EXCHANGE, market: normalizedSchema.market || 'unknown', extracted: extractedWs });
+    websocketSchemas = normalizeWebsocketSchema({ exchange: EXCHANGE, market: pageNormalizedSchemas[0]?.market || 'unknown', extracted: extractedWs });
     websocketSchemas = websocketSchemas.filter((ws) => validateWebsocketStateModel(ws).valid);
     const wsPath = path.join(WEBSOCKET_DIR, `${slugify(new URL(url).pathname, { lower: true, strict: true })}.json`);
     await fs.ensureDir(path.dirname(wsPath));
@@ -324,10 +284,13 @@ async function scrapeOne(page, url) {
   const chunksPath = path.join(CHUNKS_DIR, `${slugify(new URL(url).pathname, { lower: true, strict: true })}.json`);
   await fs.ensureDir(path.dirname(schemaPath));
   await fs.ensureDir(path.dirname(chunksPath));
-  await fs.writeJson(schemaPath, { raw: schema, normalized: normalizedSchema }, { spaces: 2 });
+  
+  await fs.writeJson(schemaPath, { rawSchemas: extractedSchemas, normalizedSchemas: pageNormalizedSchemas }, { spaces: 2 });
   await fs.writeJson(chunksPath, chunks, { spaces: 2 });
 
-  if (normalizedSchema.id) normalizedSchemas.push(normalizedSchema);
+  pageNormalizedSchemas.forEach(s => {
+    if (s.id) normalizedSchemas.push(s);
+  });
 
   const pageSlug = slugify(new URL(url).pathname, { lower: true, strict: true });
   const specArtifacts = await ingestSpecs({ outputDir: OUTPUT_DIR, pageSlug, discovered: discoveredSpecs });
@@ -341,7 +304,7 @@ async function scrapeOne(page, url) {
     extracted_at: new Date().toISOString(),
     assets: assets.map((a) => ({ remote: a.remote, local: path.relative(OUTPUT_DIR, a.local) })),
     schema_path: path.relative(OUTPUT_DIR, schemaPath),
-    normalized_id: normalizedSchema.id,
+    normalized_id: pageNormalizedSchemas.map(s => s.id).filter(Boolean).join(',') || null,
     chunks_path: path.relative(OUTPUT_DIR, chunksPath),
     websocket_schemas: websocketSchemas.length > 0 ? websocketSchemas.length : 0,
     specs: { openapi: specArtifacts.openapi.length, asyncapi: specArtifacts.asyncapi.length },
