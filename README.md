@@ -176,3 +176,8 @@ For a concise project status and usage expectation, see `CURRENT_STATE.md`.
 ## Ollama / Local-Agent Integration
 
 For local-first agent grounding patterns, see `OLLAMA_INTEGRATION.md`.
+
+
+## Retrieval Strategy
+
+For deterministic local-agent retrieval design, see `RETRIEVAL_STRATEGY.md`.

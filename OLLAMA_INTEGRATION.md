@@ -76,3 +76,6 @@ See:
 - `PROJECT_BOUNDARY.md`
 - `RELEASE_STATUS.md`
 - `CURRENT_STATE.md`
+
+
+For detailed query-time retrieval contract and priority tiers, see `RETRIEVAL_STRATEGY.md`.

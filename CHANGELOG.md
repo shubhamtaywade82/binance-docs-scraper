@@ -39,3 +39,5 @@
 - Add Delta Exchange adapter support (`EXCHANGE=delta`) within existing compiler boundary.
 
 - Add `OLLAMA_INTEGRATION.md` describing deterministic local-agent grounding using `_compiled`/`_registry`/`_websocket` with `_chunks` as retrieval fallback.
+
+- Add `RETRIEVAL_STRATEGY.md` to formalize hybrid deterministic+semantic retrieval flow for Ollama/local-agent grounding.

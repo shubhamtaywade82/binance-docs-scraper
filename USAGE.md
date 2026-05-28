@@ -319,3 +319,8 @@ If you are onboarding downstream consumers, start with `CURRENT_STATE.md` before
 ## 22. Ollama Integration
 
 See `OLLAMA_INTEGRATION.md` for retrieval priority, chunk embedding strategy, and deterministic lookup flow.
+
+
+## 23. Retrieval Strategy
+
+Use `RETRIEVAL_STRATEGY.md` to implement hybrid deterministic + semantic retrieval for Ollama agents.
