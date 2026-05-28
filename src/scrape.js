@@ -282,6 +282,17 @@ async function scrapeOne(page, url) {
   if (prev && prev.contentHash === contentHash) {
     crawlState.set(url, { ...prev, etag, lastModified, unchanged_at: new Date().toISOString() });
     runStats.pagesSkipped += 1;
+
+    const schemaPath = path.join(SCHEMAS_DIR, `${slugify(new URL(url).pathname, { lower: true, strict: true })}.json`);
+    if (await fs.pathExists(schemaPath)) {
+      try {
+        const existing = await fs.readJson(schemaPath);
+        if (existing?.normalized?.id) {
+          normalizedSchemas.push(existing.normalized);
+        }
+      } catch (e) {}
+    }
+    
     return links;
   }
 

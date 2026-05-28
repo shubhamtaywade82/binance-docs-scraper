@@ -1,12 +1,20 @@
 const fs = require('fs-extra');
 const path = require('path');
+const yaml = require('js-yaml');
 
 async function fetchJsonOrText(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`spec_fetch_failed: ${url}`);
   const contentType = res.headers.get('content-type') || '';
   if (contentType.includes('application/json')) return { format: 'json', body: await res.json() };
-  return { format: 'text', body: await res.text() };
+  
+  const text = await res.text();
+  if (contentType.includes('yaml') || url.endsWith('.yaml') || url.endsWith('.yml')) {
+    try {
+      return { format: 'json', body: yaml.load(text) };
+    } catch (e) {}
+  }
+  return { format: 'text', body: text };
 }
 
 /** Ingest discovered OpenAPI/AsyncAPI specs for semantic-first compilation. */

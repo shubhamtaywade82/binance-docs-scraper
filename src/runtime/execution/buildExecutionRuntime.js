@@ -19,6 +19,12 @@ async function buildExecutionRuntime({ outputDir }) {
       const endpoints = await fs.readJson(path.join(compiledDir, file));
       (endpoints || []).forEach((endpoint) => restExecutors.push(compileRestExecutor(endpoint)));
     }
+
+    const wsFiles = (await fs.readdir(compiledDir)).filter((f) => f.endsWith('-compiled-ws.json'));
+    for (const file of wsFiles) {
+      const schemas = await fs.readJson(path.join(compiledDir, file));
+      (schemas || []).forEach((schema) => websocketRuntimes.push(compileWebsocketRuntime(schema)));
+    }
   }
 
   if (await fs.pathExists(websocketDir)) {
