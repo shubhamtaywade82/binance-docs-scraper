@@ -35,3 +35,5 @@
 - Mark project as `v1.0 COMPLETE` against `PROJECT_BOUNDARY.md` DoD and document stabilization-mode maintenance policy in `RELEASE_STATUS.md`.
 
 - Add `CURRENT_STATE.md` as a concise operational summary of project identity, outputs, and downstream boundary.
+
+- Add Delta Exchange adapter support (`EXCHANGE=delta`) within existing compiler boundary.

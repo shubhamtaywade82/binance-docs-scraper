@@ -25,6 +25,7 @@ Problem solved:
 - Binance
 - DhanHQ
 - CoinDCX
+- Delta Exchange
 
 ### Supported doc providers (initial)
 - Docusaurus
@@ -126,7 +127,8 @@ Deterministic queries available:
 - `validateExecutionPolicy()`
 
 ### H) Exchange Coverage
-Support Binance, DhanHQ, CoinDCX across REST docs, WebSocket docs, OpenAPI, AsyncAPI via exchange adapters.
+Support Binance, DhanHQ, CoinDCX
+- Delta Exchange across REST docs, WebSocket docs, OpenAPI, AsyncAPI via exchange adapters.
 
 ## Final Boundary
 

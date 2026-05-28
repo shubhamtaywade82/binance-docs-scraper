@@ -6,6 +6,7 @@ const { validateRegistry } = require('../src/runtime/validators/validateRegistry
 const { validateWebsocketStateModel } = require('../src/websocket/validators/validateWebsocketStateModel');
 const { compileOpenApi } = require('../src/specs/compilers/compileOpenApi');
 const { compileAsyncApi } = require('../src/specs/compilers/compileAsyncApi');
+const { getAdapter } = require('../src/core/getAdapter');
 
 test('diffSchemas detects parameter and weight changes', () => {
   const previousSchema = {
@@ -77,4 +78,11 @@ test('compileAsyncApi compiles websocket channel models', () => {
   assert.equal(compiled.length, 1);
   assert.equal(compiled[0].transport, 'websocket');
   assert.equal(compiled[0].channel, 'depth');
+});
+
+
+test('getAdapter supports delta exchange', () => {
+  const adapter = getAdapter('delta');
+  assert.equal(adapter.name, 'delta');
+  assert.equal(adapter.baseUrl, 'https://docs.delta.exchange');
 });

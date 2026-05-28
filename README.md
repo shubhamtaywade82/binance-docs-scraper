@@ -84,6 +84,7 @@ npm run scrape
 ```
 
 ### CoinDCX
+- Delta Exchange
 
 ```bash
 START_URL=https://docs.coindcx.com \

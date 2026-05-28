@@ -28,6 +28,7 @@ It is **not**:
 - Binance
 - DhanHQ
 - CoinDCX
+- Delta Exchange
 
 ## Expected Usage
 
