@@ -84,6 +84,7 @@ npm run scrape
 ```
 
 ### CoinDCX
+- Delta Exchange
 
 ```bash
 START_URL=https://docs.coindcx.com \
@@ -95,6 +96,9 @@ npm run scrape
 
 ```text
 docs/
+├── exchange/
+├── raw/
+├── markdown/
 ├── _compiled/
 ├── _schemas/
 ├── _registry/
@@ -146,3 +150,34 @@ The platform now includes initial live runtime skeletons for direct integration:
 - `src/runtime/live/BinanceRestClient.js`
 - `src/runtime/live/DepthStreamRuntime.js`
 - `src/runtime/state/OrderLifecycleStateMachine.js`
+
+
+For a detailed artifact map, see `OUTPUT_STRUCTURE.md`.
+
+
+Complete output architecture is documented in `OUTPUT_STRUCTURE.md`.
+
+
+## Project Boundary and DoD
+
+See `PROJECT_BOUNDARY.md` for strict scope, non-goals, and Definition of Done.
+
+
+## Release Status
+
+Current release status and maintenance scope are defined in `RELEASE_STATUS.md`.
+
+
+## Current State
+
+For a concise project status and usage expectation, see `CURRENT_STATE.md`.
+
+
+## Ollama / Local-Agent Integration
+
+For local-first agent grounding patterns, see `OLLAMA_INTEGRATION.md`.
+
+
+## Retrieval Strategy
+
+For deterministic local-agent retrieval design, see `RETRIEVAL_STRATEGY.md`.

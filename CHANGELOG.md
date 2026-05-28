@@ -23,3 +23,21 @@
 - Add execution runtime compiler that generates REST/WebSocket executor artifacts in `docs/_execution_runtime` for direct live trading runtime integration.
 
 - Add live runtime integration skeletons (REST executor client, websocket depth runtime, order lifecycle state machine) to bridge compiled semantics to deterministic execution behavior.
+
+- Add `OUTPUT_STRUCTURE.md` to document end-to-end artifact flow from ingestion/spec compilation to execution runtime definitions.
+
+- Align output architecture with exchange/raw/markdown separation and split spec storage into `_specs/openapi` + `_specs/asyncapi`.
+
+- Add `PROJECT_BOUNDARY.md` with strict scope, non-goals, and Definition of Done to prevent infrastructure drift.
+
+- Add baseline node test suite for core compiler/runtime validators to close stabilization gaps before declaring DoD completion.
+
+- Mark project as `v1.0 COMPLETE` against `PROJECT_BOUNDARY.md` DoD and document stabilization-mode maintenance policy in `RELEASE_STATUS.md`.
+
+- Add `CURRENT_STATE.md` as a concise operational summary of project identity, outputs, and downstream boundary.
+
+- Add Delta Exchange adapter support (`EXCHANGE=delta`) within existing compiler boundary.
+
+- Add `OLLAMA_INTEGRATION.md` describing deterministic local-agent grounding using `_compiled`/`_registry`/`_websocket` with `_chunks` as retrieval fallback.
+
+- Add `RETRIEVAL_STRATEGY.md` to formalize hybrid deterministic+semantic retrieval flow for Ollama/local-agent grounding.

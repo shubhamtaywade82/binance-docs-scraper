@@ -19,6 +19,7 @@ npm run scrape
 ```
 
 ### CoinDCX
+- Delta Exchange
 
 ```bash
 START_URL=https://docs.coindcx.com \
@@ -285,3 +286,41 @@ src/runtime/state/OrderLifecycleStateMachine.js
 These bridge semantic compilation to live execution behavior:
 - REST: validate → sign → execute → reconcile
 - WS: connect → subscribe → sequence validate → resync
+
+
+## 17. Output Folder Reference
+
+See `OUTPUT_STRUCTURE.md` for a full artifact-by-artifact map from crawl outputs to execution runtime definitions.
+
+
+## 18. Exchange/Raw/Markdown Separation
+
+- `docs/exchange/<exchange>/` logical exchange separation root
+- `docs/raw/<exchange>/` raw extracted HTML for debug/recovery
+- `docs/markdown/<exchange>/` clean markdown knowledge base
+- `_specs/openapi/` and `_specs/asyncapi/` separate spec classes
+
+
+## 19. Scope Boundary
+
+Before extending architecture, check `PROJECT_BOUNDARY.md` to ensure changes remain in compiler scope and do not drift into live execution/risk/strategy systems.
+
+
+## 20. Stabilization Mode
+
+This project is now in boundary-controlled stabilization mode. See `RELEASE_STATUS.md` and `PROJECT_BOUNDARY.md` before proposing new features.
+
+
+## 21. Current State Reference
+
+If you are onboarding downstream consumers, start with `CURRENT_STATE.md` before integration work.
+
+
+## 22. Ollama Integration
+
+See `OLLAMA_INTEGRATION.md` for retrieval priority, chunk embedding strategy, and deterministic lookup flow.
+
+
+## 23. Retrieval Strategy
+
+Use `RETRIEVAL_STRATEGY.md` to implement hybrid deterministic + semantic retrieval for Ollama agents.

@@ -24,6 +24,9 @@ const BASE_URL = ADAPTER.baseUrl;
 const START_URL = ADAPTER.startUrl;
 const ALLOWED_PATH_PREFIX = ADAPTER.allowedPathPrefix;
 const OUTPUT_DIR = path.resolve(process.env.OUTPUT_DIR || 'docs');
+const EXCHANGE_DIR = path.join(OUTPUT_DIR, 'exchange', EXCHANGE);
+const RAW_DIR = path.join(OUTPUT_DIR, 'raw', EXCHANGE);
+const MARKDOWN_DIR = path.join(OUTPUT_DIR, 'markdown', EXCHANGE);
 const ASSET_DIR = path.join(OUTPUT_DIR, '_assets');
 const METADATA_DIR = path.join(OUTPUT_DIR, '_metadata');
 const SCHEMAS_DIR = path.join(OUTPUT_DIR, '_schemas');
@@ -78,7 +81,7 @@ function buildOutputPath(url) {
   const parsed = new URL(url);
   let pathname = parsed.pathname.replace(/^\/docs\//, '');
   if (pathname.endsWith('/')) pathname += 'index';
-  return path.join(OUTPUT_DIR, `${pathname}.md`);
+  return path.join(MARKDOWN_DIR, `${pathname}.md`);
 }
 
 function classifyPage(markdown, url) {
@@ -255,6 +258,9 @@ async function scrapeOne(page, url) {
   await page.waitForTimeout(REQUEST_DELAY_MS);
 
   const html = await page.content();
+  const rawPath = path.join(RAW_DIR, `${slugify(new URL(url).pathname || 'index', { lower: true, strict: true })}.html`);
+  await fs.ensureDir(path.dirname(rawPath));
+  await fs.writeFile(rawPath, html);
   const $ = cheerio.load(html);
   const links = extractLinks($, url);
   const provider = detectProvider(html);
@@ -276,6 +282,17 @@ async function scrapeOne(page, url) {
   if (prev && prev.contentHash === contentHash) {
     crawlState.set(url, { ...prev, etag, lastModified, unchanged_at: new Date().toISOString() });
     runStats.pagesSkipped += 1;
+
+    const schemaPath = path.join(SCHEMAS_DIR, `${slugify(new URL(url).pathname, { lower: true, strict: true })}.json`);
+    if (await fs.pathExists(schemaPath)) {
+      try {
+        const existing = await fs.readJson(schemaPath);
+        if (existing?.normalized?.id) {
+          normalizedSchemas.push(existing.normalized);
+        }
+      } catch (e) {}
+    }
+    
     return links;
   }
 
@@ -349,6 +366,9 @@ async function writeReadme() {
 
 async function run() {
   await fs.ensureDir(OUTPUT_DIR);
+  await fs.ensureDir(EXCHANGE_DIR);
+  await fs.ensureDir(RAW_DIR);
+  await fs.ensureDir(MARKDOWN_DIR);
   await loadState();
 
   const browser = await chromium.launch({ headless: true });
