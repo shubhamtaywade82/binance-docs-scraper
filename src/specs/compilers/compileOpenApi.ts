@@ -6,6 +6,7 @@ function compileOpenApi({ exchange, market, doc }: { exchange: string; market: s
 
   Object.entries(paths).forEach(([path, ops]: [string, any]) => {
     Object.entries(ops || {}).forEach(([method, operation]: [string, any]) => {
+      if (!['get', 'post', 'put', 'delete', 'patch'].includes(method.toLowerCase())) return;
       const op = operation || {};
       const id = `${exchange}.${market}.${(op.operationId || `${method}_${path}`).replace(/[^a-zA-Z0-9_.-]/g, '_')}`;
       compiled.push({

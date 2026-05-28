@@ -2,6 +2,7 @@ import fs from 'fs-extra';
 import path from 'path';
 import { compileOpenApi } from '../specs/compilers/compileOpenApi.js';
 import { compileAsyncApi } from '../specs/compilers/compileAsyncApi.js';
+import yaml from 'js-yaml';
 
 async function compileSpecsToRuntime({
   kbDir,
@@ -30,13 +31,25 @@ async function compileSpecsToRuntime({
   for (const file of files) {
     const full = path.join(specsDir, file);
     const blob = await fs.readJson(full);
+    let doc = typeof blob.body === 'object' ? blob.body : null;
+    if (!doc && typeof blob.body === 'string') {
+      try {
+        doc = JSON.parse(blob.body);
+      } catch {
+        try {
+          doc = yaml.load(blob.body);
+        } catch {
+          // ignore
+        }
+      }
+    }
+
     if (blob.url?.toLowerCase().includes('asyncapi')) {
-      const compiled = compileAsyncApi({ exchange, market, doc: blob.body });
+      const compiled = compileAsyncApi({ exchange, market, doc });
       const name = file.split('/').pop()?.replace('.json', '').replace(/-/g, '/') || 'ws';
       await fs.writeJson(path.join(outDir, `${name}-compiled-ws.json`), compiled, { spaces: 2 });
       asyncapiCount += compiled.length;
     } else {
-      const doc = typeof blob.body === 'object' ? blob.body : null;
       const compiled = compileOpenApi({ exchange, market, doc });
       await fs.writeJson(
         path.join(outDir, `${file.replaceAll('/', '-').replace('.json', '')}-compiled-rest.json`),

@@ -275,6 +275,9 @@ class ExchangeScraper {
         }
       }
 
+      const outPath = prev.outputPath ? path.join(KB_DIR, prev.outputPath) : this.buildOutputPath(url);
+      this.pageResults.push({ title: prev.title || title, url, outPath });
+
       return links;
     }
 
@@ -363,6 +366,7 @@ class ExchangeScraper {
     await fs.writeJson(metadataPath, metadata, { spaces: 2 });
 
     this.crawlState.set(url, {
+      title,
       url,
       etag,
       lastModified,
