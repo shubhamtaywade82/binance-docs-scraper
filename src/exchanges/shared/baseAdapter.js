@@ -7,12 +7,12 @@ class BaseAdapter {
     this.allowedPathPrefix = allowedPathPrefix;
   }
 
-  normalizeUrl(raw) {
-    const url = new URL(raw, this.baseUrl);
+  normalizeUrl(raw, currentUrl = this.baseUrl) {
+    const url = new URL(raw, currentUrl);
     if (url.origin !== this.baseUrl || !url.pathname.startsWith(this.allowedPathPrefix)) return null;
     url.hash = '';
     url.search = '';
-    return url.toString().replace(/\/$/, '');
+    return url.toString();
   }
 
   discoverLinks($, currentUrl) {
@@ -20,7 +20,7 @@ class BaseAdapter {
     $('.menu__link, a[href]').each((_, el) => {
       const href = $(el).attr('href');
       if (!href) return;
-      const normalized = this.normalizeUrl(href);
+      const normalized = this.normalizeUrl(href, currentUrl);
       if (normalized) links.add(normalized);
     });
     links.delete(currentUrl);

@@ -13,7 +13,7 @@ npm run scrape
 ### DhanHQ
 
 ```bash
-START_URL=https://dhanhq.co/docs/v2 \
+START_URL=https://dhanhq.co/docs/v2/ \
 EXCHANGE=dhanhq \
 npm run scrape
 ```

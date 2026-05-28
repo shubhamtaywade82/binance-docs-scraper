@@ -5,7 +5,7 @@ class DhanhqAdapter extends BaseAdapter {
     super({
       name: 'dhanhq',
       baseUrl: 'https://dhanhq.co',
-      startUrl: process.env.START_URL || 'https://dhanhq.co/docs/v2',
+      startUrl: process.env.START_URL || 'https://dhanhq.co/docs/v2/',
       allowedPathPrefix: process.env.ALLOWED_PATH_PREFIX || '/docs/v2',
     });
   }
