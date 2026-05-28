@@ -15,6 +15,7 @@ const { validateWebsocketStateModel } = require('./websocket/validators/validate
 const { detectProvider } = require('./providers/detectProvider');
 const { discoverSpecUrls } = require('./specs/discoverSpecUrls');
 const { ingestSpecs } = require('./specs/ingestSpecs');
+const { compileSpecsToRuntime } = require('./compiler/compileSpecsToRuntime');
 
 const EXCHANGE = process.env.EXCHANGE || 'binance';
 const ADAPTER = getAdapter(EXCHANGE);
@@ -62,6 +63,8 @@ const runStats = {
   pagesSkipped: 0,
   assetsDownloaded: 0,
   failures: [],
+  compiledOpenApi: 0,
+  compiledAsyncApi: 0,
 };
 
 function normalizeUrl(raw) {
@@ -376,6 +379,9 @@ async function run() {
 
     if (COMBINED_README) await writeReadme();
     await buildRegistry({ outputDir: OUTPUT_DIR, normalizedRecords: normalizedSchemas });
+    const compiledSummary = await compileSpecsToRuntime({ outputDir: OUTPUT_DIR, exchange: EXCHANGE, market: 'usdm_futures' });
+    runStats.compiledOpenApi = compiledSummary.openapi;
+    runStats.compiledAsyncApi = compiledSummary.asyncapi;
     await saveState();
     await saveRunStats();
     console.log(`Done. Visited=${runStats.pagesVisited} Written=${runStats.pagesWritten} Skipped=${runStats.pagesSkipped} Failures=${runStats.failures.length}`);
