@@ -38,8 +38,18 @@ turndown.addRule('fencedCodeWithLanguage', {
     const firstChild = node.firstChild as HTMLElement | null;
     if (!firstChild) return '';
     const className = firstChild.getAttribute('class') || '';
-    const lang = (className.match(/language-([\w-]+)/) || [])[1] || '';
-    const code = firstChild.textContent || '';
+    let lang = (className.match(/language-([\w-]+)/) || [])[1] || '';
+    let code = firstChild.textContent || '';
+    
+    if (code.trim().startsWith('{') || code.trim().startsWith('[')) {
+      try {
+        code = JSON.stringify(JSON.parse(code), null, 2);
+        if (!lang) lang = 'json';
+      } catch {
+        // ignore invalid json
+      }
+    }
+    
     return `\n\n\`\`\`${lang}\n${code.replace(/\n$/, '')}\n\`\`\`\n\n`;
   },
 });
