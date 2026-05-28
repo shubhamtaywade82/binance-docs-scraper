@@ -2,7 +2,7 @@
 
 ## Status
 
-**Universal Exchange Knowledge Compiler: v1.0 COMPLETE**
+**Universal API Knowledge Compiler: v1.0 COMPLETE**
 
 Completion is measured against `PROJECT_BOUNDARY.md` Definition of Done and is satisfied.
 

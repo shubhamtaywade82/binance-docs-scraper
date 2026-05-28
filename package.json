@@ -1,18 +1,19 @@
 {
-  "name": "binance-docs-scraper",
+  "name": "universal-api-semantic-compiler",
   "version": "1.0.0",
-  "description": "Recursive Binance USDⓈ-M Futures docs scraper to Markdown",
+  "description": "Deterministic API docs/spec compiler to runtime-safe semantic artifacts",
   "main": "src/scrape.js",
   "scripts": {
     "scrape": "node src/scrape.js",
     "test": "node --test"
   },
   "keywords": [
-    "binance",
-    "docs",
-    "scraper",
-    "playwright",
-    "markdown"
+    "api",
+    "compiler",
+    "openapi",
+    "asyncapi",
+    "semantic",
+    "runtime"
   ],
   "license": "MIT",
   "dependencies": {

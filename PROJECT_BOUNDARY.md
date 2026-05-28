@@ -1,8 +1,8 @@
-# Universal Exchange Knowledge Compiler
+# Universal API Knowledge Compiler
 
 ## Final Goal
 
-Build a deterministic exchange knowledge compiler that converts exchange API documentation and specifications into a structured, queryable, runtime-safe knowledge base for automated trading systems and AI agents.
+Build a deterministic API knowledge compiler that converts exchange API documentation and specifications into a structured, queryable, runtime-safe knowledge base for automated trading systems and AI agents.
 
 Problem solved:
 

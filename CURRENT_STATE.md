@@ -2,7 +2,7 @@
 
 ## Project Identity
 
-This repository is a **deterministic exchange knowledge compiler**.
+This repository is a **deterministic API knowledge compiler**.
 
 It compiles heterogeneous exchange API documentation/specifications into structured, queryable, runtime-safe exchange intelligence.
 
