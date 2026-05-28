@@ -1,0 +1,68 @@
+src/runtime/live/BinanceRestClient.ts(6,17): error TS7031: Binding element 'signer' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(6,25): error TS7031: Binding element 'httpClient' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(6,37): error TS7031: Binding element 'orderValidator' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(6,53): error TS7031: Binding element 'policyValidator' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(7,10): error TS2551: Property 'signer' does not exist on type 'BinanceRestClient'. Did you mean 'sign'?
+src/runtime/live/BinanceRestClient.ts(8,10): error TS2339: Property 'httpClient' does not exist on type 'BinanceRestClient'.
+src/runtime/live/BinanceRestClient.ts(9,10): error TS2339: Property 'orderValidator' does not exist on type 'BinanceRestClient'.
+src/runtime/live/BinanceRestClient.ts(10,10): error TS2339: Property 'policyValidator' does not exist on type 'BinanceRestClient'.
+src/runtime/live/BinanceRestClient.ts(14,14): error TS7031: Binding element 'registryNode' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(14,28): error TS7031: Binding element 'intent' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(14,36): error TS7031: Binding element 'policy' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(15,29): error TS2339: Property 'orderValidator' does not exist on type 'BinanceRestClient'.
+src/runtime/live/BinanceRestClient.ts(17,17): error TS2339: Property 'policyValidator' does not exist on type 'BinanceRestClient'.
+src/runtime/live/BinanceRestClient.ts(21,10): error TS7031: Binding element 'method' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(21,18): error TS7031: Binding element 'path' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(22,17): error TS2551: Property 'signer' does not exist on type 'BinanceRestClient'. Did you mean 'sign'?
+src/runtime/live/BinanceRestClient.ts(26,19): error TS7031: Binding element 'method' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(26,27): error TS7031: Binding element 'path' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(27,17): error TS2339: Property 'httpClient' does not exist on type 'BinanceRestClient'.
+src/runtime/live/BinanceRestClient.ts(31,13): error TS7006: Parameter 'response' implicitly has an 'any' type.
+src/runtime/live/DepthStreamRuntime.ts(6,17): error TS7031: Binding element 'wsClient' implicitly has an 'any' type.
+src/runtime/live/DepthStreamRuntime.ts(6,27): error TS7031: Binding element 'snapshotFetcher' implicitly has an 'any' type.
+src/runtime/live/DepthStreamRuntime.ts(6,44): error TS7031: Binding element 'symbol' implicitly has an 'any' type.
+src/runtime/live/DepthStreamRuntime.ts(6,52): error TS7031: Binding element 'onUpdate' implicitly has an 'any' type.
+src/runtime/live/DepthStreamRuntime.ts(7,10): error TS2339: Property 'wsClient' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(8,10): error TS2339: Property 'snapshotFetcher' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(9,10): error TS2339: Property 'symbol' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(10,10): error TS2339: Property 'onUpdate' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(11,10): error TS2339: Property 'lastSequence' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(12,10): error TS2339: Property 'snapshot' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(16,10): error TS2339: Property 'snapshot' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(16,32): error TS2339: Property 'snapshotFetcher' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(16,53): error TS2339: Property 'symbol' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(17,10): error TS2339: Property 'lastSequence' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(17,30): error TS2339: Property 'snapshot' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(18,16): error TS2339: Property 'wsClient' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(19,16): error TS2339: Property 'wsClient' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(19,43): error TS2339: Property 'symbol' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(22,20): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/runtime/live/DepthStreamRuntime.ts(25,14): error TS2339: Property 'lastSequence' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(26,26): error TS2339: Property 'lastSequence' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(26,54): error TS2339: Property 'lastSequence' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(29,17): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/runtime/live/DepthStreamRuntime.ts(34,10): error TS2339: Property 'lastSequence' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(34,41): error TS2339: Property 'lastSequence' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(35,10): error TS2339: Property 'onUpdate' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(39,10): error TS2339: Property 'snapshot' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(39,32): error TS2339: Property 'snapshotFetcher' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(39,53): error TS2339: Property 'symbol' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(40,10): error TS2339: Property 'lastSequence' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(40,30): error TS2339: Property 'snapshot' does not exist on type 'DepthStreamRuntime'.
+src/runtime/query/findEndpoints.ts(2,24): error TS7006: Parameter 'nodes' implicitly has an 'any' type.
+src/runtime/query/findEndpoints.ts(3,24): error TS7006: Parameter 'node' implicitly has an 'any' type.
+src/runtime/query/findEndpoints.ts(4,17): error TS2339: Property 'action' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(4,51): error TS2339: Property 'action' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(5,17): error TS2339: Property 'market' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(5,51): error TS2339: Property 'market' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(6,17): error TS2339: Property 'auth' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(6,47): error TS2339: Property 'auth' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(7,17): error TS2339: Property 'transport' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(7,57): error TS2339: Property 'transport' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(8,17): error TS2339: Property 'supportsTrailingStop' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(9,17): error TS2339: Property 'supportsReduceOnly' does not exist on type '{}'.
+src/scrape.ts(21,27): error TS2305: Module '"cheerio"' has no exported member 'Element'.
+src/scrape.ts(178,67): error TS18046: 'err' is of type 'unknown'.
+src/scrape.ts(251,71): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/scrape.ts(347,16): error TS2345: Argument of type 'string | null' is not assignable to parameter of type 'string'.
+  Type 'null' is not assignable to type 'string'.
