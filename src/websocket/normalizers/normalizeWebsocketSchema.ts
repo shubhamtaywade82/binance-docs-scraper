@@ -1,5 +1,13 @@
 /** Normalize websocket semantics into exchange-agnostic model. */
-function normalizeWebsocketSchema({ exchange, market, extracted }: { exchange: string, market: string, extracted: any }) {
+function normalizeWebsocketSchema({
+  exchange,
+  market,
+  extracted,
+}: {
+  exchange: string;
+  market: string;
+  extracted: any;
+}) {
   return (extracted.streams || []).map((streamRow: any) => {
     const stream = streamRow.stream;
     const kind = /depth/i.test(stream)
@@ -41,4 +49,4 @@ function normalizeWebsocketSchema({ exchange, market, extracted }: { exchange: s
   });
 }
 
-export {  normalizeWebsocketSchema  };
+export { normalizeWebsocketSchema };

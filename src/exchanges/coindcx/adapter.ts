@@ -20,14 +20,12 @@ class CoindcxAdapter extends BaseAdapter {
   }
 
   cleanDocument($: CheerioAPI): void {
-    [
-      '.toc-wrapper', '#nav-button', '.dark-box', 'script', 'style', 'nav'
-    ].forEach((s) => $(s).remove());
+    ['.toc-wrapper', '#nav-button', '.dark-box', 'script', 'style', 'nav'].forEach((s) => $(s).remove());
   }
 
-  extractApiSchemas(markdown: string, url: string): ApiSchema[] {
+  extractApiSchemas(_markdown: string, _url: string): ApiSchema[] {
     return [];
   }
 }
 
-export {  CoindcxAdapter  };
+export { CoindcxAdapter };

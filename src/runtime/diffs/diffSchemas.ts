@@ -20,4 +20,4 @@ function diffSchemas(previousSchema: any, nextSchema: any) {
   return { changes };
 }
 
-export {  diffSchemas  };
+export { diffSchemas };

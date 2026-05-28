@@ -12,4 +12,4 @@ function validateWebsocketStateModel(schema: any) {
   return { valid: errors.length === 0, errors };
 }
 
-export {  validateWebsocketStateModel  };
+export { validateWebsocketStateModel };

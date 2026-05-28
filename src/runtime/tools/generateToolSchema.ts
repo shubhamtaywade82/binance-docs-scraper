@@ -23,4 +23,4 @@ function generateToolSchema(endpoint: any) {
   };
 }
 
-export {  generateToolSchema  };
+export { generateToolSchema };

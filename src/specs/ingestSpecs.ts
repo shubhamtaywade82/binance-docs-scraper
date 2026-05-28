@@ -7,24 +7,34 @@ async function fetchJsonOrText(url: string) {
   if (!res.ok) throw new Error(`spec_fetch_failed: ${url}`);
   const contentType = res.headers.get('content-type') || '';
   if (contentType.includes('application/json')) return { format: 'json', body: await res.json() };
-  
+
   const text = await res.text();
   if (contentType.includes('yaml') || url.endsWith('.yaml') || url.endsWith('.yml')) {
     try {
       return { format: 'json', body: yaml.load(text) };
-    } catch (e) {}
+    } catch (e) {
+      console.error(e);
+    }
   }
   return { format: 'text', body: text };
 }
 
 /** Ingest discovered OpenAPI/AsyncAPI specs for semantic-first compilation. */
-async function ingestSpecs({ outputDir, pageSlug, discovered }: { outputDir: string, pageSlug: string, discovered: { openapi?: string[], asyncapi?: string[] } }) {
+async function ingestSpecs({
+  outputDir,
+  pageSlug,
+  discovered,
+}: {
+  outputDir: string;
+  pageSlug: string;
+  discovered: { openapi?: string[]; asyncapi?: string[] };
+}) {
   const outDir = path.join(outputDir, '_specs');
   const openapiDir = path.join(outDir, 'openapi');
   const asyncapiDir = path.join(outDir, 'asyncapi');
   await fs.ensureDir(openapiDir);
   await fs.ensureDir(asyncapiDir);
-  const result: { openapi: string[], asyncapi: string[] } = { openapi: [], asyncapi: [] };
+  const result: { openapi: string[]; asyncapi: string[] } = { openapi: [], asyncapi: [] };
 
   for (const url of discovered.openapi || []) {
     try {
@@ -32,7 +42,9 @@ async function ingestSpecs({ outputDir, pageSlug, discovered }: { outputDir: str
       const file = path.join(openapiDir, `${pageSlug}-openapi-${result.openapi.length + 1}.json`);
       await fs.writeJson(file, { url, ...payload }, { spaces: 2 });
       result.openapi.push(file);
-    } catch {}
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   for (const url of discovered.asyncapi || []) {
@@ -41,10 +53,12 @@ async function ingestSpecs({ outputDir, pageSlug, discovered }: { outputDir: str
       const file = path.join(asyncapiDir, `${pageSlug}-asyncapi-${result.asyncapi.length + 1}.json`);
       await fs.writeJson(file, { url, ...payload }, { spaces: 2 });
       result.asyncapi.push(file);
-    } catch {}
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   return result;
 }
 
-export {  ingestSpecs  };
+export { ingestSpecs };

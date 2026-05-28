@@ -1,5 +1,5 @@
 /** Compile AsyncAPI document into runtime websocket channel types. */
-function compileAsyncApi({ exchange, market, doc }: { exchange: string, market: string, doc: any }) {
+function compileAsyncApi({ exchange, market, doc }: { exchange: string; market: string; doc: any }) {
   if (!doc || typeof doc !== 'object') return [];
   const channels = doc.channels || {};
 
@@ -26,4 +26,4 @@ function compileAsyncApi({ exchange, market, doc }: { exchange: string, market: 
   });
 }
 
-export {  compileAsyncApi  };
+export { compileAsyncApi };

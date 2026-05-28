@@ -1,5 +1,5 @@
 import slugify from 'slugify';
-import {  normalizeParams  } from '../runtime/normalization/normalizeParams.js';
+import { normalizeParams } from '../runtime/normalization/normalizeParams.js';
 import type { ApiSchema } from '../types.js';
 
 const ACTION_MAP: Record<string, string> = {
@@ -20,7 +20,7 @@ function inferResource(endpointPath: string | null): string {
 function normalizeBinanceRestSchema(rawSchema: ApiSchema): any {
   const method = rawSchema.method || null;
   const resource = inferResource(rawSchema.path);
-  const action = method ? (ACTION_MAP[method] || 'custom') : 'custom';
+  const action = method ? ACTION_MAP[method] || 'custom' : 'custom';
 
   return {
     id: rawSchema.path && method ? `binance.usdm.${resource}.${action}` : null,
@@ -41,4 +41,4 @@ function normalizeBinanceRestSchema(rawSchema: ApiSchema): any {
   };
 }
 
-export {  normalizeBinanceRestSchema  };
+export { normalizeBinanceRestSchema };

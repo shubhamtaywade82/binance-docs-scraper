@@ -49,4 +49,4 @@ function normalizeParams(rawParameters: ApiParameter[] = []) {
   }));
 }
 
-export {  normalizeParams  };
+export { normalizeParams };

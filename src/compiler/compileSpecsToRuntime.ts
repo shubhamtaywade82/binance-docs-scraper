@@ -1,9 +1,17 @@
 import fs from 'fs-extra';
 import path from 'path';
-import {  compileOpenApi  } from '../specs/compilers/compileOpenApi.js';
-import {  compileAsyncApi  } from '../specs/compilers/compileAsyncApi.js';
+import { compileOpenApi } from '../specs/compilers/compileOpenApi.js';
+import { compileAsyncApi } from '../specs/compilers/compileAsyncApi.js';
 
-async function compileSpecsToRuntime({ outputDir, exchange, market = 'unknown' }: { outputDir: string, exchange: string, market?: string }) {
+async function compileSpecsToRuntime({
+  outputDir,
+  exchange,
+  market = 'unknown',
+}: {
+  outputDir: string;
+  exchange: string;
+  market?: string;
+}) {
   const specsDir = path.join(outputDir, '_specs');
   const outDir = path.join(outputDir, '_compiled');
   await fs.ensureDir(outDir);
@@ -24,12 +32,17 @@ async function compileSpecsToRuntime({ outputDir, exchange, market = 'unknown' }
     const blob = await fs.readJson(full);
     if (blob.url?.toLowerCase().includes('asyncapi')) {
       const compiled = compileAsyncApi({ exchange, market, doc: blob.body });
-      await fs.writeJson(path.join(outDir, `${file.replace(/[\/]/g, '-').replace('.json', '')}-compiled-ws.json`), compiled, { spaces: 2 });
+      const name = file.replace(`${pageSlug}-openapi-`, '').replace('.json', '').replace(/-/g, '/');
+      await fs.writeJson(path.join(outDir, `${name}-compiled-ws.json`), compiled, { spaces: 2 });
       asyncapiCount += compiled.length;
     } else {
       const doc = typeof blob.body === 'object' ? blob.body : null;
       const compiled = compileOpenApi({ exchange, market, doc });
-      await fs.writeJson(path.join(outDir, `${file.replace(/[\/]/g, '-').replace('.json', '')}-compiled-rest.json`), compiled, { spaces: 2 });
+      await fs.writeJson(
+        path.join(outDir, `${file.replace(/[\/]/g, '-').replace('.json', '')}-compiled-rest.json`),
+        compiled,
+        { spaces: 2 },
+      );
       openapiCount += compiled.length;
     }
   }
@@ -37,4 +50,4 @@ async function compileSpecsToRuntime({ outputDir, exchange, market = 'unknown' }
   return { openapi: openapiCount, asyncapi: asyncapiCount };
 }
 
-export {  compileSpecsToRuntime  };
+export { compileSpecsToRuntime };

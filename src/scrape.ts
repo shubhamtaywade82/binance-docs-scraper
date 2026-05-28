@@ -18,6 +18,8 @@ import { discoverSpecUrls } from './specs/discoverSpecUrls.js';
 import { ingestSpecs } from './specs/ingestSpecs.js';
 import { compileSpecsToRuntime } from './compiler/compileSpecsToRuntime.js';
 import { buildExecutionRuntime } from './runtime/execution/buildExecutionRuntime.js';
+import { load } from 'cheerio';
+import * as turndown from 'turndown';
 import type { CheerioAPI } from 'cheerio';
 import type { ApiSchema, RunStats } from './types.js';
 
@@ -47,7 +49,8 @@ const MIN_MARKDOWN_LENGTH = Number(process.env.MIN_MARKDOWN_LENGTH || 300);
 const turndown = new TurndownService({ headingStyle: 'atx', codeBlockStyle: 'fenced', bulletListMarker: '-' });
 turndown.use(gfm);
 turndown.addRule('fencedCodeWithLanguage', {
-  filter: (node: HTMLElement) => Boolean(node.nodeName === 'PRE' && node.firstChild && node.firstChild.nodeName === 'CODE'),
+  filter: (node: HTMLElement) =>
+    Boolean(node.nodeName === 'PRE' && node.firstChild && node.firstChild.nodeName === 'CODE'),
   replacement: (_content: string, node: any) => {
     const firstChild = node.firstChild as HTMLElement | null;
     if (!firstChild) return '';
@@ -91,7 +94,8 @@ function buildOutputPath(url: string) {
 
 function classifyPage(markdown: string, url: string) {
   const lower = markdown.toLowerCase();
-  if (/\/(fapi|dapi)\/v\d+\//.test(markdown) && /\b(get|post|put|delete|patch)\b/i.test(markdown)) return 'rest_endpoint';
+  if (/\/(fapi|dapi)\/v\d+\//.test(markdown) && /\b(get|post|put|delete|patch)\b/i.test(markdown))
+    return 'rest_endpoint';
   if (lower.includes('websocket') || lower.includes('stream name')) return 'websocket_stream';
   if (lower.includes('error code') || lower.includes('error codes')) return 'error_codes';
   if (lower.includes('rate limit') || lower.includes('request weight')) return 'rate_limits';
@@ -214,11 +218,17 @@ async function scrapeOne(page: Page, url: string) {
   visited.add(url);
   runStats.pagesVisited += 1;
 
-  const response = await withRetry(async () => page.goto(url, { waitUntil: 'networkidle', timeout: 60_000 }), `goto ${url}`);
+  const response = await withRetry(
+    async () => page.goto(url, { waitUntil: 'networkidle', timeout: 60_000 }),
+    `goto ${url}`,
+  );
   await page.waitForTimeout(REQUEST_DELAY_MS);
 
   const html = await page.content();
-  const rawPath = path.join(RAW_DIR, `${slugify(new URL(url).pathname || 'index', { lower: true, strict: true })}.html`);
+  const rawPath = path.join(
+    RAW_DIR,
+    `${slugify(new URL(url).pathname || 'index', { lower: true, strict: true })}.html`,
+  );
   await fs.ensureDir(path.dirname(rawPath));
   await fs.writeFile(rawPath, html);
   const $ = cheerio.load(html);
@@ -252,9 +262,11 @@ async function scrapeOne(page: Page, url: string) {
         } else if (existing?.normalized?.id) {
           normalizedSchemas.push(existing.normalized);
         }
-      } catch (e) {}
+      } catch {
+        // file doesn't exist or is invalid
+      }
     }
-    
+
     return links;
   }
 
@@ -262,23 +274,38 @@ async function scrapeOne(page: Page, url: string) {
   await fs.ensureDir(path.dirname(outPath));
 
   const kind = classifyPage(markdownBody, url);
-  const frontmatter = ['---', `title: "${title.replace(/"/g, '\\"')}"`, `url: ${url}`, `kind: ${kind}`, 'category: derivatives', 'source: binance', `scraped_at: ${new Date().toISOString()}`, '---', ''].join('\n');
+  const frontmatter = [
+    '---',
+    `title: "${title.replace(/"/g, '\\"')}"`,
+    `url: ${url}`,
+    `kind: ${kind}`,
+    'category: derivatives',
+    'source: binance',
+    `scraped_at: ${new Date().toISOString()}`,
+    '---',
+    '',
+  ].join('\n');
   const finalMarkdown = `${frontmatter}# ${title}\n\n> Source: ${url}\n\n${markdownBody}\n`;
   await fs.writeFile(outPath, finalMarkdown);
 
   const pageContainer = cheerio.load(contentHtml);
   const assets = await downloadAssets(pageContainer, url);
   const extractedSchemas = ADAPTER.extractApiSchemas(markdownBody, url);
-  const pageNormalizedSchemas = extractedSchemas.map(s => normalizeBinanceRestSchema(s));
-  
-  const chunks = extractedSchemas.length > 0 
-    ? extractedSchemas.flatMap(s => compileChunks(markdownBody, s, url, title))
-    : compileChunks(markdownBody, {}, url, title);
+  const pageNormalizedSchemas = extractedSchemas.map((s) => normalizeBinanceRestSchema(s));
+
+  const chunks =
+    extractedSchemas.length > 0
+      ? extractedSchemas.flatMap((s) => compileChunks(markdownBody, s, url, title))
+      : compileChunks(markdownBody, {}, url, title);
 
   let websocketSchemas: any[] = [];
   if (kind === 'websocket_stream') {
     const extractedWs = extractWebsocketSchemas(markdownBody);
-    websocketSchemas = normalizeWebsocketSchema({ exchange: EXCHANGE, market: pageNormalizedSchemas[0]?.market || 'unknown', extracted: extractedWs });
+    websocketSchemas = normalizeWebsocketSchema({
+      exchange: EXCHANGE,
+      market: pageNormalizedSchemas[0]?.market || 'unknown',
+      extracted: extractedWs,
+    });
     websocketSchemas = websocketSchemas.filter((ws: any) => validateWebsocketStateModel(ws).valid);
     const wsPath = path.join(WEBSOCKET_DIR, `${slugify(new URL(url).pathname, { lower: true, strict: true })}.json`);
     await fs.ensureDir(path.dirname(wsPath));
@@ -289,8 +316,12 @@ async function scrapeOne(page: Page, url: string) {
   const chunksPath = path.join(CHUNKS_DIR, `${slugify(new URL(url).pathname, { lower: true, strict: true })}.json`);
   await fs.ensureDir(path.dirname(schemaPath));
   await fs.ensureDir(path.dirname(chunksPath));
-  
-  await fs.writeJson(schemaPath, { rawSchemas: extractedSchemas, normalizedSchemas: pageNormalizedSchemas }, { spaces: 2 });
+
+  await fs.writeJson(
+    schemaPath,
+    { rawSchemas: extractedSchemas, normalizedSchemas: pageNormalizedSchemas },
+    { spaces: 2 },
+  );
   await fs.writeJson(chunksPath, chunks, { spaces: 2 });
 
   pageNormalizedSchemas.forEach((s: any) => {
@@ -309,7 +340,11 @@ async function scrapeOne(page: Page, url: string) {
     extracted_at: new Date().toISOString(),
     assets: assets.map((a) => ({ remote: a.remote, local: path.relative(OUTPUT_DIR, a.local) })),
     schema_path: path.relative(OUTPUT_DIR, schemaPath),
-    normalized_id: pageNormalizedSchemas.map(s => s.id).filter(Boolean).join(',') || null,
+    normalized_id:
+      pageNormalizedSchemas
+        .map((s) => s.id)
+        .filter(Boolean)
+        .join(',') || null,
     chunks_path: path.relative(OUTPUT_DIR, chunksPath),
     websocket_schemas: websocketSchemas.length > 0 ? websocketSchemas.length : 0,
     specs: { openapi: specArtifacts.openapi.length, asyncapi: specArtifacts.asyncapi.length },
@@ -319,7 +354,14 @@ async function scrapeOne(page: Page, url: string) {
   await fs.ensureDir(path.dirname(metadataPath));
   await fs.writeJson(metadataPath, metadata, { spaces: 2 });
 
-  crawlState.set(url, { url, etag, lastModified, contentHash, outputPath: path.relative(OUTPUT_DIR, outPath), updated_at: new Date().toISOString() });
+  crawlState.set(url, {
+    url,
+    etag,
+    lastModified,
+    contentHash,
+    outputPath: path.relative(OUTPUT_DIR, outPath),
+    updated_at: new Date().toISOString(),
+  });
   pageResults.push({ title, url, outPath });
   runStats.pagesWritten += 1;
 
@@ -328,7 +370,11 @@ async function scrapeOne(page: Page, url: string) {
 
 async function writeReadme() {
   const lines = ['# Binance USDⓈ-M Futures Docs', '', `Seed: ${START_URL}`, '', '## Pages', ''];
-  pageResults.sort((a, b) => a.outPath.localeCompare(b.outPath)).forEach((page) => lines.push(`- [${page.title}](./${path.relative(OUTPUT_DIR, page.outPath).replace(/\\/g, '/')})`));
+  pageResults
+    .sort((a, b) => a.outPath.localeCompare(b.outPath))
+    .forEach((page) =>
+      lines.push(`- [${page.title}](./${path.relative(OUTPUT_DIR, page.outPath).replace(/\\/g, '/')})`),
+    );
   await fs.writeFile(path.join(OUTPUT_DIR, 'README.md'), `${lines.join('\n')}\n`);
 }
 
@@ -370,7 +416,11 @@ async function run() {
 
     if (COMBINED_README) await writeReadme();
     await buildRegistry({ outputDir: OUTPUT_DIR, normalizedRecords: normalizedSchemas });
-    const compiledSummary = await compileSpecsToRuntime({ outputDir: OUTPUT_DIR, exchange: EXCHANGE, market: 'usdm_futures' });
+    const compiledSummary = await compileSpecsToRuntime({
+      outputDir: OUTPUT_DIR,
+      exchange: EXCHANGE,
+      market: 'usdm_futures',
+    });
     runStats.compiledOpenApi = compiledSummary.openapi;
     runStats.compiledAsyncApi = compiledSummary.asyncapi;
     const executionSummary = await buildExecutionRuntime({ outputDir: OUTPUT_DIR });
@@ -378,7 +428,9 @@ async function run() {
     runStats.runtimeWebsocketExecutors = executionSummary.websocketRuntimes;
     await saveState();
     await saveRunStats();
-    console.log(`Done. Visited=${runStats.pagesVisited} Written=${runStats.pagesWritten} Skipped=${runStats.pagesSkipped} Failures=${runStats.failures.length}`);
+    console.log(
+      `Done. Visited=${runStats.pagesVisited} Written=${runStats.pagesWritten} Skipped=${runStats.pagesSkipped} Failures=${runStats.failures.length}`,
+    );
   } finally {
     await Promise.all(pages.map((p) => p.close()));
     await context.close();

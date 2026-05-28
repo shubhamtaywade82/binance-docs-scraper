@@ -12,7 +12,7 @@ class DhanhqAdapter extends BaseAdapter {
     });
   }
 
-  extractApiSchemas(markdown: string, url: string): ApiSchema[] {
+  extractApiSchemas(markdown: string, _url: string): ApiSchema[] {
     const endpoint = markdown.match(/https:\/\/api\.dhan\.co\/v2(\/[\w/-]+)/)?.[1] || null;
     const method = markdown.match(/curl --request (GET|POST|PUT|DELETE|PATCH)/)?.[1] || null;
 
@@ -37,4 +37,4 @@ class DhanhqAdapter extends BaseAdapter {
   }
 }
 
-export {  DhanhqAdapter  };
+export { DhanhqAdapter };

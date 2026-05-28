@@ -11,4 +11,4 @@ class BinanceAdapter extends BaseAdapter {
   }
 }
 
-export {  BinanceAdapter  };
+export { BinanceAdapter };

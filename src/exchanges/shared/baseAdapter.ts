@@ -9,7 +9,17 @@ class BaseAdapter implements Adapter {
   startUrl: string;
   allowedPathPrefix: string;
 
-  constructor({ name, baseUrl, startUrl, allowedPathPrefix }: { name: string, baseUrl: string, startUrl: string, allowedPathPrefix: string }) {
+  constructor({
+    name,
+    baseUrl,
+    startUrl,
+    allowedPathPrefix,
+  }: {
+    name: string;
+    baseUrl: string;
+    startUrl: string;
+    allowedPathPrefix: string;
+  }) {
     this.name = name;
     this.baseUrl = baseUrl;
     this.startUrl = startUrl;
@@ -38,9 +48,23 @@ class BaseAdapter implements Adapter {
 
   cleanDocument($: CheerioAPI): void {
     [
-      'nav', 'header', 'footer', 'script', 'style', '.navbar', '.pagination-nav', '.theme-doc-footer',
-      '.table-of-contents', '.breadcrumbs', '.menu', '.theme-edit-this-page', '.clean-btn', '.hash-link',
-      '.DocSearch', '.mobile-nav', '.theme-back-to-top-button'
+      'nav',
+      'header',
+      'footer',
+      'script',
+      'style',
+      '.navbar',
+      '.pagination-nav',
+      '.theme-doc-footer',
+      '.table-of-contents',
+      '.breadcrumbs',
+      '.menu',
+      '.theme-edit-this-page',
+      '.clean-btn',
+      '.hash-link',
+      '.DocSearch',
+      '.mobile-nav',
+      '.theme-back-to-top-button',
     ].forEach((s) => $(s).remove());
   }
 
@@ -55,7 +79,7 @@ class BaseAdapter implements Adapter {
     return best;
   }
 
-  extractApiSchemas(markdown: string, url: string): ApiSchema[] {
+  extractApiSchemas(markdown: string, _url: string): ApiSchema[] {
     const endpoint = markdown.match(/\/(fapi|dapi)\/v1\/[\w/-]+/)?.[0] || null;
     const method = markdown.match(/\b(GET|POST|PUT|DELETE|PATCH)\b/)?.[1] || null;
     const weight = Number(markdown.match(/Request Weight\s*:?\s*(\d+)/i)?.[1] || NaN);
@@ -82,4 +106,4 @@ class BaseAdapter implements Adapter {
   }
 }
 
-export {  BaseAdapter  };
+export { BaseAdapter };

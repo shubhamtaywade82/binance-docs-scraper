@@ -20,4 +20,4 @@ function validateRegistry(nodes: any[], graph: any) {
   return { valid: errors.length === 0, errors };
 }
 
-export {  validateRegistry  };
+export { validateRegistry };

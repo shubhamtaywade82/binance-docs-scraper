@@ -19,4 +19,4 @@ function compileWebsocketRuntime(schema: any) {
   };
 }
 
-export {  compileWebsocketRuntime  };
+export { compileWebsocketRuntime };

@@ -48,4 +48,4 @@ class DepthStreamRuntime {
   }
 }
 
-export {  DepthStreamRuntime  };
+export { DepthStreamRuntime };

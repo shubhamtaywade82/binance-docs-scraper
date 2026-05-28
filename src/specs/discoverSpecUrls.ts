@@ -1,5 +1,5 @@
 /** Discover OpenAPI/AsyncAPI spec URLs from HTML. */
-function discoverSpecUrls($: any, baseUrl: string): { openapi: string[], asyncapi: string[] } {
+function discoverSpecUrls($: any, baseUrl: string): { openapi: string[]; asyncapi: string[] } {
   const openapi = new Set<string>();
   const asyncapi = new Set<string>();
 
@@ -26,4 +26,4 @@ function discoverSpecUrls($: any, baseUrl: string): { openapi: string[], asyncap
   return { openapi: [...openapi], asyncapi: [...asyncapi] };
 }
 
-export {  discoverSpecUrls  };
+export { discoverSpecUrls };

@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path';
-import {  compileRestExecutor  } from '../compiler/compileRestExecutor.js';
-import {  compileWebsocketRuntime  } from '../compiler/compileWebsocketRuntime.js';
+import { compileRestExecutor } from '../compiler/compileRestExecutor.js';
+import { compileWebsocketRuntime } from '../compiler/compileWebsocketRuntime.js';
 
 /** Build executable runtime artifacts from compiled REST/WS semantics. */
 async function buildExecutionRuntime({ outputDir }: { outputDir: string }) {
@@ -41,4 +41,4 @@ async function buildExecutionRuntime({ outputDir }: { outputDir: string }) {
   return { restExecutors: restExecutors.length, websocketRuntimes: websocketRuntimes.length };
 }
 
-export {  buildExecutionRuntime  };
+export { buildExecutionRuntime };

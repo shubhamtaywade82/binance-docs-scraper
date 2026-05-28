@@ -6,13 +6,16 @@ import { DeltaAdapter } from '../exchanges/delta/adapter.js';
 
 function getAdapter(exchange?: string): Adapter {
   switch ((exchange || 'binance').toLowerCase()) {
-    case 'dhanhq': return new DhanhqAdapter();
-    case 'coindcx': return new CoindcxAdapter();
-    case 'delta': return new DeltaAdapter();
+    case 'dhanhq':
+      return new DhanhqAdapter();
+    case 'coindcx':
+      return new CoindcxAdapter();
+    case 'delta':
+      return new DeltaAdapter();
     case 'binance':
     default:
       return new BinanceAdapter();
   }
 }
 
-export {  getAdapter  };
+export { getAdapter };

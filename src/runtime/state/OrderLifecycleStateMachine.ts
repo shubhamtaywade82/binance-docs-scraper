@@ -18,4 +18,4 @@ class OrderLifecycleStateMachine {
   }
 }
 
-export {  OrderLifecycleStateMachine  };
+export { OrderLifecycleStateMachine };

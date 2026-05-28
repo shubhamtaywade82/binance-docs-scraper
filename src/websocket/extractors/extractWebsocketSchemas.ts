@@ -10,7 +10,9 @@ function extractWebsocketSchemas(markdown = '') {
 
   const eventTypes = [...markdown.matchAll(/"e"\s*:\s*"([a-zA-Z0-9_]+)"/g)].map((m) => m[1]);
 
-  const subscriptionExamples = [...markdown.matchAll(/```json\n([\s\S]*?SUBSCRIBE[\s\S]*?)```/g)].map((m) => m[1].trim());
+  const subscriptionExamples = [...markdown.matchAll(/```json\n([\s\S]*?SUBSCRIBE[\s\S]*?)```/g)].map((m) =>
+    m[1].trim(),
+  );
 
   return {
     connections: [...new Set(connections)],
@@ -20,4 +22,4 @@ function extractWebsocketSchemas(markdown = '') {
   };
 }
 
-export {  extractWebsocketSchemas  };
+export { extractWebsocketSchemas };

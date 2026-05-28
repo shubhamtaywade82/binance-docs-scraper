@@ -9,4 +9,4 @@ function detectProvider(html = '') {
   return 'custom';
 }
 
-export {  detectProvider  };
+export { detectProvider };

@@ -1,5 +1,5 @@
 /** Compile OpenAPI document into runtime endpoint types. */
-function compileOpenApi({ exchange, market, doc }: { exchange: string, market: string, doc: any }) {
+function compileOpenApi({ exchange, market, doc }: { exchange: string; market: string; doc: any }) {
   if (!doc || typeof doc !== 'object') return [];
   const paths = doc.paths || {};
   const compiled: any[] = [];
@@ -17,7 +17,10 @@ function compileOpenApi({ exchange, market, doc }: { exchange: string, market: s
         path,
         inputSchema: { parameters: op.parameters || [], requestBody: op.requestBody || null },
         outputSchema: op.responses || {},
-        auth: (op.security || doc.security || []).length > 0 ? { required: true, schemes: op.security || doc.security } : { required: false, schemes: [] },
+        auth:
+          (op.security || doc.security || []).length > 0
+            ? { required: true, schemes: op.security || doc.security }
+            : { required: false, schemes: [] },
         constraints: { rateLimitWeight: null },
         capabilities: {},
       });
@@ -27,4 +30,4 @@ function compileOpenApi({ exchange, market, doc }: { exchange: string, market: s
   return compiled;
 }
 
-export {  compileOpenApi  };
+export { compileOpenApi };

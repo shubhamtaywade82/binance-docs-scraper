@@ -42,4 +42,4 @@ class BinanceRestClient {
   }
 }
 
-export {  BinanceRestClient  };
+export { BinanceRestClient };

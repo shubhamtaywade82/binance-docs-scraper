@@ -1,5 +1,5 @@
 /** Validate requested order intent against normalized endpoint capabilities. */
-function validateOrder({ registryNode, intent }: { registryNode: any, intent: any }) {
+function validateOrder({ registryNode, intent }: { registryNode: any; intent: any }) {
   if (!registryNode) {
     return { valid: false, supported: false, reason: 'endpoint_not_found', warnings: [] };
   }
@@ -26,4 +26,4 @@ function validateOrder({ registryNode, intent }: { registryNode: any, intent: an
   return { valid: true, supported: true, reason: null, warnings };
 }
 
-export {  validateOrder  };
+export { validateOrder };

@@ -11,4 +11,4 @@ function findEndpoints(nodes: any[], filters: any = {}) {
   });
 }
 
-export {  findEndpoints  };
+export { findEndpoints };

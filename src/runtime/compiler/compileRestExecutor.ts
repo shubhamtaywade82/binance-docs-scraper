@@ -1,4 +1,4 @@
-import {  generateToolSchema  } from '../tools/generateToolSchema.js';
+import { generateToolSchema } from '../tools/generateToolSchema.js';
 
 /** Compile a normalized endpoint into an executable REST runtime definition. */
 function compileRestExecutor(endpoint: any) {
@@ -24,4 +24,4 @@ function compileRestExecutor(endpoint: any) {
   };
 }
 
-export {  compileRestExecutor  };
+export { compileRestExecutor };
