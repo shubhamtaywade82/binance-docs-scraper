@@ -31,3 +31,5 @@ Deterministic Binance docs synchronization + semantic extraction pipeline for US
 - `EXCHANGE` (`binance`, `dhanhq`, `coindcx`)
 
 - `docs/_websocket/*.json` — normalized websocket stream/state schemas
+
+- `docs/_specs/*.json` — discovered OpenAPI/AsyncAPI spec artifacts (preferred over HTML fallback)

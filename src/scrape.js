@@ -12,6 +12,9 @@ const { getAdapter } = require('./core/getAdapter');
 const { extractWebsocketSchemas } = require('./websocket/extractors/extractWebsocketSchemas');
 const { normalizeWebsocketSchema } = require('./websocket/normalizers/normalizeWebsocketSchema');
 const { validateWebsocketStateModel } = require('./websocket/validators/validateWebsocketStateModel');
+const { detectProvider } = require('./providers/detectProvider');
+const { discoverSpecUrls } = require('./specs/discoverSpecUrls');
+const { ingestSpecs } = require('./specs/ingestSpecs');
 
 const EXCHANGE = process.env.EXCHANGE || 'binance';
 const ADAPTER = getAdapter(EXCHANGE);
@@ -248,6 +251,8 @@ async function scrapeOne(page, url) {
   const html = await page.content();
   const $ = cheerio.load(html);
   const links = extractLinks($, url);
+  const provider = detectProvider(html);
+  const discoveredSpecs = discoverSpecUrls($, url);
   cleanDocument($);
 
   const title = $('h1').first().text().trim() || $('title').text().trim() || 'Untitled';
@@ -301,10 +306,14 @@ async function scrapeOne(page, url) {
 
   if (normalizedSchema.id) normalizedSchemas.push(normalizedSchema);
 
+  const pageSlug = slugify(new URL(url).pathname, { lower: true, strict: true });
+  const specArtifacts = await ingestSpecs({ outputDir: OUTPUT_DIR, pageSlug, discovered: discoveredSpecs });
+
   const metadata = {
     title,
     url,
     kind,
+    provider,
     output_path: path.relative(OUTPUT_DIR, outPath),
     extracted_at: new Date().toISOString(),
     assets: assets.map((a) => ({ remote: a.remote, local: path.relative(OUTPUT_DIR, a.local) })),
@@ -312,6 +321,7 @@ async function scrapeOne(page, url) {
     normalized_id: normalizedSchema.id,
     chunks_path: path.relative(OUTPUT_DIR, chunksPath),
     websocket_schemas: websocketSchemas.length > 0 ? websocketSchemas.length : 0,
+    specs: { openapi: specArtifacts.openapi.length, asyncapi: specArtifacts.asyncapi.length },
   };
 
   const metadataPath = path.join(METADATA_DIR, `${slugify(new URL(url).pathname, { lower: true, strict: true })}.json`);
