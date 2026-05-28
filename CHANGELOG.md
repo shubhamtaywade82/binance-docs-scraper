@@ -37,3 +37,5 @@
 - Add `CURRENT_STATE.md` as a concise operational summary of project identity, outputs, and downstream boundary.
 
 - Add Delta Exchange adapter support (`EXCHANGE=delta`) within existing compiler boundary.
+
+- Add `OLLAMA_INTEGRATION.md` describing deterministic local-agent grounding using `_compiled`/`_registry`/`_websocket` with `_chunks` as retrieval fallback.

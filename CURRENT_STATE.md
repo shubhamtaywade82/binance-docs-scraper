@@ -62,3 +62,8 @@ See also:
 - `PROJECT_BOUNDARY.md`
 - `RELEASE_STATUS.md`
 - `OUTPUT_STRUCTURE.md`
+
+
+## Local Agent Fit
+
+This compiler is directly suitable as grounding infrastructure for local-first agents (e.g. ollama-based) via `_compiled`, `_registry`, `_websocket`, and `_chunks`.

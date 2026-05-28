@@ -171,3 +171,8 @@ Current release status and maintenance scope are defined in `RELEASE_STATUS.md`.
 ## Current State
 
 For a concise project status and usage expectation, see `CURRENT_STATE.md`.
+
+
+## Ollama / Local-Agent Integration
+
+For local-first agent grounding patterns, see `OLLAMA_INTEGRATION.md`.

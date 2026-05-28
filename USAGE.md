@@ -314,3 +314,8 @@ This project is now in boundary-controlled stabilization mode. See `RELEASE_STAT
 ## 21. Current State Reference
 
 If you are onboarding downstream consumers, start with `CURRENT_STATE.md` before integration work.
+
+
+## 22. Ollama Integration
+
+See `OLLAMA_INTEGRATION.md` for retrieval priority, chunk embedding strategy, and deterministic lookup flow.
