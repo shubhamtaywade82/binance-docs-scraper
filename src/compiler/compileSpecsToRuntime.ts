@@ -32,14 +32,14 @@ async function compileSpecsToRuntime({
     const blob = await fs.readJson(full);
     if (blob.url?.toLowerCase().includes('asyncapi')) {
       const compiled = compileAsyncApi({ exchange, market, doc: blob.body });
-      const name = file.replace(`${pageSlug}-openapi-`, '').replace('.json', '').replace(/-/g, '/');
+      const name = file.split('/').pop()?.replace('.json', '').replace(/-/g, '/') || 'ws';
       await fs.writeJson(path.join(outDir, `${name}-compiled-ws.json`), compiled, { spaces: 2 });
       asyncapiCount += compiled.length;
     } else {
       const doc = typeof blob.body === 'object' ? blob.body : null;
       const compiled = compileOpenApi({ exchange, market, doc });
       await fs.writeJson(
-        path.join(outDir, `${file.replace(/[\/]/g, '-').replace('.json', '')}-compiled-rest.json`),
+        path.join(outDir, `${file.replaceAll('/', '-').replace('.json', '')}-compiled-rest.json`),
         compiled,
         { spaces: 2 },
       );

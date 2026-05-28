@@ -21,4 +21,6 @@ function getAdapter(exchange?: string): Adapter {
   }
 }
 
+export const SUPPORTED_EXCHANGES = ['binance', 'dhanhq', 'coindcx', 'delta', 'ollama'];
+
 export { getAdapter };

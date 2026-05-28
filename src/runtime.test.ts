@@ -14,13 +14,13 @@ test('diffSchemas detects parameter and weight changes', () => {
     rateLimitWeight: 1,
     parameters: [{ name: 'symbol' }, { name: 'side' }],
     deprecated: false,
-  } as ApiSchema;
+  } as unknown as ApiSchema;
 
   const nextSchema = {
     rateLimitWeight: 5,
     parameters: [{ name: 'symbol' }, { name: 'side' }, { name: 'reduceOnly' }],
     deprecated: false,
-  } as ApiSchema;
+  } as unknown as ApiSchema;
 
   const diff = diffSchemas(previousSchema, nextSchema);
   assert.equal(
