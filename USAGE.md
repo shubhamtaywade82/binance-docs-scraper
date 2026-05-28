@@ -249,3 +249,18 @@ Use compiled runtime semantics for:
 - If runtime compiled outputs are empty, inspect `docs/_specs` for discovered spec artifacts.
 - If too many pages fail validation, reduce `MIN_MARKDOWN_LENGTH` temporarily and inspect selectors/provider detection.
 - Check `docs/_failures` and `docs/_runs` first when diagnosing crawl issues.
+
+
+## 15. Execution Runtime Artifacts
+
+Generated runtime executors are written to:
+
+```text
+docs/_execution_runtime/
+├── rest-executors.json
+└── websocket-runtimes.json
+```
+
+These artifacts are intended for direct trading runtime integration:
+- REST: `validate → sign → execute → retry → reconcile`
+- WebSocket: `connect → subscribe → heartbeat → reconcile → resync`

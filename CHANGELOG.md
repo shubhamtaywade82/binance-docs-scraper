@@ -19,3 +19,5 @@
 - Add spec runtime compiler to transform discovered OpenAPI/AsyncAPI artifacts into compiled executable REST/WS runtime types under `docs/_compiled`.
 
 - Split documentation into high-level `README.md` and operational `USAGE.md` to keep platform architecture and workflows clearly separated.
+
+- Add execution runtime compiler that generates REST/WebSocket executor artifacts in `docs/_execution_runtime` for direct live trading runtime integration.

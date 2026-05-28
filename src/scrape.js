@@ -16,6 +16,7 @@ const { detectProvider } = require('./providers/detectProvider');
 const { discoverSpecUrls } = require('./specs/discoverSpecUrls');
 const { ingestSpecs } = require('./specs/ingestSpecs');
 const { compileSpecsToRuntime } = require('./compiler/compileSpecsToRuntime');
+const { buildExecutionRuntime } = require('./runtime/execution/buildExecutionRuntime');
 
 const EXCHANGE = process.env.EXCHANGE || 'binance';
 const ADAPTER = getAdapter(EXCHANGE);
@@ -65,6 +66,8 @@ const runStats = {
   failures: [],
   compiledOpenApi: 0,
   compiledAsyncApi: 0,
+  runtimeRestExecutors: 0,
+  runtimeWebsocketExecutors: 0,
 };
 
 function normalizeUrl(raw) {
@@ -382,6 +385,9 @@ async function run() {
     const compiledSummary = await compileSpecsToRuntime({ outputDir: OUTPUT_DIR, exchange: EXCHANGE, market: 'usdm_futures' });
     runStats.compiledOpenApi = compiledSummary.openapi;
     runStats.compiledAsyncApi = compiledSummary.asyncapi;
+    const executionSummary = await buildExecutionRuntime({ outputDir: OUTPUT_DIR });
+    runStats.runtimeRestExecutors = executionSummary.restExecutors;
+    runStats.runtimeWebsocketExecutors = executionSummary.websocketRuntimes;
     await saveState();
     await saveRunStats();
     console.log(`Done. Visited=${runStats.pagesVisited} Written=${runStats.pagesWritten} Skipped=${runStats.pagesSkipped} Failures=${runStats.failures.length}`);
