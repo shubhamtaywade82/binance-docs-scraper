@@ -308,3 +308,8 @@ Before extending architecture, check `PROJECT_BOUNDARY.md` to ensure changes rem
 ## 20. Stabilization Mode
 
 This project is now in boundary-controlled stabilization mode. See `RELEASE_STATUS.md` and `PROJECT_BOUNDARY.md` before proposing new features.
+
+
+## 21. Current State Reference
+
+If you are onboarding downstream consumers, start with `CURRENT_STATE.md` before integration work.

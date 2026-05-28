@@ -165,3 +165,8 @@ See `PROJECT_BOUNDARY.md` for strict scope, non-goals, and Definition of Done.
 ## Release Status
 
 Current release status and maintenance scope are defined in `RELEASE_STATUS.md`.
+
+
+## Current State
+
+For a concise project status and usage expectation, see `CURRENT_STATE.md`.
