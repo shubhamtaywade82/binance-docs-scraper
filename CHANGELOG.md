@@ -31,3 +31,5 @@
 - Add `PROJECT_BOUNDARY.md` with strict scope, non-goals, and Definition of Done to prevent infrastructure drift.
 
 - Add baseline node test suite for core compiler/runtime validators to close stabilization gaps before declaring DoD completion.
+
+- Mark project as `v1.0 COMPLETE` against `PROJECT_BOUNDARY.md` DoD and document stabilization-mode maintenance policy in `RELEASE_STATUS.md`.

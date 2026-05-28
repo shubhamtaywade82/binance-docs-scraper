@@ -160,3 +160,8 @@ Complete output architecture is documented in `OUTPUT_STRUCTURE.md`.
 ## Project Boundary and DoD
 
 See `PROJECT_BOUNDARY.md` for strict scope, non-goals, and Definition of Done.
+
+
+## Release Status
+
+Current release status and maintenance scope are defined in `RELEASE_STATUS.md`.

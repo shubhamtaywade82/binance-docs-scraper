@@ -303,3 +303,8 @@ See `OUTPUT_STRUCTURE.md` for a full artifact-by-artifact map from crawl outputs
 ## 19. Scope Boundary
 
 Before extending architecture, check `PROJECT_BOUNDARY.md` to ensure changes remain in compiler scope and do not drift into live execution/risk/strategy systems.
+
+
+## 20. Stabilization Mode
+
+This project is now in boundary-controlled stabilization mode. See `RELEASE_STATUS.md` and `PROJECT_BOUNDARY.md` before proposing new features.
