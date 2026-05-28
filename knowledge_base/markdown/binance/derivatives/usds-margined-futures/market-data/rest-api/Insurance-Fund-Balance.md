@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:57:58.744Z
 ---
 # Query Insurance Fund Balance Snapshot
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Insurance-Fund-Balance
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Insurance-Fund-Balance>
 
 # Query Insurance Fund Balance Snapshot
 

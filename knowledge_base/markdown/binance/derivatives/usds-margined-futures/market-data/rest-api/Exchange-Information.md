@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:56:33.412Z
 ---
 # Exchange Information
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Exchange-Information
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Exchange-Information>
 
 # Exchange Information
 
@@ -33,221 +33,221 @@ NONE
 ```
 {
 
-	"exchangeFilters": [],
+ "exchangeFilters": [],
 
- 	"rateLimits": [
+  "rateLimits": [
 
- 		{
+   {
 
- 			"interval": "MINUTE",
+    "interval": "MINUTE",
 
-   			"intervalNum": 1,
+      "intervalNum": 1,
 
-   			"limit": 2400,
+      "limit": 2400,
 
-   			"rateLimitType": "REQUEST_WEIGHT" 
+      "rateLimitType": "REQUEST_WEIGHT" 
 
-   		},
+     },
 
-  		{
+    {
 
-  			"interval": "MINUTE",
+     "interval": "MINUTE",
 
-   			"intervalNum": 1,
+      "intervalNum": 1,
 
-   			"limit": 1200,
+      "limit": 1200,
 
-   			"rateLimitType": "ORDERS"
+      "rateLimitType": "ORDERS"
 
-   		}
+     }
 
-   	],
+    ],
 
- 	"serverTime": 1565613908500,    // Ignore please. If you want to check current server time, please check via "GET /fapi/v1/time"
+  "serverTime": 1565613908500,    // Ignore please. If you want to check current server time, please check via "GET /fapi/v1/time"
 
- 	"assets": [ // assets information
+  "assets": [ // assets information
 
- 		{
+   {
 
- 			"asset": "BTC",
+    "asset": "BTC",
 
-   			"marginAvailable": true, // whether the asset can be used as margin in Multi-Assets mode
+      "marginAvailable": true, // whether the asset can be used as margin in Multi-Assets mode
 
-   			"autoAssetExchange": "-0.10" // auto-exchange threshold in Multi-Assets margin mode
+      "autoAssetExchange": "-0.10" // auto-exchange threshold in Multi-Assets margin mode
 
-   		},
+     },
 
- 		{
+   {
 
- 			"asset": "USDT",
+    "asset": "USDT",
 
-   			"marginAvailable": true,
+      "marginAvailable": true,
 
-   			"autoAssetExchange": "0"
+      "autoAssetExchange": "0"
 
-   		},
+     },
 
- 		{
+   {
 
- 			"asset": "BNB",
+    "asset": "BNB",
 
-   			"marginAvailable": false,
+      "marginAvailable": false,
 
-   			"autoAssetExchange": null
+      "autoAssetExchange": null
 
-   		}
+     }
 
-   	],
+    ],
 
- 	"symbols": [
+  "symbols": [
 
- 		{
+   {
 
- 			"symbol": "BLZUSDT",
+    "symbol": "BLZUSDT",
 
- 			"pair": "BLZUSDT",
+    "pair": "BLZUSDT",
 
- 			"contractType": "PERPETUAL",
+    "contractType": "PERPETUAL",
 
- 			"deliveryDate": 4133404800000,
+    "deliveryDate": 4133404800000,
 
- 			"onboardDate": 1598252400000,
+    "onboardDate": 1598252400000,
 
- 			"status": "TRADING",
+    "status": "TRADING",
 
- 			"maintMarginPercent": "2.5000",   // ignore
+    "maintMarginPercent": "2.5000",   // ignore
 
- 			"requiredMarginPercent": "5.0000",  // ignore
+    "requiredMarginPercent": "5.0000",  // ignore
 
- 			"baseAsset": "BLZ", 
+    "baseAsset": "BLZ", 
 
- 			"quoteAsset": "USDT",
+    "quoteAsset": "USDT",
 
- 			"marginAsset": "USDT",
+    "marginAsset": "USDT",
 
- 			"pricePrecision": 5,	// please do not use it as tickSize
+    "pricePrecision": 5, // please do not use it as tickSize
 
- 			"quantityPrecision": 0, // please do not use it as stepSize
+    "quantityPrecision": 0, // please do not use it as stepSize
 
- 			"baseAssetPrecision": 8,
+    "baseAssetPrecision": 8,
 
- 			"quotePrecision": 8, 
+    "quotePrecision": 8, 
 
- 			"underlyingType": "COIN",
+    "underlyingType": "COIN",
 
- 			"underlyingSubType": ["STORAGE"],
+    "underlyingSubType": ["STORAGE"],
 
- 			"settlePlan": 0,
+    "settlePlan": 0,
 
- 			"triggerProtect": "0.15", // threshold for algo order with "priceProtect"
+    "triggerProtect": "0.15", // threshold for algo order with "priceProtect"
 
- 			"filters": [
+    "filters": [
 
- 				{
+     {
 
- 					"filterType": "PRICE_FILTER",
+      "filterType": "PRICE_FILTER",
 
-     				"maxPrice": "300",
+         "maxPrice": "300",
 
-     				"minPrice": "0.0001", 
+         "minPrice": "0.0001", 
 
-     				"tickSize": "0.0001"
+         "tickSize": "0.0001"
 
-     			},
+        },
 
-    			{
+       {
 
-    				"filterType": "LOT_SIZE", 
+        "filterType": "LOT_SIZE", 
 
-     				"maxQty": "10000000",
+         "maxQty": "10000000",
 
-     				"minQty": "1",
+         "minQty": "1",
 
-     				"stepSize": "1"
+         "stepSize": "1"
 
-     			},
+        },
 
-    			{
+       {
 
-    				"filterType": "MARKET_LOT_SIZE",
+        "filterType": "MARKET_LOT_SIZE",
 
-     				"maxQty": "590119",
+         "maxQty": "590119",
 
-     				"minQty": "1",
+         "minQty": "1",
 
-     				"stepSize": "1"
+         "stepSize": "1"
 
-     			},
+        },
 
-     			{
+        {
 
-    				"filterType": "MAX_NUM_ORDERS",
+        "filterType": "MAX_NUM_ORDERS",
 
-    				"limit": 200
+        "limit": 200
 
-  				},
+      },
 
-  				{
+      {
 
-  					"filterType": "MIN_NOTIONAL",
+       "filterType": "MIN_NOTIONAL",
 
-  					"notional": "5.0", 
+       "notional": "5.0", 
 
-  				},
+      },
 
-  				{
+      {
 
-    				"filterType": "PERCENT_PRICE",
+        "filterType": "PERCENT_PRICE",
 
-    				"multiplierUp": "1.1500",
+        "multiplierUp": "1.1500",
 
-    				"multiplierDown": "0.8500",
+        "multiplierDown": "0.8500",
 
-    				"multiplierDecimal": "4"
+        "multiplierDecimal": "4"
 
-    			}
+       }
 
-   			],
+      ],
 
- 			"orderTypes": [
+    "orderTypes": [
 
-   				"LIMIT",
+       "LIMIT",
 
-   				"MARKET",
+       "MARKET",
 
-   				"STOP",
+       "STOP",
 
-   				"STOP_MARKET",
+       "STOP_MARKET",
 
-   				"TAKE_PROFIT",
+       "TAKE_PROFIT",
 
-   				"TAKE_PROFIT_MARKET",
+       "TAKE_PROFIT_MARKET",
 
-   				"TRAILING_STOP_MARKET" 
+       "TRAILING_STOP_MARKET" 
 
-   			],
+      ],
 
-   			"timeInForce": [
+      "timeInForce": [
 
-   				"GTC", 
+       "GTC", 
 
-   				"IOC", 
+       "IOC", 
 
-   				"FOK", 
+       "FOK", 
 
-   				"GTX" 
+       "GTX" 
 
- 			],
+    ],
 
- 			"liquidationFee": "0.010000",	// liquidation fee rate
+    "liquidationFee": "0.010000", // liquidation fee rate
 
-   			"marketTakeBound": "0.30",	// the max price difference rate( from mark price) a market order can make
+      "marketTakeBound": "0.30", // the max price difference rate( from mark price) a market order can make
 
- 		}
+   }
 
-   	],
+    ],
 
-	"timezone": "UTC" 
+ "timezone": "UTC" 
 
 }
 

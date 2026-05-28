@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:50:41.771Z
 ---
 # New CM Order(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/New-CM-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/New-CM-Order>
 
 # New CM Order(TRADE)
 
@@ -49,9 +49,9 @@ Additional mandatory parameters based on `type`:
 | `LIMIT` | `timeInForce`, `quantity`, `price` |
 | `MARKET` | `quantity` |
 
--   If `newOrderRespType` is sent as `RESULT` :
-    -   `MARKET` order: the final FILLED result of the order will be return directly.
-    -   `LIMIT` order with special `timeInForce`: the final status result of the order(FILLED or EXPIRED) will be returned directly.
+- If `newOrderRespType` is sent as `RESULT` :
+  - `MARKET` order: the final FILLED result of the order will be return directly.
+  - `LIMIT` order with special `timeInForce`: the final status result of the order(FILLED or EXPIRED) will be returned directly.
 
 ## Response Example
 

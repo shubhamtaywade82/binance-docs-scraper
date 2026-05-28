@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:49:33.397Z
 ---
 # Account Information (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/account/rest-api/Account-Information
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/account/rest-api/Account-Information>
 
 # Account Information (USER\_DATA)
 
@@ -31,8 +31,8 @@ GET `/dapi/v1/account`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   for One-way Mode user, the "positions" will only show the "BOTH" positions
-> -   for Hedge Mode user, the "positions" will show "BOTH", "LONG", and "SHORT" positions.
+> - for One-way Mode user, the "positions" will only show the "BOTH" positions
+> - for Hedge Mode user, the "positions" will show "BOTH", "LONG", and "SHORT" positions.
 
 ## Response Example
 

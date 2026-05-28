@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:46:04.526Z
 ---
 # Query Portfolio Margin Pro Bankruptcy Loan Repay History(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Query-Portfolio-Margin-Pro-Bankruptcy-Loan-Repay-History
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Query-Portfolio-Margin-Pro-Bankruptcy-Loan-Repay-History>
 
 # Query Portfolio Margin Pro Bankruptcy Loan Repay History(USER\_DATA)
 
@@ -35,10 +35,10 @@ GET `/sapi/v1/portfolio/pmloan-history`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
--   `startTime` and `endTime` cannot be longer than 360 days
--   If `startTime` and `endTime` not sent, return records of the last 30 days by default.
--   If `startTime`is sent and `endTime` is not sent, return records of \[startTime, startTime+30d\].
--   If `startTime` is not sent and `endTime` is sent, return records of \[endTime-30d, endTime\].
+- `startTime` and `endTime` cannot be longer than 360 days
+- If `startTime` and `endTime` not sent, return records of the last 30 days by default.
+- If `startTime`is sent and `endTime` is not sent, return records of \[startTime, startTime+30d\].
+- If `startTime` is not sent and `endTime` is sent, return records of \[endTime-30d, endTime\].
 
 ## Response Example
 

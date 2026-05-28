@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:46:48.504Z
 ---
 # List All Convert Pairs
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/convert
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/convert>
 
 # List All Convert Pairs
 
@@ -31,9 +31,9 @@ GET `/fapi/v1/convert/exchangeInfo`
 | fromAsset | STRING | EITHER OR BOTH | User spends coin |
 | toAsset | STRING | EITHER OR BOTH | User receives coin |
 
-> -   User needs to supply either or both of the input parameter
-> -   If not defined for both fromAsset and toAsset, only partial token pairs will be returned
-> -   Asset BNFCR is only available to convert for MICA region users.
+> - User needs to supply either or both of the input parameter
+> - If not defined for both fromAsset and toAsset, only partial token pairs will be returned
+> - Asset BNFCR is only available to convert for MICA region users.
 
 ## Response Example
 

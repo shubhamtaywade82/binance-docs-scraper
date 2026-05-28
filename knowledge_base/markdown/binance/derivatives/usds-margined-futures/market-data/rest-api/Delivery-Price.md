@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:57:28.298Z
 ---
 # Quarterly Contract Settlement Price
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Delivery-Price
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Delivery-Price>
 
 # Quarterly Contract Settlement Price
 

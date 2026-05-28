@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:47:22.557Z
 ---
 # Event: Margin Account Update
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-Margin-Account-Update
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-Margin-Account-Update>
 
 # Event: Margin Account Update
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:59:40.579Z
 ---
 # Partial Book Depth Streams
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/websocket-market-streams/Partial-Book-Depth-Streams
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/websocket-market-streams/Partial-Book-Depth-Streams>
 
 # Partial Book Depth Streams
 

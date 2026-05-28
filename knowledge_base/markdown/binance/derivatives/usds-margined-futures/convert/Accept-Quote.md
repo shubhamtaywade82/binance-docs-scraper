@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:46:53.831Z
 ---
 # Accept the offered quote (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/convert/Accept-Quote
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/convert/Accept-Quote>
 
 # Accept the offered quote (USER\_DATA)
 

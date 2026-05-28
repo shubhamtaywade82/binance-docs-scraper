@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:46:40.054Z
 ---
 # Query Block Trade Details (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/market-maker-block-trade/Query-Block-Trade-Detail
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/market-maker-block-trade/Query-Block-Trade-Detail>
 
 # Query Block Trade Details (USER\_DATA)
 

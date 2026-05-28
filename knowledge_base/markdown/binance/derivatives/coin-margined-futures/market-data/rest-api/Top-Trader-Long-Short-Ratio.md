@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:58:58.778Z
 ---
 # Top Trader Long/Short Ratio (Positions)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Top-Trader-Long-Short-Ratio
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Top-Trader-Long-Short-Ratio>
 
 # Top Trader Long/Short Ratio (Positions)
 
@@ -34,8 +34,8 @@ GET `/futures/data/topLongShortPositionRatio`
 | startTime | LONG | NO |  |
 | endTime | LONG | NO |  |
 
-> -   If startTime and endTime are not sent, the most recent data is returned.
-> -   Only the data of the latest 30 days is available.
+> - If startTime and endTime are not sent, the most recent data is returned.
+> - Only the data of the latest 30 days is available.
 
 ## Response Example
 

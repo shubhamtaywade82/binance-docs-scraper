@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:02:07.036Z
 ---
 # Terms and Conditions
 
-> Source: https://docs.coindcx.com/
+> Source: <https://docs.coindcx.com/>
 
 # Terms and Conditions
 
@@ -18,63 +18,63 @@ The User hereby agrees and acknowledges that upon accessing any CoinDCX API (def
 
 ### 1\. DEFINITIONS
 
--   1.1. “Affiliate” shall mean any person or entity who is controlled by, under common control with, or controlling the other party. For the purposes of the foregoing, “control” means;
-    -   (a) the ownership of more than fifty percent (50%) of the voting stock, shares or interests or voting rights of a person or entity, and
-    -   (b) the power to direct or cause the direction of the management and policies of a person or entity through the ownership of voting securities, by contract or otherwise.
--   1.2. “Applicable Law(s)” shall mean the governing law to which these Terms are subject to and includes but is not limited to all the statutes (including common law statutes), legislations, rules, regulations, treaties, directives, decisions, ordinances, by-laws, notices, injunctions, demands, judgement, circular and any direction, notification issued by statutory authority, regulatory authority, or any judicial/ quasi-judicial authority. Applicable Law shall include any law, regulation, directive or guidelines to which CoinDCX may be subject to.
+- 1.1. “Affiliate” shall mean any person or entity who is controlled by, under common control with, or controlling the other party. For the purposes of the foregoing, “control” means;
+  - (a) the ownership of more than fifty percent (50%) of the voting stock, shares or interests or voting rights of a person or entity, and
+  - (b) the power to direct or cause the direction of the management and policies of a person or entity through the ownership of voting securities, by contract or otherwise.
+- 1.2. “Applicable Law(s)” shall mean the governing law to which these Terms are subject to and includes but is not limited to all the statutes (including common law statutes), legislations, rules, regulations, treaties, directives, decisions, ordinances, by-laws, notices, injunctions, demands, judgement, circular and any direction, notification issued by statutory authority, regulatory authority, or any judicial/ quasi-judicial authority. Applicable Law shall include any law, regulation, directive or guidelines to which CoinDCX may be subject to.
 
--   1.3. “Application Programming Interface” or “API” is a software intermediary which enables the interaction between two or more applications/ platforms.
--   1.4. “Algorithmic Trading” (also called automated trading, black-box trading, or algo-trading) means a method which uses a computer program following a defined set of instructions or algorithm to place a trade.
--   1.5. “CoinDCX API” shall mean and include the public API and/or any data, information related to the trading activity on the CoinDCX platforms made available through https://docs.coindcx.com/ (including Market Data and Data Packages) as amended, modified, replaced at the sole discretion of CoinDCX from time to time.
--   1.6. “Company Data” means anonymized transactional data pertaining to contracts and other financial instruments, which is accessible through the CoinDCX API.
--   1.7. “Data Packages” means and includes all the data feeds, tiers, or packages of the Market Data or any other data as may be identified and included by CoinDCX as a part of the CoinDCX API.
--   1.8. “Intellectual Property Rights” means any patent, copyright, trademark, word mark, service mark, logo, corporate name, internet domain name, industrial design, trade secrets, proprietary rights in any software, application, goodwill of the brand.
--   1.9. “Licensee” shall mean the User and any person accessing any CoinDCX API or any services or products governed by these Terms.
--   1.10. “Licensee Data” shall mean and inter alia include all the data, information owned/ controlled by the Licensee in whatever form.
--   1.11. “High-Frequency Trading” is a type of Algorithmic Trading characterized by high speeds, high turnover rates, and high order-to-trade ratios that leverages high-frequency financial data and electronic trading tools.
+- 1.3. “Application Programming Interface” or “API” is a software intermediary which enables the interaction between two or more applications/ platforms.
+- 1.4. “Algorithmic Trading” (also called automated trading, black-box trading, or algo-trading) means a method which uses a computer program following a defined set of instructions or algorithm to place a trade.
+- 1.5. “CoinDCX API” shall mean and include the public API and/or any data, information related to the trading activity on the CoinDCX platforms made available through <https://docs.coindcx.com/> (including Market Data and Data Packages) as amended, modified, replaced at the sole discretion of CoinDCX from time to time.
+- 1.6. “Company Data” means anonymized transactional data pertaining to contracts and other financial instruments, which is accessible through the CoinDCX API.
+- 1.7. “Data Packages” means and includes all the data feeds, tiers, or packages of the Market Data or any other data as may be identified and included by CoinDCX as a part of the CoinDCX API.
+- 1.8. “Intellectual Property Rights” means any patent, copyright, trademark, word mark, service mark, logo, corporate name, internet domain name, industrial design, trade secrets, proprietary rights in any software, application, goodwill of the brand.
+- 1.9. “Licensee” shall mean the User and any person accessing any CoinDCX API or any services or products governed by these Terms.
+- 1.10. “Licensee Data” shall mean and inter alia include all the data, information owned/ controlled by the Licensee in whatever form.
+- 1.11. “High-Frequency Trading” is a type of Algorithmic Trading characterized by high speeds, high turnover rates, and high order-to-trade ratios that leverages high-frequency financial data and electronic trading tools.
 
 ### 2\. LICENSE GRANT AND AUTHORISED USE
 
--   2.1. User hereby understands and acknowledges that upon agreeing to the terms contained herein, the User is granted a non-exclusive, non-transferable, non-assignable, non-sublicensable, revocable, restricted license for usage purpose only in accordance with the Applicable Law(s).
--   2.2. User hereby agrees that the License granted as per these Terms is only for the authorized use of the CoinDCX API, Market Data and any software provided as per the terms contained herein.
--   2.3. The User shall always ensure that:
+- 2.1. User hereby understands and acknowledges that upon agreeing to the terms contained herein, the User is granted a non-exclusive, non-transferable, non-assignable, non-sublicensable, revocable, restricted license for usage purpose only in accordance with the Applicable Law(s).
+- 2.2. User hereby agrees that the License granted as per these Terms is only for the authorized use of the CoinDCX API, Market Data and any software provided as per the terms contained herein.
+- 2.3. The User shall always ensure that:
 
--   a) The User does not alter, manipulate, or misrepresent any CoinDCX API or Market Data
--   b) The User shall not copy, reverse engineer, decompile, disassemble, or attempt to derive the source code, algorithm, structure, of the CoinDCX API or any software provided to the User hereunder.
--   c) The User shall not redistribute, display, or disseminate the Market Data or any data, charts, analytics, research, or other works based on, referring to, or derived from the Market Data to any third party.
--   d) Any use by the Affiliates of User shall be disclosed to CoinDCX and it may involve additional pricing.
+- a) The User does not alter, manipulate, or misrepresent any CoinDCX API or Market Data
+- b) The User shall not copy, reverse engineer, decompile, disassemble, or attempt to derive the source code, algorithm, structure, of the CoinDCX API or any software provided to the User hereunder.
+- c) The User shall not redistribute, display, or disseminate the Market Data or any data, charts, analytics, research, or other works based on, referring to, or derived from the Market Data to any third party.
+- d) Any use by the Affiliates of User shall be disclosed to CoinDCX and it may involve additional pricing.
 
 ### 3\. FEES AND CHARGES
 
--   3.1. The User hereby agrees and acknowledges that presently no fees or charges are levied by CoinDCX for the use of CoinDCX API. However, nothing contained in this section, or these Terms shall restrict or limit the right of CoinDCX to charge fees or levy charges for use of the services captured herein including the CoinDCX APIs.
--   3.2. CoinDCX shall have a right to waive any fee/ charges based on the use of the CoinDCX API / Market Data by the User(s). The User hereby understands and acknowledges that rates/ charges/ fees may differ for Users on account of several factors including but not limited to jurisdiction, scale of use, type of entity etc. and the User waives the right to claim against CoinDCX in this regard.
+- 3.1. The User hereby agrees and acknowledges that presently no fees or charges are levied by CoinDCX for the use of CoinDCX API. However, nothing contained in this section, or these Terms shall restrict or limit the right of CoinDCX to charge fees or levy charges for use of the services captured herein including the CoinDCX APIs.
+- 3.2. CoinDCX shall have a right to waive any fee/ charges based on the use of the CoinDCX API / Market Data by the User(s). The User hereby understands and acknowledges that rates/ charges/ fees may differ for Users on account of several factors including but not limited to jurisdiction, scale of use, type of entity etc. and the User waives the right to claim against CoinDCX in this regard.
 
 ### 4\. OWNERSHIP AND RIGHTS
 
--   4.1. The User hereby agrees and acknowledges that CoinDCX shall retain the ownership and the Intellectual Property Rights in all the Company Data, CoinDCX API and Market Data including any software or service provided or granted to the User as per the terms contained herein.
--   4.2. The User hereby agrees that it shall use the Intellectual Property Rights belonging to CoinDCX strictly according to the terms contained herein and the written instructions as may be provided or published by CoinDCX from time to time. The User may not delete, remove, alter, hide, move any Intellectual Property Rights belonging to CoinDCX which may or may not appear in the CoinDCX API or Market Data. All representations by the User of any Intellectual Property Rights as originally distributed and intended by CoinDCX.
+- 4.1. The User hereby agrees and acknowledges that CoinDCX shall retain the ownership and the Intellectual Property Rights in all the Company Data, CoinDCX API and Market Data including any software or service provided or granted to the User as per the terms contained herein.
+- 4.2. The User hereby agrees that it shall use the Intellectual Property Rights belonging to CoinDCX strictly according to the terms contained herein and the written instructions as may be provided or published by CoinDCX from time to time. The User may not delete, remove, alter, hide, move any Intellectual Property Rights belonging to CoinDCX which may or may not appear in the CoinDCX API or Market Data. All representations by the User of any Intellectual Property Rights as originally distributed and intended by CoinDCX.
 
 ### 5\. TERM AND TERMINATION
 
--   5.1. These Terms shall be valid unless terminated as per the terms contained hereunder. Any amendment to the pricing terms may be introduced by the parties upon execution of a pricing schedule to incorporate additional terms.
--   5.2. These Terms may be terminated by CoinDCX without any notice to the User and without assigning any reason. The User understands and agrees that this could affect the User’s right to use any of the services or benefits granted by virtue of these Terms. The User hereby waives any and all rights to claim under this section.
--   5.3. Termination for breach:
+- 5.1. These Terms shall be valid unless terminated as per the terms contained hereunder. Any amendment to the pricing terms may be introduced by the parties upon execution of a pricing schedule to incorporate additional terms.
+- 5.2. These Terms may be terminated by CoinDCX without any notice to the User and without assigning any reason. The User understands and agrees that this could affect the User’s right to use any of the services or benefits granted by virtue of these Terms. The User hereby waives any and all rights to claim under this section.
+- 5.3. Termination for breach:
 
--   User’s access to the CoinDCX API or any Market Data shall be terminated/ revoked by CoinDCX forthwith without any notice to the User in the following cases:
--   a) Breach of any Intellectual Property Rights of CoinDCX or its Affiliates.
--   b) Breach of any terms contained herein.
--   c) Use of the CoinDCX API for any fraudulent, illegal, immoral, or any activity not authorized by CoinDCX.
+- User’s access to the CoinDCX API or any Market Data shall be terminated/ revoked by CoinDCX forthwith without any notice to the User in the following cases:
+- a) Breach of any Intellectual Property Rights of CoinDCX or its Affiliates.
+- b) Breach of any terms contained herein.
+- c) Use of the CoinDCX API for any fraudulent, illegal, immoral, or any activity not authorized by CoinDCX.
 
 ### 6\. REPRESENTATIONS AND WARRANTIES OF THE USER
 
--   The User hereby represents and warrants the following:
--   6.1. The User has the requisite power, authority, consents, licenses, and authorizations to comply with the Terms.
--   6.2. Any data, information, material, documents provided to CoinDCX is accurate, true, updated. Further, the User agrees to promptly inform CoinDCX in case of any changes to the document, information or material provided.
--   6.3. The User shall comply with the Applicable Law(s)
--   6.4. It has the relevant licenses to conduct any High Frequency Trading or Algorithmic Trading and shall ensure that relevant licenses/ approvals/ consents are obtained if the same is required under any Applicable Law(s).
--   6.5. The User represents and warrants that it shall comply with the Terms of Use.
--   6.6. The User hereby represents and warrants that it shall preserve and maintain the information, data and relevant records pertaining to the use of the CoinDCX API/ Market Data for a period of 5 years post termination or expiry of these Terms.
--   6.7. The User understands and agrees that Company is not acting as an advisor or fiduciary with respect to Licensee and is not providing investment advice, tax advice, legal advice, or other professional advice by allowing Licensee to use the Company API and Company Data. Licensee shall be solely responsible, and Company shall have no responsibility, for any decisions of Licensee or its use of the Company API or Company Data and for Licensee’s compliance with applicable laws and regulations. Without limiting the foregoing, the Company makes no recommendation regarding the purchase or sale of digital assets or any other asset, or any other investment decision or action, taken by Licensee.
+- The User hereby represents and warrants the following:
+- 6.1. The User has the requisite power, authority, consents, licenses, and authorizations to comply with the Terms.
+- 6.2. Any data, information, material, documents provided to CoinDCX is accurate, true, updated. Further, the User agrees to promptly inform CoinDCX in case of any changes to the document, information or material provided.
+- 6.3. The User shall comply with the Applicable Law(s)
+- 6.4. It has the relevant licenses to conduct any High Frequency Trading or Algorithmic Trading and shall ensure that relevant licenses/ approvals/ consents are obtained if the same is required under any Applicable Law(s).
+- 6.5. The User represents and warrants that it shall comply with the Terms of Use.
+- 6.6. The User hereby represents and warrants that it shall preserve and maintain the information, data and relevant records pertaining to the use of the CoinDCX API/ Market Data for a period of 5 years post termination or expiry of these Terms.
+- 6.7. The User understands and agrees that Company is not acting as an advisor or fiduciary with respect to Licensee and is not providing investment advice, tax advice, legal advice, or other professional advice by allowing Licensee to use the Company API and Company Data. Licensee shall be solely responsible, and Company shall have no responsibility, for any decisions of Licensee or its use of the Company API or Company Data and for Licensee’s compliance with applicable laws and regulations. Without limiting the foregoing, the Company makes no recommendation regarding the purchase or sale of digital assets or any other asset, or any other investment decision or action, taken by Licensee.
 
 ### 7\. DISCLAIMER
 
@@ -82,7 +82,7 @@ THE COINDCX API, MARKET DATA (INCLUDING DATA PACKAGES) AND ANY OTHER SERVICE/ SO
 
 ### 8\. SECURITY
 
-The user shall ensure that the information received through APIs, including personally identifiable information is protected from unauthorized access or use and shall promptly report to CoinDCX of any unauthorized access or use of such information to the extent required by applicable law. The User must ensure secure operation of CoinDCX APIs by employing reasonable security measures. The Users shall report any security deficiencies or intrusions at legal@coindcx.com.
+The user shall ensure that the information received through APIs, including personally identifiable information is protected from unauthorized access or use and shall promptly report to CoinDCX of any unauthorized access or use of such information to the extent required by applicable law. The User must ensure secure operation of CoinDCX APIs by employing reasonable security measures. The Users shall report any security deficiencies or intrusions at <legal@coindcx.com>.
 
 ### 9\. LIMITATION OF LIABILITY
 
@@ -90,16 +90,16 @@ In no event, whether in tort, contract or otherwise, shall CoinDCX or its Affili
 
 ### 10\. INDEMNITY
 
--   The User shall be liable to indemnify, hold harmless and keep CoinDCX and its Affiliates always indemnified for and against any liability, costs, expenses, damages, charges/ fees (including reasonable attorney and legal fees), claims arising or relating to:
--   a) Use of the CoinDCX API/ Market Data or any software provided hereunder
--   b) Breach of any Confidentiality terms or any Intellectual Property Rights of CoinDCX and its Affiliates.
--   c) Any fraudulent use of the CoinDCX API by the User or its Affiliates
--   d) Breach of the terms contained herein
+- The User shall be liable to indemnify, hold harmless and keep CoinDCX and its Affiliates always indemnified for and against any liability, costs, expenses, damages, charges/ fees (including reasonable attorney and legal fees), claims arising or relating to:
+- a) Use of the CoinDCX API/ Market Data or any software provided hereunder
+- b) Breach of any Confidentiality terms or any Intellectual Property Rights of CoinDCX and its Affiliates.
+- c) Any fraudulent use of the CoinDCX API by the User or its Affiliates
+- d) Breach of the terms contained herein
 
 ### 11\. ARBITRATION
 
--   11.1 Any dispute, claim, difference or controversy arising out of, relating to or having any connection with the Terms, including any dispute as to its existence, validity, interpretation, performance, breach or termination or the consequences of its nullity and any dispute relating to any non-contractual obligations arising out of or in connection with it shall be referred to and finally resolved by arbitration administered by the Arbitration Tribunal in accordance with the Arbitration & Reconciliation Act, 1996 as amended, updated, re-enacted from time to time.
--   11.2. The Language of arbitration shall be English and Mumbai, India shall be the seat and place of Arbitration.
+- 11.1 Any dispute, claim, difference or controversy arising out of, relating to or having any connection with the Terms, including any dispute as to its existence, validity, interpretation, performance, breach or termination or the consequences of its nullity and any dispute relating to any non-contractual obligations arising out of or in connection with it shall be referred to and finally resolved by arbitration administered by the Arbitration Tribunal in accordance with the Arbitration & Reconciliation Act, 1996 as amended, updated, re-enacted from time to time.
+- 11.2. The Language of arbitration shall be English and Mumbai, India shall be the seat and place of Arbitration.
 
 ### 12\. GOVERNING LAW AND JURISDICTION
 
@@ -107,11 +107,11 @@ Subject to the Arbitration clause above, these Terms shall be governed by the la
 
 ### 13\. MISCELLANEOUS
 
--   13.1. The User shall not assign any of its obligations, rights under these Terms to any third party. Assignment to Affiliates shall be only after obtaining the prior written consent of CoinDCX.
--   13.2. Force Majeure - CoinDCX shall not be held responsible for any failure, delay, interruption caused by circumstances outside its control, such as network failure, network connection failure, earthquake, flooding, strikes, embargoes, or any act(s) of the government or any regulatory/ statutory authority.
--   13.3. The User agrees to pay all the necessary taxes as may be imposed under the Applicable Laws.
--   13.4. Failure by CoinDCX to exercise or enforce any rights hereunder shall not amount to waiver of those rights.
--   13.5. Each party is an independent contractor and there shall not be any principal-agent relationship between CoinDCX and the User.
+- 13.1. The User shall not assign any of its obligations, rights under these Terms to any third party. Assignment to Affiliates shall be only after obtaining the prior written consent of CoinDCX.
+- 13.2. Force Majeure - CoinDCX shall not be held responsible for any failure, delay, interruption caused by circumstances outside its control, such as network failure, network connection failure, earthquake, flooding, strikes, embargoes, or any act(s) of the government or any regulatory/ statutory authority.
+- 13.3. The User agrees to pay all the necessary taxes as may be imposed under the Applicable Laws.
+- 13.4. Failure by CoinDCX to exercise or enforce any rights hereunder shall not amount to waiver of those rights.
+- 13.5. Each party is an independent contractor and there shall not be any principal-agent relationship between CoinDCX and the User.
 
 # Introduction
 
@@ -130,21 +130,21 @@ Whereas Sockets can be used to get continues data related to trades, user balanc
 
 ### Common
 
--   `target currency` refers to the asset that is the `quantity` of a symbol.
--   `base currency` refers to the asset that is the `price` of a symbol.
--   `pair` uniquely identifies the market along with its exchange, and is available in market details api.
+- `target currency` refers to the asset that is the `quantity` of a symbol.
+- `base currency` refers to the asset that is the `price` of a symbol.
+- `pair` uniquely identifies the market along with its exchange, and is available in market details api.
 
 ### Orders
 
--   `status`: used to denote the current status of the given order. Valid values for status include:
-    -   `init`: order is just created, but not placed in the orderbook (eg: stop-limit orders whose stop/trigger price hasn't reached)
-    -   `open`: order is successfully placed in the orderbook
-    -   `partially_filled`: order is partially filled
-    -   `filled`: order is completely filled
-    -   `partially_cancelled`: order is partially filled, but cancelled, thus inactive
-    -   `cancelled`: order is completely or partially cancelled
-    -   `rejected`: order is rejected (not placed on the exchange)
-    -   `untriggered`: order is untriggered (only applies to Futures Take Profit and Stop Loss orders)
+- `status`: used to denote the current status of the given order. Valid values for status include:
+  - `init`: order is just created, but not placed in the orderbook (eg: stop-limit orders whose stop/trigger price hasn't reached)
+  - `open`: order is successfully placed in the orderbook
+  - `partially_filled`: order is partially filled
+  - `filled`: order is completely filled
+  - `partially_cancelled`: order is partially filled, but cancelled, thus inactive
+  - `cancelled`: order is completely or partially cancelled
+  - `rejected`: order is rejected (not placed on the exchange)
+  - `untriggered`: order is untriggered (only applies to Futures Take Profit and Stop Loss orders)
 
 Among these, the open-equivalent status' includes:  
 `init, open, partially_filled`  
@@ -156,60 +156,56 @@ Orders having any of these status could not undergo any change.
 
 ### Margin Orders
 
--   `status`: used to denote the current status of the given margin order. Valid values for status include:
-    -   `init`: order is just created, but not placed in the orderbook
-    -   `open`: order is successfully placed in the orderbook
-    -   `partial_entry`: internal entry order is partially filled
-    -   `partial_close`: internal target order is partially closed
-    -   `cancelled`: order is completely cancelled
-    -   `rejected`: order is rejected (not placed on the exchange)
-    -   `close`: order is completely filled
-    -   `triggered`: stop variant order triggered at specified stop price
+- `status`: used to denote the current status of the given margin order. Valid values for status include:
+  - `init`: order is just created, but not placed in the orderbook
+  - `open`: order is successfully placed in the orderbook
+  - `partial_entry`: internal entry order is partially filled
+  - `partial_close`: internal target order is partially closed
+  - `cancelled`: order is completely cancelled
+  - `rejected`: order is rejected (not placed on the exchange)
+  - `close`: order is completely filled
+  - `triggered`: stop variant order triggered at specified stop price
 
-  
+- `order_type`: used to denote the type of order to be placed. Valid values for order\_type includes:
+  - `market_order`: in this order type we don't specify price; it is executed on the market price
+  - `limit_order`: in this order type we specify the price on which order is to be executed
+  - `stop_limit`: it is a type of limit order whether we specify stop price and a price, once price reaches stop\_price, order is placed on the given price
+  - `take_profit`: it is a type of limit order whether we specify stop price and a price, once price reaches stop\_price, order is placed on the given price
 
--   `order_type`: used to denote the type of order to be placed. Valid values for order\_type includes:
-    -   `market_order`: in this order type we don't specify price; it is executed on the market price
-    -   `limit_order`: in this order type we specify the price on which order is to be executed
-    -   `stop_limit`: it is a type of limit order whether we specify stop price and a price, once price reaches stop\_price, order is placed on the given price
-    -   `take_profit`: it is a type of limit order whether we specify stop price and a price, once price reaches stop\_price, order is placed on the given price
-
-  
-
--   Other Terms:
-    -   `target_price`: The price at which the trader plans to buy/sell or close the order position is called the Target Price. When the Target price is hit, the trade is closed and the trader’s funds are settled according to the P&L incurred. Target price feature is available if the trader checks the Bracket order checkbox.
-    -   `sl_price`: The price at which the trader wishes to Stop Loss is the SL Price.
-    -   `stop_price`: It is used in the Stop Variant order, to specify stop price
+- Other Terms:
+  - `target_price`: The price at which the trader plans to buy/sell or close the order position is called the Target Price. When the Target price is hit, the trade is closed and the trader’s funds are settled according to the P&L incurred. Target price feature is available if the trader checks the Bracket order checkbox.
+  - `sl_price`: The price at which the trader wishes to Stop Loss is the SL Price.
+  - `stop_price`: It is used in the Stop Variant order, to specify stop price
 
 ### Margin Internal Orders
 
--   `status` for internal orders: used to denote the type of internal orders. Valid values for order\_type includes:
-    -   `initial`: order is just created
-    -   `open`: order is successfully placed in the orderbook
-    -   `partially_filled`: order is partially filled
-    -   `filled`: order is completely filled
-    -   `cancelled`: order is completely cancelled
-    -   `rejected`: order is rejected (not placed on the exchange)
-    -   `partially_cancelled`: order is partially cancelled
-    -   `untriggered`: stop variant order was not triggered
+- `status` for internal orders: used to denote the type of internal orders. Valid values for order\_type includes:
+  - `initial`: order is just created
+  - `open`: order is successfully placed in the orderbook
+  - `partially_filled`: order is partially filled
+  - `filled`: order is completely filled
+  - `cancelled`: order is completely cancelled
+  - `rejected`: order is rejected (not placed on the exchange)
+  - `partially_cancelled`: order is partially cancelled
+  - `untriggered`: stop variant order was not triggered
 
 # Setup
 
 To access CoinDCX Public APIs and Sockets you will need
 
--   Key and Secret
--   Programming and Scripting language (Python and Javascript)
--   Few Libraries (Socket.io, request module, Crypto module)
+- Key and Secret
+- Programming and Scripting language (Python and Javascript)
+- Few Libraries (Socket.io, request module, Crypto module)
 
 Follow below mentioned steps for completing the pre-requisite
 
 1\. You can get your API key and Secret as follows
 
--   Go to your CoinDCX profile section
--   Click `API dashboard`
--   Click Create API key button and enter label name and check `Bind IP Address to API key` only if you wanna bind the API key with your IP
--   Enter email and SMS OTP
--   Store the Key and Secret visible on the screen
+- Go to your CoinDCX profile section
+- Click `API dashboard`
+- Click Create API key button and enter label name and check `Bind IP Address to API key` only if you wanna bind the API key with your IP
+- Enter email and SMS OTP
+- Store the Key and Secret visible on the screen
 
 NOTE: `If the Key is binded with the IP, then these API can only be used with the binded IP and cannot be shared with ony other user having different IP.`
 
@@ -219,10 +215,8 @@ a. Javascript:
 
 We recommend using [Node.js](https://nodejs.org/en/download/). We recommend that you use v14 and above You’ll need to have the following 2 Node modules installed to be able to work with our APIs:
 
--   Request module
--   Crypto module
-
-  
+- Request module
+- Crypto module
 
 b. Python:
 
@@ -234,11 +228,11 @@ a. Javascript:
 
 We recommend using Node.js. We recommend that you use v14 and above You’ll need to have the following Node modules installed to be able to work with our APIs:
 
--   Socket.io: Please note only version 2.4.0 of this module would work with our Websockets. Please check this version in package.json
+- Socket.io: Please note only version 2.4.0 of this module would work with our Websockets. Please check this version in package.json
 
 You can install the specific version by using the command
 
--   `npm install socket.io@2.4.0`
+- `npm install socket.io@2.4.0`
 
 b. Python:
 
@@ -284,12 +278,12 @@ Copy to Clipboard
 
 ### Definitions
 
--   bid - Highest bid offer in the orderbook
--   ask - Highest ask offer in the orderbook
--   high - 24 hour high
--   low - 24 hour low
--   volume - Volume of the market in last 24 hours.
--   timestamp - Time when this ticker was generated
+- bid - Highest bid offer in the orderbook
+- ask - Highest ask offer in the orderbook
+- high - 24 hour high
+- low - 24 hour low
+- volume - Volume of the market in last 24 hours.
+- timestamp - Time when this ticker was generated
 
 A ticker is generated once every second
 
@@ -370,7 +364,7 @@ Copy to Clipboard
 
 `[   {     "p": 11603.88,     "q": 0.023519,     "s": "BTCUSDT",     "T": 1565163305770,     "m": false   } ]`
 
-The base URL for Trades API call is https://public.coindcx.com
+The base URL for Trades API call is <https://public.coindcx.com>
 
 ### HTTP request
 
@@ -387,11 +381,11 @@ This API provides with a sorted list of most recent 30 trades by default if limi
 
 ### Definitions
 
--   p is the trade price
--   q is the quantity
--   s is the market name
--   T is the timestamp of trade
--   m stands for whether the buyer is market maker or not.
+- p is the trade price
+- q is the quantity
+- s is the market name
+- T is the timestamp of trade
+- m stands for whether the buyer is market maker or not.
 
 ## Order Book
 
@@ -409,7 +403,7 @@ Copy to Clipboard
 
 `{   "bids":{     "11570.67000000": "0.000871",     "11570.58000000": "0.001974",     "11570.02000000": "0.280293",     "11570.00000000": "5.929216",     "11569.91000000": "0.000871",     "11569.89000000": "0.0016",     ,     ,     ,   },   "asks":{    "13900.00000000": "27.04094600",     "13100.00000000": "15.48547100",     "12800.00000000": "36.93142200",     "12200.00000000": "92.04554800",     "12000.00000000": "72.66595000",     "11950.00000000": "17.16624600",     ,     ,     ,   },`
 
-The base URL for Order book API call is https://public.coindcx.com
+The base URL for Order book API call is <https://public.coindcx.com>
 
 ### HTTP request
 
@@ -437,7 +431,7 @@ Copy to Clipboard
 
 `[   {         "open": 0.011803, // open price         "high": 0.011803, // highest price         "low": 0.011803, // lowest price         "volume": 0.35,  // total volume in terms of target currency (in BTC for B-BTC_USDT)         "close": 0.011803, // close price         "time": 1561463700000 //open time in ms   }   .   .   . ],`
 
-The base URL for Candles API call is https://public.coindcx.com
+The base URL for Candles API call is <https://public.coindcx.com>
 
 ### HTTP request
 
@@ -459,19 +453,19 @@ This API provides with a sorted list (in descending order according to time key)
 
 m -> minutes, h -> hours, d -> days, w -> weeks, M -> months
 
--   `1m`
--   `5m`
--   `15m`
--   `30m`
--   `1h`
--   `2h`
--   `4h`
--   `6h`
--   `8h`
--   `1d`
--   `3d`
--   `1w`
--   `1M`
+- `1m`
+- `5m`
+- `15m`
+- `30m`
+- `1h`
+- `2h`
+- `4h`
+- `6h`
+- `8h`
+- `1d`
+- `3d`
+- `1w`
+- `1M`
 
 # Authentication
 
@@ -489,19 +483,17 @@ Copy to Clipboard
 
 Common Notes:
 
--   All the Authenticated API calls use POST method.
--   Parameters are to be passed as JSON in the request body.
--   Every request must contain a timestamp parameter of when the request was generated. This timestamp is used to validate that the request is not a very old one (due to some lag in any layer) - the request is rejected with an appropriate error if this timestamp deviates too much from the server's time at which it is received to be processed.
+- All the Authenticated API calls use POST method.
+- Parameters are to be passed as JSON in the request body.
+- Every request must contain a timestamp parameter of when the request was generated. This timestamp is used to validate that the request is not a very old one (due to some lag in any layer) - the request is rejected with an appropriate error if this timestamp deviates too much from the server's time at which it is received to be processed.
 
 The authentication procedure is as follows:
 
--   The payload is the parameters object, JSON encoded
+- The payload is the parameters object, JSON encoded
 `payload = parameters-object -> JSON encode`  
   
--   The signature is the hex digest of an HMAC-SHA256 hash where the message is your payload, and the secret key is your API secret.
+- The signature is the hex digest of an HMAC-SHA256 hash where the message is your payload, and the secret key is your API secret.
 `signature = HMAC-SHA256(payload, api-secret).digest('hex')`
-
-  
 
 After this, You will have to add following headers into all the authenticated requests
 
@@ -584,9 +576,9 @@ Copy to Clipboard
 
 Using this endpoint,master account can carry out the following fund transfers:
 
--   Main account spot wallet to sub-account spot wallet
--   Sub-account spot wallet to main account spot wallet
--   One sub-account spot wallet to another sub-account spot wallet
+- Main account spot wallet to sub-account spot wallet
+- Sub-account spot wallet to main account spot wallet
+- One sub-account spot wallet to another sub-account spot wallet
 
 For security reasons, this endpoint would only be available to users who have created an API key post 12th August, 2024.
 
@@ -636,8 +628,8 @@ Copy to Clipboard
 
 Using this endpoint,master account can carry out the following fund transfers:
 
--   Transfer from spot to futures wallet
--   Transfer from futures to spot wallet
+- Transfer from spot to futures wallet
+- Transfer from futures to spot wallet
 
 ### HTTP Request
 
@@ -1539,8 +1531,8 @@ Copy to Clipboard
 
 There are two types of channels
 
-1.  Private (requires authentication)
-2.  Public (doesn’t require authentication)
+1. Private (requires authentication)
+2. Public (doesn’t require authentication)
 
 PUBLIC
 
@@ -1558,7 +1550,7 @@ Copy to Clipboard
 
 Copy to Clipboard
 
-`import io from 'socket.io-client';  const socketEndpoint = "https://stream.coindcx.com";  const socket = io.connect(socketEndpoint, {   transports: ['websocket'],   origin: '*', });  //Listen update on channelName socket.on('eventName', (response) => {   console.log(response.data); });  socket.connect();  // client-side socket.on("connect", () => {   console.log(socket.id,'coindcx'); // x8WIv7-mJelg7on_ALbx   //Join Channel   socket.emit('join', {     'channelName': "channelName",   }); });  // leave a channel socket.emit('leave', {   'channelName': "channelName" });  //These examples has been tested on the following socket.io versions : // 1. socket.io-2.3.1.js // 2. socket.io-2.3.0.js // 3. socket.io-2.2.0.js  // 4. socket.io-1.0.0.js` 
+`import io from 'socket.io-client';  const socketEndpoint = "https://stream.coindcx.com";  const socket = io.connect(socketEndpoint, {   transports: ['websocket'],   origin: '*', });  //Listen update on channelName socket.on('eventName', (response) => {   console.log(response.data); });  socket.connect();  // client-side socket.on("connect", () => {   console.log(socket.id,'coindcx'); // x8WIv7-mJelg7on_ALbx   //Join Channel   socket.emit('join', {     'channelName': "channelName",   }); });  // leave a channel socket.emit('leave', {   'channelName': "channelName" });  //These examples has been tested on the following socket.io versions : // 1. socket.io-2.3.1.js // 2. socket.io-2.3.0.js // 3. socket.io-2.2.0.js  // 4. socket.io-1.0.0.js`
 
 ## Get Balance Update
 
@@ -1578,16 +1570,16 @@ Copy to Clipboard
 
 ### Definitions
 
--   **Channel:** coindcx (Private).
--   **Event:** balance-update
--   **Description:** This Event gives the wallet balance information whenever there is a change in wallet balance
+- **Channel:** coindcx (Private).
+- **Event:** balance-update
+- **Description:** This Event gives the wallet balance information whenever there is a change in wallet balance
 
 ### Response
 
--   `id`: Wallet Id
--   `balance`: usable balance
--   `locked_balance`: balance currently being used by an open order
--   `currency_short_name`: currency like LTC, BTC etc.
+- `id`: Wallet Id
+- `balance`: usable balance
+- `locked_balance`: balance currently being used by an open order
+- `currency_short_name`: currency like LTC, BTC etc.
 
 ## Get Order Update
 
@@ -1607,37 +1599,37 @@ Copy to Clipboard
 
 ### Definitions
 
--   **Channel:** coindcx (Private).
--   **Event:** order-update
--   **Description:** This Event gives the order info whenever there is a change in order status
+- **Channel:** coindcx (Private).
+- **Event:** order-update
+- **Description:** This Event gives the order info whenever there is a change in order status
 
 ### Response
 
--   `id`: unique order identifier (uuid)
--   `client_order_id`: client order id of the order
--   `order_type`: the order type
--   `side`: whether the order is a buy order or a sell order
--   `status`: the current [status](https://docs.coindcx.com/?javascript#common)
--   `fee_amount`: total fee amount charged so far (in base-currency)
--   `fee`: deprecated - do not refer - will be removed soon
--   `maker_fee`: the fee (in percentage) to be charged for maker-trades for this order
--   `taker_fee`: the fee (in percentage) to be charged for taker-trades for this order
--   `total_quantity`: total quantity
--   `remaining_quantity`: pending (unfilled/uncancelled) quantity
--   `source`: deprecated - do not refer - will be removed soon
--   `base_currency_name`: deprecated - do not refer - will be removed soon
--   `target_currency_name`: deprecated - do not refer - will be removed soon
--   `base_currency_short_name`: deprecated - do not refer - will be removed soon
--   `target_currency_short_name`: deprecated - do not refer - will be removed soon
--   `base_currency_precision`: deprecated - do not refer - will be removed soon
--   `target_currency_precision`: deprecated - do not refer - will be removed soon
--   `avg_price`: avg-execution price so far
--   `price_per_unit`: specified limit price
--   `stop_price`: specified stop price (applicable for stop-variant orders)
--   `market`: symbol
--   `time_in_force`: just contains one value for now, which is `good_till_cancel`
--   `created_at`: the timestamp for order creation
--   `updated_at`: the latest timestamp specifying when the order was updated
+- `id`: unique order identifier (uuid)
+- `client_order_id`: client order id of the order
+- `order_type`: the order type
+- `side`: whether the order is a buy order or a sell order
+- `status`: the current [status](https://docs.coindcx.com/?javascript#common)
+- `fee_amount`: total fee amount charged so far (in base-currency)
+- `fee`: deprecated - do not refer - will be removed soon
+- `maker_fee`: the fee (in percentage) to be charged for maker-trades for this order
+- `taker_fee`: the fee (in percentage) to be charged for taker-trades for this order
+- `total_quantity`: total quantity
+- `remaining_quantity`: pending (unfilled/uncancelled) quantity
+- `source`: deprecated - do not refer - will be removed soon
+- `base_currency_name`: deprecated - do not refer - will be removed soon
+- `target_currency_name`: deprecated - do not refer - will be removed soon
+- `base_currency_short_name`: deprecated - do not refer - will be removed soon
+- `target_currency_short_name`: deprecated - do not refer - will be removed soon
+- `base_currency_precision`: deprecated - do not refer - will be removed soon
+- `target_currency_precision`: deprecated - do not refer - will be removed soon
+- `avg_price`: avg-execution price so far
+- `price_per_unit`: specified limit price
+- `stop_price`: specified stop price (applicable for stop-variant orders)
+- `market`: symbol
+- `time_in_force`: just contains one value for now, which is `good_till_cancel`
+- `created_at`: the timestamp for order creation
+- `updated_at`: the latest timestamp specifying when the order was updated
 
 ## Get Trade Update
 
@@ -1657,23 +1649,23 @@ Copy to Clipboard
 
 ### Definitions
 
--   **Channel:** coindcx (Private).
--   **Event:** trade-update
--   **Description:** This Event gives the trade info whenever trades are executed.
+- **Channel:** coindcx (Private).
+- **Event:** trade-update
+- **Description:** This Event gives the trade info whenever trades are executed.
 
 ### Response
 
--   `o`: system generated order id
--   `c`: client order id
--   `t`: trade id
--   `s`: symbol/market (USDTINR)
--   `p`: price
--   `q`: quantity
--   `T`: timestamp
--   `m`: whether the buyer is market maker or not.
--   `f`: fee amount
--   `e`: exchange identifier
--   `x`: status
+- `o`: system generated order id
+- `c`: client order id
+- `t`: trade id
+- `s`: symbol/market (USDTINR)
+- `p`: price
+- `q`: quantity
+- `T`: timestamp
+- `m`: whether the buyer is market maker or not.
+- `f`: fee amount
+- `e`: exchange identifier
+- `x`: status
 
 ## Get Candlestick Info
 
@@ -1695,37 +1687,37 @@ The set of candlestick resolutions available are \["1m", "5m", "15m", "30m", "1h
 
 ### Definitions
 
--   **Channel:** {pair}\_1m ( Use 'pair' from Markets details API response. )
--   **Event:** candlestick
--   **Description:** This event provides information on the current candlestick bars for a given pair at the resolution.
+- **Channel:** {pair}\_1m ( Use 'pair' from Markets details API response. )
+- **Event:** candlestick
+- **Description:** This event provides information on the current candlestick bars for a given pair at the resolution.
 
 ### Response
 
--   `t`: start timestamp
--   `T`: close timestamp
--   `s`: symbol
--   `i`: candle period
+- `t`: start timestamp
+- `T`: close timestamp
+- `s`: symbol
+- `i`: candle period
   
--   `f` : first trade ID
+- `f` : first trade ID
   
--   `L`: last trade ID
--   `o`: open
--   `c`: close
--   `h`: high
--   `l`: low
--   `v`: Base asset volume
--   `n`: number of trades
--   `x`: current candle has been completed Y/N
+- `L`: last trade ID
+- `o`: open
+- `c`: close
+- `h`: high
+- `l`: low
+- `v`: Base asset volume
+- `n`: number of trades
+- `x`: current candle has been completed Y/N
   
--   `q`: completed trade amount (in quote asset)
--   `V`: Taker buy base asset volume
--   `Q`: taker trade amount(in quote asset)
--   `B`: first trade ID
+- `q`: completed trade amount (in quote asset)
+- `V`: Taker buy base asset volume
+- `Q`: taker trade amount(in quote asset)
+- `B`: first trade ID
   
--   `ecode`: exchange code
+- `ecode`: exchange code
   
--   `channel`: Channel Name
--   `pr`: product
+- `channel`: Channel Name
+- `pr`: product
 
 ## Get Depth Snapshot Info ( Order Book )
 
@@ -1747,16 +1739,16 @@ Copy to Clipboard
 
 ### Definitions
 
--   **Channel:** {pair}@orderbook@20 ( Use 'pair' from Markets details API response. )
--   **Event:** depth-snapshot
--   **Description:** This event gives the changes in the orderbook data of the pair as a snapshot.
+- **Channel:** {pair}@orderbook@20 ( Use 'pair' from Markets details API response. )
+- **Event:** depth-snapshot
+- **Description:** This event gives the changes in the orderbook data of the pair as a snapshot.
 
 ### Response
 
--   `vs`: version
--   `ts`: timestamp
--   `pr`: product
--   `s`: symbol(currency)
+- `vs`: version
+- `ts`: timestamp
+- `pr`: product
+- `s`: symbol(currency)
 
 ## Get Depth Update ( Order Book )
 
@@ -1778,17 +1770,17 @@ Copy to Clipboard
 
 ### Definitions
 
--   **Channel:** {pair}@orderbook@20 ( Use 'pair' from Markets details API response. )
--   **Event:** depth-update
--   **Description:** This Event gives the changes in the orderbook data of the pair when the depth of the orderbook changes.
+- **Channel:** {pair}@orderbook@20 ( Use 'pair' from Markets details API response. )
+- **Event:** depth-update
+- **Description:** This Event gives the changes in the orderbook data of the pair when the depth of the orderbook changes.
 
 ### Response
 
--   `vs`: version
--   `ts`: timestamp
--   `pr`: product
--   `E`: Event time
--   `s`: symbol(currency)
+- `vs`: version
+- `ts`: timestamp
+- `pr`: product
+- `E`: Event time
+- `s`: symbol(currency)
 
 ## Get Current Prices
 
@@ -1810,15 +1802,15 @@ currentPrices@spot@10s, Here 10 denotes, the interval at which the prices can be
 
 ### Definitions
 
--   **Channel:** currentPrices@spot@10s
--   **Event:** currentPrices@spot#update
--   **Description:** This Event gives the current prices of the pairs whose price got updated in the last 1s/10s.
+- **Channel:** currentPrices@spot@10s
+- **Event:** currentPrices@spot#update
+- **Description:** This Event gives the current prices of the pairs whose price got updated in the last 1s/10s.
 
 ### Response
 
--   `vs`: version
--   `ts`: timestamp
--   `pr`: product
+- `vs`: version
+- `ts`: timestamp
+- `pr`: product
 
 ## Get Price Stats
 
@@ -1840,17 +1832,17 @@ priceStats@spot@60s, Here 60 denotes, the interval at which the prices can be fe
 
 ### Definitions
 
--   **Channel:** priceStats@spot@60s
--   **Event:** priceStats@spot#update
--   **Description:** This Event gives the 24hrs price change of pairs whose price got updated in the last 60s.
+- **Channel:** priceStats@spot@60s
+- **Event:** priceStats@spot#update
+- **Description:** This Event gives the 24hrs price change of pairs whose price got updated in the last 60s.
 
 ### Response
 
--   `vs`: version
--   `ts`: timestamp
--   `pr`: product
--   `pc`: price change percent
--   `v`: volume 24h
+- `vs`: version
+- `ts`: timestamp
+- `pr`: product
+- `pc`: price change percent
+- `v`: volume 24h
 
 ## Get New Trade
 
@@ -1870,17 +1862,17 @@ Copy to Clipboard
 
 ### Definitions
 
--   **Channel:** {pair}@trades
--   **Event:** new-trade
--   **Description:** This Event gives the latest trade info of the given pair.
+- **Channel:** {pair}@trades
+- **Event:** new-trade
+- **Description:** This Event gives the latest trade info of the given pair.
 
 ### Response
 
--   `m`: whether the buyer is market maker or not
--   `p`: trade price
--   `q`: quantity
--   `T`: timestamp of trade
--   `s`: symbol(currency)
+- `m`: whether the buyer is market maker or not
+- `p`: trade price
+- `q`: quantity
+- `T`: timestamp of trade
+- `s`: symbol(currency)
 
 ## Get Price Change ( LTP )
 
@@ -1900,15 +1892,15 @@ Copy to Clipboard
 
 ### Definitions
 
--   **Channel:** {pair}@prices
--   **Event:** price-change
--   **Description:** This Event gives the latest price info of a pair whenever there is a price change.
+- **Channel:** {pair}@prices
+- **Event:** price-change
+- **Description:** This Event gives the latest price info of a pair whenever there is a price change.
 
 ### Response
 
--   `p`: trade price
--   `T`: timestamp of trade
--   `pr`: Product(spot)
+- `p`: trade price
+- `T`: timestamp of trade
+- `pr`: Product(spot)
 
 ## Sample code for Socket Connection
 
@@ -1926,36 +1918,36 @@ Copy to Clipboard
 
 ### Note
 
--   Websocket connection implementation with ping check : Ping check is required to keep the socket connection alive.
--   **Only Private channels need authentication.**
--   Python Packages Required : python-socketio\[client\]
--   APPLE MAC Issue : Certificate verify failed: unable to get local issuer certificate or Mac OSX python ssl.SSLError: \[SSL: CERTIFICATE\_VERIFY\_FAILED\] certificate verify failed (\_ssl.c:749) -> **Fix for the issue : Will be fixed by installing the "Install Certificates.command"**
+- Websocket connection implementation with ping check : Ping check is required to keep the socket connection alive.
+- **Only Private channels need authentication.**
+- Python Packages Required : python-socketio\[client\]
+- APPLE MAC Issue : Certificate verify failed: unable to get local issuer certificate or Mac OSX python ssl.SSLError: \[SSL: CERTIFICATE\_VERIFY\_FAILED\] certificate verify failed (\_ssl.c:749) -> **Fix for the issue : Will be fixed by installing the "Install Certificates.command"**
 
 # Futures End Points
 
 ## Glossary
 
--   e - is the Event type
--   p - price (LTP)
--   q - quantity (trade quantity)
--   pr - product (futures)
--   f - futures
--   s - spot
--   T - timestamp
--   m - is maker. Boolean value that would be true if its maker and false if its taker
--   RT - range timestamp
--   ts - timestamp
--   vs - version
--   Ets - event timestamp as given by TPE (applicable to candlesticks data)
--   i - Interval
--   E - event timestamp (applicable to order book data)
--   pST - price sent time
--   v - volume 24h
--   ls - last price
--   pc - price change percent
--   btST - TPE Tick send time
--   mp - mark price
--   bmST - TPE mark price send time (The timestamp at which Third-Party exchange sent this event)
+- e - is the Event type
+- p - price (LTP)
+- q - quantity (trade quantity)
+- pr - product (futures)
+- f - futures
+- s - spot
+- T - timestamp
+- m - is maker. Boolean value that would be true if its maker and false if its taker
+- RT - range timestamp
+- ts - timestamp
+- vs - version
+- Ets - event timestamp as given by TPE (applicable to candlesticks data)
+- i - Interval
+- E - event timestamp (applicable to order book data)
+- pST - price sent time
+- v - volume 24h
+- ls - last price
+- pc - price change percent
+- btST - TPE Tick send time
+- mp - mark price
+- bmST - TPE mark price send time (The timestamp at which Third-Party exchange sent this event)
 
 ## Get active instruments
 
@@ -2195,23 +2187,24 @@ Default value - \["USDT"\]. Possible values INR & USDT. |
 | pair | Instrument Pair (Format: B-ETH\_USDT) |
 | side | Order side. Possible values are buy or sell |
 | status | Order status. Possible values are:
--   OPEN - The order has been accepted and is in open status
--   PARTIALLY\_FILLED - Order which is partially filled and the remaining quantity is open
--   FILLED - The order has been completely filled
--   CANCELED - The order has been canceled
--   PARTIALLY\_CANCELED - Order which is partially filled and the remaining quantity has been cancelled
--   REJECTED - The order was not accepted by the system
--   UNTRIGGERED - TP or SL orders which are not triggered yet
+
+- OPEN - The order has been accepted and is in open status
+- PARTIALLY\_FILLED - Order which is partially filled and the remaining quantity is open
+- FILLED - The order has been completely filled
+- CANCELED - The order has been canceled
+- PARTIALLY\_CANCELED - Order which is partially filled and the remaining quantity has been cancelled
+- REJECTED - The order was not accepted by the system
+- UNTRIGGERED - TP or SL orders which are not triggered yet
 
  |
 | order\_type | Order type. Possible values are:
 
--   limit - A type of order where the execution price will be no worse than the order's set price. The execution price is limited to be the set price or better.
--   market - A type of order where the user buys or sells an asset at the best available prices and liquidity until the order is fully filled or the order book's liquidity is exhausted.
--   stop\_market - Once the market price hits the stopPrice, a market order is placed on the order book.
--   stop\_limit - Once the market price hits the stopPrice, a limit order is placed on the order book at the limit price.
--   take\_profit\_market - Once the market price hits the stopPrice, a market order is placed on the order book.
--   take\_profit\_limit - Once the market price hits the stopPrice, a limit order is placed on the order book at the limit price.
+- limit - A type of order where the execution price will be no worse than the order's set price. The execution price is limited to be the set price or better.
+- market - A type of order where the user buys or sells an asset at the best available prices and liquidity until the order is fully filled or the order book's liquidity is exhausted.
+- stop\_market - Once the market price hits the stopPrice, a market order is placed on the order book.
+- stop\_limit - Once the market price hits the stopPrice, a limit order is placed on the order book at the limit price.
+- take\_profit\_market - Once the market price hits the stopPrice, a market order is placed on the order book.
+- take\_profit\_limit - Once the market price hits the stopPrice, a limit order is placed on the order book at the limit price.
 
  |
 | stop\_trigger\_instruction | Ignore this |
@@ -2228,12 +2221,12 @@ Default value - \["USDT"\]. Possible values INR & USDT. |
 | cancelled\_quantity | Quantity of the order which is cancelled and will not be executed |
 | ideal\_margin | Ignore this |
 | order\_category | Ignore this |
-| stage | 
+| stage |
 
--   default - Standard limit, market, stop limit, stop market, take profit limit, or take profit market order
--   exit - Quick exit which closes the entire position
--   liquidate - Order which was created by the system to liquidate a futures position
--   tpsl\_exit - Take profit or stop loss order which was placed to close the entire futures position
+- default - Standard limit, market, stop limit, stop market, take profit limit, or take profit market order
+- exit - Quick exit which closes the entire position
+- liquidate - Order which was created by the system to liquidate a futures position
+- tpsl\_exit - Take profit or stop loss order which was placed to close the entire futures position
 
  |
 | group\_id | Group id used when a large order is split into smaller parts. All split parts will have the same group id |
@@ -2274,20 +2267,20 @@ Use this endpoint to create an order by passing the necessary parameters.
 
 \*\*\* "Do not include 'time\_in \_force' parameter for market orders."
 
--   Buy Orders:
-    -   Stop Limit:
-        -   Stop price must be greater than LTP.
-        -   Limit price must be greater than stop price.
-    -   Take Profit Limit:
-        -   Stop price must be less than LTP.
-        -   Limit price must be greater than stop price and less than LTP.
--   Sell Orders:
-    -   Stop Limit:
-        -   Stop price must be less than LTP.
-        -   Limit price must be less than stop price.
-    -   Take Profit Limit:
-        -   Stop price must be greater than LTP.
-        -   Limit price must be less than stop price and greater than LTP.
+- Buy Orders:
+  - Stop Limit:
+    - Stop price must be greater than LTP.
+    - Limit price must be greater than stop price.
+  - Take Profit Limit:
+    - Stop price must be less than LTP.
+    - Limit price must be greater than stop price and less than LTP.
+- Sell Orders:
+  - Stop Limit:
+    - Stop price must be less than LTP.
+    - Limit price must be less than stop price.
+  - Take Profit Limit:
+    - Stop price must be greater than LTP.
+    - Limit price must be less than stop price and greater than LTP.
 
 ### Request Defnitions
 
@@ -2347,12 +2340,13 @@ If position margin type is not passed, it considers the margin type of the posit
 | side | Side: buy / sell |
 | status | Ignore this (It will be initial for all the newly placed orders) |
 | order\_type | Order type. Possible values are :
--   limit - a type of order where the execution price will be no worse than the order's set price. The execution price is limited to be the set price or better.
--   market - A type of order where the user buys or sells an asset at the best available prices and liquidity until the order is fully filled or the order book's liquidity is exhausted.
--   stop\_market - once the market price hits the stopPrice, a market order is placed on the order book.
--   stop\_limit - once the market price hits the stopPrice, a limit order is placed on the order book at the limit price.
--   take\_profit\_market - once the market price hits the stopPrice, a market order is placed on the order book.
--   take\_profit\_limit - once the market price hits the stopPrice, a limit order is placed on the order book at the limit price.
+
+- limit - a type of order where the execution price will be no worse than the order's set price. The execution price is limited to be the set price or better.
+- market - A type of order where the user buys or sells an asset at the best available prices and liquidity until the order is fully filled or the order book's liquidity is exhausted.
+- stop\_market - once the market price hits the stopPrice, a market order is placed on the order book.
+- stop\_limit - once the market price hits the stopPrice, a limit order is placed on the order book at the limit price.
+- take\_profit\_market - once the market price hits the stopPrice, a market order is placed on the order book.
+- take\_profit\_limit - once the market price hits the stopPrice, a limit order is placed on the order book at the limit price.
 
  |
 | notification | no\_notification OR email\_notification
@@ -3192,9 +3186,10 @@ Use this endpoint to fetch the list of wallet transactions for both INR & USDT F
 | currency\_short\_name | Currency of wallet |
 | currency\_full\_name | Currency full name of wallet |
 | reason | Reason will be
--   by\_universal\_wallet: For transfers between spot and futures wallets.
--   by\_futures\_order: For all the transactions created due to a futures order
--   by\_futures\_funding: For all the transaction created due to funding (only applicable for fundings that occur in cross margined positions)
+
+- by\_universal\_wallet: For transfers between spot and futures wallets.
+- by\_futures\_order: For all the transactions created due to a futures order
+- by\_futures\_funding: For all the transaction created due to funding (only applicable for fundings that occur in cross margined positions)
 <!---   by\_adjust\_position\_settlement: Created while removing margin from INR margined positions to account for the difference in the Avg. USDT<>INR conversion of the position and the current USDT<>INR conversion price.
 \-->
 
@@ -3244,12 +3239,13 @@ Use this endpoint to edit the order which is in open status.
 | side | Side buy / sell |
 | status | Ignore this (It will be initial for all the newly placed orders) |
 | order\_type | Order type. Possible values are:
--   limit - a type of order where the execution price will be no worse than the order's set price. The execution price is limited to be the set price or better.
--   market - A type of order where the user buys or sells an asset at the best available prices and liquidity until the order is fully filled or the order book's liquidity is exhausted.
--   stop\_market - once the market price hits the stopPrice, a market order is placed on the order book.
--   stop\_limit - once the market price hits the stopPrice, a limit order is placed on the order book at the limit price.
--   take\_profit\_market - once the market price hits the stopPrice, a market order is placed on the order book.
--   take\_profit\_limit - once the market price hits the stopPrice, a limit order is placed on the order book at the limit price.
+
+- limit - a type of order where the execution price will be no worse than the order's set price. The execution price is limited to be the set price or better.
+- market - A type of order where the user buys or sells an asset at the best available prices and liquidity until the order is fully filled or the order book's liquidity is exhausted.
+- stop\_market - once the market price hits the stopPrice, a market order is placed on the order book.
+- stop\_limit - once the market price hits the stopPrice, a limit order is placed on the order book at the limit price.
+- take\_profit\_market - once the market price hits the stopPrice, a market order is placed on the order book.
+- take\_profit\_limit - once the market price hits the stopPrice, a limit order is placed on the order book at the limit price.
 
  |
 | stop\_trigger\_instruction |  |
@@ -3379,27 +3375,27 @@ Use this endpoint to get the USDT currency conversion price in INR .
 
 ## Glossary
 
--   e - is the Event type
--   p - price (LTP)
--   q - quantity (trade quantity)
--   pr - product (futures)
--   f - futures
--   s - spot
--   T - timestamp
--   m - is maker. Boolean value that would be true if its maker and false if its taker
--   RT - range timestamp
--   ts - timestamp
--   vs - version
--   Ets - event timestamp as given by TPE (applicable to candlesticks data)
--   i - Interval
--   E - event timestamp (applicable to order book data)
--   pST - price sent time
--   v - volume 24h
--   ls - last price
--   pc - price change percent
--   btST - TPE Tick send time
--   mp - mark price
--   bmST - TPE mark price send time (The timestamp at which Third-Party exchange sent this event)
+- e - is the Event type
+- p - price (LTP)
+- q - quantity (trade quantity)
+- pr - product (futures)
+- f - futures
+- s - spot
+- T - timestamp
+- m - is maker. Boolean value that would be true if its maker and false if its taker
+- RT - range timestamp
+- ts - timestamp
+- vs - version
+- Ets - event timestamp as given by TPE (applicable to candlesticks data)
+- i - Interval
+- E - event timestamp (applicable to order book data)
+- pST - price sent time
+- v - volume 24h
+- ls - last price
+- pc - price change percent
+- btST - TPE Tick send time
+- mp - mark price
+- bmST - TPE mark price send time (The timestamp at which Third-Party exchange sent this event)
 
 ## ACCOUNT
 
@@ -3429,8 +3425,8 @@ Copy to Clipboard
 
 ### Definitions
 
--   **Channel:** coindcx
--   **Event:** df-position-update
+- **Channel:** coindcx
+- **Event:** df-position-update
 
 ## Get Order Update
 
@@ -3450,8 +3446,8 @@ Copy to Clipboard
 
 ### Definitions
 
--   **Channel:** coindcx
--   **Event:** df-order-update
+- **Channel:** coindcx
+- **Event:** df-order-update
 
 ## Get Balance Update
 
@@ -3471,8 +3467,8 @@ Copy to Clipboard
 
 ### Definitions
 
--   **Channel:** coindcx
--   **Event:** balance-update
+- **Channel:** coindcx
+- **Event:** balance-update
 
 ## Get Candlestick Data
 
@@ -3494,9 +3490,9 @@ Copy to Clipboard
 
 The set of candlestick resolutions available are \["1m", "5m", "15m", "30m", "1h", "4h", "8h", "1d", "3d", "1w", "1M"\]. For example for 15 minute candle please connect to channel \[instrument\_name\]\_15m-futures
 
--   **Channel:** "\[instrument\_name\]\_1m-future" , "\[instrument\_name\]\_1h-futures", "\[instrument\_name\]\_1d-futures" etc.Here \[instrument\_name\] can be derived from Get active instruments.
--   **Example to join channel :** \["join",{"channelName": "B-BTC\_USDT\_1m-futures" }\]
--   **Event:** candlestick
+- **Channel:** "\[instrument\_name\]\_1m-future" , "\[instrument\_name\]\_1h-futures", "\[instrument\_name\]\_1d-futures" etc.Here \[instrument\_name\] can be derived from Get active instruments.
+- **Example to join channel :** \["join",{"channelName": "B-BTC\_USDT\_1m-futures" }\]
+- **Event:** candlestick
 
 ## Get Orderbook
 
@@ -3516,9 +3512,9 @@ Copy to Clipboard
 
 ### Definitions
 
--   **Channel:** "\[instrument\_name\]@orderbook@50-futures. Here \[instrument\_name\] can be derived from Get active instruments.Here 50 denotes, the depth of the order book the other possible values are 10 and 20.
--   **Example to join channel :** \['join', {'channelName':"B-ID\_USDT@orderbook@50-futures"}\]
--   **Event:** depth-snapshot
+- **Channel:** "\[instrument\_name\]@orderbook@50-futures. Here \[instrument\_name\] can be derived from Get active instruments.Here 50 denotes, the depth of the order book the other possible values are 10 and 20.
+- **Example to join channel :** \['join', {'channelName':"B-ID\_USDT@orderbook@50-futures"}\]
+- **Event:** depth-snapshot
 
 ## Get Current Prices
 
@@ -3538,9 +3534,9 @@ Copy to Clipboard
 
 ### Definitions
 
--   **Channel:** currentPrices@futures@rt
--   **Example to join channel :** \['join', {'channelName':"currentPrices@futures@rt"}\]
--   **Event:** currentPrices@futures#update
+- **Channel:** currentPrices@futures@rt
+- **Example to join channel :** \['join', {'channelName':"currentPrices@futures@rt"}\]
+- **Event:** currentPrices@futures#update
 
 ## Get New Trade
 
@@ -3560,9 +3556,9 @@ Copy to Clipboard
 
 ### Definitions
 
--   **Channel:** "\[instrument\_name\]@trades-futures. Here \[instrument\_name\] can be derived from Get active instruments
--   **Example to join channel :** \['join', {'channelName':"B-ID\_USDT@trades-futures"}\]
--   **Event:** new-trade
+- **Channel:** "\[instrument\_name\]@trades-futures. Here \[instrument\_name\] can be derived from Get active instruments
+- **Example to join channel :** \['join', {'channelName':"B-ID\_USDT@trades-futures"}\]
+- **Event:** new-trade
 
 ## Get LTP Data
 
@@ -3582,9 +3578,9 @@ Copy to Clipboard
 
 ### Definitions
 
--   **Channel:** "\[instrument\_name\]@trades-futures. Here \[instrument\_name\] can be derived from Get active instruments
--   **Example to join channel :** \['join', {'channelName':"B-ID\_USDT@prices-futures"}\]
--   **Event:** new-trade
+- **Channel:** "\[instrument\_name\]@trades-futures. Here \[instrument\_name\] can be derived from Get active instruments
+- **Example to join channel :** \['join', {'channelName':"B-ID\_USDT@prices-futures"}\]
+- **Event:** new-trade
 
 ## Sample code for Socket Connection
 
@@ -3598,7 +3594,7 @@ Copy to Clipboard
 
 ### Definitions
 
--   **Websocket connection implementation with ping check**
+- **Websocket connection implementation with ping check**
 
 # FAQ
 
@@ -3635,10 +3631,10 @@ General API 1\. What are the rate limits applicable on CoinDCX APIs
 
 In the case of API failure you get a 5xx error. The 2 applicable errors are:  
 
--   500: Internal Server Error. This is a one-off error that happens due to internal issues on CoinDCX’s side
--   503: Service Unavailable. This error is thrown when there is a downtime at CoinDCX. These should get resolved fairly quickly.
+- 500: Internal Server Error. This is a one-off error that happens due to internal issues on CoinDCX’s side
+- 503: Service Unavailable. This error is thrown when there is a downtime at CoinDCX. These should get resolved fairly quickly.
 
-For scheduled downtimes, you would receive prior notification over e-mail from the email ID info@engage-coindcx.com among other CoinDCX email IDs.  
+For scheduled downtimes, you would receive prior notification over e-mail from the email ID <info@engage-coindcx.com> among other CoinDCX email IDs.  
 Please add us to your address-book so as to not miss such important emails.
 
 3\. What is High Frequency Trading
@@ -3662,8 +3658,8 @@ API keys are different for master and sub accounts and so are the trades and tra
 
 The following data is available without authentication:
 
--   In REST APIs here’s a [list of public endpoints](#public-endpoints) that don’t need an authentication
--   In Websockets, the order book and market data is available without authentication
+- In REST APIs here’s a [list of public endpoints](#public-endpoints) that don’t need an authentication
+- In Websockets, the order book and market data is available without authentication
 
 8\. Is Futures trading available through Public APIs
 
@@ -3717,9 +3713,9 @@ Please refer to this [article](https://dcxlearn.com/trading/what-are-different-t
 
 This would depend on the kind of order that you’d like to place.
 
--   In case of limit value this can be calculated with the price and quantity you’d like to set.
--   In case of market value, this can be calculated by fetching the latest prices from the Candles API and multiplying with the quantity you’d like to order. The final price will however depend on the market conditions.
--   In case of stop limit order, the price you’d set would determine the
+- In case of limit value this can be calculated with the price and quantity you’d like to set.
+- In case of market value, this can be calculated by fetching the latest prices from the Candles API and multiplying with the quantity you’d like to order. The final price will however depend on the market conditions.
+- In case of stop limit order, the price you’d set would determine the
 
 4\. For a failed transaction will there be a fee charged
 
@@ -3729,8 +3725,8 @@ No fee would be applicable on a failed transaction.
 
 This can be done in 2 ways:
 
--   Using the [Order Book Rest API](#order-book)
--   Using the “depth-update” [event](#order-book) in various market specific channels
+- Using the [Order Book Rest API](#order-book)
+- Using the “depth-update” [event](#order-book) in various market specific channels
 
 6\. What is the max length of the client order id
 
@@ -3740,10 +3736,10 @@ The maximum allowed length is 36 characters
 
 There could be several reasons because of which an order could not be placed. Some of these are listed below:
 
--   There isn’t enough balance present in the user's wallet
--   Rate limits have been hit
--   The order type sent is not present for the market
--   The mandatory fields needed to execute the order are not sent
+- There isn’t enough balance present in the user's wallet
+- Rate limits have been hit
+- The order type sent is not present for the market
+- The mandatory fields needed to execute the order are not sent
 
 8\. What are the various reasons for which orders could be rejected after getting placed
 
@@ -3773,8 +3769,8 @@ User Data 1\. How can I get my balances and update in balance via APIs
 
 There are 2 ways to fetch this data:
 
--   You can use our REST APIs [here](#get-balances)
--   You can also get this data via our websockets by following the steps [here](#balances)
+- You can use our REST APIs [here](#get-balances)
+- You can also get this data via our websockets by following the steps [here](#balances)
 
 2\. Can I get my fee tier via APIs
 
@@ -3784,9 +3780,9 @@ Handling Errors 1\. “Invalid Request”
 
 This happens when there is something incorrect in the request body. These could be:
 
--   Not sending all mandatory params
--   Not sending the right values in the query params
--   Not using the right JSON structure in the request body
+- Not sending all mandatory params
+- Not sending the right values in the query params
+- Not using the right JSON structure in the request body
 
 Please re-check the request params and values you are passing in the request.
 
@@ -3823,7 +3819,7 @@ The CoinDCX API uses the following error codes:
 
 CoinDCX’s API for High-Frequency Trading (HFT)
 
-The base URL for all HFT API calls is \`https://hft-api.coindcx.com\`.
+The base URL for all HFT API calls is \`<https://hft-api.coindcx.com\`>.
 
 CoinDCX provides special access to our HFT APIs for enterprise and specialized clients. These APIs will enable our clients to trade and receive market data with faster API responses and higher API rate limits.
 

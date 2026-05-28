@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:57:11.856Z
 ---
 # Get Funding Rate History
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Get-Funding-Rate-History
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Get-Funding-Rate-History>
 
 # Get Funding Rate History
 
@@ -33,9 +33,9 @@ share 500/5min/IP rate limit with GET /fapi/v1/fundingInfo
 | endTime | LONG | NO | Timestamp in ms to get funding rate until INCLUSIVE. |
 | limit | INT | NO | Default 100; max 1000 |
 
-> -   If `startTime` and `endTime` are not sent, the most recent 200 records are returned.
-> -   If the number of data between `startTime` and `endTime` is larger than `limit`, return as `startTime` + `limit`.
-> -   In ascending order.
+> - If `startTime` and `endTime` are not sent, the most recent 200 records are returned.
+> - If the number of data between `startTime` and `endTime` is larger than `limit`, return as `startTime` + `limit`.
+> - In ascending order.
 
 ## Response Example
 

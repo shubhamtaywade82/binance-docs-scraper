@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:48:35.591Z
 ---
 # Change Multi-Assets Mode (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Change-Multi-Assets-Mode
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Change-Multi-Assets-Mode>
 
 # Change Multi-Assets Mode (TRADE)
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:43:38.650Z
 ---
 # Start User Data Stream (USER_STREAM)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Start-User-Data-Stream
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Start-User-Data-Stream>
 
 # Start User Data Stream (USER\_STREAM)
 

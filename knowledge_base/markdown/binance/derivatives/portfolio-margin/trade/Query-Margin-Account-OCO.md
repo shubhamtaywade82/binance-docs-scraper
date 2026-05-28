@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:53:20.553Z
 ---
 # Query Margin Account's OCO (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-Margin-Account-OCO
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-Margin-Account-OCO>
 
 # Query Margin Account's OCO (USER\_DATA)
 
@@ -24,7 +24,7 @@ GET `/papi/v1/margin/orderList`
 
 **5**
 
-## Parameters:
+## Parameters
 
 | Name | Type | Mandatory | Description |
 | --- | --- | --- | --- |
@@ -33,7 +33,7 @@ GET `/papi/v1/margin/orderList`
 | recvWindow | LONG | NO | The value cannot be greater than 60000 |
 | timestamp | LONG | YES |  |
 
-## Response:
+## Response
 
 ```json
 {

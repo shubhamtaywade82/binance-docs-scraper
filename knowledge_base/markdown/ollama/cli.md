@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:04:44.733Z
 ---
 # CLI Reference - Ollama
 
-> Source: https://docs.ollama.com/cli
+> Source: <https://docs.ollama.com/cli>
 
 [Documentation
 
@@ -17,12 +17,12 @@ scraped_at: 2026-05-28T19:04:44.733Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
-### 
+###
 
 [​
 
@@ -34,7 +34,7 @@ Run a model
 ollama run gemma3
 ```
 
-### 
+###
 
 [​
 
@@ -48,7 +48,7 @@ ollama launch
 
 Configure and launch external applications to use Ollama models. This provides an interactive way to set up and start integrations with supported apps.
 
-#### 
+####
 
 [​
 
@@ -56,13 +56,13 @@ Configure and launch external applications to use Ollama models. This provides a
 
 Supported integrations
 
--   **OpenCode** - Open-source coding assistant
--   **Claude Code** - Anthropic’s agentic coding tool
--   **Codex** - OpenAI’s coding assistant
--   **VS Code** - Microsoft’s IDE with built-in AI chat
--   **Droid** - Factory’s AI coding agent
+- **OpenCode** - Open-source coding assistant
+- **Claude Code** - Anthropic’s agentic coding tool
+- **Codex** - OpenAI’s coding assistant
+- **VS Code** - Microsoft’s IDE with built-in AI chat
+- **Droid** - Factory’s AI coding agent
 
-#### 
+####
 
 [​
 
@@ -94,7 +94,7 @@ Configure without launching:
 ollama launch droid --config
 ```
 
-#### 
+####
 
 [​
 
@@ -111,7 +111,7 @@ For multiline input, you can wrap text with `"""`:
 I'm a basic program that prints the famous "Hello, world!" message to the console.
 ```
 
-#### 
+####
 
 [​
 
@@ -123,7 +123,7 @@ Multimodal models
 ollama run gemma3 "What's in this image? /Users/jmorgan/Desktop/smile.png"
 ```
 
-### 
+###
 
 [​
 
@@ -141,7 +141,7 @@ Output is a JSON array:
 echo "Hello world" | ollama run nomic-embed-text
 ```
 
-### 
+###
 
 [​
 
@@ -153,7 +153,7 @@ Download a model
 ollama pull gemma3
 ```
 
-### 
+###
 
 [​
 
@@ -165,7 +165,7 @@ Remove a model
 ollama rm gemma3
 ```
 
-### 
+###
 
 [​
 
@@ -177,7 +177,7 @@ List models
 ollama ls
 ```
 
-### 
+###
 
 [​
 
@@ -189,7 +189,7 @@ Sign in to Ollama
 ollama signin
 ```
 
-### 
+###
 
 [​
 
@@ -201,7 +201,7 @@ Sign out of Ollama
 ollama signout
 ```
 
-### 
+###
 
 [​
 
@@ -222,7 +222,7 @@ Then run `ollama create`:
 ollama create -f Modelfile
 ```
 
-### 
+###
 
 [​
 
@@ -234,7 +234,7 @@ List running models
 ollama ps
 ```
 
-### 
+###
 
 [​
 
@@ -246,7 +246,7 @@ Stop a running model
 ollama stop gemma3
 ```
 
-### 
+###
 
 [​
 
@@ -265,8 +265,6 @@ To view a list of environment variables that can be set run `ollama serve --help
 NemoClaw
 
 Next
-
-
 
 ](/integrations/nemoclaw)
 

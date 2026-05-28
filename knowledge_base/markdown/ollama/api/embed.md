@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:02:48.165Z
 ---
 # Generate embeddings - Ollama
 
-> Source: https://docs.ollama.com/api/embed
+> Source: <https://docs.ollama.com/api/embed>
 
 [Documentation
 
@@ -63,9 +63,9 @@ curl http://localhost:11434/api/embed -d '{
 ```
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 #### Body
@@ -201,8 +201,6 @@ Number of input tokens processed to generate embeddings
 TagsFetch a list of models and their details
 
 Next
-
-
 
 ](/api/tags)
 

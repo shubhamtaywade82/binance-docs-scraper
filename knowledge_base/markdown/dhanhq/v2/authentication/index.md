@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:00:32.593Z
 ---
 # Authentication
 
-> Source: https://dhanhq.co/docs/v2/authentication/
+> Source: <https://dhanhq.co/docs/v2/authentication/>
 
 # Authentication
 
@@ -16,10 +16,9 @@ DhanHQ APIs require authentication based on an access token which needs to be pa
 
 There are two categories in which users of DhanHQ APIs are divided:
 
--   Individual - Users who have Dhan account and are coders, traders, geeks who want to build their own algorithm or trading system on top of DhanHQ APIs
-    
--   Partners - Platforms who want to build on top of DhanHQ APIs and serve it to their users. This can be algo platforms, fintechs, banks, PMS, and others.
-    
+- Individual - Users who have Dhan account and are coders, traders, geeks who want to build their own algorithm or trading system on top of DhanHQ APIs
+
+- Partners - Platforms who want to build on top of DhanHQ APIs and serve it to their users. This can be algo platforms, fintechs, banks, PMS, and others.
 
 ## Eligibility
 
@@ -31,23 +30,20 @@ If you are a partner who wants to get integrated and build on top of DhanHQ APIs
 
 As an individual trader, there are two methods using which a user can generate an access token:
 
--   Directly generate access token from Dhan Web
--   Use API key based authentication method  
-      
-    
+- Directly generate access token from Dhan Web
+- Use API key based authentication method  
 
 ### Access Token
 
 Individual traders can directly get their Access Token from [web.dhan.co](https://web.dhan.co). All Dhan users are eligible to get free access to Trading APIs. Here's how to get your Access Token:
 
--   Login to [web.dhan.co](https://web.dhan.co)
-    
--   Click on My Profile and navigate to **_'Access DhanHQ APIs'_**
-    
--   Generate "Access Token" for a validity of 24 hours from there.
-    
--   User have an option to enter Postback URL while generating the access token, to get order updates as [Postback](/postback/).
-    
+- Login to [web.dhan.co](https://web.dhan.co)
+
+- Click on My Profile and navigate to **_'Access DhanHQ APIs'_**
+
+- Generate "Access Token" for a validity of 24 hours from there.
+
+- User have an option to enter Postback URL while generating the access token, to get order updates as [Postback](/postback/).
 
 #### Generate Token
 
@@ -60,7 +56,6 @@ curl --location --request POST
 'https://auth.dhan.co/app/generateAccessToken?dhanClientId=1000000001&pin=11111&totp=000000'
 ```
 
-  
 **Query Parameters**
 
 | Field | Description |
@@ -82,7 +77,6 @@ curl --location --request POST
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -110,22 +104,19 @@ Note: This only renews tokens which are active. If you try to renew an expired t
 
 Individuals can login with an OAuth based flow as well. All dhan users can generate individual user specific API key and secret. To generate API key and secret, a user needs to follow the below steps:
 
--   Login to [web.dhan.co](https://web.dhan.co)
-    
--   Click on My Profile and navigate to **_'Access DhanHQ APIs'_**
-    
--   Toggle to **_'API key'_** and enter your app name
-    
--   Enter **App name**, **Redirect URL** (to be used at the end of Step 2 provided below) and **Postback URL** (which is option to get updates on [Postback](/postback/)).
-    
+- Login to [web.dhan.co](https://web.dhan.co)
+
+- Click on My Profile and navigate to **_'Access DhanHQ APIs'_**
+
+- Toggle to **_'API key'_** and enter your app name
+
+- Enter **App name**, **Redirect URL** (to be used at the end of Step 2 provided below) and **Postback URL** (which is option to get updates on [Postback](/postback/)).
 
 Note
 
 API Key & Secret are valid for 12 months from the date of generation
 
 After getting the API key and secret, user needs to follow below three steps, in order to generate access token, which can be used for all other API authentication.
-
-  
 
 **STEP 1 : Generate Consent**  
 This API is provided to generate consent to initiate a login session. On this step, the App ID and secret is validated and a new session is created for the user to enter credentials.
@@ -167,8 +158,6 @@ _required_ | API Secret generated from Dhan |
 | --- | --- |
 | consentAppId | Temporary session ID, to be used in step 2 |
 | consentAppStatus | Status of the API request |
-
-  
 
 **STEP 2 : Browser based login**  
 
@@ -258,8 +247,6 @@ Once partner receives `partner_id` & `partner_secret`. they can use this authent
 
 This login method is a three step based, which is outlined below. This is for all different types of platforms, wherein the user can login to their Dhan account right from the third party platform itself.
 
-  
-
 **STEP 1 : Generate Consent**  
 This API is to generate consent to initiate a login session for a user. This is to validate the partner and allow them to start the authentication process.
 
@@ -296,8 +283,6 @@ _required_ | Partner Secret provided by Dhan |
 | Field | Description |
 | --- | --- |
 | consentId | Temporary session ID on partner level, to be used in step 2 |
-
-  
 
 **STEP 2 : Dhan login on browser for user**  
 
@@ -342,8 +327,6 @@ curl --location 'https://auth.dhan.co/partner/consume-consent?tokenId={Token ID}
 --header 'partner_id: {Partner ID}' \
 --header 'partner_secret: {Partner Secret}'
 ```
-
-  
 
 ![03](https://dev-images.dhan.co/common/03.png)
 
@@ -534,11 +517,11 @@ Time-based One-Time Password (TOTP) is a 6-digit code generated from a shared se
 
 ### How to set up TOTP
 
-1.  Go to Dhan Web > DhanHQ Trading APIs section
-2.  Select Setup TOTP
-3.  Confirm with OTP on mobile/email
-4.  Scan the QR via an Authenticator app or enter the code shown into the Authenticator
-5.  Confirm by entering the first TOTP
+1. Go to Dhan Web > DhanHQ Trading APIs section
+2. Select Setup TOTP
+3. Confirm with OTP on mobile/email
+4. Scan the QR via an Authenticator app or enter the code shown into the Authenticator
+5. Confirm by entering the first TOTP
 
 Once this is is setup, you will by default see TOTP as an option while logging into any partner platforms or inside the API key based authentication mode.
 

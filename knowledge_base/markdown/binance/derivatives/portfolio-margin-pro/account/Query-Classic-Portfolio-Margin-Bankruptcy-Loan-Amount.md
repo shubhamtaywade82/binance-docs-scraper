@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:45:44.367Z
 ---
 # Query Portfolio Margin Pro Bankruptcy Loan Amount(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Query-Classic-Portfolio-Margin-Bankruptcy-Loan-Amount
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Query-Classic-Portfolio-Margin-Bankruptcy-Loan-Amount>
 
 # Query Portfolio Margin Pro Bankruptcy Loan Amount(USER\_DATA)
 
@@ -31,7 +31,7 @@ GET `/sapi/v1/portfolio/pmLoan`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   If there’s no classic portfolio margin bankruptcy loan, the amount would be 0
+> - If there’s no classic portfolio margin bankruptcy loan, the amount would be 0
 
 ## Response Example
 

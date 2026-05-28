@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:48:14.000Z
 ---
 # All Orders (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/All-Orders
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/All-Orders>
 
 # All Orders (USER\_DATA)
 
@@ -16,9 +16,9 @@ scraped_at: 2026-05-28T18:48:14.000Z
 
 Get all account orders; active, canceled, or filled.
 
--   These orders will not be found:
-    -   order status is `CANCELED` or `EXPIRED` **AND** order has NO filled trade **AND** created time + 3 days < current time
-    -   order create time + 90 days < current time
+- These orders will not be found:
+  - order status is `CANCELED` or `EXPIRED` **AND** order has NO filled trade **AND** created time + 3 days < current time
+  - order create time + 90 days < current time
 
 ## HTTP Request
 
@@ -42,8 +42,8 @@ GET `/fapi/v1/allOrders`
 
 **Notes:**
 
-> -   If `orderId` is set, it will get orders >= that `orderId`. Otherwise most recent orders are returned.
-> -   The query time period must be less then 7 days( default as the recent 7 days).
+> - If `orderId` is set, it will get orders >= that `orderId`. Otherwise most recent orders are returned.
+> - The query time period must be less then 7 days( default as the recent 7 days).
 
 ## Response Example
 

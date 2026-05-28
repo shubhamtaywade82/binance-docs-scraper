@@ -1,6 +1,6 @@
 # dhanhq Docs
 
-Seed: https://dhanhq.co/docs/v2/
+Seed: <https://dhanhq.co/docs/v2/>
 
 ## Pages
 

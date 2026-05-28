@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:51:41.488Z
 ---
 # Query UM Order (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-UM-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-UM-Order>
 
 # Query UM Order (USER\_DATA)
 
@@ -36,11 +36,11 @@ GET `/papi/v1/um/order`
 
 Notes:
 
-> -   These orders will not be found:
-> -   Either `orderId` or `origClientOrderId` must be sent.
->     -   order status is `CANCELED` or `EXPIRED`, **AND**
->     -   order has NO filled trade, **AND**
->     -   created time + 3 days < current time
+> - These orders will not be found:
+> - Either `orderId` or `origClientOrderId` must be sent.
+>   - order status is `CANCELED` or `EXPIRED`, **AND**
+>   - order has NO filled trade, **AND**
+>   - created time + 3 days < current time
 
 ## Response Example
 

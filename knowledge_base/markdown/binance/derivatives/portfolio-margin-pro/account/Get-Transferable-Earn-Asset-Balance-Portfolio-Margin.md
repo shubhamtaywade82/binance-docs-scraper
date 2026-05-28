@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:46:10.199Z
 ---
 # Get Transferable Earn Asset Balance for Portfolio Margin (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Get-Transferable-Earn-Asset-Balance-Portfolio-Margin
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Get-Transferable-Earn-Asset-Balance-Portfolio-Margin>
 
 # Get Transferable Earn Asset Balance for Portfolio Margin (USER\_DATA)
 

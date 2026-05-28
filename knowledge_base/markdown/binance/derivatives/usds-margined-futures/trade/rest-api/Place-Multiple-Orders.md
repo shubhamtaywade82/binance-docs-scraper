@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:47:51.229Z
 ---
 # Place Multiple Orders(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Place-Multiple-Orders
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Place-Multiple-Orders>
 
 # Place Multiple Orders(TRADE)
 
@@ -34,7 +34,7 @@ POST `/fapi/v1/batchOrders`
 
 **Where `batchOrders` is the list of order parameters in JSON**
 
--   **Example:** /fapi/v1/batchOrders?batchOrders=\[{"type":"LIMIT","timeInForce":"GTC",  
+- **Example:** /fapi/v1/batchOrders?batchOrders=\[{"type":"LIMIT","timeInForce":"GTC",  
     "symbol":"BTCUSDT","side":"BUY","price":"10001","quantity":"0.001"}\]
 
 | Name | Type | Mandatory | Description |
@@ -53,9 +53,9 @@ POST `/fapi/v1/batchOrders`
 | selfTradePreventionMode | ENUM | NO | `EXPIRE_TAKER`:expire taker order when STP triggers/ `EXPIRE_MAKER`:expire taker order when STP triggers/ `EXPIRE_BOTH`:expire both orders when STP triggers; default `NONE` |
 | goodTillDate | LONG | NO | order cancel time for timeInForce `GTD`, mandatory when `timeInforce` set to `GTD`; order the timestamp only retains second-level precision, ms part will be ignored; The goodTillDate timestamp must be greater than the current time plus 600 seconds and smaller than 253402300799000 |
 
-> -   Paremeter rules are same with `New Order`
-> -   Batch orders are processed concurrently, and the order of matching is not guaranteed.
-> -   The order of returned contents for batch orders is the same as the order of the order list.
+> - Paremeter rules are same with `New Order`
+> - Batch orders are processed concurrently, and the order of matching is not guaranteed.
+> - The order of returned contents for batch orders is the same as the order of the order list.
 
 ## Response Example
 

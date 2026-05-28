@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:02:24.852Z
 ---
 # Authentication - Ollama
 
-> Source: https://docs.ollama.com/api/authentication
+> Source: <https://docs.ollama.com/api/authentication>
 
 [Documentation
 
@@ -17,23 +17,23 @@ scraped_at: 2026-05-28T19:02:24.852Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 No authentication is required when accessing Ollama’s API locally via `http://localhost:11434`. Authentication is required for the following:
 
--   Running cloud models via ollama.com
--   Publishing models
--   Downloading private models
+- Running cloud models via ollama.com
+- Publishing models
+- Downloading private models
 
 Ollama supports two authentication methods:
 
--   **Signing in**: sign in from your local installation, and Ollama will automatically take care of authenticating requests to ollama.com when running commands
--   **API keys**: API keys for programmatic access to ollama.com’s API
+- **Signing in**: sign in from your local installation, and Ollama will automatically take care of authenticating requests to ollama.com when running commands
+- **API keys**: API keys for programmatic access to ollama.com’s API
 
-## 
+##
 
 [​
 
@@ -62,7 +62,7 @@ curl http://localhost:11434/api/generate -d '{
 }'
 ```
 
-## 
+##
 
 [​
 
@@ -95,8 +95,6 @@ API keys don’t currently expire, however you can revoke them at any time in yo
 Streaming
 
 Next
-
-
 
 ](/api/streaming)
 

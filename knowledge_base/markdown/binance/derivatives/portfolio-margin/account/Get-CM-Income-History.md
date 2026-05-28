@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:42:28.140Z
 ---
 # Get CM Income History(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-CM-Income-History
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-CM-Income-History>
 
 # Get CM Income History(USER\_DATA)
 
@@ -37,10 +37,10 @@ GET `/papi/v1/cm/income`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   If `incomeType` is not sent, all kinds of flow will be returned
-> -   "trandId" is unique in the same "incomeType" for a user
-> -   The interval between `startTime` and `endTime` can not exceed 200 days:
->     -   If `startTime` and `endTime` are not sent, the last 200 days will be returned
+> - If `incomeType` is not sent, all kinds of flow will be returned
+> - "trandId" is unique in the same "incomeType" for a user
+> - The interval between `startTime` and `endTime` can not exceed 200 days:
+>   - If `startTime` and `endTime` are not sent, the last 200 days will be returned
 
 ## Response Example
 

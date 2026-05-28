@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:54:26.258Z
 ---
 # Account Trade List (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Account-Trade-List
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Account-Trade-List>
 
 # Account Trade List (USER\_DATA)
 
@@ -38,55 +38,55 @@ GET `/dapi/v1/userTrades`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either symbol or pair must be sent
-> -   Symbol and pair cannot be sent together
-> -   Pair and fromId cannot be sent together
-> -   OrderId can only be sent together with symbol
-> -   If a pair is sent,tickers for all symbols of the pair will be returned
-> -   The parameter `fromId` cannot be sent with `startTime` or `endTime`
-> -   If startTime and endTime are both not sent, then the last 7 days' data will be returned.
-> -   The time between startTime and endTime cannot be longer than 7 days.
+> - Either symbol or pair must be sent
+> - Symbol and pair cannot be sent together
+> - Pair and fromId cannot be sent together
+> - OrderId can only be sent together with symbol
+> - If a pair is sent,tickers for all symbols of the pair will be returned
+> - The parameter `fromId` cannot be sent with `startTime` or `endTime`
+> - If startTime and endTime are both not sent, then the last 7 days' data will be returned.
+> - The time between startTime and endTime cannot be longer than 7 days.
 
 ## Response Example
 
 ```
 [
 
-	{
+ {
 
-		'symbol': 'BTCUSD_200626',
+  'symbol': 'BTCUSD_200626',
 
-	  	'id': 6,
+    'id': 6,
 
-	  	'orderId': 28,
+    'orderId': 28,
 
-	  	'pair': 'BTCUSD',
+    'pair': 'BTCUSD',
 
-	  	'side': 'SELL',
+    'side': 'SELL',
 
-	  	'price': '8800',
+    'price': '8800',
 
-	  	'qty': '1',
+    'qty': '1',
 
-	  	'realizedPnl': '0',
+    'realizedPnl': '0',
 
-	  	'marginAsset': 'BTC',
+    'marginAsset': 'BTC',
 
-	  	'baseQty': '0.01136364',
+    'baseQty': '0.01136364',
 
-	  	'commission': '0.00000454',
+    'commission': '0.00000454',
 
-	  	'commissionAsset': 'BTC',
+    'commissionAsset': 'BTC',
 
-	  	'time': 1590743483586,
+    'time': 1590743483586,
 
-	  	'positionSide': 'BOTH',
+    'positionSide': 'BOTH',
 
-	  	'buyer': false,
+    'buyer': false,
 
-	  	'maker': false
+    'maker': false
 
-	}
+ }
 
 ]
 

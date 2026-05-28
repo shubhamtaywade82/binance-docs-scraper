@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:48:49.323Z
 ---
 # Get Position Margin Change History (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Get-Position-Margin-Change-History
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Get-Position-Margin-Change-History>
 
 # Get Position Margin Change History (TRADE)
 
@@ -36,8 +36,8 @@ GET `/fapi/v1/positionMargin/history`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Support querying future histories that are not older than 30 days
-> -   The time between `startTime` and `endTime`can't be more than 30 days
+> - Support querying future histories that are not older than 30 days
+> - The time between `startTime` and `endTime`can't be more than 30 days
 
 ## Response Example
 

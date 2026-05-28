@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:02:42.677Z
 ---
 # Generate a response - Ollama
 
-> Source: https://docs.ollama.com/api/generate
+> Source: <https://docs.ollama.com/api/generate>
 
 [Documentation
 
@@ -75,9 +75,9 @@ curl http://localhost:11434/api/generate -d '{
 ```
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 #### Body
@@ -365,8 +365,6 @@ Show child attributes
 ChatGenerate the next chat message in a conversation between a user and an assistant.
 
 Next
-
-
 
 ](/api/chat)
 

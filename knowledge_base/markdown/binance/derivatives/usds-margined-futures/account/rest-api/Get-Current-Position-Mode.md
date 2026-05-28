@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:55:53.290Z
 ---
 # Get Current Position Mode(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Current-Position-Mode
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Current-Position-Mode>
 
 # Get Current Position Mode(USER\_DATA)
 

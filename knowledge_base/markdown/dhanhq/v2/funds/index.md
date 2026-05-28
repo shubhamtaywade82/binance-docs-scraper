@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:00:53.285Z
 ---
 # Funds & Margin
 
-> Source: https://dhanhq.co/docs/v2/funds/
+> Source: <https://dhanhq.co/docs/v2/funds/>
 
 # Funds & Margin
 
@@ -50,7 +50,6 @@ Fetch span, exposure, var, brokerage, leverage, available margin values for any 
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -179,5 +178,4 @@ _No Body_
 | blockedPayoutAmount | float | Amount blocked against payout request |
 | withdrawableBalance | float | Amount available to withdraw in bank account |
 
-  
 Note: For description of enum values, refer [Annexure](https://dhanhq.co/docs/v2/annexure)

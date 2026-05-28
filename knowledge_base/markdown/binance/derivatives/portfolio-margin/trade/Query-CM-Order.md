@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:52:13.595Z
 ---
 # Query CM Order(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-CM-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-CM-Order>
 
 # Query CM Order(USER\_DATA)
 
@@ -36,11 +36,11 @@ GET `/papi/v1/cm/order`
 
 Notes:
 
-> -   Either `orderId` or `origClientOrderId` must be sent.
-> -   These orders will not be found:
->     -   order status is `CANCELED` or `EXPIRED`, **AND**
->     -   order has NO filled trade, **AND**
->     -   created time + 3 days < current time
+> - Either `orderId` or `origClientOrderId` must be sent.
+> - These orders will not be found:
+>   - order status is `CANCELED` or `EXPIRED`, **AND**
+>   - order has NO filled trade, **AND**
+>   - created time + 3 days < current time
 
 ## Response Example
 

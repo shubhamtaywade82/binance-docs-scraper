@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:40:51.969Z
 ---
 # Event: Account Configuration Update (Leverage Update)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/user-data-streams/Event-Account-Configuration-Update
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/user-data-streams/Event-Account-Configuration-Update>
 
 # Event: Account Configuration Update (Leverage Update)
 

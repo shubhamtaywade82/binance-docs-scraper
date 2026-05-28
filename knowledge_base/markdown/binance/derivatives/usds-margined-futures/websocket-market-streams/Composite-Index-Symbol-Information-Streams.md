@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:39:29.021Z
 ---
 # Composite Index Symbol Information Streams
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Composite-Index-Symbol-Information-Streams
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Composite-Index-Symbol-Information-Streams>
 
 # Composite Index Symbol Information Streams
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:50:53.836Z
 ---
 # Margin Account Repay(MARGIN)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Margin-Account-Repay
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Margin-Account-Repay>
 
 # Margin Account Repay(MARGIN)
 

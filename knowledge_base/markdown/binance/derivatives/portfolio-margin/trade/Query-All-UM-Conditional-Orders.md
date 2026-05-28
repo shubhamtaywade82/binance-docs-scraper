@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:51:52.529Z
 ---
 # Query All UM Conditional Orders(Deprecated)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-All-UM-Conditional-Orders
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-All-UM-Conditional-Orders>
 
 # Query All UM Conditional Orders(Deprecated)
 
@@ -36,11 +36,11 @@ GET `/papi/v1/um/conditional/allOrders`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   These orders will not be found:
->     -   order strategyStatus is `CANCELED` or `EXPIRED`, **AND**
->     -   order has NO filled trade, **AND**
->     -   created time + 7 days < current time
-> -   The query time period must be less than 7 days( default as the recent 7 days).
+> - These orders will not be found:
+>   - order strategyStatus is `CANCELED` or `EXPIRED`, **AND**
+>   - order has NO filled trade, **AND**
+>   - created time + 7 days < current time
+> - The query time period must be less than 7 days( default as the recent 7 days).
 
 ## Response Example
 

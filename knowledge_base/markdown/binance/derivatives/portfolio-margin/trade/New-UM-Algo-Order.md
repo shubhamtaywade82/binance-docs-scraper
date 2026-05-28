@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:50:36.230Z
 ---
 # New UM Algo Order (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/New-UM-Algo-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/New-UM-Algo-Order>
 
 # New UM Algo Order (TRADE)
 
@@ -50,31 +50,31 @@ POST `/papi/v1/um/algo/order`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Algo order with type `STOP`, parameter `timeInForce` can be sent ( default `GTC`).
-> -   Algo order with type `TAKE_PROFIT`, parameter `timeInForce` can be sent ( default `GTC`).
+> - Algo order with type `STOP`, parameter `timeInForce` can be sent ( default `GTC`).
+> - Algo order with type `TAKE_PROFIT`, parameter `timeInForce` can be sent ( default `GTC`).
 
-> -   Condition orders will be triggered when:
->     
->     -   If parameter`priceProtect`is sent as true:
->         -   when price reaches the `triggerPrice` , the difference rate between "MARK\_PRICE" and "CONTRACT\_PRICE" cannot be larger than the "triggerProtect" of the symbol
->         -   "triggerProtect" of a symbol can be got from `GET /fapi/v1/exchangeInfo`
->     -   `STOP`, `STOP_MARKET`:
->         -   BUY: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") >= `triggerPrice`
->         -   SELL: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") <= `triggerPrice`
->     -   `TAKE_PROFIT`, `TAKE_PROFIT_MARKET`:
->         -   BUY: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") <= `triggerPrice`
->         -   SELL: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") >= `triggerPrice`
->     -   `TRAILING_STOP_MARKET`:
->         -   BUY: the lowest price after order placed <= `activatePrice`, and the latest price >= the lowest price \* (1 + `callbackRate`)
->         -   SELL: the highest price after order placed >= `activatePrice`, and the latest price <= the highest price \* (1 - `callbackRate`)
-> -   For `TRAILING_STOP_MARKET`, if you got such error code.  
+> - Condition orders will be triggered when:
+>
+>   - If parameter`priceProtect`is sent as true:
+>     - when price reaches the `triggerPrice` , the difference rate between "MARK\_PRICE" and "CONTRACT\_PRICE" cannot be larger than the "triggerProtect" of the symbol
+>     - "triggerProtect" of a symbol can be got from `GET /fapi/v1/exchangeInfo`
+>   - `STOP`, `STOP_MARKET`:
+>     - BUY: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") >= `triggerPrice`
+>     - SELL: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") <= `triggerPrice`
+>   - `TAKE_PROFIT`, `TAKE_PROFIT_MARKET`:
+>     - BUY: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") <= `triggerPrice`
+>     - SELL: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") >= `triggerPrice`
+>   - `TRAILING_STOP_MARKET`:
+>     - BUY: the lowest price after order placed <= `activatePrice`, and the latest price >= the lowest price \* (1 + `callbackRate`)
+>     - SELL: the highest price after order placed >= `activatePrice`, and the latest price <= the highest price \* (1 - `callbackRate`)
+> - For `TRAILING_STOP_MARKET`, if you got such error code.  
 >     `{"code": -2021, "msg": "Order would immediately trigger."}`  
 >     means that the parameters you send do not meet the following requirements:
->     
->     -   BUY: `activatePrice` should be smaller than latest price.
->     -   SELL: `activatePrice` should be larger than latest price.
-> -   `selfTradePreventionMode` is only effective when `timeInForce` set to `IOC` or `GTC` or `GTD`.
->     
+>
+>   - BUY: `activatePrice` should be smaller than latest price.
+>   - SELL: `activatePrice` should be larger than latest price.
+> - `selfTradePreventionMode` is only effective when `timeInForce` set to `IOC` or `GTC` or `GTD`.
+>
 
 ## Response Example
 

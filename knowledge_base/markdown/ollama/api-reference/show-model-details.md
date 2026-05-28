@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:02:55.826Z
 ---
 # Show model details - Ollama
 
-> Source: https://docs.ollama.com/api-reference/show-model-details
+> Source: <https://docs.ollama.com/api-reference/show-model-details>
 
 [Documentation
 
@@ -99,9 +99,9 @@ curl http://localhost:11434/api/show -d '{
 ```
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 #### Body
@@ -211,8 +211,6 @@ Additional model metadata
 Create
 
 Next
-
-
 
 ](/api/create)
 

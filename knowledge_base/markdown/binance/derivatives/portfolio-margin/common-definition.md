@@ -8,134 +8,134 @@ scraped_at: 2026-05-28T18:38:17.435Z
 ---
 # Public API Definitions
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/common-definition
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/common-definition>
 
 # Public API Definitions
 
 ## Terminology
 
--   `baseasseet` refers to the asset that is the `quantity` of a symbol.
--   `quoteAsset` refers to the asset that is the `price` of a symbol.
--   `Margin` refers to `Cross Margin`
--   `UM` refers to `USD-M Futures`
--   `CM` refers to `Coin-M Futures`
+- `baseasseet` refers to the asset that is the `quantity` of a symbol.
+- `quoteAsset` refers to the asset that is the `price` of a symbol.
+- `Margin` refers to `Cross Margin`
+- `UM` refers to `USD-M Futures`
+- `CM` refers to `Coin-M Futures`
 
 ## ENUM definitions
 
 **Order side (side)**
 
--   BUY
--   SELL
+- BUY
+- SELL
 
 **Position side for Futures (positionSide)**
 
--   BOTH
--   LONG
--   SHORT
+- BOTH
+- LONG
+- SHORT
 
 **Time in force (timeInForce)**
 
--   GTC - Good Till Cancel
--   IOC - Immediate or Cancel
--   FOK - Fill or Kill
--   GTX - Good Till Crossing (Post Only)
+- GTC - Good Till Cancel
+- IOC - Immediate or Cancel
+- FOK - Fill or Kill
+- GTX - Good Till Crossing (Post Only)
 
 **Stop-Limit Time in force (stopLimitTimeInForce)**
 
--   GTC - Good Till Cancel
--   IOC - Immediate or Cancel
--   FOK - Fill or Kill
+- GTC - Good Till Cancel
+- IOC - Immediate or Cancel
+- FOK - Fill or Kill
 
 **Side Effect Type (sideEffectType)**
 
--   NO\_SIDE\_EFFECT
--   MARGIN\_BUY
--   AUTO\_REPAY
+- NO\_SIDE\_EFFECT
+- MARGIN\_BUY
+- AUTO\_REPAY
 
 **Price Match (priceMatch)**
 
--   NONE: no price match
--   OPPONENT: counterparty best price
--   OPPONENT\_5: counterparty 5th best price
--   OPPONENT\_10: counterparty 10th best price
--   OPPONENT\_20: counterparty 20th best price
--   QUEUE: the best price on the same side of the order book
--   QUEUE\_5: the 5th best price on the same side of the order book
--   QUEUE\_10: the 10th best price on the same side of the order book
--   QUEUE\_20: the 20th best price on the same side of the order book
+- NONE: no price match
+- OPPONENT: counterparty best price
+- OPPONENT\_5: counterparty 5th best price
+- OPPONENT\_10: counterparty 10th best price
+- OPPONENT\_20: counterparty 20th best price
+- QUEUE: the best price on the same side of the order book
+- QUEUE\_5: the 5th best price on the same side of the order book
+- QUEUE\_10: the 10th best price on the same side of the order book
+- QUEUE\_20: the 20th best price on the same side of the order book
 
 **Self-Trade Prevention mode (selfTradePreventionMode)**
 
--   NONE: No Self-Trade Prevention
--   EXPIRE\_TAKER: expire taker order when STP trigger
--   EXPIRE\_BOTH: expire taker and maker order when STP trigger
--   EXPIRE\_MAKER: expire maker order when STP trigger
+- NONE: No Self-Trade Prevention
+- EXPIRE\_TAKER: expire taker order when STP trigger
+- EXPIRE\_BOTH: expire taker and maker order when STP trigger
+- EXPIRE\_MAKER: expire maker order when STP trigger
 
 **Response Type (newOrderRespType)**
 
--   ACK
--   RESULT
+- ACK
+- RESULT
 
 **Order types (type)**
 
--   LIMIT
--   MARKET
+- LIMIT
+- MARKET
 
 **Conditional Order types (strategyType)**
 
--   STOP
--   STOP\_MARKET
--   LIMIT\_MAKER
--   TAKE\_PROFIT
--   TAKE\_PROFIT\_MARKET
--   TRAILING\_STOP\_MARKET
+- STOP
+- STOP\_MARKET
+- LIMIT\_MAKER
+- TAKE\_PROFIT
+- TAKE\_PROFIT\_MARKET
+- TRAILING\_STOP\_MARKET
 
 **Working Type for Futures Conditional Orders (workingType)**
 
--   MARK\_PRICE
+- MARK\_PRICE
 
 **Order status (status)**
 
--   NEW
--   CANCELED
--   REJECTED
--   PARTIALLY\_FILLED
--   FILLED
--   EXPIRED
--   EXPIRED\_IN\_MATCH
+- NEW
+- CANCELED
+- REJECTED
+- PARTIALLY\_FILLED
+- FILLED
+- EXPIRED
+- EXPIRED\_IN\_MATCH
 
 **Conditional Order status (strategyStatus)**
 
--   NEW
--   CANCELED
--   TRIGGERED - conditional order is triggered
--   FINISHED - triggered order is filled
--   EXPIRED
+- NEW
+- CANCELED
+- TRIGGERED - conditional order is triggered
+- FINISHED - triggered order is filled
+- EXPIRED
 
 **Futures Contract type (contractType):**
 
--   PERPETUAL
--   CURRENT\_MONTH
--   NEXT\_MONTH
--   CURRENT\_QUARTER
--   NEXT\_QUARTER
--   PERPETUAL\_DELIVERING
+- PERPETUAL
+- CURRENT\_MONTH
+- NEXT\_MONTH
+- CURRENT\_QUARTER
+- NEXT\_QUARTER
+- PERPETUAL\_DELIVERING
 
 **Contract status (contractStatus, status):**
 
--   PENDING\_TRADING
--   TRADING
--   PRE\_DELIVERING
--   DELIVERING
--   DELIVERED
--   PRE\_SETTLE
--   SETTLING
--   CLOSE
+- PENDING\_TRADING
+- TRADING
+- PRE\_DELIVERING
+- DELIVERING
+- DELIVERED
+- PRE\_SETTLE
+- SETTLING
+- CLOSE
 
 **Rate limiters (rateLimitType)**
 
--   REQUEST\_WEIGHT
--   ORDERS
+- REQUEST\_WEIGHT
+- ORDERS
 
 > **REQUEST\_WEIGHT**
 
@@ -161,7 +161,7 @@ scraped_at: 2026-05-28T18:38:17.435Z
 
 **Rate limit intervals (interval)**
 
--   MINUTE
+- MINUTE
 
 # Filters
 
@@ -173,15 +173,15 @@ Filters define trading rules on a symbol or an exchange.
 
 The `PRICE_FILTER` defines the `price` rules for a symbol. There are 3 parts:
 
--   `minPrice` defines the minimum `price`/`stopPrice` allowed; disabled on `minPrice` == 0.
--   `maxPrice` defines the maximum `price`/`stopPrice` allowed; disabled on `maxPrice` == 0.
--   `tickSize` defines the intervals that a `price`/`stopPrice` can be increased/decreased by; disabled on `tickSize` == 0.
+- `minPrice` defines the minimum `price`/`stopPrice` allowed; disabled on `minPrice` == 0.
+- `maxPrice` defines the maximum `price`/`stopPrice` allowed; disabled on `maxPrice` == 0.
+- `tickSize` defines the intervals that a `price`/`stopPrice` can be increased/decreased by; disabled on `tickSize` == 0.
 
 Any of the above variables can be set to 0, which disables that rule in the `price filter`. In order to pass the `price filter`, the following must be true for `price`/`stopPrice` of the enabled rules:
 
--   sell order `price` >= `minPrice`
--   buy order `price` <= `maxPrice`
--   (`price`\-`minPrice`) % `tickSize` == 0
+- sell order `price` >= `minPrice`
+- buy order `price` <= `maxPrice`
+- (`price`\-`minPrice`) % `tickSize` == 0
 
 > **ExchangeInfo format:**
 
@@ -198,15 +198,15 @@ Any of the above variables can be set to 0, which disables that rule in the `pri
 
 The `LOT_SIZE` filter defines the `quantity` (aka "lots" in auction terms) rules for a symbol. There are 3 parts:
 
--   `minQty` defines the minimum `quantity` allowed.
--   `maxQty` defines the maximum `quantity` allowed.
--   `stepSize` defines the intervals that a `quantity` can be increased/decreased by.
+- `minQty` defines the minimum `quantity` allowed.
+- `maxQty` defines the maximum `quantity` allowed.
+- `stepSize` defines the intervals that a `quantity` can be increased/decreased by.
 
 In order to pass the `lot size`, the following must be true for `quantity`:
 
--   `quantity` >= `minQty`
--   `quantity` <= `maxQty`
--   (`quantity`\-`minQty`) % `stepSize` == 0
+- `quantity` >= `minQty`
+- `quantity` <= `maxQty`
+- (`quantity`\-`minQty`) % `stepSize` == 0
 
 > **/exchangeInfo format:**
 
@@ -225,8 +225,8 @@ The `PERCENT_PRICE` filter defines valid range for a price based on the mark pri
 
 In order to pass the `percent price`, the following must be true for `price`:
 
--   Futures BUY: `price` <= `markPrice` \_ `multiplierUp` SELL: `price` >= `markPrice` \_ `multiplierDown`
--   Cross Margin BUY: `price` <= `weightedAveragePrice` \_ `multiplierUp` SELL: `price` >= `weightedAveragePrice` \_ `multiplierDown`
+- Futures BUY: `price` <= `markPrice` \_ `multiplierUp` SELL: `price` >= `markPrice` \_ `multiplierDown`
+- Cross Margin BUY: `price` <= `weightedAveragePrice` \_ `multiplierUp` SELL: `price` >= `weightedAveragePrice` \_ `multiplierDown`
 
 ### MIN\_NOTIONAL
 
@@ -236,15 +236,15 @@ The `MIN_NOTIONAL` filter defines the minimum notional value allowed for an orde
 
 The `MARKET_LOT_SIZE` filter defines the `quantity` (aka "lots" in auction terms) rules for `MARKET` orders on a symbol. There are 3 parts:
 
--   `minQty` defines the minimum `quantity` allowed.
--   `maxQty` defines the maximum `quantity` allowed.
--   `stepSize` defines the intervals that a `quantity` can be increased/decreased by.
+- `minQty` defines the minimum `quantity` allowed.
+- `maxQty` defines the maximum `quantity` allowed.
+- `stepSize` defines the intervals that a `quantity` can be increased/decreased by.
 
 In order to pass the `market lot size`, the following must be true for `quantity`:
 
--   `quantity` >= `minQty`
--   `quantity` <= `maxQty`
--   (`quantity`\-`minQty`) % `stepSize` == 0
+- `quantity` >= `minQty`
+- `quantity` <= `maxQty`
+- (`quantity`\-`minQty`) % `stepSize` == 0
 
 > **/exchangeInfo format:**
 

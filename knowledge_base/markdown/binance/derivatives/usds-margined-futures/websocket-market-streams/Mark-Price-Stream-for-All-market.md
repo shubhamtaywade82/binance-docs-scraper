@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:38:45.537Z
 ---
 # Mark Price Stream for All market
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Mark-Price-Stream-for-All-market
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Mark-Price-Stream-for-All-market>
 
 # Mark Price Stream for All market
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:45:52.856Z
 ---
 # Get Auto-repay-futures Status(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Get-Auto-repay-futures-Status
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Get-Auto-repay-futures-Status>
 
 # Get Auto-repay-futures Status(USER\_DATA)
 

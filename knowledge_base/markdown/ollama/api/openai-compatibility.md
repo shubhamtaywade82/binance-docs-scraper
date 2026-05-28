@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:02:35.989Z
 ---
 # OpenAI compatibility - Ollama
 
-> Source: https://docs.ollama.com/api/openai-compatibility
+> Source: <https://docs.ollama.com/api/openai-compatibility>
 
 [Documentation
 
@@ -17,14 +17,14 @@ scraped_at: 2026-05-28T19:02:35.989Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 Ollama provides compatibility with parts of the [OpenAI API](https://platform.openai.com/docs/api-reference) to help connect existing applications to Ollama.
 
-## 
+##
 
 [​
 
@@ -32,7 +32,7 @@ Ollama provides compatibility with parts of the [OpenAI API](https://platform.op
 
 Usage
 
-### 
+###
 
 [​
 
@@ -64,7 +64,7 @@ chat_completion = client.chat.completions.create(
 print(chat_completion.choices[0].message.content)
 ```
 
-### 
+###
 
 [​
 
@@ -91,7 +91,7 @@ responses_result = client.responses.create(
 print(responses_result.output_text)
 ```
 
-### 
+###
 
 [​
 
@@ -130,7 +130,7 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 
-## 
+##
 
 [​
 
@@ -138,7 +138,7 @@ print(response.choices[0].message.content)
 
 Endpoints
 
-### 
+###
 
 [​
 
@@ -146,7 +146,7 @@ Endpoints
 
 `/v1/chat/completions`
 
-#### 
+####
 
 [​
 
@@ -154,16 +154,16 @@ Endpoints
 
 Supported features
 
--   [x]  Chat completions
--   [x]  Streaming
--   [x]  JSON mode
--   [x]  Reproducible outputs
--   [x]  Vision
--   [x]  Tools
--   [x]  Reasoning/thinking control (for thinking models)
--   [ ]  Logprobs
+- [x]  Chat completions
+- [x]  Streaming
+- [x]  JSON mode
+- [x]  Reproducible outputs
+- [x]  Vision
+- [x]  Tools
+- [x]  Reasoning/thinking control (for thinking models)
+- [ ]  Logprobs
 
-#### 
+####
 
 [​
 
@@ -171,34 +171,34 @@ Supported features
 
 Supported request fields
 
--   [x]  `model`
--   [x]  `messages`
-    -   [x]  Text `content`
-    -   [x]  Image `content`
-        -   [x]  Base64 encoded image
-        -   [ ]  Image URL
-    -   [x]  Array of `content` parts
--   [x]  `frequency_penalty`
--   [x]  `presence_penalty`
--   [x]  `response_format`
--   [x]  `seed`
--   [x]  `stop`
--   [x]  `stream`
--   [x]  `stream_options`
-    -   [x]  `include_usage`
--   [x]  `temperature`
--   [x]  `top_p`
--   [x]  `max_tokens`
--   [x]  `tools`
--   [x]  `reasoning_effort` (`"high"`, `"medium"`, `"low"`, `"none"`)
--   [x]  `reasoning`
-    -   [x]  `effort` (`"high"`, `"medium"`, `"low"`, `"none"`)
--   [ ]  `tool_choice`
--   [ ]  `logit_bias`
--   [ ]  `user`
--   [ ]  `n`
+- [x]  `model`
+- [x]  `messages`
+  - [x]  Text `content`
+  - [x]  Image `content`
+    - [x]  Base64 encoded image
+    - [ ]  Image URL
+  - [x]  Array of `content` parts
+- [x]  `frequency_penalty`
+- [x]  `presence_penalty`
+- [x]  `response_format`
+- [x]  `seed`
+- [x]  `stop`
+- [x]  `stream`
+- [x]  `stream_options`
+  - [x]  `include_usage`
+- [x]  `temperature`
+- [x]  `top_p`
+- [x]  `max_tokens`
+- [x]  `tools`
+- [x]  `reasoning_effort` (`"high"`, `"medium"`, `"low"`, `"none"`)
+- [x]  `reasoning`
+  - [x]  `effort` (`"high"`, `"medium"`, `"low"`, `"none"`)
+- [ ]  `tool_choice`
+- [ ]  `logit_bias`
+- [ ]  `user`
+- [ ]  `n`
 
-### 
+###
 
 [​
 
@@ -206,7 +206,7 @@ Supported request fields
 
 `/v1/completions`
 
-#### 
+####
 
 [​
 
@@ -214,13 +214,13 @@ Supported request fields
 
 Supported features
 
--   [x]  Completions
--   [x]  Streaming
--   [x]  JSON mode
--   [x]  Reproducible outputs
--   [ ]  Logprobs
+- [x]  Completions
+- [x]  Streaming
+- [x]  JSON mode
+- [x]  Reproducible outputs
+- [ ]  Logprobs
 
-#### 
+####
 
 [​
 
@@ -228,26 +228,26 @@ Supported features
 
 Supported request fields
 
--   [x]  `model`
--   [x]  `prompt`
--   [x]  `frequency_penalty`
--   [x]  `presence_penalty`
--   [x]  `seed`
--   [x]  `stop`
--   [x]  `stream`
--   [x]  `stream_options`
-    -   [x]  `include_usage`
--   [x]  `temperature`
--   [x]  `top_p`
--   [x]  `max_tokens`
--   [x]  `suffix`
--   [ ]  `best_of`
--   [ ]  `echo`
--   [ ]  `logit_bias`
--   [ ]  `user`
--   [ ]  `n`
+- [x]  `model`
+- [x]  `prompt`
+- [x]  `frequency_penalty`
+- [x]  `presence_penalty`
+- [x]  `seed`
+- [x]  `stop`
+- [x]  `stream`
+- [x]  `stream_options`
+  - [x]  `include_usage`
+- [x]  `temperature`
+- [x]  `top_p`
+- [x]  `max_tokens`
+- [x]  `suffix`
+- [ ]  `best_of`
+- [ ]  `echo`
+- [ ]  `logit_bias`
+- [ ]  `user`
+- [ ]  `n`
 
-#### 
+####
 
 [​
 
@@ -255,9 +255,9 @@ Supported request fields
 
 Notes
 
--   `prompt` currently only accepts a string
+- `prompt` currently only accepts a string
 
-### 
+###
 
 [​
 
@@ -265,7 +265,7 @@ Notes
 
 `/v1/models`
 
-#### 
+####
 
 [​
 
@@ -273,10 +273,10 @@ Notes
 
 Notes
 
--   `created` corresponds to when the model was last modified
--   `owned_by` corresponds to the ollama username, defaulting to `"library"`
+- `created` corresponds to when the model was last modified
+- `owned_by` corresponds to the ollama username, defaulting to `"library"`
 
-### 
+###
 
 [​
 
@@ -284,7 +284,7 @@ Notes
 
 `/v1/models/{model}`
 
-#### 
+####
 
 [​
 
@@ -292,10 +292,10 @@ Notes
 
 Notes
 
--   `created` corresponds to when the model was last modified
--   `owned_by` corresponds to the ollama username, defaulting to `"library"`
+- `created` corresponds to when the model was last modified
+- `owned_by` corresponds to the ollama username, defaulting to `"library"`
 
-### 
+###
 
 [​
 
@@ -303,7 +303,7 @@ Notes
 
 `/v1/embeddings`
 
-#### 
+####
 
 [​
 
@@ -311,17 +311,17 @@ Notes
 
 Supported request fields
 
--   [x]  `model`
--   [x]  `input`
-    -   [x]  string
-    -   [x]  array of strings
-    -   [ ]  array of tokens
-    -   [ ]  array of token arrays
--   [x]  `encoding format`
--   [x]  `dimensions`
--   [ ]  `user`
+- [x]  `model`
+- [x]  `input`
+  - [x]  string
+  - [x]  array of strings
+  - [ ]  array of tokens
+  - [ ]  array of token arrays
+- [x]  `encoding format`
+- [x]  `dimensions`
+- [ ]  `user`
 
-### 
+###
 
 [​
 
@@ -354,7 +354,7 @@ response = client.images.generate(
 print(response.data[0].b64_json[:50] + '...')
 ```
 
-#### 
+####
 
 [​
 
@@ -362,16 +362,16 @@ print(response.data[0].b64_json[:50] + '...')
 
 Supported request fields
 
--   [x]  `model`
--   [x]  `prompt`
--   [x]  `size` (e.g. “1024x1024”)
--   [x]  `response_format` (only `b64_json` supported)
--   [ ]  `n`
--   [ ]  `quality`
--   [ ]  `style`
--   [ ]  `user`
+- [x]  `model`
+- [x]  `prompt`
+- [x]  `size` (e.g. “1024x1024”)
+- [x]  `response_format` (only `b64_json` supported)
+- [ ]  `n`
+- [ ]  `quality`
+- [ ]  `style`
+- [ ]  `user`
 
-### 
+###
 
 [​
 
@@ -383,7 +383,7 @@ Supported request fields
 
 Ollama supports the [OpenAI Responses API](https://platform.openai.com/docs/api-reference/responses). Only the non-stateful flavor is supported (i.e., there is no `previous_response_id` or `conversation` support).
 
-#### 
+####
 
 [​
 
@@ -391,12 +391,12 @@ Ollama supports the [OpenAI Responses API](https://platform.openai.com/docs/api-
 
 Supported features
 
--   [x]  Streaming
--   [x]  Tools (function calling)
--   [x]  Reasoning summaries (for thinking models)
--   [ ]  Stateful requests
+- [x]  Streaming
+- [x]  Tools (function calling)
+- [x]  Reasoning summaries (for thinking models)
+- [ ]  Stateful requests
 
-#### 
+####
 
 [​
 
@@ -404,19 +404,19 @@ Supported features
 
 Supported request fields
 
--   [x]  `model`
--   [x]  `input`
--   [x]  `instructions`
--   [x]  `tools`
--   [x]  `stream`
--   [x]  `temperature`
--   [x]  `top_p`
--   [x]  `max_output_tokens`
--   [ ]  `previous_response_id` (stateful v1/responses not supported)
--   [ ]  `conversation` (stateful v1/responses not supported)
--   [ ]  `truncation`
+- [x]  `model`
+- [x]  `input`
+- [x]  `instructions`
+- [x]  `tools`
+- [x]  `stream`
+- [x]  `temperature`
+- [x]  `top_p`
+- [x]  `max_output_tokens`
+- [ ]  `previous_response_id` (stateful v1/responses not supported)
+- [ ]  `conversation` (stateful v1/responses not supported)
+- [ ]  `truncation`
 
-## 
+##
 
 [​
 
@@ -430,7 +430,7 @@ Before using a model, pull it locally `ollama pull`:
 ollama pull llama3.2
 ```
 
-### 
+###
 
 [​
 
@@ -460,7 +460,7 @@ curl http://localhost:11434/v1/chat/completions \
     }'
 ```
 
-### 
+###
 
 [​
 
@@ -496,8 +496,6 @@ curl http://localhost:11434/v1/chat/completions \
 Anthropic compatibility
 
 Next
-
-
 
 ](/api/anthropic-compatibility)
 

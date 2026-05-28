@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:58:23.743Z
 ---
 # Index Price and Mark Price
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Index-Price-and-Mark-Price
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Index-Price-and-Mark-Price>
 
 # Index Price and Mark Price
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:39:11.399Z
 ---
 # Liquidation Order Streams
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Liquidation-Order-Streams
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Liquidation-Order-Streams>
 
 # Liquidation Order Streams
 
@@ -35,39 +35,39 @@ The Liquidation Order Snapshot Streams push force liquidation order information 
 
 
 
-	"e":"forceOrder",                   // Event Type
+ "e":"forceOrder",                   // Event Type
 
-	"E":1568014460893,                  // Event Time
+ "E":1568014460893,                  // Event Time
 
-	"o":{
+ "o":{
 
-	
+ 
 
-		"s":"BTCUSDT",                   // Symbol
+  "s":"BTCUSDT",                   // Symbol
 
-		"S":"SELL",                      // Side
+  "S":"SELL",                      // Side
 
-		"o":"LIMIT",                     // Order Type
+  "o":"LIMIT",                     // Order Type
 
-		"f":"IOC",                       // Time in Force
+  "f":"IOC",                       // Time in Force
 
-		"q":"0.014",                     // Original Quantity
+  "q":"0.014",                     // Original Quantity
 
-		"p":"9910",                      // Price
+  "p":"9910",                      // Price
 
-		"ap":"9910",                     // Average Price
+  "ap":"9910",                     // Average Price
 
-		"X":"FILLED",                    // Order Status
+  "X":"FILLED",                    // Order Status
 
-		"l":"0.014",                     // Order Last Filled Quantity
+  "l":"0.014",                     // Order Last Filled Quantity
 
-		"z":"0.014",                     // Order Filled Accumulated Quantity
+  "z":"0.014",                     // Order Filled Accumulated Quantity
 
-		"T":1568014460893,          	 // Order Trade Time
+  "T":1568014460893,            // Order Trade Time
 
-	
+ 
 
-	}
+ }
 
 
 

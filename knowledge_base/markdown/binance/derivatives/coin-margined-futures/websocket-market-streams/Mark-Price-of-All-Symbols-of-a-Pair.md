@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:44:49.376Z
 ---
 # Mark Price of All Symbols of a Pair
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Mark-Price-of-All-Symbols-of-a-Pair
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Mark-Price-of-All-Symbols-of-a-Pair>
 
 # Mark Price of All Symbols of a Pair
 

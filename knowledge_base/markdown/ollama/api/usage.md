@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:02:29.154Z
 ---
 # Usage - Ollama
 
-> Source: https://docs.ollama.com/api/usage
+> Source: <https://docs.ollama.com/api/usage>
 
 [Documentation
 
@@ -17,23 +17,23 @@ scraped_at: 2026-05-28T19:02:29.154Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 Ollama’s API responses include metrics that can be used for measuring performance and model usage:
 
--   `total_duration`: How long the response took to generate
--   `load_duration`: How long the model took to load
--   `prompt_eval_count`: How many input tokens were processed
--   `prompt_eval_duration`: How long it took to evaluate the prompt
--   `eval_count`: How many output tokens were processes
--   `eval_duration`: How long it took to generate the output tokens
+- `total_duration`: How long the response took to generate
+- `load_duration`: How long the model took to load
+- `prompt_eval_count`: How many input tokens were processed
+- `prompt_eval_duration`: How long it took to evaluate the prompt
+- `eval_count`: How many output tokens were processes
+- `eval_duration`: How long it took to generate the output tokens
 
 All timing values are measured in nanoseconds.
 
-## 
+##
 
 [​
 
@@ -66,8 +66,6 @@ For endpoints that return **streaming responses**, usage fields are included as 
 Errors
 
 Next
-
-
 
 ](/api/errors)
 

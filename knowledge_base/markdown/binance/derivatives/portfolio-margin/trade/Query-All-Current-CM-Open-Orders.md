@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:52:24.221Z
 ---
 # Query All Current CM Open Orders(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-All-Current-CM-Open-Orders
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-All-Current-CM-Open-Orders>
 
 # Query All Current CM Open Orders(USER\_DATA)
 
@@ -33,7 +33,7 @@ Get all open orders on a symbol.
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   If the symbol is not sent, orders for all symbols will be returned in an array.
+> - If the symbol is not sent, orders for all symbols will be returned in an array.
 
 ## Response Example
 

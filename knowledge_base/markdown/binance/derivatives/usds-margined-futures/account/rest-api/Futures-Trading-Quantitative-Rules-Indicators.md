@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:56:00.471Z
 ---
 # Futures Trading Quantitative Rules Indicators (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Futures-Trading-Quantitative-Rules-Indicators
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Futures-Trading-Quantitative-Rules-Indicators>
 
 # Futures Trading Quantitative Rules Indicators (USER\_DATA)
 
@@ -22,8 +22,8 @@ GET `/fapi/v1/apiTradingStatus`
 
 ## Request Weight
 
--   **1** for a single symbol
--   **10** when the symbol parameter is omitted
+- **1** for a single symbol
+- **10** when the symbol parameter is omitted
 
 ## Request Parameters
 
@@ -46,9 +46,9 @@ GET `/fapi/v1/apiTradingStatus`
 
             {
 
-				"isLocked": true,
+    "isLocked": true,
 
-			    "plannedRecoverTime": 1545741270000,
+       "plannedRecoverTime": 1545741270000,
 
                 "indicator": "UFR",  // Unfilled Ratio (UFR)
 
@@ -60,9 +60,9 @@ GET `/fapi/v1/apiTradingStatus`
 
             {
 
-				"isLocked": true,
+    "isLocked": true,
 
-			    "plannedRecoverTime": 1545741270000,
+       "plannedRecoverTime": 1545741270000,
 
                 "indicator": "IFER",  // IOC/FOK Expiration Ratio (IFER)
 
@@ -74,9 +74,9 @@ GET `/fapi/v1/apiTradingStatus`
 
             {
 
-				"isLocked": true,
+    "isLocked": true,
 
-			    "plannedRecoverTime": 1545741270000,
+       "plannedRecoverTime": 1545741270000,
 
                 "indicator": "GCR",  // GTC Cancellation Ratio (GCR)
 
@@ -88,9 +88,9 @@ GET `/fapi/v1/apiTradingStatus`
 
             {
 
-				"isLocked": true,
+    "isLocked": true,
 
-			    "plannedRecoverTime": 1545741270000,
+       "plannedRecoverTime": 1545741270000,
 
                 "indicator": "DR",  // Dust Ratio (DR)
 
@@ -106,9 +106,9 @@ GET `/fapi/v1/apiTradingStatus`
 
             {
 
-				"isLocked": true,
+    "isLocked": true,
 
-			    "plannedRecoverTime": 1545741270000,
+       "plannedRecoverTime": 1545741270000,
 
                 "indicator": "UFR",
 
@@ -120,9 +120,9 @@ GET `/fapi/v1/apiTradingStatus`
 
             {
 
-				"isLocked": true,
+    "isLocked": true,
 
-			    "plannedRecoverTime": 1545741270000,
+       "plannedRecoverTime": 1545741270000,
 
                 "indicator": "IFER",
 
@@ -134,9 +134,9 @@ GET `/fapi/v1/apiTradingStatus`
 
             {
 
-				"isLocked": true,
+    "isLocked": true,
 
-			    "plannedRecoverTime": 1545741270000,
+       "plannedRecoverTime": 1545741270000,
 
                 "indicator": "GCR",
 
@@ -148,9 +148,9 @@ GET `/fapi/v1/apiTradingStatus`
 
             {
 
-				"isLocked": true,
+    "isLocked": true,
 
-			    "plannedRecoverTime": 1545741270000,
+       "plannedRecoverTime": 1545741270000,
 
                 "indicator": "DR",
 

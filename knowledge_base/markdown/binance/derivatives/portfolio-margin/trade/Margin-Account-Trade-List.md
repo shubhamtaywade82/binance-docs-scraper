@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:53:29.903Z
 ---
 # Margin Account Trade List (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Margin-Account-Trade-List
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Margin-Account-Trade-List>
 
 # Margin Account Trade List (USER\_DATA)
 
@@ -24,7 +24,7 @@ GET `/papi/v1/margin/myTrades`
 
 **5**
 
-## Parameters:
+## Parameters
 
 | Name | Type | Mandatory | Description |
 | --- | --- | --- | --- |
@@ -39,10 +39,10 @@ GET `/papi/v1/margin/myTrades`
 
 **Notes:**
 
--   If `fromId` is set, it will get trades >= that `fromId`. Otherwise most recent trades are returned.
--   Less than 24 hours between `startTime` and `endTime`.
+- If `fromId` is set, it will get trades >= that `fromId`. Otherwise most recent trades are returned.
+- Less than 24 hours between `startTime` and `endTime`.
 
-## Response:
+## Response
 
 ```json
 [

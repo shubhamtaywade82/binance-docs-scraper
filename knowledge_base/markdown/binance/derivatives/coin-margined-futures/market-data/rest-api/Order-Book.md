@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:58:12.192Z
 ---
 # Order Book
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Order-Book
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Order-Book>
 
 # Order Book
 

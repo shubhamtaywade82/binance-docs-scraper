@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:03:59.117Z
 ---
 # Claude Code - Ollama
 
-> Source: https://docs.ollama.com/integrations/claude-code
+> Source: <https://docs.ollama.com/integrations/claude-code>
 
 [Documentation
 
@@ -17,14 +17,14 @@ scraped_at: 2026-05-28T19:03:59.117Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 Claude Code is Anthropic’s agentic coding tool that can read, modify, and execute code in your working directory. Open models can be used with Claude Code through Ollama’s Anthropic-compatible API, enabling you to use models such as `qwen3.5`, `glm-5:cloud`, `kimi-k2.5:cloud`. ![Claude Code with Ollama](https://files.ollama.com/claude-code.png)
 
-## 
+##
 
 [​
 
@@ -42,7 +42,7 @@ Windows
 curl -fsSL https://claude.ai/install.sh | bash
 ```
 
-## 
+##
 
 [​
 
@@ -50,7 +50,7 @@ curl -fsSL https://claude.ai/install.sh | bash
 
 Usage with Ollama
 
-### 
+###
 
 [​
 
@@ -62,7 +62,7 @@ Quick setup
 ollama launch claude
 ```
 
-### 
+###
 
 [​
 
@@ -74,7 +74,7 @@ Run directly with a model
 ollama launch claude --model kimi-k2.5:cloud
 ```
 
-## 
+##
 
 [​
 
@@ -82,16 +82,16 @@ ollama launch claude --model kimi-k2.5:cloud
 
 Recommended Models
 
--   `kimi-k2.5:cloud`
--   `glm-5:cloud`
--   `minimax-m2.7:cloud`
--   `qwen3.5:cloud`
--   `glm-4.7-flash`
--   `qwen3.5`
+- `kimi-k2.5:cloud`
+- `glm-5:cloud`
+- `minimax-m2.7:cloud`
+- `qwen3.5:cloud`
+- `glm-4.7-flash`
+- `qwen3.5`
 
 Cloud models are also available at [ollama.com/search?c=cloud](https://ollama.com/search?c=cloud).
 
-## 
+##
 
 [​
 
@@ -107,7 +107,7 @@ ollama launch claude --model kimi-k2.5:cloud --yes -- -p "how does this reposito
 
 The `--yes` flag auto-pulls the model, skips selectors, and requires `--model` to be specified. Arguments after `--` are passed directly to Claude Code.
 
-## 
+##
 
 [​
 
@@ -117,7 +117,7 @@ Web search
 
 Claude Code can search the web through Ollama’s web search API. See the [web search documentation](/capabilities/web-search) for setup and usage.
 
-## 
+##
 
 [​
 
@@ -131,7 +131,7 @@ The `/loop` command runs a prompt or slash command on a recurring schedule insid
 /loop <interval> <prompt or /command>
 ```
 
-### 
+###
 
 [​
 
@@ -163,7 +163,7 @@ Examples
 /loop 1h Remind me to review the deploy status
 ```
 
-## 
+##
 
 [​
 
@@ -179,7 +179,7 @@ ollama launch claude -- --channels plugin:telegram@claude-plugins-official
 
 Claude Code will prompt for permission on most actions. To allow the bot to work autonomously, configure [permission rules](https://code.claude.com/docs/en/permissions) or pass `--dangerously-skip-permissions` in isolated environments. See the [plugin README](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/telegram) for full setup instructions including pairing and access control.
 
-## 
+##
 
 [​
 
@@ -189,7 +189,7 @@ Manual setup
 
 Claude Code connects to Ollama using the Anthropic-compatible API.
 
-1.  Set the environment variables:
+1. Set the environment variables:
 
 ```
 export ANTHROPIC_AUTH_TOKEN=ollama
@@ -197,7 +197,7 @@ export ANTHROPIC_API_KEY=""
 export ANTHROPIC_BASE_URL=http://localhost:11434
 ```
 
-2.  Run Claude Code with an Ollama model:
+1. Run Claude Code with an Ollama model:
 
 ```
 claude --model qwen3.5
@@ -216,8 +216,6 @@ ANTHROPIC_AUTH_TOKEN=ollama ANTHROPIC_BASE_URL=http://localhost:11434 ANTHROPIC_
 Codex App
 
 Next
-
-
 
 ](/integrations/codex-app)
 

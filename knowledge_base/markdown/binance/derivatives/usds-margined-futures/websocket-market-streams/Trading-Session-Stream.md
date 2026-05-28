@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:39:37.834Z
 ---
 # Trading Session Stream
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Trading-Session-Stream
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Trading-Session-Stream>
 
 # Trading Session Stream
 

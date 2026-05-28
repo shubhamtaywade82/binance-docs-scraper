@@ -1,6 +1,6 @@
 # binance Docs
 
-Seed: https://developers.binance.com/docs/derivatives/change-log
+Seed: <https://developers.binance.com/docs/derivatives/change-log>
 
 ## Pages
 

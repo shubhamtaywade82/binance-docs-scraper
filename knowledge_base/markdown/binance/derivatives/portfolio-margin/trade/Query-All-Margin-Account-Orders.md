@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:53:17.695Z
 ---
 # Query All Margin Account Orders (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-All-Margin-Account-Orders
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-All-Margin-Account-Orders>
 
 # Query All Margin Account Orders (USER\_DATA)
 
@@ -24,7 +24,7 @@ GET `/papi/v1/margin/allOrders`
 
 **100**
 
-## Parameters:
+## Parameters
 
 | Name | Type | Mandatory | Description |
 | --- | --- | --- | --- |
@@ -38,10 +38,10 @@ GET `/papi/v1/margin/allOrders`
 
 **Notes:**
 
--   If `orderId` is set, it will get orders >= that `orderId`. Otherwise most recent orders are returned.
--   For some historical orders cummulativeQuoteQty will be < 0, meaning the data is not available at this time.
+- If `orderId` is set, it will get orders >= that `orderId`. Otherwise most recent orders are returned.
+- For some historical orders cummulativeQuoteQty will be < 0, meaning the data is not available at this time.
 
-## Response:
+## Response
 
 ```
 [

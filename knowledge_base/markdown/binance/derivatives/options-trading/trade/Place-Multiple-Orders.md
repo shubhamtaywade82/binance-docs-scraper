@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:59:51.372Z
 ---
 # Place Multiple Orders(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/trade/Place-Multiple-Orders
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/trade/Place-Multiple-Orders>
 
 # Place Multiple Orders(TRADE)
 
@@ -34,7 +34,7 @@ POST `/eapi/v1/batchOrders`
 
 **Where `orders` is the list of order parameters in JSON:**
 
--   **example:** /eapi/v1/batchOrders?orders=\[{"symbol":"BTC-210115-35000-C", "price":"100","quantity":"0.0002","side":"BUY","type":"LIMIT"}\]
+- **example:** /eapi/v1/batchOrders?orders=\[{"symbol":"BTC-210115-35000-C", "price":"100","quantity":"0.0002","side":"BUY","type":"LIMIT"}\]
 
 | Name | Type | Mandatory | Description |
 | --- | --- | --- | --- |
@@ -57,8 +57,8 @@ POST `/eapi/v1/batchOrders`
 | --- | --- |
 | LIMIT | timeInForce, quantity, price |
 
-> -   Parameter rules are same with New Order
-> -   Batch orders are processed concurrently, and the order of matching is not guaranteed.
+> - Parameter rules are same with New Order
+> - Batch orders are processed concurrently, and the order of matching is not guaranteed.
 
 ## Response Example
 

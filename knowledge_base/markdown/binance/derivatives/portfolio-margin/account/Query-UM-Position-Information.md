@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:41:18.006Z
 ---
 # Query UM Position Information(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Query-UM-Position-Information
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Query-UM-Position-Information>
 
 # Query UM Position Information(USER\_DATA)
 
@@ -34,13 +34,13 @@ GET `/papi/v1/um/positionRisk`
 
 **Note**
 
-> -   Please use with user data stream `ACCOUNT_UPDATE` to meet your timeliness and accuracy needs.  
-> -   for One-way Mode user, the response will only show the "BOTH" positions
-> -   for Hedge Mode user, the response will show "LONG", and "SHORT" positions.
+> - Please use with user data stream `ACCOUNT_UPDATE` to meet your timeliness and accuracy needs.  
+> - for One-way Mode user, the response will only show the "BOTH" positions
+> - for Hedge Mode user, the response will show "LONG", and "SHORT" positions.
 
 ## Response Example
 
-> -   For One-way position mode:
+> - For One-way position mode:
 
 ```json
 [

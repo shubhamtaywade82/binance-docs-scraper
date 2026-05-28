@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:53:04.577Z
 ---
 # Toggle BNB Burn On UM Futures Trade (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Toggle-BNB-Burn-On-UM-Futures-Trade
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Toggle-BNB-Burn-On-UM-Futures-Trade>
 
 # Toggle BNB Burn On UM Futures Trade (TRADE)
 
@@ -32,7 +32,7 @@ POST `/papi/v1/um/feeBurn`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
--   The BNB would not be collected from UM-PM account to the Portfolio Margin account.
+- The BNB would not be collected from UM-PM account to the Portfolio Margin account.
 
 ## Response Example
 

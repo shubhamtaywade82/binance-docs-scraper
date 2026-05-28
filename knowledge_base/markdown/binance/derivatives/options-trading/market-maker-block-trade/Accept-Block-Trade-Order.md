@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:46:37.152Z
 ---
 # Accept Block Trade Order (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/market-maker-block-trade/Accept-Block-Trade-Order
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/market-maker-block-trade/Accept-Block-Trade-Order>
 
 # Accept Block Trade Order (TRADE)
 

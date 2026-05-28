@@ -8,15 +8,15 @@ scraped_at: 2026-05-28T18:40:43.141Z
 ---
 # Event: Margin Call
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/user-data-streams/Event-Margin-Call
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/user-data-streams/Event-Margin-Call>
 
 # Event: Margin Call
 
 ## Event Description
 
--   When the user's position risk ratio is too high, this stream will be pushed.
--   This message is only used as risk guidance information and is not recommended for investment strategies.
--   In the case of a highly volatile market, there may be the possibility that the user's position has been liquidated at the same time when this stream is pushed out.
+- When the user's position risk ratio is too high, this stream will be pushed.
+- This message is only used as risk guidance information and is not recommended for investment strategies.
+- In the case of a highly volatile market, there may be the possibility that the user's position has been liquidated at the same time when this stream is pushed out.
 
 ## Event Name
 

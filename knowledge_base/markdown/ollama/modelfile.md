@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:04:47.885Z
 ---
 # Modelfile Reference - Ollama
 
-> Source: https://docs.ollama.com/modelfile
+> Source: <https://docs.ollama.com/modelfile>
 
 [Documentation
 
@@ -17,14 +17,14 @@ scraped_at: 2026-05-28T19:04:47.885Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 A Modelfile is the blueprint to create and share customized models using Ollama.
 
-## 
+##
 
 [​
 
@@ -32,24 +32,24 @@ A Modelfile is the blueprint to create and share customized models using Ollama.
 
 Table of Contents
 
--   [Format](#format)
--   [Examples](#examples)
--   [Instructions](#instructions)
-    -   [FROM (Required)](#from-required)
-        -   [Build from existing model](#build-from-existing-model)
-        -   [Build from a Safetensors model](#build-from-a-safetensors-model)
-        -   [Build from a GGUF file](#build-from-a-gguf-file)
-    -   [PARAMETER](#parameter)
-        -   [Valid Parameters and Values](#valid-parameters-and-values)
-    -   [TEMPLATE](#template)
-        -   [Template Variables](#template-variables)
-    -   [SYSTEM](#system)
-    -   [ADAPTER](#adapter)
-    -   [LICENSE](#license)
-    -   [MESSAGE](#message)
--   [Notes](#notes)
+- [Format](#format)
+- [Examples](#examples)
+- [Instructions](#instructions)
+  - [FROM (Required)](#from-required)
+    - [Build from existing model](#build-from-existing-model)
+    - [Build from a Safetensors model](#build-from-a-safetensors-model)
+    - [Build from a GGUF file](#build-from-a-gguf-file)
+  - [PARAMETER](#parameter)
+    - [Valid Parameters and Values](#valid-parameters-and-values)
+  - [TEMPLATE](#template)
+    - [Template Variables](#template-variables)
+  - [SYSTEM](#system)
+  - [ADAPTER](#adapter)
+  - [LICENSE](#license)
+  - [MESSAGE](#message)
+- [Notes](#notes)
 
-## 
+##
 
 [​
 
@@ -75,7 +75,7 @@ INSTRUCTION arguments
 | [`MESSAGE`](#message) | Specify message history. |
 | [`REQUIRES`](#requires) | Specify the minimum version of Ollama required by the model. |
 
-## 
+##
 
 [​
 
@@ -83,7 +83,7 @@ INSTRUCTION arguments
 
 Examples
 
-### 
+###
 
 [​
 
@@ -106,10 +106,10 @@ SYSTEM You are Mario from super mario bros, acting as an assistant.
 
 To use this:
 
-1.  Save it as a file (e.g. `Modelfile`)
-2.  `ollama create choose-a-model-name -f <location of the file e.g. ./Modelfile>`
-3.  `ollama run choose-a-model-name`
-4.  Start using the model!
+1. Save it as a file (e.g. `Modelfile`)
+2. `ollama create choose-a-model-name -f <location of the file e.g. ./Modelfile>`
+3. `ollama run choose-a-model-name`
+4. Start using the model!
 
 To view the Modelfile of a given model, use the `ollama show --modelfile` command.
 
@@ -135,7 +135,7 @@ PARAMETER stop "<|eot_id|>"
 PARAMETER stop "<|reserved_special_token"
 ```
 
-## 
+##
 
 [​
 
@@ -143,7 +143,7 @@ PARAMETER stop "<|reserved_special_token"
 
 Instructions
 
-### 
+###
 
 [​
 
@@ -157,7 +157,7 @@ The `FROM` instruction defines the base model to use when creating a model.
 FROM <model name>:<tag>
 ```
 
-#### 
+####
 
 [​
 
@@ -177,7 +177,7 @@ A list of available base models
 
 Additional models can be found at
 
-#### 
+####
 
 [​
 
@@ -191,12 +191,12 @@ FROM <model directory>
 
 The model directory should contain the Safetensors weights for a supported architecture. Currently supported model architectures:
 
--   Llama (including Llama 2, Llama 3, Llama 3.1, and Llama 3.2)
--   Mistral (including Mistral 1, Mistral 2, and Mixtral)
--   Gemma (including Gemma 1 and Gemma 2)
--   Phi3
+- Llama (including Llama 2, Llama 3, Llama 3.1, and Llama 3.2)
+- Mistral (including Mistral 1, Mistral 2, and Mixtral)
+- Gemma (including Gemma 1 and Gemma 2)
+- Phi3
 
-#### 
+####
 
 [​
 
@@ -210,7 +210,7 @@ FROM ./ollama-model.gguf
 
 The GGUF file location should be specified as an absolute path or relative to the `Modelfile` location.
 
-### 
+###
 
 [​
 
@@ -224,7 +224,7 @@ The `PARAMETER` instruction defines a parameter that can be set when the model i
 PARAMETER <parameter> <parametervalue>
 ```
 
-#### 
+####
 
 [​
 
@@ -245,7 +245,7 @@ Valid Parameters and Values
 | top\_p | Works together with top-k. A higher value (e.g., 0.95) will lead to more diverse text, while a lower value (e.g., 0.5) will generate more focused and conservative text. (Default: 0.9) | float | top\_p 0.9 |
 | min\_p | Alternative to the top_p, and aims to ensure a balance of quality and variety. The parameter \_p_ represents the minimum probability for a token to be considered, relative to the probability of the most likely token. For example, with _p_\=0.05 and the most likely token having a probability of 0.9, logits with a value less than 0.045 are filtered out. (Default: 0.0) | float | min\_p 0.05 |
 
-### 
+###
 
 [​
 
@@ -255,7 +255,7 @@ TEMPLATE
 
 `TEMPLATE` of the full prompt template to be passed into the model. It may include (optionally) a system message, a user’s message and the response from the model. Note: syntax may be model specific. Templates use Go [template syntax](https://pkg.go.dev/text/template).
 
-#### 
+####
 
 [​
 
@@ -278,7 +278,7 @@ TEMPLATE """{{ if .System }}<|im_start|>system
 """
 ```
 
-### 
+###
 
 [​
 
@@ -292,7 +292,7 @@ The `SYSTEM` instruction specifies the system message to be used in the template
 SYSTEM """<system message>"""
 ```
 
-### 
+###
 
 [​
 
@@ -302,7 +302,7 @@ ADAPTER
 
 The `ADAPTER` instruction specifies a fine tuned LoRA adapter that should apply to the base model. The value of the adapter should be an absolute path or a path relative to the Modelfile. The base model should be specified with a `FROM` instruction. If the base model is not the same as the base model that the adapter was tuned from the behaviour will be erratic.
 
-#### 
+####
 
 [​
 
@@ -316,11 +316,11 @@ ADAPTER <path to safetensor adapter>
 
 Currently supported Safetensor adapters:
 
--   Llama (including Llama 2, Llama 3, and Llama 3.1)
--   Mistral (including Mistral 1, Mistral 2, and Mixtral)
--   Gemma (including Gemma 1 and Gemma 2)
+- Llama (including Llama 2, Llama 3, and Llama 3.1)
+- Mistral (including Mistral 1, Mistral 2, and Mixtral)
+- Gemma (including Gemma 1 and Gemma 2)
 
-#### 
+####
 
 [​
 
@@ -332,7 +332,7 @@ GGUF adapter
 ADAPTER ./ollama-lora.gguf
 ```
 
-### 
+###
 
 [​
 
@@ -348,7 +348,7 @@ LICENSE """
 """
 ```
 
-### 
+###
 
 [​
 
@@ -362,7 +362,7 @@ The `MESSAGE` instruction allows you to specify a message history for the model 
 MESSAGE <role> <message>
 ```
 
-#### 
+####
 
 [​
 
@@ -376,7 +376,7 @@ Valid roles
 | user | An example message of what the user could have asked. |
 | assistant | An example message of how the model should respond. |
 
-#### 
+####
 
 [​
 
@@ -393,7 +393,7 @@ MESSAGE user Is Ontario in Canada?
 MESSAGE assistant yes
 ```
 
-### 
+###
 
 [​
 
@@ -409,7 +409,7 @@ REQUIRES <version>
 
 The version should be a valid Ollama version (e.g. 0.14.0).
 
-## 
+##
 
 [​
 
@@ -417,16 +417,14 @@ The version should be a valid Ollama version (e.g. 0.14.0).
 
 Notes
 
--   the **`Modelfile` is not case sensitive**. In the examples, uppercase instructions are used to make it easier to distinguish it from arguments.
--   Instructions can be in any order. In the examples, the `FROM` instruction is first to keep it easily readable.
+- the **`Modelfile` is not case sensitive**. In the examples, uppercase instructions are used to make it easier to distinguish it from arguments.
+- Instructions can be in any order. In the examples, the `FROM` instruction is first to keep it easily readable.
 
 [Previous](/integrations/nemoclaw)[
 
 Context length
 
 Next
-
-
 
 ](/context-length)
 

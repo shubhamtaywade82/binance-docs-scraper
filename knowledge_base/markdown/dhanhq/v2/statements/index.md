@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:00:55.448Z
 ---
 # Statement
 
-> Source: https://dhanhq.co/docs/v2/statements/
+> Source: <https://dhanhq.co/docs/v2/statements/>
 
 # Statement
 
@@ -27,7 +27,6 @@ curl --request GET \
 --header 'access-token: {JWT}'
 ```
 
-  
 **Query Parameters**
 
 | Field | Description |
@@ -41,7 +40,6 @@ _required_ | Date upto which Ledger Report is required in format `YYYY-MM-DD` |
 
 _No Body_
 
-  
 **Response Structure**
 
 ```json
@@ -58,7 +56,6 @@ _No Body_
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -85,7 +82,6 @@ curl --request GET \
 --header 'access-token: {JWT}'
 ```
 
-  
 **Path Parameters**
 
 | Field | Description |
@@ -97,12 +93,10 @@ _required_ | Date upto which Trade History is required in format `YYYY-MM-DD` |
 | page  
 _required_ | Page number of which data is being fetched. Pass `0` as default. |
 
-  
 **Request Structure**
 
 _No Body_
 
-  
 **Response Structure**
 
 ```json
@@ -139,7 +133,6 @@ _No Body_
 ]
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -177,5 +170,4 @@ _No Body_
 `CALL` `PUT` |
 | drvStrikePrice | float | For Options, Strike Price |
 
-  
 Note: For description of enum values, refer [Annexure](https://dhanhq.co/docs/v2/annexure)

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:51:04.548Z
 ---
 # Cancel UM Algo Order (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-UM-Algo-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-UM-Algo-Order>
 
 # Cancel UM Algo Order (TRADE)
 
@@ -33,7 +33,7 @@ DELETE `/papi/v1/um/algo/order`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either `algoId` or `clientAlgoId` must be sent.
+> - Either `algoId` or `clientAlgoId` must be sent.
 
 ## Response Example
 

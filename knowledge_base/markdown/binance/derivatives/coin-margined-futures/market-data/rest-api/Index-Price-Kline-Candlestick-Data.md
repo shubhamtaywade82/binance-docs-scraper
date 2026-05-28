@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:58:36.849Z
 ---
 # Index Price Kline/Candlestick Data
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Index-Price-Kline-Candlestick-Data
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Index-Price-Kline-Candlestick-Data>
 
 # Index Price Kline/Candlestick Data
 
@@ -42,11 +42,11 @@ based on parameter `LIMIT`
 | endTime | LONG | NO |  |
 | limit | INT | NO | Default 500; max 1500. |
 
-> -   The difference between `startTime` and `endTime` can only be up to 200 days
-> -   Between `startTime` and `endTime`, the most recent `limit` data from `endTime` will be returned:
->     -   If `startTime` and `endTime` are not sent, current timestamp will be set as `endTime`, and the most recent data will be returned.
->     -   If `startTime` is sent only, the timestamp of 200 days after `startTime` will be set as `endTime`(up to the current time)
->     -   If `endTime` is sent only, the timestamp of 200 days before `endTime` will be set as `startTime`
+> - The difference between `startTime` and `endTime` can only be up to 200 days
+> - Between `startTime` and `endTime`, the most recent `limit` data from `endTime` will be returned:
+>   - If `startTime` and `endTime` are not sent, current timestamp will be set as `endTime`, and the most recent data will be returned.
+>   - If `startTime` is sent only, the timestamp of 200 days after `startTime` will be set as `endTime`(up to the current time)
+>   - If `endTime` is sent only, the timestamp of 200 days before `endTime` will be set as `startTime`
 
 ## Response Example
 
@@ -55,29 +55,29 @@ based on parameter `LIMIT`
 
   [
 
-    1591256400000,      	// Open time
+    1591256400000,       // Open time
 
-    "9653.69440000",    	// Open
+    "9653.69440000",     // Open
 
-    "9653.69640000",     	// High
+    "9653.69640000",      // High
 
-    "9651.38600000",     	// Low
+    "9651.38600000",      // Low
 
-    "9651.55200000",     	// Close (or latest price)
+    "9651.55200000",      // Close (or latest price)
 
-    "0	", 					// Ignore
+    "0 ",      // Ignore
 
-    1591256459999,      	// Close time
+    1591256459999,       // Close time
 
-    "0",    				// Ignore
+    "0",        // Ignore
 
-    60,                		// Number of bisic data
+    60,                  // Number of bisic data
 
-    "0",    				// Ignore
+    "0",        // Ignore
 
-    "0",      				// Ignore
+    "0",          // Ignore
 
-    "0" 					// Ignore
+    "0"      // Ignore
 
   ]
 

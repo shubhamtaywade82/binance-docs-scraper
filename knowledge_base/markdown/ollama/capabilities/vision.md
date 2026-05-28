@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:03:34.939Z
 ---
 # Vision - Ollama
 
-> Source: https://docs.ollama.com/capabilities/vision
+> Source: <https://docs.ollama.com/capabilities/vision>
 
 [Documentation
 
@@ -17,14 +17,14 @@ scraped_at: 2026-05-28T19:03:34.939Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 Vision models accept images alongside text so the model can describe, classify, and answer questions about what it sees.
 
-## 
+##
 
 [​
 
@@ -36,7 +36,7 @@ Quick start
 ollama run gemma3 ./image.png whats in this image?
 ```
 
-## 
+##
 
 [​
 
@@ -46,12 +46,11 @@ Usage with Ollama’s API
 
 Provide an `images` array. SDKs accept file paths, URLs or raw bytes while the REST API expects base64-encoded image data.
 
--   cURL
-    
--   Python
-    
--   JavaScript
-    
+- cURL
+
+- Python
+
+- JavaScript
 
 ```
 # 1. Download a sample image
@@ -120,8 +119,6 @@ console.log(response.message.content)
 EmbeddingsGenerate text embeddings for semantic search, retrieval, and RAG.
 
 Next
-
-
 
 ](/capabilities/embeddings)
 

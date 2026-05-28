@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:42:44.120Z
 ---
 # Get UM Account Detail V2(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-UM-Account-Detail-V2
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-UM-Account-Detail-V2>
 
 # Get UM Account Detail V2(USER\_DATA)
 

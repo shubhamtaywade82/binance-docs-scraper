@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:59:54.228Z
 ---
 # Cancel Option Order (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/trade/Cancel-Option-Order
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/trade/Cancel-Option-Order>
 
 # Cancel Option Order (TRADE)
 
@@ -32,7 +32,7 @@ DELETE `/eapi/v1/order`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   At least one instance of `orderId` and `clientOrderId` must be sent.
+> - At least one instance of `orderId` and `clientOrderId` must be sent.
 
 ## Response Example
 

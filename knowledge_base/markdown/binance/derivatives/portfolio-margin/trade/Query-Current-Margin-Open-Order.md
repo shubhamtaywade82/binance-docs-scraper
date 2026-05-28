@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:53:13.933Z
 ---
 # Query Current Margin Open Order (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-Current-Margin-Open-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-Current-Margin-Open-Order>
 
 # Query Current Margin Open Order (USER\_DATA)
 
@@ -24,7 +24,7 @@ GET `/papi/v1/margin/openOrders`
 
 **5**
 
-## Parameters:
+## Parameters
 
 | Name | Type | Mandatory | Description |
 | --- | --- | --- | --- |
@@ -34,10 +34,10 @@ GET `/papi/v1/margin/openOrders`
 
 **Notes:**
 
--   If the `symbol` is not sent, orders for all symbols will be returned in an array.
--   When all symbols are returned, the number of requests counted against the rate limiter is equal to the number of symbols currently trading on the exchange.
+- If the `symbol` is not sent, orders for all symbols will be returned in an array.
+- When all symbols are returned, the number of requests counted against the rate limiter is equal to the number of symbols currently trading on the exchange.
 
-## Response:
+## Response
 
 ```
 [

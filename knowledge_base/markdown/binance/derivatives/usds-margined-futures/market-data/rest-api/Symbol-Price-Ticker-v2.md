@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:57:22.562Z
 ---
 # Symbol Price Ticker V2
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Symbol-Price-Ticker-v2
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Symbol-Price-Ticker-v2>
 
 # Symbol Price Ticker V2
 
@@ -31,8 +31,8 @@ GET `/fapi/v2/ticker/price`
 | --- | --- | --- | --- |
 | symbol | STRING | NO |  |
 
-> -   If the symbol is not sent, prices for all symbols will be returned in an array.
-> -   The field `X-MBX-USED-WEIGHT-1M` in response header is not accurate from this endpoint, please ignore.
+> - If the symbol is not sent, prices for all symbols will be returned in an array.
+> - The field `X-MBX-USED-WEIGHT-1M` in response header is not accurate from this endpoint, please ignore.
 
 ## Response Example
 

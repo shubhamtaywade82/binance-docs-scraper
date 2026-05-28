@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:01:08.135Z
 ---
 # Full Market Depth
 
-> Source: https://dhanhq.co/docs/v2/full-market-depth/
+> Source: <https://dhanhq.co/docs/v2/full-market-depth/>
 
 # Full Market Depth
 
@@ -38,7 +38,6 @@ To establish connection with DhanHQ WebSocket for 200 Level Market Depth, you ca
 wss://full-depth-api.dhan.co/twohundreddepth?token=eyxxxxx&clientId=100xxxxxxx&authType=2
 ```
 
-  
 **Query Parameters**
 
 | Field | Description |
@@ -77,7 +76,6 @@ You can send all 50 instruments in a single JSON message for 20 Depth. You can s
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -106,7 +104,6 @@ In 200 level market depth, only 1 instrument per connection can be subscribed. T
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -203,7 +200,6 @@ Each of these 200 packets will be received in the following packet structure:
 
 Note
 
-  
 Whenever 20 or 200 level depth packets are sent on the connection, they are stacked one after another in a single message. For 20 level depth, if two instruments are subscribed, then the first instrument's Bid packet followed by Ask packet of that instrument is added and then the second instrument's bid and ask packets in same sequence. To handle this, you can break down the packet on the basis of length.
 
 ## Feed Disconnect
@@ -218,9 +214,7 @@ If you want to disconnect WebSocket, you can send below JSON request message via
 
 In case of WebSocket disconnection from server side, you will receive disconnection packet, which will have disconnection reason code.
 
--   If more than 5 websockets are established, then the first socket will be disconnected with `805` with every additional connection.
-
-  
+- If more than 5 websockets are established, then the first socket will be disconnected with `805` with every additional connection.
 
 | Bytes | Type | Size | Description |
 | --- | --- | --- | --- |

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:59:38.065Z
 ---
 # Trade Streams
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/websocket-market-streams/Trade-Streams
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/websocket-market-streams/Trade-Streams>
 
 # Trade Streams
 

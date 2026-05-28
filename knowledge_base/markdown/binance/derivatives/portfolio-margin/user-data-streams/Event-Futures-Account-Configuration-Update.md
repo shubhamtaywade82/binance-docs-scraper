@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:47:37.410Z
 ---
 # Event: Futures Account Configuration Update(Leverage Update)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-Futures-Account-Configuration-Update
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-Futures-Account-Configuration-Update>
 
 # Event: Futures Account Configuration Update(Leverage Update)
 

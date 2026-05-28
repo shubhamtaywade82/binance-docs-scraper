@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:57:45.219Z
 ---
 # Taker Buy/Sell Volume
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Taker-BuySell-Volume
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Taker-BuySell-Volume>
 
 # Taker Buy/Sell Volume
 
@@ -34,9 +34,9 @@ GET `/futures/data/takerlongshortRatio`
 | startTime | LONG | NO |  |
 | endTime | LONG | NO |  |
 
-> -   If startTime and endTime are not sent, the most recent data is returned.
-> -   Only the data of the latest 30 days is available.
-> -   IP rate limit 1000 requests/5min
+> - If startTime and endTime are not sent, the most recent data is returned.
+> - Only the data of the latest 30 days is available.
+> - IP rate limit 1000 requests/5min
 
 ## Response Example
 
@@ -45,25 +45,25 @@ GET `/futures/data/takerlongshortRatio`
 
     { 
 
-	    "buySellRatio":"1.5586",
+     "buySellRatio":"1.5586",
 
-	    "buyVol": "387.3300", 
+     "buyVol": "387.3300", 
 
-	    "sellVol":"248.5030", 
+     "sellVol":"248.5030", 
 
-	    "timestamp":"1585614900000"
+     "timestamp":"1585614900000"
 
     },
 
     { 
 
-	    "buySellRatio":"1.3104",
+     "buySellRatio":"1.3104",
 
-	    "buyVol": "343.9290", 
+     "buyVol": "343.9290", 
 
-	    "sellVol":"248.5030", 	                
+     "sellVol":"248.5030",                  
 
-	    "timestamp":"1583139900000"        
+     "timestamp":"1583139900000"        
 
     },    
 

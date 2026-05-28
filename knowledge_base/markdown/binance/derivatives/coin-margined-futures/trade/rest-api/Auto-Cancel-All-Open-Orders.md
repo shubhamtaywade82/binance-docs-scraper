@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:54:09.644Z
 ---
 # Auto-Cancel All Open Orders (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Auto-Cancel-All-Open-Orders
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Auto-Cancel-All-Open-Orders>
 
 # Auto-Cancel All Open Orders (TRADE)
 
@@ -16,7 +16,7 @@ scraped_at: 2026-05-28T18:54:09.644Z
 
 Cancel all open orders of the specified symbol at the end of the specified countdown. This rest endpoint means to ensure your open orders are canceled in case of an outage. The endpoint should be called repeatedly as heartbeats so that the existing countdown time can be canceled and repalced by a new one. The system will check all countdowns **approximately every 10 milliseconds**, so please note that sufficient redundancy should be considered when using this function. We do not recommend setting the countdown time to be too precise or too small.
 
--   Example usage:
+- Example usage:
 
 > Call this endpoint at 30s intervals with an countdownTime of 120000 (120s).  
 > If this endpoint is not called within 120 seconds, all your orders of the specified symbol will be automatically canceled.  

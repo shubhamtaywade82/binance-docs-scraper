@@ -1,6 +1,6 @@
 # ollama Docs
 
-Seed: https://docs.ollama.com/api/introduction
+Seed: <https://docs.ollama.com/api/introduction>
 
 ## Pages
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:04:12.526Z
 ---
 # Droid - Ollama
 
-> Source: https://docs.ollama.com/integrations/droid
+> Source: <https://docs.ollama.com/integrations/droid>
 
 [Documentation
 
@@ -17,12 +17,12 @@ scraped_at: 2026-05-28T19:04:12.526Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
-## 
+##
 
 [​
 
@@ -38,7 +38,7 @@ curl -fsSL https://app.factory.ai/cli | sh
 
 Droid requires a larger context window. It is recommended to use a context window of at least 64k tokens. See [Context length](/context-length) for more information.
 
-## 
+##
 
 [​
 
@@ -46,7 +46,7 @@ Droid requires a larger context window. It is recommended to use a context windo
 
 Usage with Ollama
 
-### 
+###
 
 [​
 
@@ -64,7 +64,7 @@ To configure without launching:
 ollama launch droid --config
 ```
 
-### 
+###
 
 [​
 
@@ -89,7 +89,7 @@ Add a local configuration block to `~/.factory/config.json`:
 }
 ```
 
-## 
+##
 
 [​
 
@@ -114,7 +114,7 @@ Cloud Models
 }
 ```
 
-## 
+##
 
 [​
 
@@ -122,9 +122,9 @@ Cloud Models
 
 Connecting to ollama.com
 
-1.  Create an [API key](https://ollama.com/settings/keys) from ollama.com and export it as `OLLAMA_API_KEY`.
-2.  Add the cloud configuration block to `~/.factory/config.json`:
-    
+1. Create an [API key](https://ollama.com/settings/keys) from ollama.com and export it as `OLLAMA_API_KEY`.
+2. Add the cloud configuration block to `~/.factory/config.json`:
+
     ```
     {
       "custom_models": [
@@ -139,7 +139,6 @@ Connecting to ollama.com
       ]
     }
     ```
-    
 
 Run `droid` in a new terminal to load the new settings.
 
@@ -148,8 +147,6 @@ Run `droid` in a new terminal to load the new settings.
 Goose
 
 Next
-
-
 
 ](/integrations/goose)
 

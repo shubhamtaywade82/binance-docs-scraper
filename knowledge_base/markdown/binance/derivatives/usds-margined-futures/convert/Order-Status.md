@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:44:23.820Z
 ---
 # Order status(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/convert/Order-Status
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/convert/Order-Status>
 
 # Order status(USER\_DATA)
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:55:05.853Z
 ---
 # Event: Order update
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/user-data-streams/Event-Order-update
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/user-data-streams/Event-Order-update>
 
 # Event: Order update
 
@@ -18,35 +18,35 @@ When new order created, order status changed will push such event. event type is
 
 **Side**
 
--   BUY
--   SELL
+- BUY
+- SELL
 
 **Order Type**
 
--   LIMIT
+- LIMIT
 
 **Execution Type**
 
--   NEW
--   CANCELED
--   EXPIRED
--   TRADE
+- NEW
+- CANCELED
+- EXPIRED
+- TRADE
 
 **Order Status**
 
--   NEW
--   PARTIALLY\_FILLED
--   FILLED
--   CANCELED
--   EXPIRED
--   EXPIRED\_IN\_MATCH
+- NEW
+- PARTIALLY\_FILLED
+- FILLED
+- CANCELED
+- EXPIRED
+- EXPIRED\_IN\_MATCH
 
 **Time in force**
 
--   GTC
--   IOC
--   FOK
--   GTX
+- GTC
+- IOC
+- FOK
+- GTX
 
 ## URL PATH
 

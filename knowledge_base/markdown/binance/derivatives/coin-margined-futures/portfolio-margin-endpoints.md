@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:39:50.711Z
 ---
 # Classic Portfolio Margin Account Information (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/portfolio-margin-endpoints
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/portfolio-margin-endpoints>
 
 # Classic Portfolio Margin Account Information (USER\_DATA)
 
@@ -31,7 +31,7 @@ GET `/dapi/v1/pmAccountInfo`
 | asset | STRING | YES |  |
 | recvWindow | LONG | NO |  |
 
-> -   maxWithdrawAmount is for asset transfer out to the spot wallet.
+> - maxWithdrawAmount is for asset transfer out to the spot wallet.
 
 ## Response Example
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:55:17.780Z
 ---
 # Futures Account Balance V3 (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Futures-Account-Balance-V3
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Futures-Account-Balance-V3>
 
 # Futures Account Balance V3 (USER\_DATA)
 

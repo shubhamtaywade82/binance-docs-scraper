@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:55:40.579Z
 ---
 # Symbol Configuration(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Symbol-Config
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Symbol-Config>
 
 # Symbol Configuration(USER\_DATA)
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:44:17.447Z
 ---
 # Event: Conditional_Order_Trigger_Reject
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Event-Conditional-Order-Trigger-Reject
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Event-Conditional-Order-Trigger-Reject>
 
 # Event: Conditional\_Order\_Trigger\_Reject
 

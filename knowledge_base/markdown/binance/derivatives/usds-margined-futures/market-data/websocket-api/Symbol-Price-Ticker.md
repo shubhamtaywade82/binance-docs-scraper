@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:53:40.781Z
 ---
 # Symbol Price Ticker
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/websocket-api/Symbol-Price-Ticker
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/websocket-api/Symbol-Price-Ticker>
 
 # Symbol Price Ticker
 
@@ -43,7 +43,7 @@ Latest price for a symbol or symbols.
 | --- | --- | --- | --- |
 | symbol | STRING | NO |  |
 
-> -   If the symbol is not sent, prices for all symbols will be returned in an array.
+> - If the symbol is not sent, prices for all symbols will be returned in an array.
 
 ## Response Example
 

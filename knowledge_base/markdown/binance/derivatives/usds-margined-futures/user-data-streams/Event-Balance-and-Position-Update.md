@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:43:57.954Z
 ---
 # Event: Balance and Position Update
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Event-Balance-and-Position-Update
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Event-Balance-and-Position-Update>
 
 # Event: Balance and Position Update
 
@@ -16,36 +16,35 @@ scraped_at: 2026-05-28T18:43:57.954Z
 
 Event type is `ACCOUNT_UPDATE`.
 
--   When balance or position get updated, this event will be pushed.
-    
-    -   `ACCOUNT_UPDATE` will be pushed only when update happens on user's account, including changes on balances, positions, or margin type.
-    -   Unfilled orders or cancelled orders will not make the event `ACCOUNT_UPDATE` pushed, since there's no change on positions.
-    -   "position" in `ACCOUNT_UPDATE`: Only symbols of changed positions will be pushed.
--   When "FUNDING FEE" changes to the user's balance, the event will be pushed with the brief message:
-    
-    -   When "FUNDING FEE" occurs in a **crossed position**, `ACCOUNT_UPDATE` will be pushed with only the balance `B`(including the "FUNDING FEE" asset only), without any position `P` message.
-    -   When "FUNDING FEE" occurs in an **isolated position**, `ACCOUNT_UPDATE` will be pushed with only the balance `B`(including the "FUNDING FEE" asset only) and the relative position message `P`( including the isolated position on which the "FUNDING FEE" occurs only, without any other position message).
--   The field "m" represents the reason type for the event and may shows the following possible types:
-    
-    -   DEPOSIT
-    -   WITHDRAW
-    -   ORDER
-    -   FUNDING\_FEE
-    -   WITHDRAW\_REJECT
-    -   ADJUSTMENT
-    -   INSURANCE\_CLEAR
-    -   ADMIN\_DEPOSIT
-    -   ADMIN\_WITHDRAW
-    -   MARGIN\_TRANSFER
-    -   MARGIN\_TYPE\_CHANGE
-    -   ASSET\_TRANSFER
-    -   OPTIONS\_PREMIUM\_FEE
-    -   OPTIONS\_SETTLE\_PROFIT
-    -   AUTO\_EXCHANGE
-    -   COIN\_SWAP\_DEPOSIT
-    -   COIN\_SWAP\_WITHDRAW
--   The field "bc" represents the balance change except for PnL and commission.
-    
+- When balance or position get updated, this event will be pushed.
+
+  - `ACCOUNT_UPDATE` will be pushed only when update happens on user's account, including changes on balances, positions, or margin type.
+  - Unfilled orders or cancelled orders will not make the event `ACCOUNT_UPDATE` pushed, since there's no change on positions.
+  - "position" in `ACCOUNT_UPDATE`: Only symbols of changed positions will be pushed.
+- When "FUNDING FEE" changes to the user's balance, the event will be pushed with the brief message:
+
+  - When "FUNDING FEE" occurs in a **crossed position**, `ACCOUNT_UPDATE` will be pushed with only the balance `B`(including the "FUNDING FEE" asset only), without any position `P` message.
+  - When "FUNDING FEE" occurs in an **isolated position**, `ACCOUNT_UPDATE` will be pushed with only the balance `B`(including the "FUNDING FEE" asset only) and the relative position message `P`( including the isolated position on which the "FUNDING FEE" occurs only, without any other position message).
+- The field "m" represents the reason type for the event and may shows the following possible types:
+
+  - DEPOSIT
+  - WITHDRAW
+  - ORDER
+  - FUNDING\_FEE
+  - WITHDRAW\_REJECT
+  - ADJUSTMENT
+  - INSURANCE\_CLEAR
+  - ADMIN\_DEPOSIT
+  - ADMIN\_WITHDRAW
+  - MARGIN\_TRANSFER
+  - MARGIN\_TYPE\_CHANGE
+  - ASSET\_TRANSFER
+  - OPTIONS\_PREMIUM\_FEE
+  - OPTIONS\_SETTLE\_PROFIT
+  - AUTO\_EXCHANGE
+  - COIN\_SWAP\_DEPOSIT
+  - COIN\_SWAP\_WITHDRAW
+- The field "bc" represents the balance change except for PnL and commission.
 
 ## URL PATH
 
@@ -60,29 +59,29 @@ Event type is `ACCOUNT_UPDATE`.
 ```
 {
 
-  "e": "ACCOUNT_UPDATE",				// Event Type
+  "e": "ACCOUNT_UPDATE",    // Event Type
 
-  "E": 1564745798939,            		// Event Time
+  "E": 1564745798939,              // Event Time
 
-  "T": 1564745798938 ,           		// Transaction
+  "T": 1564745798938 ,             // Transaction
 
-  "a":                          		// Update Data
+  "a":                            // Update Data
 
     {
 
-      "m":"ORDER",						// Event reason type
+      "m":"ORDER",      // Event reason type
 
-      "B":[                     		// Balances
+      "B":[                       // Balances
 
         {
 
-          "a":"USDT",           		// Asset
+          "a":"USDT",             // Asset
 
-          "wb":"122624.12345678",    	// Wallet Balance
+          "wb":"122624.12345678",     // Wallet Balance
 
-          "cw":"100.12345678",			// Cross Wallet Balance
+          "cw":"100.12345678",   // Cross Wallet Balance
 
-          "bc":"50.12345678"			// Balance Change except PnL and Commission
+          "bc":"50.12345678"   // Balance Change except PnL and Commission
 
         },
 
@@ -104,67 +103,67 @@ Event type is `ACCOUNT_UPDATE`.
 
         {
 
-          "s":"BTCUSDT",          	// Symbol
+          "s":"BTCUSDT",           // Symbol
 
-          "pa":"0",               	// Position Amount
+          "pa":"0",                // Position Amount
 
           "ep":"0.00000",            // Entry Price
 
           "bep":"0",                // breakeven price 
 
-		  "cr":"200",             	// (Pre-fee) Accumulated Realized
+    "cr":"200",              // (Pre-fee) Accumulated Realized
 
-          "up":"0",						// Unrealized PnL
+          "up":"0",      // Unrealized PnL
 
-          "mt":"isolated",				// Margin Type
+          "mt":"isolated",    // Margin Type
 
-          "iw":"0.00000000",			// Isolated Wallet (if isolated position)
+          "iw":"0.00000000",   // Isolated Wallet (if isolated position)
 
-          "ps":"BOTH"					// Position Side
+          "ps":"BOTH"     // Position Side
 
         }，
 
         {
 
-        	"s":"BTCUSDT",
+         "s":"BTCUSDT",
 
-        	"pa":"20",
+         "pa":"20",
 
-        	"ep":"6563.66500",
+         "ep":"6563.66500",
 
-        	"bep":"0",                // breakeven price
+         "bep":"0",                // breakeven price
 
-        	"cr":"0",
+         "cr":"0",
 
-        	"up":"2850.21200",
+         "up":"2850.21200",
 
-        	"mt":"isolated",
+         "mt":"isolated",
 
-        	"iw":"13200.70726908",
+         "iw":"13200.70726908",
 
-        	"ps":"LONG"
+         "ps":"LONG"
 
-      	 },
+        },
 
         {
 
-        	"s":"BTCUSDT",
+         "s":"BTCUSDT",
 
-        	"pa":"-10",
+         "pa":"-10",
 
-        	"ep":"6563.86000",
+         "ep":"6563.86000",
 
-        	"bep":"6563.6",          // breakeven price
+         "bep":"6563.6",          // breakeven price
 
-        	"cr":"-45.04000000",
+         "cr":"-45.04000000",
 
-        	"up":"-1423.15600",
+         "up":"-1423.15600",
 
-        	"mt":"isolated",
+         "mt":"isolated",
 
-        	"iw":"6570.42511771",
+         "iw":"6570.42511771",
 
-        	"ps":"SHORT"
+         "ps":"SHORT"
 
         }
 

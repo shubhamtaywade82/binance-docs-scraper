@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:45:10.135Z
 ---
 # All Book Tickers Stream
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/All-Book-Tickers-Stream
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/All-Book-Tickers-Stream>
 
 # All Book Tickers Stream
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:52:32.891Z
 ---
 # Query All CM Conditional Orders(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-All-CM-Conditional-Orders
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-All-CM-Conditional-Orders>
 
 # Query All CM Conditional Orders(USER\_DATA)
 
@@ -38,11 +38,11 @@ GET `/papi/v1/cm/conditional/allOrders`
 
 **Notes:**
 
-> -   These orders will not be found:
->     -   order strategyStatus is `CANCELED` or `EXPIRED`, **AND**
->     -   order has NO filled trade, **AND**
->     -   created time + 7 days < current time
-> -   The query time period must be less than 7 days( default as the recent 7 days).
+> - These orders will not be found:
+>   - order strategyStatus is `CANCELED` or `EXPIRED`, **AND**
+>   - order has NO filled trade, **AND**
+>   - created time + 7 days < current time
+> - The query time period must be less than 7 days( default as the recent 7 days).
 
 ## Response Example
 

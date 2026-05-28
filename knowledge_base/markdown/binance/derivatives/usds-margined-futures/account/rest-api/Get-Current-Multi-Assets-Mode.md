@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:55:49.677Z
 ---
 # Get Current Multi-Assets Mode (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Current-Multi-Assets-Mode
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Current-Multi-Assets-Mode>
 
 # Get Current Multi-Assets Mode (USER\_DATA)
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:04:53.350Z
 ---
 # Linux - Ollama
 
-> Source: https://docs.ollama.com/linux
+> Source: <https://docs.ollama.com/linux>
 
 [Documentation
 
@@ -17,12 +17,12 @@ scraped_at: 2026-05-28T19:04:53.350Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
-## 
+##
 
 [​
 
@@ -36,7 +36,7 @@ To install Ollama, run the following command:
 curl -fsSL https://ollama.com/install.sh | sh
 ```
 
-## 
+##
 
 [​
 
@@ -65,7 +65,7 @@ In another terminal, verify that Ollama is running:
 ollama -v
 ```
 
-### 
+###
 
 [​
 
@@ -80,7 +80,7 @@ curl -fsSL https://ollama.com/download/ollama-linux-amd64-rocm.tar.zst \
     | sudo tar x -C /usr
 ```
 
-### 
+###
 
 [​
 
@@ -95,7 +95,7 @@ curl -fsSL https://ollama.com/download/ollama-linux-arm64.tar.zst \
     | sudo tar x -C /usr
 ```
 
-### 
+###
 
 [​
 
@@ -136,7 +136,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable ollama
 ```
 
-### 
+###
 
 [​
 
@@ -150,7 +150,7 @@ Install CUDA drivers (optional)
 nvidia-smi
 ```
 
-### 
+###
 
 [​
 
@@ -160,7 +160,7 @@ Install AMD ROCm drivers (optional)
 
 [Download and Install](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/tutorial/quick-start.html) ROCm v7.
 
-### 
+###
 
 [​
 
@@ -177,7 +177,7 @@ sudo systemctl status ollama
 
 While AMD has contributed the `amdgpu` driver upstream to the official linux kernel source, the version is older and may not support all ROCm features. We recommend you install the latest driver from [https://www.amd.com/en/support/linux-drivers](https://www.amd.com/en/support/linux-drivers) for best support of your Radeon GPU.
 
-## 
+##
 
 [​
 
@@ -198,7 +198,7 @@ Alternatively, create an override file manually in `/etc/systemd/system/ollama.s
 Environment="OLLAMA_DEBUG=1"
 ```
 
-## 
+##
 
 [​
 
@@ -219,7 +219,7 @@ curl -fsSL https://ollama.com/download/ollama-linux-amd64.tar.zst \
     | sudo tar x -C /usr
 ```
 
-## 
+##
 
 [​
 
@@ -233,7 +233,7 @@ Use `OLLAMA_VERSION` environment variable with the install script to install a s
 curl -fsSL https://ollama.com/install.sh | OLLAMA_VERSION=0.5.7 sh
 ```
 
-## 
+##
 
 [​
 
@@ -247,7 +247,7 @@ To view logs of Ollama running as a startup service, run:
 journalctl -e -u ollama
 ```
 
-## 
+##
 
 [​
 
@@ -288,8 +288,6 @@ sudo rm -r /usr/share/ollama
 macOS
 
 Next
-
-
 
 ](/macos)
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:55:34.218Z
 ---
 # User Commission Rate (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/User-Commission-Rate
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/User-Commission-Rate>
 
 # User Commission Rate (USER\_DATA)
 

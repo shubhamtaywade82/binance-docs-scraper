@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:45:36.628Z
 ---
 # Fund Auto-collection(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Fund-Auto-collection
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Fund-Auto-collection>
 
 # Fund Auto-collection(USER\_DATA)
 
@@ -31,8 +31,8 @@ POST `/sapi/v1/portfolio/auto-collection`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   The BNB would not be collected from UM-PM account to the Portfolio Margin account.
-> -   You can only use this function 500 times per hour in a rolling manner.
+> - The BNB would not be collected from UM-PM account to the Portfolio Margin account.
+> - You can only use this function 500 times per hour in a rolling manner.
 
 ## Response Example
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:54:32.902Z
 ---
 # Change Position Mode(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Change-Position-Mode
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Change-Position-Mode>
 
 # Change Position Mode(TRADE)
 
@@ -34,7 +34,7 @@ POST `/dapi/v1/positionSide/dual`
 
 **Note:**
 
--   CM `dualSidePosition` must stay consistent with UM. If CM `dualSidePosition` is already the same as UM, changing it will be rejected with error: _"The operation is rejected because the CM dual-side is not allowed to be different from UM dual-side."_
+- CM `dualSidePosition` must stay consistent with UM. If CM `dualSidePosition` is already the same as UM, changing it will be rejected with error: _"The operation is rejected because the CM dual-side is not allowed to be different from UM dual-side."_
 
 ## Response Example
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:53:43.483Z
 ---
 # Get BNB Burn Status (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-BNB-Burn-Status
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-BNB-Burn-Status>
 
 # Get BNB Burn Status (USER\_DATA)
 

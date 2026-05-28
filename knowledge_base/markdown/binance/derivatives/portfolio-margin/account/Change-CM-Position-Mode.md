@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:41:32.894Z
 ---
 # Change CM Position Mode(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Change-CM-Position-Mode
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Change-CM-Position-Mode>
 
 # Change CM Position Mode(TRADE)
 
@@ -34,7 +34,7 @@ POST `/papi/v1/cm/positionSide/dual`
 
 **Note:**
 
--   CM `dualSidePosition` must stay consistent with UM. If CM `dualSidePosition` is already the same as UM, changing it will be rejected with error: _"The operation is rejected because the CM dual-side is not allowed to be different from UM dual-side."_
+- CM `dualSidePosition` must stay consistent with UM. If CM `dualSidePosition` is already the same as UM, changing it will be rejected with error: _"The operation is rejected because the CM dual-side is not allowed to be different from UM dual-side."_
 
 ## Response Example
 

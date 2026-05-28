@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:47:48.108Z
 ---
 # New Order(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api>
 
 # New Order(TRADE)
 
@@ -51,11 +51,11 @@ Additional mandatory parameters based on `type`:
 | `LIMIT` | `timeInForce`, `quantity`, `price` |
 | `MARKET` | `quantity` |
 
-> -   If `newOrderRespType` is sent as `RESULT` :
->     -   `MARKET` order: the final FILLED result of the order will be return directly.
->     -   `LIMIT` order with special `timeInForce`: the final status result of the order(FILLED or EXPIRED) will be returned directly.
-> -   `selfTradePreventionMode` is only effective when `timeInForce` set to `IOC` or `GTC` or `GTD`.
-> -   In extreme market conditions, timeInForce `GTD` order auto cancel time might be delayed comparing to `goodTillDate`
+> - If `newOrderRespType` is sent as `RESULT` :
+>   - `MARKET` order: the final FILLED result of the order will be return directly.
+>   - `LIMIT` order with special `timeInForce`: the final status result of the order(FILLED or EXPIRED) will be returned directly.
+> - `selfTradePreventionMode` is only effective when `timeInForce` set to `IOC` or `GTC` or `GTD`.
+> - In extreme market conditions, timeInForce `GTD` order auto cancel time might be delayed comparing to `goodTillDate`
 
 ## Response Example
 

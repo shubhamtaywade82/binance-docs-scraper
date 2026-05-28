@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:49:08.770Z
 ---
 # Query All Algo Orders (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Query-All-Algo-Orders
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Query-All-Algo-Orders>
 
 # Query All Algo Orders (USER\_DATA)
 
@@ -16,9 +16,9 @@ scraped_at: 2026-05-28T18:49:08.770Z
 
 Get all algo (conditional) orders — active, CANCELED, TRIGGERED, or FINISHED — including TP/SL (Take Profit / Stop Loss) and trailing stop orders on USD-M Futures.
 
--   These orders will not be found:
-    -   order status is `CANCELED` or `EXPIRED` **AND** order has NO filled trade **AND** created time + 3 days < current time
-    -   order create time + 90 days < current time
+- These orders will not be found:
+  - order status is `CANCELED` or `EXPIRED` **AND** order has NO filled trade **AND** created time + 3 days < current time
+  - order create time + 90 days < current time
 
 ## HTTP Request
 
@@ -42,8 +42,8 @@ GET `/fapi/v1/allAlgoOrders`
 
 **Notes:**
 
-> -   If `algoId` is set, it will get orders >= that `algoId`. Otherwise most recent orders are returned.
-> -   The query time period must be less then 7 days( default as the recent 7 days).
+> - If `algoId` is set, it will get orders >= that `algoId`. Otherwise most recent orders are returned.
+> - The query time period must be less then 7 days( default as the recent 7 days).
 
 ## Response Example
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:03:15.531Z
 ---
 # Ollama's documentation - Ollama
 
-> Source: https://docs.ollama.com/
+> Source: <https://docs.ollama.com/>
 
 [Documentation
 
@@ -17,9 +17,9 @@ scraped_at: 2026-05-28T19:03:15.531Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 ![](https://mintcdn.com/ollama-9269c548/w-L7kuDqk3_8zi5c/images/welcome.png?fit=max&auto=format&n=w-L7kuDqk3_8zi5c&q=85&s=914368bbe8709d04481a8a478b66cf8c) [Ollama](https://ollama.com) is the easiest way to get up and running with large language models such as gpt-oss, Gemma 3, DeepSeek-R1, Qwen3 and more.
@@ -30,8 +30,6 @@ scraped_at: 2026-05-28T19:03:15.531Z
 
 Get up and running with your first model or integrate Ollama with your favorite tools
 
-
-
 ](/quickstart)
 
 [
@@ -40,17 +38,13 @@ Get up and running with your first model or integrate Ollama with your favorite 
 
 Download Ollama on macOS, Windows or Linux
 
-
-
-](https://ollama.com/download)
+](<https://ollama.com/download>)
 
 [
 
 ## Cloud
 
 Ollama’s cloud models offer larger models with better performance.
-
-
 
 ](/cloud)
 
@@ -60,11 +54,9 @@ Ollama’s cloud models offer larger models with better performance.
 
 View Ollama’s API reference
 
-
-
 ](/api)
 
-## 
+##
 
 [​
 
@@ -78,9 +70,7 @@ Libraries
 
 The official library for using Ollama with Python
 
-
-
-](https://github.com/ollama/ollama-python)
+](<https://github.com/ollama/ollama-python>)
 
 [
 
@@ -88,9 +78,7 @@ The official library for using Ollama with Python
 
 The official library for using Ollama with JavaScript or TypeScript.
 
-
-
-](https://github.com/ollama/ollama-js)
+](<https://github.com/ollama/ollama-js>)
 
 [
 
@@ -98,11 +86,9 @@ The official library for using Ollama with JavaScript or TypeScript.
 
 View a list of 20+ community-supported libraries for Ollama
 
+](<https://github.com/ollama/ollama?tab=readme-ov-file#libraries-1>)
 
-
-](https://github.com/ollama/ollama?tab=readme-ov-file#libraries-1)
-
-## 
+##
 
 [​
 
@@ -116,9 +102,7 @@ Community
 
 Join our Discord community
 
-
-
-](https://discord.gg/ollama)
+](<https://discord.gg/ollama>)
 
 [
 
@@ -126,17 +110,13 @@ Join our Discord community
 
 Join our Reddit community
 
-
-
-](https://reddit.com/r/ollama)
+](<https://reddit.com/r/ollama>)
 
 [
 
 Quickstart
 
 Next
-
-
 
 ](/quickstart)
 

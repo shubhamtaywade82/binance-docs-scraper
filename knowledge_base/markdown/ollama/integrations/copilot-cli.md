@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:04:07.743Z
 ---
 # Copilot CLI - Ollama
 
-> Source: https://docs.ollama.com/integrations/copilot-cli
+> Source: <https://docs.ollama.com/integrations/copilot-cli>
 
 [Documentation
 
@@ -17,14 +17,14 @@ scraped_at: 2026-05-28T19:04:07.743Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 GitHub Copilot CLI is GitHub’s AI coding agent for the terminal. It can understand your codebase, make edits, run commands, and help you build software faster. Open models can be used with Copilot CLI through Ollama, enabling you to use models such as `qwen3.5`, `glm-5.1:cloud`, `kimi-k2.5:cloud`.
 
-## 
+##
 
 [​
 
@@ -46,7 +46,7 @@ Windows (WinGet)
 brew install copilot-cli
 ```
 
-## 
+##
 
 [​
 
@@ -54,7 +54,7 @@ brew install copilot-cli
 
 Usage with Ollama
 
-### 
+###
 
 [​
 
@@ -66,7 +66,7 @@ Quick setup
 ollama launch copilot
 ```
 
-### 
+###
 
 [​
 
@@ -78,7 +78,7 @@ Run directly with a model
 ollama launch copilot --model kimi-k2.5:cloud
 ```
 
-## 
+##
 
 [​
 
@@ -86,16 +86,16 @@ ollama launch copilot --model kimi-k2.5:cloud
 
 Recommended Models
 
--   `kimi-k2.5:cloud`
--   `glm-5:cloud`
--   `minimax-m2.7:cloud`
--   `qwen3.5:cloud`
--   `glm-4.7-flash`
--   `qwen3.5`
+- `kimi-k2.5:cloud`
+- `glm-5:cloud`
+- `minimax-m2.7:cloud`
+- `qwen3.5:cloud`
+- `glm-4.7-flash`
+- `qwen3.5`
 
 Cloud models are also available at [ollama.com/search?c=cloud](https://ollama.com/search?c=cloud).
 
-## 
+##
 
 [​
 
@@ -111,7 +111,7 @@ ollama launch copilot --model kimi-k2.5:cloud --yes -- -p "how does this reposit
 
 The `--yes` flag auto-pulls the model, skips selectors, and requires `--model` to be specified. Arguments after `--` are passed directly to Copilot CLI.
 
-## 
+##
 
 [​
 
@@ -121,7 +121,7 @@ Manual setup
 
 Copilot CLI connects to Ollama using the OpenAI-compatible API via environment variables.
 
-1.  Set the environment variables:
+1. Set the environment variables:
 
 ```
 export COPILOT_PROVIDER_BASE_URL=http://localhost:11434/v1
@@ -130,7 +130,7 @@ export COPILOT_PROVIDER_WIRE_API=responses
 export COPILOT_MODEL=qwen3.5
 ```
 
-1.  Run Copilot CLI:
+1. Run Copilot CLI:
 
 ```
 copilot
@@ -149,8 +149,6 @@ COPILOT_PROVIDER_BASE_URL=http://localhost:11434/v1 COPILOT_PROVIDER_API_KEY= CO
 OpenCode
 
 Next
-
-
 
 ](/integrations/opencode)
 

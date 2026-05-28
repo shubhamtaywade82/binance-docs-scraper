@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:44:06.422Z
 ---
 # Event: Trade Lite Update
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Event-Trade-Lite
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Event-Trade-Lite>
 
 # Event: Trade Lite Update
 

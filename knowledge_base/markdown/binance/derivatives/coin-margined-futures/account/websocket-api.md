@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:45:26.562Z
 ---
 # Futures Account Balance(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/account/websocket-api
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/account/websocket-api>
 
 # Futures Account Balance(USER\_DATA)
 

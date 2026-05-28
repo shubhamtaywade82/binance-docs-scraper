@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:04:10.099Z
 ---
 # OpenCode - Ollama
 
-> Source: https://docs.ollama.com/integrations/opencode
+> Source: <https://docs.ollama.com/integrations/opencode>
 
 [Documentation
 
@@ -17,14 +17,14 @@ scraped_at: 2026-05-28T19:04:10.099Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 OpenCode is an open-source AI coding assistant that runs in your terminal.
 
-## 
+##
 
 [​
 
@@ -40,7 +40,7 @@ curl -fsSL https://opencode.ai/install | bash
 
 OpenCode requires a larger context window. It is recommended to use a context window of at least 64k tokens. See [Context length](/context-length) for more information.
 
-## 
+##
 
 [​
 
@@ -48,7 +48,7 @@ OpenCode requires a larger context window. It is recommended to use a context wi
 
 Usage with Ollama
 
-### 
+###
 
 [​
 
@@ -73,8 +73,6 @@ ollama launch opencode --config
 Droid
 
 Next
-
-
 
 ](/integrations/droid)
 

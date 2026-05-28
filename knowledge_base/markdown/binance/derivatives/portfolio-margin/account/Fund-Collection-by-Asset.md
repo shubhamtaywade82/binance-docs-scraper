@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:42:19.423Z
 ---
 # Fund Collection by Asset(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Fund-Collection-by-Asset
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Fund-Collection-by-Asset>
 
 # Fund Collection by Asset(TRADE)
 
@@ -32,7 +32,7 @@ POST `/papi/v1/asset-collection`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   The BNB transfer is not be supported
+> - The BNB transfer is not be supported
 
 ## Response Example
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:05:07.367Z
 ---
 # FAQ - Ollama
 
-> Source: https://docs.ollama.com/faq
+> Source: <https://docs.ollama.com/faq>
 
 [Documentation
 
@@ -17,12 +17,12 @@ scraped_at: 2026-05-28T19:05:07.367Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
-## 
+##
 
 [​
 
@@ -36,7 +36,7 @@ Ollama on macOS and Windows will automatically download updates. Click on the ta
 curl -fsSL https://ollama.com/install.sh | sh
 ```
 
-## 
+##
 
 [​
 
@@ -46,7 +46,7 @@ How can I view the logs?
 
 Review the [Troubleshooting](./troubleshooting.mdx) docs for more about using logs.
 
-## 
+##
 
 [​
 
@@ -56,7 +56,7 @@ Is my GPU compatible with Ollama?
 
 Please refer to the [GPU docs](./gpu.mdx).
 
-## 
+##
 
 [​
 
@@ -88,7 +88,7 @@ curl http://localhost:11434/api/generate -d '{
 }'
 ```
 
-## 
+##
 
 [​
 
@@ -111,11 +111,11 @@ llama3:70b  bcfb190ca3a7  42 GB   100% GPU    4 minutes from now
 
 The `Processor` column will show which memory the model was loaded into:
 
--   `100% GPU` means the model was loaded entirely into the GPU
--   `100% CPU` means the model was loaded entirely in system memory
--   `48%/52% CPU/GPU` means the model was loaded partially onto both the GPU and into system memory
+- `100% GPU` means the model was loaded entirely into the GPU
+- `100% CPU` means the model was loaded entirely in system memory
+- `48%/52% CPU/GPU` means the model was loaded partially onto both the GPU and into system memory
 
-## 
+##
 
 [​
 
@@ -125,7 +125,7 @@ How do I configure Ollama server?
 
 Ollama server can be configured with environment variables.
 
-### 
+###
 
 [​
 
@@ -135,15 +135,15 @@ Setting environment variables on Mac
 
 If Ollama is run as a macOS application, environment variables should be set using `launchctl`:
 
-1.  For each environment variable, call `launchctl setenv`.
-    
+1. For each environment variable, call `launchctl setenv`.
+
     ```
     launchctl setenv OLLAMA_HOST "0.0.0.0:11434"
     ```
-    
-2.  Restart Ollama application.
 
-### 
+2. Restart Ollama application.
+
+###
 
 [​
 
@@ -153,24 +153,23 @@ Setting environment variables on Linux
 
 If Ollama is run as a systemd service, environment variables should be set using `systemctl`:
 
-1.  Edit the systemd service by calling `systemctl edit ollama.service`. This will open an editor.
-2.  For each environment variable, add a line `Environment` under section `[Service]`:
-    
+1. Edit the systemd service by calling `systemctl edit ollama.service`. This will open an editor.
+2. For each environment variable, add a line `Environment` under section `[Service]`:
+
     ```
     [Service]
     Environment="OLLAMA_HOST=0.0.0.0:11434"
     ```
-    
-3.  Save and exit.
-4.  Reload `systemd` and restart Ollama:
-    
+
+3. Save and exit.
+4. Reload `systemd` and restart Ollama:
+
     ```
     systemctl daemon-reload
     systemctl restart ollama
     ```
-    
 
-### 
+###
 
 [​
 
@@ -180,14 +179,14 @@ Setting environment variables on Windows
 
 On Windows, Ollama inherits your user and system environment variables.
 
-1.  First Quit Ollama by clicking on it in the task bar.
-2.  Start the Settings (Windows 11) or Control Panel (Windows 10) application and search for _environment variables_.
-3.  Click on _Edit environment variables for your account_.
-4.  Edit or create a new variable for your user account for `OLLAMA_HOST`, `OLLAMA_MODELS`, etc.
-5.  Click OK/Apply to save.
-6.  Start the Ollama application from the Windows Start menu.
+1. First Quit Ollama by clicking on it in the task bar.
+2. Start the Settings (Windows 11) or Control Panel (Windows 10) application and search for _environment variables_.
+3. Click on _Edit environment variables for your account_.
+4. Edit or create a new variable for your user account for `OLLAMA_HOST`, `OLLAMA_MODELS`, etc.
+5. Click OK/Apply to save.
+6. Start the Ollama application from the Windows Start menu.
 
-## 
+##
 
 [​
 
@@ -199,7 +198,7 @@ Ollama pulls models from the Internet and may require a proxy server to access t
 
 Avoid setting `HTTP_PROXY`. Ollama does not use HTTP for model pulls, only HTTPS. Setting `HTTP_PROXY` may interrupt client connections to the server.
 
-### 
+###
 
 [​
 
@@ -222,7 +221,7 @@ docker build -t ollama-with-ca .
 docker run -d -e HTTPS_PROXY=https://my.proxy.example.com -p 11434:11434 ollama-with-ca
 ```
 
-## 
+##
 
 [​
 
@@ -232,7 +231,7 @@ Does Ollama send my prompts and answers back to ollama.com?
 
 Ollama runs locally. We don’t see your prompts or data when you run locally. When using cloud-hosted models, we process your prompts and responses to provide the service but do not store or log that content and never train on it. We collect basic account info and limited usage metadata to provide the service that does not include prompt or response content. We don’t sell your data. You can delete your account anytime.
 
-## 
+##
 
 [​
 
@@ -256,7 +255,7 @@ OLLAMA_NO_CLOUD=1
 
 Restart Ollama after changing configuration. Once disabled, Ollama’s logs will show `Ollama cloud disabled: true`.
 
-## 
+##
 
 [​
 
@@ -266,7 +265,7 @@ How can I expose Ollama on my network?
 
 Ollama binds 127.0.0.1 port 11434 by default. Change the bind address with the `OLLAMA_HOST` environment variable. Refer to the section [above](#how-do-i-configure-ollama-server) for how to set environment variables on your platform.
 
-## 
+##
 
 [​
 
@@ -287,7 +286,7 @@ server {
 }
 ```
 
-## 
+##
 
 [​
 
@@ -301,7 +300,7 @@ Ollama can be accessed using a range of tunneling apps. For example with Ngrok:
 ngrok http 11434 --host-header="localhost:11434"
 ```
 
-## 
+##
 
 [​
 
@@ -315,7 +314,7 @@ To use Ollama with Cloudflare Tunnel, use the `--url` and `--http-host-header` f
 cloudflared tunnel --url http://localhost:11434 --http-host-header="localhost:11434"
 ```
 
-## 
+##
 
 [​
 
@@ -332,7 +331,7 @@ OLLAMA_ORIGINS=chrome-extension://*,moz-extension://*,safari-web-extension://* o
 
 Refer to the section [above](#how-do-i-configure-ollama-server) for how to set environment variables on your platform.
 
-## 
+##
 
 [​
 
@@ -340,11 +339,11 @@ Refer to the section [above](#how-do-i-configure-ollama-server) for how to set e
 
 Where are models stored?
 
--   macOS: `~/.ollama/models`
--   Linux: `/usr/share/ollama/.ollama/models`
--   Windows: `C:\Users\%username%\.ollama\models`
+- macOS: `~/.ollama/models`
+- Linux: `/usr/share/ollama/.ollama/models`
+- Windows: `C:\Users\%username%\.ollama\models`
 
-### 
+###
 
 [​
 
@@ -358,7 +357,7 @@ On Linux using the standard installer, the `ollama` user needs read and write ac
 
 Refer to the section [above](#how-do-i-configure-ollama-server) for how to set environment variables on your platform.
 
-## 
+##
 
 [​
 
@@ -368,7 +367,7 @@ How can I use Ollama in Visual Studio Code?
 
 There is already a large collection of plugins available for VS Code as well as other editors that leverage Ollama. See the list of [extensions & plugins](https://github.com/ollama/ollama#extensions--plugins) at the bottom of the main repository readme.
 
-## 
+##
 
 [​
 
@@ -378,7 +377,7 @@ How do I use Ollama with GPU acceleration in Docker?
 
 The Ollama Docker container can be configured with GPU acceleration in Linux or Windows (with WSL2). This requires the [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-container-toolkit). See [ollama/ollama](https://hub.docker.com/r/ollama/ollama) for more details. GPU acceleration is not available for Docker Desktop in macOS due to the lack of GPU passthrough and emulation.
 
-## 
+##
 
 [​
 
@@ -388,7 +387,7 @@ Why is networking slow in WSL2 on Windows 10?
 
 This can impact both installing Ollama, as well as downloading models. Open `Control Panel > Networking and Internet > View network status and tasks` and click on `Change adapter settings` on the left panel. Find the `vEthernet (WSL)` adapter, right click and select `Properties`. Click on `Configure` and open the `Advanced` tab. Search through each of the properties until you find `Large Send Offload Version 2 (IPv4)` and `Large Send Offload Version 2 (IPv6)`. _Disable_ both of these properties.
 
-## 
+##
 
 [​
 
@@ -414,7 +413,7 @@ To preload a model using the CLI, use the command:
 ollama run llama3.2 ""
 ```
 
-## 
+##
 
 [​
 
@@ -430,10 +429,10 @@ ollama stop llama3.2
 
 If you’re using the API, use the `keep_alive` parameter with the `/api/generate` and `/api/chat` endpoints to set the amount of time that a model stays in memory. The `keep_alive` parameter can be set to:
 
--   a duration string (such as “10m” or “24h”)
--   a number in seconds (such as 3600)
--   any negative number which will keep the model loaded in memory (e.g. -1 or “-1m”)
--   ‘0’ which will unload the model immediately after generating a response
+- a duration string (such as “10m” or “24h”)
+- a number in seconds (such as 3600)
+- any negative number which will keep the model loaded in memory (e.g. -1 or “-1m”)
+- ‘0’ which will unload the model immediately after generating a response
 
 For example, to preload a model and leave it in memory use:
 
@@ -449,7 +448,7 @@ curl http://localhost:11434/api/generate -d '{"model": "llama3.2", "keep_alive":
 
 Alternatively, you can change the amount of time all models are loaded into memory by setting the `OLLAMA_KEEP_ALIVE` environment variable when starting the Ollama server. The `OLLAMA_KEEP_ALIVE` variable uses the same parameter types as the `keep_alive` parameter types mentioned above. Refer to the section explaining [how to configure the Ollama server](#how-do-i-configure-ollama-server) to correctly set the environment variable. The `keep_alive` API parameter with the `/api/generate` and `/api/chat` API endpoints will override the `OLLAMA_KEEP_ALIVE` setting.
 
-## 
+##
 
 [​
 
@@ -459,7 +458,7 @@ How do I manage the maximum number of requests the Ollama server can queue?
 
 If too many requests are sent to the server, it will respond with a 503 error indicating the server is overloaded. You can adjust how many requests may be queued by setting `OLLAMA_MAX_QUEUE`.
 
-## 
+##
 
 [​
 
@@ -469,13 +468,13 @@ How does Ollama handle concurrent requests?
 
 Ollama supports two levels of concurrent processing. If your system has sufficient available memory (system memory when using CPU inference, or VRAM for GPU inference) then multiple models can be loaded at the same time. For a given model, if there is sufficient available memory when the model is loaded, it is configured to allow parallel request processing. If there is insufficient available memory to load a new model request while one or more models are already loaded, all new requests will be queued until the new model can be loaded. As prior models become idle, one or more will be unloaded to make room for the new model. Queued requests will be processed in order. When using GPU inference new models must be able to completely fit in VRAM to allow concurrent model loads. Parallel request processing for a given model results in increasing the context size by the number of parallel requests. For example, a 2K context with 4 parallel requests will result in an 8K context and additional memory allocation. The following server settings may be used to adjust how Ollama handles concurrent requests on most platforms:
 
--   `OLLAMA_MAX_LOADED_MODELS` - The maximum number of models that can be loaded concurrently provided they fit in available memory. The default is 3 \* the number of GPUs or 3 for CPU inference.
--   `OLLAMA_NUM_PARALLEL` - The maximum number of parallel requests each model will process at the same time, default 1. Required RAM will scale by `OLLAMA_NUM_PARALLEL` \* `OLLAMA_CONTEXT_LENGTH`.
--   `OLLAMA_MAX_QUEUE` - The maximum number of requests Ollama will queue when busy before rejecting additional requests. The default is 512
+- `OLLAMA_MAX_LOADED_MODELS` - The maximum number of models that can be loaded concurrently provided they fit in available memory. The default is 3 \* the number of GPUs or 3 for CPU inference.
+- `OLLAMA_NUM_PARALLEL` - The maximum number of parallel requests each model will process at the same time, default 1. Required RAM will scale by `OLLAMA_NUM_PARALLEL` \* `OLLAMA_CONTEXT_LENGTH`.
+- `OLLAMA_MAX_QUEUE` - The maximum number of requests Ollama will queue when busy before rejecting additional requests. The default is 512
 
 Note: Windows with Radeon GPUs currently default to 1 model maximum due to limitations in ROCm v5.7 for available VRAM reporting. Once ROCm v6.2 is available, Windows Radeon will follow the defaults above. You may enable concurrent model loads on Radeon on Windows, but ensure you don’t load more models than will fit into your GPU’s VRAM.
 
-## 
+##
 
 [​
 
@@ -485,7 +484,7 @@ How does Ollama load models on multiple GPUs?
 
 When loading a new model, Ollama evaluates the required VRAM for the model against what is currently available. If the model will entirely fit on any single GPU, Ollama will load the model on that GPU. This typically provides the best performance as it reduces the amount of data transferring across the PCI bus during inference. If the model does not fit entirely on one GPU, then it will be spread across all the available GPUs.
 
-## 
+##
 
 [​
 
@@ -495,7 +494,7 @@ How can I enable Flash Attention?
 
 Flash Attention is a feature of most modern models that can significantly reduce memory usage as the context size grows. To enable Flash Attention, set the `OLLAMA_FLASH_ATTENTION` environment variable to `1` when starting the Ollama server.
 
-## 
+##
 
 [​
 
@@ -505,19 +504,19 @@ How can I set the quantization type for the K/V cache?
 
 The K/V context cache can be quantized to significantly reduce memory usage when Flash Attention is enabled. To use quantized K/V cache with Ollama you can set the following environment variable:
 
--   `OLLAMA_KV_CACHE_TYPE` - The quantization type for the K/V cache. Default is `f16`.
+- `OLLAMA_KV_CACHE_TYPE` - The quantization type for the K/V cache. Default is `f16`.
 
 Currently this is a global option - meaning all models will run with the specified quantization type.
 
 The currently available K/V cache quantization types are:
 
--   `f16` - high precision and memory usage (default).
--   `q8_0` - 8-bit quantization, uses approximately 1/2 the memory of `f16` with a very small loss in precision, this usually has no noticeable impact on the model’s quality (recommended if not using f16).
--   `q4_0` - 4-bit quantization, uses approximately 1/4 the memory of `f16` with a small-medium loss in precision that may be more noticeable at higher context sizes.
+- `f16` - high precision and memory usage (default).
+- `q8_0` - 8-bit quantization, uses approximately 1/2 the memory of `f16` with a very small loss in precision, this usually has no noticeable impact on the model’s quality (recommended if not using f16).
+- `q4_0` - 4-bit quantization, uses approximately 1/4 the memory of `f16` with a small-medium loss in precision that may be more noticeable at higher context sizes.
 
 How much the cache quantization impacts the model’s response quality will depend on the model and the task. Models that have a high GQA count (e.g. Qwen2) may see a larger impact on precision from quantization than models with a low GQA count. You may need to experiment with different quantization types to find the best balance between memory usage and quality.
 
-## 
+##
 
 [​
 
@@ -527,11 +526,11 @@ Where can I find my Ollama Public Key?
 
 Your **Ollama Public Key** is the public part of the key pair that lets your local Ollama instance talk to [ollama.com](https://ollama.com). You’ll need it to:
 
--   Push models to Ollama
--   Pull private models from Ollama to your machine
--   Run models hosted in [Ollama Cloud](https://ollama.com/cloud)
+- Push models to Ollama
+- Pull private models from Ollama to your machine
+- Run models hosted in [Ollama Cloud](https://ollama.com/cloud)
 
-### 
+###
 
 [​
 
@@ -539,16 +538,16 @@ Your **Ollama Public Key** is the public part of the key pair that lets your loc
 
 How to Add the Key
 
--   **Sign-in via the Settings page** in the **Mac** and **Windows App**
--   **Sign‑in via CLI**
+- **Sign-in via the Settings page** in the **Mac** and **Windows App**
+- **Sign‑in via CLI**
 
 ```
 ollama signin
 ```
 
--   **Manually copy & paste** the key on the **Ollama Keys** page: [https://ollama.com/settings/keys](https://ollama.com/settings/keys)
+- **Manually copy & paste** the key on the **Ollama Keys** page: [https://ollama.com/settings/keys](https://ollama.com/settings/keys)
 
-### 
+###
 
 [​
 
@@ -564,7 +563,7 @@ Where the Ollama Public Key lives
 
 Replace <username> with your actual Windows user name.
 
-## 
+##
 
 [​
 
@@ -574,19 +573,17 @@ How can I stop Ollama from starting when I login to my computer?
 
 Ollama for Windows and macOS register as a login item during installation. You can disable this if you prefer not to have Ollama automatically start. Ollama will respect this setting across upgrades, unless you uninstall the application. **Windows**
 
--   In `Task Manager` go to the `Startup apps` tab, search for `ollama` then click `Disable`
+- In `Task Manager` go to the `Startup apps` tab, search for `ollama` then click `Disable`
 
 **MacOS**
 
--   Open `Settings` and search for “Login Items”, find the `Ollama` entry under `Allow in the Background`, then click the slider to disable.
+- Open `Settings` and search for “Login Items”, find the `Ollama` entry under `Allow in the Background`, then click the slider to disable.
 
 [Previous](/import)[
 
 Hardware support
 
 Next
-
-
 
 ](/gpu)
 

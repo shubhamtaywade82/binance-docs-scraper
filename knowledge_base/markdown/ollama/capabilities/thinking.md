@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:03:29.437Z
 ---
 # Thinking - Ollama
 
-> Source: https://docs.ollama.com/capabilities/thinking
+> Source: <https://docs.ollama.com/capabilities/thinking>
 
 [Documentation
 
@@ -17,14 +17,14 @@ scraped_at: 2026-05-28T19:03:29.437Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 Thinking-capable models emit a `thinking` field that separates their reasoning trace from the final answer. Use this capability to audit model steps, animate the model _thinking_ in a UI, or hide the trace entirely when you only need the final response.
 
-## 
+##
 
 [​
 
@@ -32,13 +32,13 @@ Thinking-capable models emit a `thinking` field that separates their reasoning t
 
 Supported models
 
--   [Qwen 3](https://ollama.com/library/qwen3)
--   [GPT-OSS](https://ollama.com/library/gpt-oss) _(use `think` levels: `low`, `medium`, `high` — the trace cannot be fully disabled)_
--   [DeepSeek-v3.1](https://ollama.com/library/deepseek-v3.1)
--   [DeepSeek R1](https://ollama.com/library/deepseek-r1)
--   Browse the latest additions under [thinking models](https://ollama.com/search?c=thinking)
+- [Qwen 3](https://ollama.com/library/qwen3)
+- [GPT-OSS](https://ollama.com/library/gpt-oss) _(use `think` levels: `low`, `medium`, `high` — the trace cannot be fully disabled)_
+- [DeepSeek-v3.1](https://ollama.com/library/deepseek-v3.1)
+- [DeepSeek R1](https://ollama.com/library/deepseek-r1)
+- Browse the latest additions under [thinking models](https://ollama.com/search?c=thinking)
 
-## 
+##
 
 [​
 
@@ -48,12 +48,11 @@ Enable thinking in API calls
 
 Set the `think` field on chat or generate requests. Most models accept booleans (`true`/`false`). GPT-OSS instead expects one of `low`, `medium`, or `high` to tune the trace length. The `message.thinking` (chat endpoint) or `thinking` (generate endpoint) field contains the reasoning trace while `message.content` / `response` holds the final answer.
 
--   cURL
-    
--   Python
-    
--   JavaScript
-    
+- cURL
+
+- Python
+
+- JavaScript
 
 ```
 curl http://localhost:11434/api/chat -d '{
@@ -97,7 +96,7 @@ console.log('Answer:\n', response.message.content)
 
 GPT-OSS requires `think` to be set to `"low"`, `"medium"`, or `"high"`. Passing `true`/`false` is ignored for that model.
 
-## 
+##
 
 [​
 
@@ -107,10 +106,9 @@ Stream the reasoning trace
 
 Thinking streams interleave reasoning tokens before answer tokens. Detect the first `thinking` chunk to render a “thinking” section, then switch to the final reply once `message.content` arrives.
 
--   Python
-    
--   JavaScript
-    
+- Python
+
+- JavaScript
 
 ```
 from ollama import chat
@@ -173,7 +171,7 @@ async function main() {
 main()
 ```
 
-## 
+##
 
 [​
 
@@ -181,11 +179,11 @@ main()
 
 CLI quick reference
 
--   Enable thinking for a single run: `ollama run deepseek-r1 --think "Where should I visit in Lisbon?"`
--   Disable thinking: `ollama run deepseek-r1 --think=false "Summarize this article"`
--   Hide the trace while still using a thinking model: `ollama run deepseek-r1 --hidethinking "Is 9.9 bigger or 9.11?"`
--   Inside interactive sessions, toggle with `/set think` or `/set nothink`.
--   GPT-OSS only accepts levels: `ollama run gpt-oss --think=low "Draft a headline"` (replace `low` with `medium` or `high` as needed).
+- Enable thinking for a single run: `ollama run deepseek-r1 --think "Where should I visit in Lisbon?"`
+- Disable thinking: `ollama run deepseek-r1 --think=false "Summarize this article"`
+- Hide the trace while still using a thinking model: `ollama run deepseek-r1 --hidethinking "Is 9.9 bigger or 9.11?"`
+- Inside interactive sessions, toggle with `/set think` or `/set nothink`.
+- GPT-OSS only accepts levels: `ollama run gpt-oss --think=low "Draft a headline"` (replace `low` with `medium` or `high` as needed).
 
 Thinking is enabled by default in the CLI and API for supported models.
 
@@ -194,8 +192,6 @@ Thinking is enabled by default in the CLI and API for supported models.
 Structured Outputs
 
 Next
-
-
 
 ](/capabilities/structured-outputs)
 

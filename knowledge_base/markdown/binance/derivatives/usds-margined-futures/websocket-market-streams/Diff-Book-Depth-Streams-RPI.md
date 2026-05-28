@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:39:23.431Z
 ---
 # RPI Diff. Book Depth Streams
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Diff-Book-Depth-Streams-RPI
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Diff-Book-Depth-Streams-RPI>
 
 # RPI Diff. Book Depth Streams
 

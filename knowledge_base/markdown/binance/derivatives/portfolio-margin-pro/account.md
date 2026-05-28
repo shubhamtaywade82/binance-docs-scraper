@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:43:13.510Z
 ---
 # Get Portfolio Margin Pro Account Info(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account>
 
 # Get Portfolio Margin Pro Account Info(USER\_DATA)
 

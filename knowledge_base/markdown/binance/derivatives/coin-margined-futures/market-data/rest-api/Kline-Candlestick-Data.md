@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:58:31.227Z
 ---
 # Kline/Candlestick Data
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Kline-Candlestick-Data
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Kline-Candlestick-Data>
 
 # Kline/Candlestick Data
 
@@ -17,24 +17,24 @@ scraped_at: 2026-05-28T18:58:31.227Z
 Kline/candlestick bars for a symbol.  
 Klines are uniquely identified by their open time.
 
--   Kline/Candlestick chart intervals:  
+- Kline/Candlestick chart intervals:  
     m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
-    
-    -   1m
-    -   3m
-    -   5m
-    -   15m
-    -   30m
-    -   1h
-    -   2h
-    -   4h
-    -   6h
-    -   8h
-    -   12h
-    -   1d
-    -   3d
-    -   1w
-    -   1M
+
+  - 1m
+  - 3m
+  - 5m
+  - 15m
+  - 30m
+  - 1h
+  - 2h
+  - 4h
+  - 6h
+  - 8h
+  - 12h
+  - 1d
+  - 3d
+  - 1w
+  - 1M
 
 ## HTTP Request
 
@@ -62,11 +62,11 @@ based on parameter `LIMIT`
 | endTime | LONG | NO |  |
 | limit | INT | NO | Default 500; max 1500. |
 
-> -   The difference between `startTime` and `endTime` can only be up to 200 days
-> -   Between `startTime` and `endTime`, the most recent `limit` data from `endTime` will be returned:
->     -   If `startTime` and `endTime` are not sent, current timestamp will be set as `endTime`, and the most recent data will be returned.
->     -   If `startTime` is sent only, the timestamp of 200 days after `startTime` will be set as `endTime`(up to the current time)
->     -   If `endTime` is sent only, the timestamp of 200 days before `endTime` will be set as `startTime`
+> - The difference between `startTime` and `endTime` can only be up to 200 days
+> - Between `startTime` and `endTime`, the most recent `limit` data from `endTime` will be returned:
+>   - If `startTime` and `endTime` are not sent, current timestamp will be set as `endTime`, and the most recent data will be returned.
+>   - If `startTime` is sent only, the timestamp of 200 days after `startTime` will be set as `endTime`(up to the current time)
+>   - If `endTime` is sent only, the timestamp of 200 days before `endTime` will be set as `startTime`
 
 ## Response Example
 

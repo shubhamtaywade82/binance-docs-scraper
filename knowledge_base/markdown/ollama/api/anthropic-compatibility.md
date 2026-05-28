@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:02:39.258Z
 ---
 # Anthropic compatibility - Ollama
 
-> Source: https://docs.ollama.com/api/anthropic-compatibility
+> Source: <https://docs.ollama.com/api/anthropic-compatibility>
 
 [Documentation
 
@@ -17,14 +17,14 @@ scraped_at: 2026-05-28T19:02:39.258Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 Ollama provides compatibility with the [Anthropic Messages API](https://docs.anthropic.com/en/api/messages) to help connect existing applications to Ollama, including tools like Claude Code.
 
-## 
+##
 
 [​
 
@@ -32,7 +32,7 @@ Ollama provides compatibility with the [Anthropic Messages API](https://docs.ant
 
 Usage
 
-### 
+###
 
 [​
 
@@ -47,7 +47,7 @@ export ANTHROPIC_AUTH_TOKEN=ollama  # required but ignored
 export ANTHROPIC_BASE_URL=http://localhost:11434
 ```
 
-### 
+###
 
 [​
 
@@ -77,7 +77,7 @@ message = client.messages.create(
 print(message.content[0].text)
 ```
 
-### 
+###
 
 [​
 
@@ -106,7 +106,7 @@ with client.messages.stream(
         print(text, end='', flush=True)
 ```
 
-### 
+###
 
 [​
 
@@ -154,7 +154,7 @@ for block in message.content:
         print(f'Input: {block.input}')
 ```
 
-## 
+##
 
 [​
 
@@ -164,7 +164,7 @@ Using with Claude Code
 
 [Claude Code](https://code.claude.com/docs/en/overview) can be configured to use Ollama as its backend.
 
-### 
+###
 
 [​
 
@@ -184,7 +184,7 @@ ollama pull qwen3-coder
 ollama pull glm-4.7:cloud
 ```
 
-### 
+###
 
 [​
 
@@ -202,7 +202,7 @@ This will prompt you to select a model, configure Claude Code automatically, and
 ollama launch claude --config
 ```
 
-### 
+###
 
 [​
 
@@ -229,7 +229,7 @@ Then run Claude Code with any Ollama model:
 claude --model qwen3-coder
 ```
 
-## 
+##
 
 [​
 
@@ -237,7 +237,7 @@ claude --model qwen3-coder
 
 Endpoints
 
-### 
+###
 
 [​
 
@@ -245,7 +245,7 @@ Endpoints
 
 `/v1/messages`
 
-#### 
+####
 
 [​
 
@@ -253,16 +253,16 @@ Endpoints
 
 Supported features
 
--   [x]  Messages
--   [x]  Streaming
--   [x]  System prompts
--   [x]  Multi-turn conversations
--   [x]  Vision (images)
--   [x]  Tools (function calling)
--   [x]  Tool results
--   [x]  Thinking/extended thinking
+- [x]  Messages
+- [x]  Streaming
+- [x]  System prompts
+- [x]  Multi-turn conversations
+- [x]  Vision (images)
+- [x]  Tools (function calling)
+- [x]  Tool results
+- [x]  Thinking/extended thinking
 
-#### 
+####
 
 [​
 
@@ -270,27 +270,27 @@ Supported features
 
 Supported request fields
 
--   [x]  `model`
--   [x]  `max_tokens`
--   [x]  `messages`
-    -   [x]  Text `content`
-    -   [x]  Image `content` (base64)
-    -   [x]  Array of content blocks
-    -   [x]  `tool_use` blocks
-    -   [x]  `tool_result` blocks
-    -   [x]  `thinking` blocks
--   [x]  `system` (string or array)
--   [x]  `stream`
--   [x]  `temperature`
--   [x]  `top_p`
--   [x]  `top_k`
--   [x]  `stop_sequences`
--   [x]  `tools`
--   [x]  `thinking`
--   [ ]  `tool_choice`
--   [ ]  `metadata`
+- [x]  `model`
+- [x]  `max_tokens`
+- [x]  `messages`
+  - [x]  Text `content`
+  - [x]  Image `content` (base64)
+  - [x]  Array of content blocks
+  - [x]  `tool_use` blocks
+  - [x]  `tool_result` blocks
+  - [x]  `thinking` blocks
+- [x]  `system` (string or array)
+- [x]  `stream`
+- [x]  `temperature`
+- [x]  `top_p`
+- [x]  `top_k`
+- [x]  `stop_sequences`
+- [x]  `tools`
+- [x]  `thinking`
+- [ ]  `tool_choice`
+- [ ]  `metadata`
 
-#### 
+####
 
 [​
 
@@ -298,15 +298,15 @@ Supported request fields
 
 Supported response fields
 
--   [x]  `id`
--   [x]  `type`
--   [x]  `role`
--   [x]  `model`
--   [x]  `content` (text, tool\_use, thinking blocks)
--   [x]  `stop_reason` (end\_turn, max\_tokens, tool\_use)
--   [x]  `usage` (input\_tokens, output\_tokens)
+- [x]  `id`
+- [x]  `type`
+- [x]  `role`
+- [x]  `model`
+- [x]  `content` (text, tool\_use, thinking blocks)
+- [x]  `stop_reason` (end\_turn, max\_tokens, tool\_use)
+- [x]  `usage` (input\_tokens, output\_tokens)
 
-#### 
+####
 
 [​
 
@@ -314,16 +314,16 @@ Supported response fields
 
 Streaming events
 
--   [x]  `message_start`
--   [x]  `content_block_start`
--   [x]  `content_block_delta` (text\_delta, input\_json\_delta, thinking\_delta)
--   [x]  `content_block_stop`
--   [x]  `message_delta`
--   [x]  `message_stop`
--   [x]  `ping`
--   [x]  `error`
+- [x]  `message_start`
+- [x]  `content_block_start`
+- [x]  `content_block_delta` (text\_delta, input\_json\_delta, thinking\_delta)
+- [x]  `content_block_stop`
+- [x]  `message_delta`
+- [x]  `message_stop`
+- [x]  `ping`
+- [x]  `error`
 
-## 
+##
 
 [​
 
@@ -333,7 +333,7 @@ Models
 
 Ollama supports both local and cloud models.
 
-### 
+###
 
 [​
 
@@ -349,10 +349,10 @@ ollama pull qwen3-coder
 
 Recommended local models:
 
--   `qwen3-coder` - Excellent for coding tasks
--   `gpt-oss:20b` - Strong general-purpose model
+- `qwen3-coder` - Excellent for coding tasks
+- `gpt-oss:20b` - Strong general-purpose model
 
-### 
+###
 
 [​
 
@@ -362,10 +362,10 @@ Cloud models
 
 Cloud models are available immediately without pulling:
 
--   `glm-4.7:cloud` - High-performance cloud model
--   `minimax-m2.1:cloud` - Fast cloud model
+- `glm-4.7:cloud` - High-performance cloud model
+- `minimax-m2.1:cloud` - Fast cloud model
 
-### 
+###
 
 [​
 
@@ -396,7 +396,7 @@ curl http://localhost:11434/v1/messages \
     }'
 ```
 
-## 
+##
 
 [​
 
@@ -404,7 +404,7 @@ curl http://localhost:11434/v1/messages \
 
 Differences from the Anthropic API
 
-### 
+###
 
 [​
 
@@ -412,11 +412,11 @@ Differences from the Anthropic API
 
 Behavior differences
 
--   API key is accepted but not validated
--   `anthropic-version` header is accepted but not used
--   Token counts are approximations based on the underlying model’s tokenizer
+- API key is accepted but not validated
+- `anthropic-version` header is accepted but not used
+- Token counts are approximations based on the underlying model’s tokenizer
 
-### 
+###
 
 [​
 
@@ -437,7 +437,7 @@ The following Anthropic API features are not currently supported:
 | PDF support | `document` content blocks with PDF files |
 | Server-sent errors | `error` events during streaming (errors return HTTP status) |
 
-### 
+###
 
 [​
 
@@ -455,8 +455,6 @@ Partial support
 GenerateGenerates a response for the provided prompt
 
 Next
-
-
 
 ](/api/generate)
 

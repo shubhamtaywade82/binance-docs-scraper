@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:52:38.489Z
 ---
 # Query User's UM Force Orders (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-Users-UM-Force-Orders
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-Users-UM-Force-Orders>
 
 # Query User's UM Force Orders (USER\_DATA)
 
@@ -36,9 +36,9 @@ GET `/papi/v1/um/forceOrders`
 | recvWindow | LONG | NO | The value cannot be greater than 60000 |
 | timestamp | LONG | YES |  |
 
-> -   If `autoCloseType` is not sent, orders with both of the types will be returned
-> -   If `startTime` is not sent, data within 7 days before `endTime` can be queried
-> -   Only support querying data in the past 90 days
+> - If `autoCloseType` is not sent, orders with both of the types will be returned
+> - If `startTime` is not sent, data within 7 days before `endTime` can be queried
+> - Only support querying data in the past 90 days
 
 ## Response Example
 

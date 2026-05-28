@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:54:23.540Z
 ---
 # User's Force Orders(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Users-Force-Orders
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Users-Force-Orders>
 
 # User's Force Orders(USER\_DATA)
 
@@ -36,8 +36,8 @@ GET `/dapi/v1/forceOrders`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   If "autoCloseType" is not sent, orders with both of the types will be returned
-> -   Only support querying data in the past 90 days
+> - If "autoCloseType" is not sent, orders with both of the types will be returned
+> - Only support querying data in the past 90 days
 
 ## Response Example
 

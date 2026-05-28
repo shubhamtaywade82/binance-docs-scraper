@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:56:13.138Z
 ---
 # Get Futures Order History Download Link by Id (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Futures-Order-History-Download-Link-by-Id
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Futures-Order-History-Download-Link-by-Id>
 
 # Get Futures Order History Download Link by Id (USER\_DATA)
 
@@ -32,7 +32,7 @@ GET `/fapi/v1/order/asyn/id`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Download link expiration: 7 days
+> - Download link expiration: 7 days
 
 ## Response Example
 
@@ -41,17 +41,17 @@ GET `/fapi/v1/order/asyn/id`
 ```
 {
 
-	"downloadId":"545923594199212032",
+ "downloadId":"545923594199212032",
 
-  	"status":"completed",     // Enum：completed，processing
+   "status":"completed",     // Enum：completed，processing
 
-  	"url":"www.binance.com",  // The link is mapped to download id
+   "url":"www.binance.com",  // The link is mapped to download id
 
-  	"notified":true,          // ignore
+   "notified":true,          // ignore
 
-  	"expirationTimestamp":1645009771000,  // The link would expire after this timestamp
+   "expirationTimestamp":1645009771000,  // The link would expire after this timestamp
 
-  	"isExpired":null,
+   "isExpired":null,
 
 }
 
@@ -62,19 +62,19 @@ GET `/fapi/v1/order/asyn/id`
 ```
 {
 
-	"downloadId":"545923594199212032",
+ "downloadId":"545923594199212032",
 
-  	"status":"processing",
+   "status":"processing",
 
-  	"url":"", 
+   "url":"", 
 
-  	"notified":false,
+   "notified":false,
 
-  	"expirationTimestamp":-1
+   "expirationTimestamp":-1
 
-  	"isExpired":null,
+   "isExpired":null,
 
-  	
+   
 
 }
 

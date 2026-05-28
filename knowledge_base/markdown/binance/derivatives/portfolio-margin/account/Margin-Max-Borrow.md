@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:41:11.205Z
 ---
 # Margin Max Borrow(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Margin-Max-Borrow
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Margin-Max-Borrow>
 
 # Margin Max Borrow(USER\_DATA)
 

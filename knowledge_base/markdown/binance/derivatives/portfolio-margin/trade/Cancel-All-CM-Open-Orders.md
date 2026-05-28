@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:51:19.002Z
 ---
 # Cancel All CM Open Orders(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-All-CM-Open-Orders
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-All-CM-Open-Orders>
 
 # Cancel All CM Open Orders(TRADE)
 

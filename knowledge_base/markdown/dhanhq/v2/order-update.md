@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:01:56.876Z
 ---
 # Live Order Update
 
-> Source: https://dhanhq.co/docs/v2/order-update
+> Source: <https://dhanhq.co/docs/v2/order-update>
 
 # Live Order Update
 
@@ -32,7 +32,6 @@ While establishing connection, you need to send Authorisation Message for connec
 
 You can receive order updates for all orders placed via your account, irrespective of the platform via which it was placed.
 
-  
 **Authorisation message structure**
 
 ```json
@@ -45,8 +44,6 @@ You can receive order updates for all orders placed via your account, irrespecti
   "UserType": "SELF"
 }
 ```
-
-  
 
 **Parameters**
 
@@ -68,7 +65,6 @@ _required_ | string | `SELF` for individual users |
 
 Platforms can receive order updates originating for all users connected to their platform/app for which [Partner Login](https://dhanhq.co/docs/v2/#for-partners) module needs to be used.
 
-  
 **Authorisation message structure**
 
 ```
@@ -81,8 +77,6 @@ Platforms can receive order updates originating for all users connected to their
     "Secret": "partner_secret"
 }
 ```
-
-  
 
 **Parameters**
 
@@ -104,7 +98,6 @@ _required_ | string | `partner_secret` generated for the partner |
 
 Order Update messages are sent via WebSocket in below structure.
 
-  
 **Structure**
 
 ```
@@ -169,7 +162,6 @@ Order Update messages are sent via WebSocket in below structure.
 }
 ```
 
-  
 **Parameters**
 
 or

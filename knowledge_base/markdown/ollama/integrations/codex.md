@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:04:05.341Z
 ---
 # Codex CLI - Ollama
 
-> Source: https://docs.ollama.com/integrations/codex
+> Source: <https://docs.ollama.com/integrations/codex>
 
 [Documentation
 
@@ -17,12 +17,12 @@ scraped_at: 2026-05-28T19:04:05.341Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
-## 
+##
 
 [​
 
@@ -36,7 +36,7 @@ Install the [Codex CLI](https://developers.openai.com/codex/cli/). For the deskt
 npm install -g @openai/codex
 ```
 
-## 
+##
 
 [​
 
@@ -46,7 +46,7 @@ Usage with Ollama
 
 Codex requires a larger context window. It is recommended to use a context window of at least 64k tokens.
 
-### 
+###
 
 [​
 
@@ -64,7 +64,7 @@ When launched through `ollama launch codex`, Ollama refreshes the model catalog 
 ollama launch codex --config
 ```
 
-### 
+###
 
 [​
 
@@ -90,7 +90,7 @@ To use a cloud model:
 codex --oss -m gpt-oss:120b-cloud
 ```
 
-### 
+###
 
 [​
 
@@ -126,8 +126,6 @@ codex --profile ollama-cloud
 Copilot CLI
 
 Next
-
-
 
 ](/integrations/copilot-cli)
 

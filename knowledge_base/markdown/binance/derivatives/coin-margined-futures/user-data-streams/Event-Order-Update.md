@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:40:49.087Z
 ---
 # Event: Order Update
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/user-data-streams/Event-Order-Update
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/user-data-streams/Event-Order-Update>
 
 # Event: Order Update
 
@@ -18,71 +18,71 @@ When new order created, modified, order status changed will push such event. eve
 
 **Side**
 
--   BUY
--   SELL
+- BUY
+- SELL
 
 **Position side:**
 
--   BOTH
--   LONG
--   SHORT
+- BOTH
+- LONG
+- SHORT
 
 **Order Type**
 
--   MARKET
--   LIMIT
--   STOP
--   TAKE\_PROFIT
--   LIQUIDATION
+- MARKET
+- LIMIT
+- STOP
+- TAKE\_PROFIT
+- LIQUIDATION
 
 **Execution Type**
 
--   NEW
--   CANCELED
--   CALCULATED - Liquidation Execution
--   EXPIRED
--   TRADE
--   AMENDMENT - Order Modified
+- NEW
+- CANCELED
+- CALCULATED - Liquidation Execution
+- EXPIRED
+- TRADE
+- AMENDMENT - Order Modified
 
 **Order Status**
 
--   NEW
--   PARTIALLY\_FILLED
--   FILLED
--   CANCELED
--   EXPIRED
--   EXPIRED\_IN\_MATCH
+- NEW
+- PARTIALLY\_FILLED
+- FILLED
+- CANCELED
+- EXPIRED
+- EXPIRED\_IN\_MATCH
 
 **Time in force**
 
--   GTC
--   IOC
--   FOK
--   GTX
+- GTC
+- IOC
+- FOK
+- GTX
 
 **Liquidation and ADL:**
 
--   If user gets liquidated due to insufficient margin balance:
-    
-    -   `c` shows as "autoclose-XXX"，`X` shows as "NEW"
--   If user has enough margin balance but gets ADL:
-    
-    -   `c` shows as “adl\_autoclose”，`X` shows as “NEW”
+- If user gets liquidated due to insufficient margin balance:
+
+  - `c` shows as "autoclose-XXX"，`X` shows as "NEW"
+- If user has enough margin balance but gets ADL:
+
+  - `c` shows as “adl\_autoclose”，`X` shows as “NEW”
 
 **Expiry Reason**
 
--   `0`: None, the default value
--   `1`: Order has expired to prevent users from inadvertently trading against themselves
--   `2`: IOC order could not be filled completely, remaining quantity is canceled
--   `3`: IOC order could not be filled completely to prevent users from inadvertently trading against themselves, remaining quantity is canceled
--   `4`: Order has been canceled, as it's knocked out by another higher priority RO (market) order or reversed positions would be opened
--   `5`: Order has expired when the account was liquidated
--   `6`: Order has expired as GTE condition unsatisfied
--   `7`: Order has been canceled as the symbol is delisted
--   `8`: The initial order has expired after the stop order is triggered
--   `9`: Market order could not be filled completely, remaining quantity is canceled
--   `10`: FOK order could not be filled completely, the order is canceled
--   `11`: Order has been canceled, as it's failed Post-only check.
+- `0`: None, the default value
+- `1`: Order has expired to prevent users from inadvertently trading against themselves
+- `2`: IOC order could not be filled completely, remaining quantity is canceled
+- `3`: IOC order could not be filled completely to prevent users from inadvertently trading against themselves, remaining quantity is canceled
+- `4`: Order has been canceled, as it's knocked out by another higher priority RO (market) order or reversed positions would be opened
+- `5`: Order has expired when the account was liquidated
+- `6`: Order has expired as GTE condition unsatisfied
+- `7`: Order has been canceled as the symbol is delisted
+- `8`: The initial order has expired after the stop order is triggered
+- `9`: Market order could not be filled completely, remaining quantity is canceled
+- `10`: FOK order could not be filled completely, the order is canceled
+- `11`: Order has been canceled, as it's failed Post-only check.
 
 ## Event Name
 

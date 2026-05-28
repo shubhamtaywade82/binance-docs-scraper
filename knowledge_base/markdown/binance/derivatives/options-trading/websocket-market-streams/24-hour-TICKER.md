@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:59:35.440Z
 ---
 # 24-hour TICKER
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/websocket-market-streams/24-hour-TICKER
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/websocket-market-streams/24-hour-TICKER>
 
 # 24-hour TICKER
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:55:27.981Z
 ---
 # Account Information V2(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Account-Information-V2
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Account-Information-V2>
 
 # Account Information V2(USER\_DATA)
 
@@ -38,151 +38,151 @@ GET `/fapi/v2/account`
 ```
 {   
 
-	"feeTier": 0,  		// account commission tier 
+ "feeTier": 0,    // account commission tier 
 
-	"feeBurn": true,  	// "true": Fee Discount On; "false": Fee Discount Off	"canTrade": true,  	// if can trade
+ "feeBurn": true,   // "true": Fee Discount On; "false": Fee Discount Off "canTrade": true,   // if can trade
 
-	"canDeposit": true,  	// if can transfer in asset
+ "canDeposit": true,   // if can transfer in asset
 
-	"canWithdraw": true, 	// if can transfer out asset
+ "canWithdraw": true,  // if can transfer out asset
 
-	"updateTime": 0,        // reserved property, please ignore 
+ "updateTime": 0,        // reserved property, please ignore 
 
-	"multiAssetsMargin": false,
+ "multiAssetsMargin": false,
 
-	"tradeGroupId": -1,
+ "tradeGroupId": -1,
 
-	"totalInitialMargin": "0.00000000",    // total initial margin required with current mark price (useless with isolated positions), only for USDT asset
+ "totalInitialMargin": "0.00000000",    // total initial margin required with current mark price (useless with isolated positions), only for USDT asset
 
-	"totalMaintMargin": "0.00000000",  	  // total maintenance margin required, only for USDT asset
+ "totalMaintMargin": "0.00000000",     // total maintenance margin required, only for USDT asset
 
-	"totalWalletBalance": "23.72469206",     // total wallet balance, only for USDT asset
+ "totalWalletBalance": "23.72469206",     // total wallet balance, only for USDT asset
 
-	"totalUnrealizedProfit": "0.00000000",   // total unrealized profit, only for USDT asset
+ "totalUnrealizedProfit": "0.00000000",   // total unrealized profit, only for USDT asset
 
-	"totalMarginBalance": "23.72469206",     // total margin balance, only for USDT asset
+ "totalMarginBalance": "23.72469206",     // total margin balance, only for USDT asset
 
-	"totalPositionInitialMargin": "0.00000000",    // initial margin required for positions with current mark price, only for USDT asset
+ "totalPositionInitialMargin": "0.00000000",    // initial margin required for positions with current mark price, only for USDT asset
 
-	"totalOpenOrderInitialMargin": "0.00000000",   // initial margin required for open orders with current mark price, only for USDT asset
+ "totalOpenOrderInitialMargin": "0.00000000",   // initial margin required for open orders with current mark price, only for USDT asset
 
-	"totalCrossWalletBalance": "23.72469206",      // crossed wallet balance, only for USDT asset
+ "totalCrossWalletBalance": "23.72469206",      // crossed wallet balance, only for USDT asset
 
-	"totalCrossUnPnl": "0.00000000",	  // unrealized profit of crossed positions, only for USDT asset
+ "totalCrossUnPnl": "0.00000000",   // unrealized profit of crossed positions, only for USDT asset
 
-	"availableBalance": "23.72469206",       // available balance, only for USDT asset
+ "availableBalance": "23.72469206",       // available balance, only for USDT asset
 
-	"maxWithdrawAmount": "23.72469206"     // maximum amount for transfer out, only for USDT asset
+ "maxWithdrawAmount": "23.72469206"     // maximum amount for transfer out, only for USDT asset
 
-	"assets": [
+ "assets": [
 
-		{
+  {
 
-			"asset": "USDT",			// asset name
+   "asset": "USDT",   // asset name
 
-			"walletBalance": "23.72469206",      // wallet balance
+   "walletBalance": "23.72469206",      // wallet balance
 
-			"unrealizedProfit": "0.00000000",    // unrealized profit
+   "unrealizedProfit": "0.00000000",    // unrealized profit
 
-			"marginBalance": "23.72469206",      // margin balance
+   "marginBalance": "23.72469206",      // margin balance
 
-			"maintMargin": "0.00000000",	    // maintenance margin required
+   "maintMargin": "0.00000000",     // maintenance margin required
 
-			"initialMargin": "0.00000000",    // total initial margin required with current mark price 
+   "initialMargin": "0.00000000",    // total initial margin required with current mark price 
 
-			"positionInitialMargin": "0.00000000",    //initial margin required for positions with current mark price
+   "positionInitialMargin": "0.00000000",    //initial margin required for positions with current mark price
 
-			"openOrderInitialMargin": "0.00000000",   // initial margin required for open orders with current mark price
+   "openOrderInitialMargin": "0.00000000",   // initial margin required for open orders with current mark price
 
-			"crossWalletBalance": "23.72469206",      // crossed wallet balance
+   "crossWalletBalance": "23.72469206",      // crossed wallet balance
 
-			"crossUnPnl": "0.00000000"       // unrealized profit of crossed positions
+   "crossUnPnl": "0.00000000"       // unrealized profit of crossed positions
 
-			"availableBalance": "23.72469206",       // available balance
+   "availableBalance": "23.72469206",       // available balance
 
-			"maxWithdrawAmount": "23.72469206",     // maximum amount for transfer out
+   "maxWithdrawAmount": "23.72469206",     // maximum amount for transfer out
 
-			"marginAvailable": true,    // whether the asset can be used as margin in Multi-Assets mode
+   "marginAvailable": true,    // whether the asset can be used as margin in Multi-Assets mode
 
-			"updateTime": 1625474304765 // last update time 
+   "updateTime": 1625474304765 // last update time 
 
-		},
+  },
 
-		{
+  {
 
-			"asset": "BUSD",			// asset name
+   "asset": "BUSD",   // asset name
 
-			"walletBalance": "103.12345678",      // wallet balance
+   "walletBalance": "103.12345678",      // wallet balance
 
-			"unrealizedProfit": "0.00000000",    // unrealized profit
+   "unrealizedProfit": "0.00000000",    // unrealized profit
 
-			"marginBalance": "103.12345678",      // margin balance
+   "marginBalance": "103.12345678",      // margin balance
 
-			"maintMargin": "0.00000000",	    // maintenance margin required
+   "maintMargin": "0.00000000",     // maintenance margin required
 
-			"initialMargin": "0.00000000",    // total initial margin required with current mark price 
+   "initialMargin": "0.00000000",    // total initial margin required with current mark price 
 
-			"positionInitialMargin": "0.00000000",    //initial margin required for positions with current mark price
+   "positionInitialMargin": "0.00000000",    //initial margin required for positions with current mark price
 
-			"openOrderInitialMargin": "0.00000000",   // initial margin required for open orders with current mark price
+   "openOrderInitialMargin": "0.00000000",   // initial margin required for open orders with current mark price
 
-			"crossWalletBalance": "103.12345678",      // crossed wallet balance
+   "crossWalletBalance": "103.12345678",      // crossed wallet balance
 
-			"crossUnPnl": "0.00000000"       // unrealized profit of crossed positions
+   "crossUnPnl": "0.00000000"       // unrealized profit of crossed positions
 
-			"availableBalance": "103.12345678",       // available balance
+   "availableBalance": "103.12345678",       // available balance
 
-			"maxWithdrawAmount": "103.12345678",     // maximum amount for transfer out
+   "maxWithdrawAmount": "103.12345678",     // maximum amount for transfer out
 
-			"marginAvailable": true,    // whether the asset can be used as margin in Multi-Assets mode
+   "marginAvailable": true,    // whether the asset can be used as margin in Multi-Assets mode
 
-			"updateTime": 1625474304765 // last update time
+   "updateTime": 1625474304765 // last update time
 
-		}
+  }
 
-	],
+ ],
 
-	"positions": [  // positions of all symbols in the market are returned
+ "positions": [  // positions of all symbols in the market are returned
 
-		// only "BOTH" positions will be returned with One-way mode
+  // only "BOTH" positions will be returned with One-way mode
 
-		// only "LONG" and "SHORT" positions will be returned with Hedge mode
+  // only "LONG" and "SHORT" positions will be returned with Hedge mode
 
-		{
+  {
 
-			"symbol": "BTCUSDT",  	// symbol name
+   "symbol": "BTCUSDT",   // symbol name
 
-			"initialMargin": "0",	// initial margin required with current mark price 
+   "initialMargin": "0", // initial margin required with current mark price 
 
-			"maintMargin": "0",		// maintenance margin required
+   "maintMargin": "0",  // maintenance margin required
 
-			"unrealizedProfit": "0.00000000",  // unrealized profit
+   "unrealizedProfit": "0.00000000",  // unrealized profit
 
-			"positionInitialMargin": "0",      // initial margin required for positions with current mark price
+   "positionInitialMargin": "0",      // initial margin required for positions with current mark price
 
-			"openOrderInitialMargin": "0",     // initial margin required for open orders with current mark price
+   "openOrderInitialMargin": "0",     // initial margin required for open orders with current mark price
 
-			"leverage": "100",		// current initial leverage
+   "leverage": "100",  // current initial leverage
 
-			"isolated": true,  		// if the position is isolated
+   "isolated": true,    // if the position is isolated
 
-			"entryPrice": "0.00000",  	// average entry price
+   "entryPrice": "0.00000",   // average entry price
 
-			"maxNotional": "250000",  	// maximum available notional with current leverage
+   "maxNotional": "250000",   // maximum available notional with current leverage
 
-			"bidNotional": "0",  // bids notional, ignore
+   "bidNotional": "0",  // bids notional, ignore
 
-			"askNotional": "0",  // ask notional, ignore
+   "askNotional": "0",  // ask notional, ignore
 
-			"positionSide": "BOTH",  	// position side
+   "positionSide": "BOTH",   // position side
 
-			"positionAmt": "0",			// position amount
+   "positionAmt": "0",   // position amount
 
-			"updateTime": 0           // last update time
+   "updateTime": 0           // last update time
 
-		}
+  }
 
-	]
+ ]
 
 }
 
@@ -193,153 +193,153 @@ GET `/fapi/v2/account`
 ```
 {   
 
-	"feeTier": 0,  		// account commission tier 
+ "feeTier": 0,    // account commission tier 
 
-	"feeBurn": true,  	// "true": Fee Discount On; "false": Fee Discount Off	"canTrade": true,  	// if can trade
+ "feeBurn": true,   // "true": Fee Discount On; "false": Fee Discount Off "canTrade": true,   // if can trade
 
-	"canTrade": true,  	// if can trade
+ "canTrade": true,   // if can trade
 
-	"canDeposit": true,  	// if can transfer in asset
+ "canDeposit": true,   // if can transfer in asset
 
-	"canWithdraw": true, 	// if can transfer out asset
+ "canWithdraw": true,  // if can transfer out asset
 
-	"updateTime": 0,        // reserved property, please ignore 
+ "updateTime": 0,        // reserved property, please ignore 
 
-	"multiAssetsMargin": true,
+ "multiAssetsMargin": true,
 
-	"tradeGroupId": -1,
+ "tradeGroupId": -1,
 
-	"totalInitialMargin": "0.00000000",    // the sum of USD value of all cross positions/open order initial margin
+ "totalInitialMargin": "0.00000000",    // the sum of USD value of all cross positions/open order initial margin
 
-	"totalMaintMargin": "0.00000000",  	  // the sum of USD value of all cross positions maintenance margin
+ "totalMaintMargin": "0.00000000",     // the sum of USD value of all cross positions maintenance margin
 
-	"totalWalletBalance": "126.72469206",     // total wallet balance in USD
+ "totalWalletBalance": "126.72469206",     // total wallet balance in USD
 
-	"totalUnrealizedProfit": "0.00000000",   // total unrealized profit in USD
+ "totalUnrealizedProfit": "0.00000000",   // total unrealized profit in USD
 
-	"totalMarginBalance": "126.72469206",     // total margin balance in USD
+ "totalMarginBalance": "126.72469206",     // total margin balance in USD
 
-	"totalPositionInitialMargin": "0.00000000",    // the sum of USD value of all cross positions initial margin
+ "totalPositionInitialMargin": "0.00000000",    // the sum of USD value of all cross positions initial margin
 
-	"totalOpenOrderInitialMargin": "0.00000000",   // initial margin required for open orders with current mark price in USD
+ "totalOpenOrderInitialMargin": "0.00000000",   // initial margin required for open orders with current mark price in USD
 
-	"totalCrossWalletBalance": "126.72469206",      // crossed wallet balance in USD
+ "totalCrossWalletBalance": "126.72469206",      // crossed wallet balance in USD
 
-	"totalCrossUnPnl": "0.00000000",	  // unrealized profit of crossed positions in USD
+ "totalCrossUnPnl": "0.00000000",   // unrealized profit of crossed positions in USD
 
-	"availableBalance": "126.72469206",       // available balance in USD
+ "availableBalance": "126.72469206",       // available balance in USD
 
-	"maxWithdrawAmount": "126.72469206"     // maximum virtual amount for transfer out in USD
+ "maxWithdrawAmount": "126.72469206"     // maximum virtual amount for transfer out in USD
 
-	"assets": [
+ "assets": [
 
-		{
+  {
 
-			"asset": "USDT",			// asset name
+   "asset": "USDT",   // asset name
 
-			"walletBalance": "23.72469206",      // wallet balance
+   "walletBalance": "23.72469206",      // wallet balance
 
-			"unrealizedProfit": "0.00000000",    // unrealized profit
+   "unrealizedProfit": "0.00000000",    // unrealized profit
 
-			"marginBalance": "23.72469206",      // margin balance
+   "marginBalance": "23.72469206",      // margin balance
 
-			"maintMargin": "0.00000000",	    // maintenance margin required
+   "maintMargin": "0.00000000",     // maintenance margin required
 
-			"initialMargin": "0.00000000",    // total initial margin required with current mark price 
+   "initialMargin": "0.00000000",    // total initial margin required with current mark price 
 
-			"positionInitialMargin": "0.00000000",    //initial margin required for positions with current mark price
+   "positionInitialMargin": "0.00000000",    //initial margin required for positions with current mark price
 
-			"openOrderInitialMargin": "0.00000000",   // initial margin required for open orders with current mark price
+   "openOrderInitialMargin": "0.00000000",   // initial margin required for open orders with current mark price
 
-			"crossWalletBalance": "23.72469206",      // crossed wallet balance
+   "crossWalletBalance": "23.72469206",      // crossed wallet balance
 
-			"crossUnPnl": "0.00000000"       // unrealized profit of crossed positions
+   "crossUnPnl": "0.00000000"       // unrealized profit of crossed positions
 
-			"availableBalance": "126.72469206",       // available balance
+   "availableBalance": "126.72469206",       // available balance
 
-			"maxWithdrawAmount": "23.72469206",     // maximum amount for transfer out
+   "maxWithdrawAmount": "23.72469206",     // maximum amount for transfer out
 
-			"marginAvailable": true,    // whether the asset can be used as margin in Multi-Assets mode
+   "marginAvailable": true,    // whether the asset can be used as margin in Multi-Assets mode
 
-			"updateTime": 1625474304765 // last update time 
+   "updateTime": 1625474304765 // last update time 
 
-		},
+  },
 
-		{
+  {
 
-			"asset": "BUSD",			// asset name
+   "asset": "BUSD",   // asset name
 
-			"walletBalance": "103.12345678",      // wallet balance
+   "walletBalance": "103.12345678",      // wallet balance
 
-			"unrealizedProfit": "0.00000000",    // unrealized profit
+   "unrealizedProfit": "0.00000000",    // unrealized profit
 
-			"marginBalance": "103.12345678",      // margin balance
+   "marginBalance": "103.12345678",      // margin balance
 
-			"maintMargin": "0.00000000",	    // maintenance margin required
+   "maintMargin": "0.00000000",     // maintenance margin required
 
-			"initialMargin": "0.00000000",    // total initial margin required with current mark price 
+   "initialMargin": "0.00000000",    // total initial margin required with current mark price 
 
-			"positionInitialMargin": "0.00000000",    //initial margin required for positions with current mark price
+   "positionInitialMargin": "0.00000000",    //initial margin required for positions with current mark price
 
-			"openOrderInitialMargin": "0.00000000",   // initial margin required for open orders with current mark price
+   "openOrderInitialMargin": "0.00000000",   // initial margin required for open orders with current mark price
 
-			"crossWalletBalance": "103.12345678",      // crossed wallet balance
+   "crossWalletBalance": "103.12345678",      // crossed wallet balance
 
-			"crossUnPnl": "0.00000000"       // unrealized profit of crossed positions
+   "crossUnPnl": "0.00000000"       // unrealized profit of crossed positions
 
-			"availableBalance": "126.72469206",       // available balance
+   "availableBalance": "126.72469206",       // available balance
 
-			"maxWithdrawAmount": "103.12345678",     // maximum amount for transfer out
+   "maxWithdrawAmount": "103.12345678",     // maximum amount for transfer out
 
-			"marginAvailable": true,    // whether the asset can be used as margin in Multi-Assets mode
+   "marginAvailable": true,    // whether the asset can be used as margin in Multi-Assets mode
 
-			"updateTime": 1625474304765 // last update time
+   "updateTime": 1625474304765 // last update time
 
-		}
+  }
 
-	],
+ ],
 
-	"positions": [  // positions of all symbols in the market are returned
+ "positions": [  // positions of all symbols in the market are returned
 
-		// only "BOTH" positions will be returned with One-way mode
+  // only "BOTH" positions will be returned with One-way mode
 
-		// only "LONG" and "SHORT" positions will be returned with Hedge mode
+  // only "LONG" and "SHORT" positions will be returned with Hedge mode
 
-		{
+  {
 
-			"symbol": "BTCUSDT",  	// symbol name
+   "symbol": "BTCUSDT",   // symbol name
 
-			"initialMargin": "0",	// initial margin required with current mark price 
+   "initialMargin": "0", // initial margin required with current mark price 
 
-			"maintMargin": "0",		// maintenance margin required
+   "maintMargin": "0",  // maintenance margin required
 
-			"unrealizedProfit": "0.00000000",  // unrealized profit
+   "unrealizedProfit": "0.00000000",  // unrealized profit
 
-			"positionInitialMargin": "0",      // initial margin required for positions with current mark price
+   "positionInitialMargin": "0",      // initial margin required for positions with current mark price
 
-			"openOrderInitialMargin": "0",     // initial margin required for open orders with current mark price
+   "openOrderInitialMargin": "0",     // initial margin required for open orders with current mark price
 
-			"leverage": "100",		// current initial leverage
+   "leverage": "100",  // current initial leverage
 
-			"isolated": true,  		// if the position is isolated
+   "isolated": true,    // if the position is isolated
 
-			"entryPrice": "0.00000",  	// average entry price
+   "entryPrice": "0.00000",   // average entry price
 
-			"maxNotional": "250000",  	// maximum available notional with current leverage
+   "maxNotional": "250000",   // maximum available notional with current leverage
 
-			"bidNotional": "0",  // bids notional, ignore
+   "bidNotional": "0",  // bids notional, ignore
 
-			"askNotional": "0",  // ask notional, ignore
+   "askNotional": "0",  // ask notional, ignore
 
-			"positionSide": "BOTH",  	// position side
+   "positionSide": "BOTH",   // position side
 
-			"positionAmt": "0",			// position amount
+   "positionAmt": "0",   // position amount
 
-			"updateTime": 0           // last update time
+   "updateTime": 0           // last update time
 
-		}
+  }
 
-	]
+ ]
 
 }
 

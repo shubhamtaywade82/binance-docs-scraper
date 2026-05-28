@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:40:03.995Z
 ---
 # Portfolio Margin Collateral Rate(MARKET_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/market-data/Classic-Portfolio-Margin-Collateral-Rate
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/market-data/Classic-Portfolio-Margin-Collateral-Rate>
 
 # Portfolio Margin Collateral Rate(MARKET\_DATA)
 

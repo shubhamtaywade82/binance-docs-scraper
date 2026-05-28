@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:55:57.035Z
 ---
 # Get Income History (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Income-History
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Income-History>
 
 # Get Income History (USER\_DATA)
 
@@ -37,10 +37,10 @@ GET `/fapi/v1/income`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   If neither `startTime` nor `endTime` is sent, the recent 7-day data will be returned.
-> -   If `incomeType` is not sent, all kinds of flow will be returned
-> -   "trandId" is unique in the same incomeType for a user
-> -   Income history only contains data for the last three months
+> - If neither `startTime` nor `endTime` is sent, the recent 7-day data will be returned.
+> - If `incomeType` is not sent, all kinds of flow will be returned
+> - "trandId" is unique in the same incomeType for a user
+> - Income history only contains data for the last three months
 
 ## Response Example
 

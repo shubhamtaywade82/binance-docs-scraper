@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:47:25.748Z
 ---
 # Event: Liability Update
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-Liability-Update
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-Liability-Update>
 
 # Event: Liability Update
 

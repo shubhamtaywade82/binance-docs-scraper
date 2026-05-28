@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:04:29.234Z
 ---
 # Roo Code - Ollama
 
-> Source: https://docs.ollama.com/integrations/roo-code
+> Source: <https://docs.ollama.com/integrations/roo-code>
 
 [Documentation
 
@@ -17,12 +17,12 @@ scraped_at: 2026-05-28T19:04:29.234Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
-## 
+##
 
 [​
 
@@ -32,7 +32,7 @@ Install
 
 Install [Roo Code](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline) from the VS Code Marketplace.
 
-## 
+##
 
 [​
 
@@ -40,15 +40,15 @@ Install [Roo Code](https://marketplace.visualstudio.com/items?itemName=RooVeteri
 
 Usage with Ollama
 
-1.  Open Roo Code in VS Code and click the **gear icon** on the top right corner of the Roo Code window to open **Provider Settings**
-2.  Set `API Provider` to `Ollama`
-3.  (Optional) Update `Base URL` if your Ollama instance is running remotely. The default is `http://localhost:11434`
-4.  Enter a valid `Model ID` (for example `qwen3` or `qwen3-coder:480b-cloud`)
-5.  Adjust the `Context Window` to at least 32K tokens for coding tasks
+1. Open Roo Code in VS Code and click the **gear icon** on the top right corner of the Roo Code window to open **Provider Settings**
+2. Set `API Provider` to `Ollama`
+3. (Optional) Update `Base URL` if your Ollama instance is running remotely. The default is `http://localhost:11434`
+4. Enter a valid `Model ID` (for example `qwen3` or `qwen3-coder:480b-cloud`)
+5. Adjust the `Context Window` to at least 32K tokens for coding tasks
 
 Coding tools require a larger context window. It is recommended to use a context window of at least 32K tokens. See [Context length](/context-length) for more information.
 
-## 
+##
 
 [​
 
@@ -56,12 +56,12 @@ Coding tools require a larger context window. It is recommended to use a context
 
 Connecting to ollama.com
 
-1.  Create an [API key](https://ollama.com/settings/keys) from ollama.com
-2.  Enable `Use custom base URL` and set it to `https://ollama.com`
-3.  Enter your **Ollama API Key**
-4.  Select a model from the list
+1. Create an [API key](https://ollama.com/settings/keys) from ollama.com
+2. Enable `Use custom base URL` and set it to `https://ollama.com`
+3. Enter your **Ollama API Key**
+4. Select a model from the list
 
-### 
+###
 
 [​
 
@@ -69,16 +69,14 @@ Connecting to ollama.com
 
 Recommended Models
 
--   `qwen3-coder:480b`
--   `deepseek-v3.1:671b`
+- `qwen3-coder:480b`
+- `deepseek-v3.1:671b`
 
 [Previous](/integrations/jetbrains)[
 
 VS Code
 
 Next
-
-
 
 ](/integrations/vscode)
 

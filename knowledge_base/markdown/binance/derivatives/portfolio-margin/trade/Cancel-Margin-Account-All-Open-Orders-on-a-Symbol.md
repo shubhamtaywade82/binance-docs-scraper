@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:51:33.744Z
 ---
 # Cancel Margin Account All Open Orders on a Symbol(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-Margin-Account-All-Open-Orders-on-a-Symbol
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-Margin-Account-All-Open-Orders-on-a-Symbol>
 
 # Cancel Margin Account All Open Orders on a Symbol(TRADE)
 

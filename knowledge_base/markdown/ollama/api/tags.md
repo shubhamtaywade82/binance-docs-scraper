@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:02:50.712Z
 ---
 # List models - Ollama
 
-> Source: https://docs.ollama.com/api/tags
+> Source: <https://docs.ollama.com/api/tags>
 
 [Documentation
 
@@ -60,9 +60,9 @@ curl http://localhost:11434/api/tags
 ```
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 #### Response
@@ -86,8 +86,6 @@ Show child attributes
 PsRetrieve a list of models that are currently running
 
 Next
-
-
 
 ](/api/ps)
 

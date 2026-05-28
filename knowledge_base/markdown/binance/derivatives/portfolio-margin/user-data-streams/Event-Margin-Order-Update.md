@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:47:28.888Z
 ---
 # Event: Margin Order Update
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-Margin-Order-Update
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-Margin-Order-Update>
 
 # Event: Margin Order Update
 
@@ -18,12 +18,12 @@ Margin orders are updated with the `executionReport` event.
 
 **Execution types:**
 
--   NEW - The order has been accepted into the engine.
--   CANCELED - The order has been canceled by the user.
--   REJECTED - The order has been rejected and was not processed (This message appears only with Cancel Replace Orders wherein the new order placement is rejected but the request to cancel request succeeds.)
--   TRADE - Part of the order or all of the order's quantity has filled.
--   EXPIRED - The order was canceled according to the order type's rules (e.g. LIMIT FOK orders with no fill, LIMIT IOC or MARKET orders that partially fill) or by the exchange, (e.g. orders canceled during liquidation, orders canceled during maintenance).
--   TRADE\_PREVENTION - The order has expired due to STP trigger. Check the Public API Definitions for more relevant enum definitions.
+- NEW - The order has been accepted into the engine.
+- CANCELED - The order has been canceled by the user.
+- REJECTED - The order has been rejected and was not processed (This message appears only with Cancel Replace Orders wherein the new order placement is rejected but the request to cancel request succeeds.)
+- TRADE - Part of the order or all of the order's quantity has filled.
+- EXPIRED - The order was canceled according to the order type's rules (e.g. LIMIT FOK orders with no fill, LIMIT IOC or MARKET orders that partially fill) or by the exchange, (e.g. orders canceled during liquidation, orders canceled during maintenance).
+- TRADE\_PREVENTION - The order has expired due to STP trigger. Check the Public API Definitions for more relevant enum definitions.
 
 ## Event Name
 

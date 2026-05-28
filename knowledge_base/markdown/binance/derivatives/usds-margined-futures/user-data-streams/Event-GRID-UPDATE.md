@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:44:14.659Z
 ---
 # Event: GRID_UPDATE (Deprecated)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Event-GRID-UPDATE
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Event-GRID-UPDATE>
 
 # Event: GRID\_UPDATE (Deprecated)
 
@@ -16,10 +16,10 @@ scraped_at: 2026-05-28T18:44:14.659Z
 
 `GRID_UPDATE` update when a sub order of a grid is filled or partially filled. **Strategy Status**
 
--   NEW
--   WORKING
--   CANCELLED
--   EXPIRED
+- NEW
+- WORKING
+- CANCELLED
+- EXPIRED
 
 ## URL PATH
 

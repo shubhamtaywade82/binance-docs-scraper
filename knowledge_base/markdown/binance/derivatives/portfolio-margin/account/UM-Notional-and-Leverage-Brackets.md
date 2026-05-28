@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:41:41.392Z
 ---
 # UM Notional and Leverage Brackets (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/UM-Notional-and-Leverage-Brackets
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/UM-Notional-and-Leverage-Brackets>
 
 # UM Notional and Leverage Brackets (USER\_DATA)
 

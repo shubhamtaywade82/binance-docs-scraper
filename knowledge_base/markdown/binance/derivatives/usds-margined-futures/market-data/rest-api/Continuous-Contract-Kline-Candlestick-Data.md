@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:56:56.852Z
 ---
 # Continuous Contract Kline/Candlestick Data
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Continuous-Contract-Kline-Candlestick-Data
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Continuous-Contract-Kline-Candlestick-Data>
 
 # Continuous Contract Kline/Candlestick Data
 
@@ -42,13 +42,13 @@ based on parameter `LIMIT`
 | endTime | LONG | NO |  |
 | limit | INT | NO | Default 500; max 1500. |
 
-> -   If startTime and endTime are not sent, the most recent klines are returned.
+> - If startTime and endTime are not sent, the most recent klines are returned.
 
-> -   Contract type:
->     -   PERPETUAL
->     -   CURRENT\_QUARTER
->     -   NEXT\_QUARTER
->     -   TRADIFI\_PERPETUAL
+> - Contract type:
+>   - PERPETUAL
+>   - CURRENT\_QUARTER
+>   - NEXT\_QUARTER
+>   - TRADIFI\_PERPETUAL
 
 ## Response Example
 

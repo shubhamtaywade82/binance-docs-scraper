@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:46:30.531Z
 ---
 # Extend Block Trade Order (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/market-maker-block-trade/Extend-Block-Trade-Order
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/market-maker-block-trade/Extend-Block-Trade-Order>
 
 # Extend Block Trade Order (TRADE)
 
@@ -18,7 +18,7 @@ Extends a block trade expire time by 30 mins from the current time.
 
 ## HTTP Request
 
-PUT `/eapi/v1/block/order/create` 
+PUT `/eapi/v1/block/order/create`
 
 ## Request Weight
 

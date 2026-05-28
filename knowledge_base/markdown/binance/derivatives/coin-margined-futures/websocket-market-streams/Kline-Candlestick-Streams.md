@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:44:43.772Z
 ---
 # Kline/Candlestick Streams
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Kline-Candlestick-Streams
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Kline-Candlestick-Streams>
 
 # Kline/Candlestick Streams
 
@@ -18,21 +18,21 @@ The Kline/Candlestick Stream push updates to the current klines/candlestick ever
 
 **Kline/Candlestick chart intervals:** m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
 
--   1m
--   3m
--   5m
--   15m
--   30m
--   1h
--   2h
--   4h
--   6h
--   8h
--   12h
--   1d
--   3d
--   1w
--   1M
+- 1m
+- 3m
+- 5m
+- 15m
+- 30m
+- 1h
+- 2h
+- 4h
+- 6h
+- 8h
+- 12h
+- 1d
+- 3d
+- 1w
+- 1M
 
 ## Stream Name
 

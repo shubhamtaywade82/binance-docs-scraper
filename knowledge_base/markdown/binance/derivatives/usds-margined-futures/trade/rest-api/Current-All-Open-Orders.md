@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:48:16.790Z
 ---
 # Current All Open Orders (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Current-All-Open-Orders
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Current-All-Open-Orders>
 
 # Current All Open Orders (USER\_DATA)
 
@@ -34,7 +34,7 @@ GET `/fapi/v1/openOrders`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   If the symbol is not sent, orders for all symbols will be returned in an array.
+> - If the symbol is not sent, orders for all symbols will be returned in an array.
 
 ## Response Example
 

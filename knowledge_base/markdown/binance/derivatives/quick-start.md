@@ -8,22 +8,22 @@ scraped_at: 2026-05-28T18:37:34.623Z
 ---
 # Quick Start
 
-> Source: https://developers.binance.com/docs/derivatives/quick-start
+> Source: <https://developers.binance.com/docs/derivatives/quick-start>
 
 # Quick Start
 
 ## API Key Setup
 
--   Some endpoints will require an API Key. Please refer to [this page](https://www.binance.com/en/support/faq/how-to-create-api-keys-on-binance-360002502072) regarding API key creation.
--   Once API key is created, it is recommended to set IP restrictions on the key for security reasons.
--   **Never share your API key/secret key to ANYONE.**
+- Some endpoints will require an API Key. Please refer to [this page](https://www.binance.com/en/support/faq/how-to-create-api-keys-on-binance-360002502072) regarding API key creation.
+- Once API key is created, it is recommended to set IP restrictions on the key for security reasons.
+- **Never share your API key/secret key to ANYONE.**
 
 If the API keys were accidentally shared, please delete them immediately and create a new key.
 
 ## API Key Restrictions
 
--   After creating the API key, the default restrictions is `Enable Reading`.
--   To **enable withdrawals via the API**, the API key restriction needs to be modified through the Binance UI.
+- After creating the API key, the default restrictions is `Enable Reading`.
+- To **enable withdrawals via the API**, the API key restriction needs to be modified through the Binance UI.
 
 ## Enabling Accounts
 

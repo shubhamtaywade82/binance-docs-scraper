@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:42:38.028Z
 ---
 # UM Futures Account Configuration(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-UM-Futures-Account-Config
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-UM-Futures-Account-Config>
 
 # UM Futures Account Configuration(USER\_DATA)
 

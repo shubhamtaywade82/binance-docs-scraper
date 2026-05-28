@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:41:14.341Z
 ---
 # Query Margin Max Withdraw(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Query-Margin-Max-Withdraw
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Query-Margin-Max-Withdraw>
 
 # Query Margin Max Withdraw(USER\_DATA)
 

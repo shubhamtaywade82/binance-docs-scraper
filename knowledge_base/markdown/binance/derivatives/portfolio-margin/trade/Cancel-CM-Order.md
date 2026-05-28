@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:51:16.254Z
 ---
 # Cancel CM Order(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-CM-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-CM-Order>
 
 # Cancel CM Order(TRADE)
 
@@ -34,7 +34,7 @@ DELETE `/papi/v1/cm/order`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either `orderId` or `origClientOrderId` must be sent.
+> - Either `orderId` or `origClientOrderId` must be sent.
 
 ## Response Example
 

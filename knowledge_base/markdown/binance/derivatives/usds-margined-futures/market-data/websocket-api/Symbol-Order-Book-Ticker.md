@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:50:16.741Z
 ---
 # Symbol Order Book Ticker
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/websocket-api/Symbol-Order-Book-Ticker
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/websocket-api/Symbol-Order-Book-Ticker>
 
 # Symbol Order Book Ticker
 
@@ -47,8 +47,8 @@ Best price/qty on the order book for a symbol or symbols.
 | --- | --- | --- | --- |
 | symbol | STRING | NO |  |
 
-> -   If the symbol is not sent, bookTickers for all symbols will be returned in an array.
-> -   The field `X-MBX-USED-WEIGHT-1M` in response header is not accurate from this endpoint, please ignore.
+> - If the symbol is not sent, bookTickers for all symbols will be returned in an array.
+> - The field `X-MBX-USED-WEIGHT-1M` in response header is not accurate from this endpoint, please ignore.
 
 ## Response Example
 

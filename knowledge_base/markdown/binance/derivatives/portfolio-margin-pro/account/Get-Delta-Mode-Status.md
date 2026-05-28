@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:46:16.117Z
 ---
 # Get Delta Mode Status(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Get-Delta-Mode-Status
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Get-Delta-Mode-Status>
 
 # Get Delta Mode Status(USER\_DATA)
 

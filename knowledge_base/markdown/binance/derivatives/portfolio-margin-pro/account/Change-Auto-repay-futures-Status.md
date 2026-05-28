@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:45:49.597Z
 ---
 # Change Auto-repay-futures Status(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Change-Auto-repay-futures-Status
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Change-Auto-repay-futures-Status>
 
 # Change Auto-repay-futures Status(TRADE)
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:59:48.806Z
 ---
 # New Order (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/trade
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/trade>
 
 # New Order (TRADE)
 

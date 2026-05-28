@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:47:42.659Z
 ---
 # Event: Margin Balance Update
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-Margin-Balance-Update
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-Margin-Balance-Update>
 
 # Event: Margin Balance Update
 

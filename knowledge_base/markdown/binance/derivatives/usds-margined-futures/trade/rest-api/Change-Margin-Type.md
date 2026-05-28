@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:48:27.729Z
 ---
 # Change Margin Type(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Change-Margin-Type
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Change-Margin-Type>
 
 # Change Margin Type(TRADE)
 

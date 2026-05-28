@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:58:34.092Z
 ---
 # Continuous Contract Kline/Candlestick Data
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Continuous-Contract-Kline-Candlestick-Data
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Continuous-Contract-Kline-Candlestick-Data>
 
 # Continuous Contract Kline/Candlestick Data
 
@@ -16,10 +16,10 @@ scraped_at: 2026-05-28T18:58:34.092Z
 
 Kline/candlestick bars for a specific contract type. Klines are uniquely identified by their open time.
 
-> -   Contract type:
->     -   PERPETUAL
->     -   CURRENT\_QUARTER
->     -   NEXT\_QUARTER
+> - Contract type:
+>   - PERPETUAL
+>   - CURRENT\_QUARTER
+>   - NEXT\_QUARTER
 
 ## HTTP Request
 
@@ -48,11 +48,11 @@ based on parameter `LIMIT`
 | endTime | LONG | NO |  |
 | limit | INT | NO | Default 500; max 1500. |
 
-> -   The difference between `startTime` and `endTime` can only be up to 200 days
-> -   Between `startTime` and `endTime`, the most recent `limit` data from `endTime` will be returned:
->     -   If `startTime` and `endTime` are not sent, current timestamp will be set as `endTime`, and the most recent data will be returned.
->     -   If `startTime` is sent only, the timestamp of 200 days after `startTime` will be set as `endTime`(up to the current time)
->     -   If `endTime` is sent only, the timestamp of 200 days before `endTime` will be set as `startTime`
+> - The difference between `startTime` and `endTime` can only be up to 200 days
+> - Between `startTime` and `endTime`, the most recent `limit` data from `endTime` will be returned:
+>   - If `startTime` and `endTime` are not sent, current timestamp will be set as `endTime`, and the most recent data will be returned.
+>   - If `startTime` is sent only, the timestamp of 200 days after `startTime` will be set as `endTime`(up to the current time)
+>   - If `endTime` is sent only, the timestamp of 200 days before `endTime` will be set as `startTime`
 
 ## Response Example
 

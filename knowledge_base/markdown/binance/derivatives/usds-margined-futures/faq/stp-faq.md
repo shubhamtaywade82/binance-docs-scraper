@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:39:42.988Z
 ---
 # Self Trade Prevention (STP) FAQ
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/faq/stp-faq
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/faq/stp-faq>
 
 # Self Trade Prevention (STP) FAQ
 
@@ -20,8 +20,8 @@ Self Trade Prevention (or STP) prevents orders of users, or the user's `tradeGro
 
 A self-trade can occur in either scenario:
 
--   The order traded against the same account.
--   The order traded against an account with the same `tradeGroupId`.
+- The order traded against the same account.
+- The order traded against an account with the same `tradeGroupId`.
 
 ## What happens when STP is triggered?
 
@@ -40,8 +40,8 @@ Thus, the STP mode of an order that goes on the book is no longer relevant and w
 
 STP can only be set using field `selfTradePreventionMode` through API endpoints below:
 
--   POST `/fapi/v1/order`
--   POST `/fapi/v1/batchOrders`
+- POST `/fapi/v1/order`
+- POST `/fapi/v1/batchOrders`
 
 ## What is a Trade Group Id?
 
@@ -117,7 +117,7 @@ In user data stream event `ORDER_TRADE_UPDATE`, field `X` would be `EXPIRED_IN_M
 }
 ```
 
-## STP Examples:
+## STP Examples
 
 For all these cases, assume that all orders for these examples are made on the same account.
 

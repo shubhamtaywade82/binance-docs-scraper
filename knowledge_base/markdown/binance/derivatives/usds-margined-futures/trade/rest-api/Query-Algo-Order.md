@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:49:03.541Z
 ---
 # Query Algo Order (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Query-Algo-Order
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Query-Algo-Order>
 
 # Query Algo Order (USER\_DATA)
 
@@ -16,9 +16,9 @@ scraped_at: 2026-05-28T18:49:03.541Z
 
 Check the status of an algo (conditional) order, such as TP/SL (Take Profit / Stop Loss) or trailing stop orders on USD-M Futures.
 
--   These orders will not be found:
-    -   order status is `CANCELED` or `EXPIRED` **AND** order has NO filled trade **AND** created time + 3 days < current time
-    -   order create time + 90 days < current time
+- These orders will not be found:
+  - order status is `CANCELED` or `EXPIRED` **AND** order has NO filled trade **AND** created time + 3 days < current time
+  - order create time + 90 days < current time
 
 ## HTTP Request
 
@@ -39,8 +39,8 @@ GET `/fapi/v1/algoOrder`
 
 Notes:
 
-> -   Either `algoId` or `clientAlgoId` must be sent.
-> -   `algoId` is self-increment for each specific `symbol`
+> - Either `algoId` or `clientAlgoId` must be sent.
+> - `algoId` is self-increment for each specific `symbol`
 
 ## Response Example
 

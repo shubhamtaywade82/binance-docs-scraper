@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:03:47.162Z
 ---
 # Web search - Ollama
 
-> Source: https://docs.ollama.com/capabilities/web-search
+> Source: <https://docs.ollama.com/capabilities/web-search>
 
 [Documentation
 
@@ -17,14 +17,14 @@ scraped_at: 2026-05-28T19:03:47.162Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 Ollama’s web search API can be used to augment models with the latest information to reduce hallucinations and improve accuracy. Web search is provided as a REST API with deeper tool integrations in the Python and JavaScript libraries. This also enables models like OpenAI’s gpt-oss models to conduct long-running research tasks.
 
-## 
+##
 
 [​
 
@@ -34,7 +34,7 @@ Authentication
 
 For access to Ollama’s web search API, create an [API key](https://ollama.com/settings/keys). A free Ollama account is required.
 
-## 
+##
 
 [​
 
@@ -44,7 +44,7 @@ Web search API
 
 Performs a web search for a single query and returns relevant results.
 
-### 
+###
 
 [​
 
@@ -54,10 +54,10 @@ Request
 
 `POST https://ollama.com/api/web_search`
 
--   `query` (string, required): the search query string
--   `max_results` (integer, optional): maximum results to return (default 5, max 10)
+- `query` (string, required): the search query string
+- `max_results` (integer, optional): maximum results to return (default 5, max 10)
 
-### 
+###
 
 [​
 
@@ -67,12 +67,12 @@ Response
 
 Returns an object containing:
 
--   `results` (array): array of search result objects, each containing:
-    -   `title` (string): the title of the web page
-    -   `url` (string): the URL of the web page
-    -   `content` (string): relevant content snippet from the web page
+- `results` (array): array of search result objects, each containing:
+  - `title` (string): the title of the web page
+  - `url` (string): the URL of the web page
+  - `content` (string): relevant content snippet from the web page
 
-### 
+###
 
 [​
 
@@ -82,7 +82,7 @@ Examples
 
 Ensure OLLAMA\_API\_KEY is set or it must be passed in the Authorization header.
 
-#### 
+####
 
 [​
 
@@ -93,9 +93,9 @@ cURL Request
 ```
 curl https://ollama.com/api/web_search \
   --header "Authorization: Bearer $OLLAMA_API_KEY" \
-	-d '{
-	  "query":"what is ollama?"
-	}'
+ -d '{
+   "query":"what is ollama?"
+ }'
 ```
 
 **Response**
@@ -122,7 +122,7 @@ curl https://ollama.com/api/web_search \
 }
 ```
 
-#### 
+####
 
 [​
 
@@ -162,7 +162,7 @@ results = [
 
 More Ollama [Python example](https://github.com/ollama/ollama-python/blob/main/examples/web-search.py)
 
-#### 
+####
 
 [​
 
@@ -204,7 +204,7 @@ console.log(JSON.stringify(results, null, 2));
 
 More Ollama [JavaScript example](https://github.com/ollama/ollama-js/blob/main/examples/websearch/websearch-tools.ts)
 
-## 
+##
 
 [​
 
@@ -214,7 +214,7 @@ Web fetch API
 
 Fetches a single web page by URL and returns its content.
 
-### 
+###
 
 [​
 
@@ -224,9 +224,9 @@ Request
 
 `POST https://ollama.com/api/web_fetch`
 
--   `url` (string, required): the URL to fetch
+- `url` (string, required): the URL to fetch
 
-### 
+###
 
 [​
 
@@ -236,11 +236,11 @@ Response
 
 Returns an object containing:
 
--   `title` (string): the title of the web page
--   `content` (string): the main content of the web page
--   `links` (array): array of links found on the page
+- `title` (string): the title of the web page
+- `content` (string): the main content of the web page
+- `links` (array): array of links found on the page
 
-### 
+###
 
 [​
 
@@ -248,7 +248,7 @@ Returns an object containing:
 
 Examples
 
-#### 
+####
 
 [​
 
@@ -280,7 +280,7 @@ curl --request POST \
 
 ```
 
-#### 
+####
 
 [​
 
@@ -307,7 +307,7 @@ models](https://ollama.com/models)\n\nAvailable for macOS, Windows, and Linux',
 )
 ```
 
-#### 
+####
 
 [​
 
@@ -337,7 +337,7 @@ console.log(JSON.stringify(fetchResult, null, 2));
 }
 ```
 
-## 
+##
 
 [​
 
@@ -413,7 +413,7 @@ Content:  Ollama has introduced two key updates to its engine, both released in 
 These updates highlight Ollama's focus on efficiency, performance, and expanded capabilities for both text and vision tasks.
 ```
 
-### 
+###
 
 [​
 
@@ -423,7 +423,7 @@ Context length and agents
 
 Web search results can return thousands of tokens. It is recommended to increase the context length of the model to at least ~32000 tokens. Search agents work best with full context length. [Ollama’s cloud models](https://docs.ollama.com/cloud) run at the full context length.
 
-## 
+##
 
 [​
 
@@ -433,7 +433,7 @@ MCP Server
 
 You can enable web search in any MCP client through the [Python MCP server](https://github.com/ollama/ollama-python/blob/main/examples/web-search-mcp.py).
 
-### 
+###
 
 [​
 
@@ -463,7 +463,7 @@ Ollama’s web search can be integrated with Cline easily using the MCP server c
 
 ![Cline MCP Configuration](https://mintcdn.com/ollama-9269c548/lS1IbrlCxMxm029K/images/cline-mcp.png?fit=max&auto=format&n=lS1IbrlCxMxm029K&q=85&s=046239fbe74a8e928752b97b1a8954fa)
 
-### 
+###
 
 [​
 
@@ -482,7 +482,7 @@ env = { "OLLAMA_API_KEY" = "your_api_key_here" }
 
 ![Codex MCP Configuration](https://mintcdn.com/ollama-9269c548/lS1IbrlCxMxm029K/images/codex-mcp.png?fit=max&auto=format&n=lS1IbrlCxMxm029K&q=85&s=775b41bb85af7836b0a5a609de7d1f6f)
 
-### 
+###
 
 [​
 
@@ -492,7 +492,7 @@ Goose
 
 Ollama can integrate with Goose via its MCP feature. ![Goose MCP Configuration 1](https://mintcdn.com/ollama-9269c548/lS1IbrlCxMxm029K/images/goose-mcp-1.png?fit=max&auto=format&n=lS1IbrlCxMxm029K&q=85&s=5fea6e0aab7865dc950470f004c549e8) ![Goose MCP Configuration 2](https://mintcdn.com/ollama-9269c548/lS1IbrlCxMxm029K/images/goose-mcp-2.png?fit=max&auto=format&n=lS1IbrlCxMxm029K&q=85&s=c69c12389f7dd60ef1c53cd10af82a7d)
 
-### 
+###
 
 [​
 
@@ -507,8 +507,6 @@ Ollama can be integrated into most of the tools available either through direct 
 Overview
 
 Next
-
-
 
 ](/integrations)
 

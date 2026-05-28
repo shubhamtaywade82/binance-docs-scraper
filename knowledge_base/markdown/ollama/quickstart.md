@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:03:19.958Z
 ---
 # Quickstart - Ollama
 
-> Source: https://docs.ollama.com/quickstart
+> Source: <https://docs.ollama.com/quickstart>
 
 [Documentation
 
@@ -17,14 +17,14 @@ scraped_at: 2026-05-28T19:03:19.958Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 Ollama is available on macOS, Windows, and Linux. [Download Ollama](https://ollama.com/download)
 
-## 
+##
 
 [​
 
@@ -40,11 +40,11 @@ ollama
 
 Navigate with `↑/↓`, press `enter` to launch, `→` to change model, and `esc` to quit. The menu provides quick access to:
 
--   **Run a model** - Start an interactive chat
--   **Launch tools** - Claude Code, Codex, OpenClaw, and more
--   **Additional integrations** - Available under “More…”
+- **Run a model** - Start an interactive chat
+- **Launch tools** - Claude Code, Codex, OpenClaw, and more
+- **Additional integrations** - Available under “More…”
 
-## 
+##
 
 [​
 
@@ -58,7 +58,7 @@ Launch [OpenClaw](/integrations/openclaw), a personal AI with 100+ skills:
 ollama launch openclaw
 ```
 
-## 
+##
 
 [​
 
@@ -82,7 +82,7 @@ ollama launch opencode
 
 See [integrations](/integrations) for all supported tools.
 
-## 
+##
 
 [​
 
@@ -106,8 +106,6 @@ See the [API documentation](/api) for Python, JavaScript, and other integrations
 Cloud
 
 Next
-
-
 
 ](/cloud)
 

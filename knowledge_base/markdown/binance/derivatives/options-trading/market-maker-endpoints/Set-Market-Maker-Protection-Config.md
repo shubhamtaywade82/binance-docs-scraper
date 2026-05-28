@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:50:08.744Z
 ---
 # Set Market Maker Protection Config (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/market-maker-endpoints/Set-Market-Maker-Protection-Config
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/market-maker-endpoints/Set-Market-Maker-Protection-Config>
 
 # Set Market Maker Protection Config (TRADE)
 

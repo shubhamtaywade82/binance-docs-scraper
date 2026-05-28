@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:52:04.412Z
 ---
 # Query Current UM Open Algo Order (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-UM-Algo-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-UM-Algo-Order>
 
 # Query Current UM Open Algo Order (USER\_DATA)
 
@@ -16,9 +16,9 @@ scraped_at: 2026-05-28T18:52:04.412Z
 
 Check an UM algo order's status.
 
--   These orders will not be found:
-    -   order status is `CANCELED` or `EXPIRED` **AND** order has NO filled trade **AND** created time + 3 days < current time
-    -   order create time + 90 days < current time
+- These orders will not be found:
+  - order status is `CANCELED` or `EXPIRED` **AND** order has NO filled trade **AND** created time + 3 days < current time
+  - order create time + 90 days < current time
 
 ## HTTP Request
 
@@ -39,8 +39,8 @@ GET `/papi/v1/um/algo/algoOrder`
 
 Notes:
 
-> -   Either `algoId` or `clientAlgoId` must be sent.
-> -   `algoId` is self-increment for each specific `symbol`
+> - Either `algoId` or `clientAlgoId` must be sent.
+> - `algoId` is self-increment for each specific `symbol`
 
 ## Response Example
 

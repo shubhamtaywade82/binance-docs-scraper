@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:54:20.674Z
 ---
 # Query Current Open Order(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Query-Current-Open-Order
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Query-Current-Open-Order>
 
 # Query Current Open Order(USER\_DATA)
 
@@ -34,65 +34,65 @@ GET `/dapi/v1/openOrder`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either`orderId` or `origClientOrderId` must be sent
-> -   If the queried order has been filled or cancelled, the error message "Order does not exist" will be returned.
+> - Either`orderId` or `origClientOrderId` must be sent
+> - If the queried order has been filled or cancelled, the error message "Order does not exist" will be returned.
 
 ## Response Example
 
 ```
 {
 
-  	"avgPrice": "0.0",				
+   "avgPrice": "0.0",    
 
-  	"clientOrderId": "abc",				
+   "clientOrderId": "abc",    
 
-  	"cumBase": "0",						
+   "cumBase": "0",      
 
-  	"executedQty": "0",					
+   "executedQty": "0",     
 
-  	"orderId": 1917641,					
+   "orderId": 1917641,     
 
-  	"origQty": "0.40",						
+   "origQty": "0.40",      
 
-  	"origType": "TRAILING_STOP_MARKET",
+   "origType": "TRAILING_STOP_MARKET",
 
-  	"price": "0",
+   "price": "0",
 
-  	"reduceOnly": false,
+   "reduceOnly": false,
 
-  	"side": "BUY",
+   "side": "BUY",
 
-  	"positionSide": "SHORT",
+   "positionSide": "SHORT",
 
-  	"status": "NEW",
+   "status": "NEW",
 
-  	"stopPrice": "9300",				// please ignore when order type is TRAILING_STOP_MARKET
+   "stopPrice": "9300",    // please ignore when order type is TRAILING_STOP_MARKET
 
-  	"closePosition": false,   			// if Close-All
+   "closePosition": false,      // if Close-All
 
-  	"symbol": "BTCUSD_200925",
+   "symbol": "BTCUSD_200925",
 
-  	"pair": "BTCUSD"
+   "pair": "BTCUSD"
 
-  	"time": 1579276756075,				// order time
+   "time": 1579276756075,    // order time
 
-  	"timeInForce": "GTC",
+   "timeInForce": "GTC",
 
-  	"type": "TRAILING_STOP_MARKET",
+   "type": "TRAILING_STOP_MARKET",
 
-  	"activatePrice": "9020",			// activation price, only return with TRAILING_STOP_MARKET order
+   "activatePrice": "9020",   // activation price, only return with TRAILING_STOP_MARKET order
 
-  	"priceRate": "0.3",					// callback rate, only return with TRAILING_STOP_MARKET order						
+   "priceRate": "0.3",     // callback rate, only return with TRAILING_STOP_MARKET order      
 
-  	"updateTime": 1579276756075,		
+   "updateTime": 1579276756075,  
 
-  	"workingType": "CONTRACT_PRICE",
+   "workingType": "CONTRACT_PRICE",
 
-  	"priceProtect": false               // if conditional order trigger is protected	
+   "priceProtect": false               // if conditional order trigger is protected 
 
-  	"priceMatch": "NONE",               // price match mode
+   "priceMatch": "NONE",               // price match mode
 
-  	"selfTradePreventionMode": "NONE"   // self trading preventation mode	
+   "selfTradePreventionMode": "NONE"   // self trading preventation mode 
 
 }
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:41:27.123Z
 ---
 # Change CM Initial Leverage (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Change-CM-Initial-Leverage
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Change-CM-Initial-Leverage>
 
 # Change CM Initial Leverage (TRADE)
 

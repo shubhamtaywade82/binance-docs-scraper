@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:59:23.884Z
 ---
 # Mark Price
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/websocket-market-streams/Mark-Price
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/websocket-market-streams/Mark-Price>
 
 # Mark Price
 

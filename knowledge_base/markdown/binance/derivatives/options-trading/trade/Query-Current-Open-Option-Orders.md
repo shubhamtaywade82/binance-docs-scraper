@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:00:11.850Z
 ---
 # Query Current Open Option Orders (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/trade/Query-Current-Open-Option-Orders
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/trade/Query-Current-Open-Option-Orders>
 
 # Query Current Open Option Orders (USER\_DATA)
 

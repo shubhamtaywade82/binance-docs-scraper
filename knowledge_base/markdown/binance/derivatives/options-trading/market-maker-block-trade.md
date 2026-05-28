@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:46:24.441Z
 ---
 # New Block Trade Order (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/market-maker-block-trade
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/market-maker-block-trade>
 
 # New Block Trade Order (TRADE)
 

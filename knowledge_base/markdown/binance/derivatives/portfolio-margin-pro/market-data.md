@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:38:26.067Z
 ---
 # Query Portfolio Margin Asset Index Price (MARKET_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/market-data
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/market-data>
 
 # Query Portfolio Margin Asset Index Price (MARKET\_DATA)
 

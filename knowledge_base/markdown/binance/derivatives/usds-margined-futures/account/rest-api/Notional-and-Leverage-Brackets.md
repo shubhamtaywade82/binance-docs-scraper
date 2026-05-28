@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:55:47.198Z
 ---
 # Notional and Leverage Brackets (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Notional-and-Leverage-Brackets
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Notional-and-Leverage-Brackets>
 
 # Notional and Leverage Brackets (USER\_DATA)
 
@@ -43,7 +43,7 @@ GET `/fapi/v1/leverageBracket`
 
         "symbol": "ETHUSDT",
 
-	    "notionalCoef": 1.50,  //user symbol bracket multiplier, only appears when user's symbol bracket is adjusted 
+     "notionalCoef": 1.50,  //user symbol bracket multiplier, only appears when user's symbol bracket is adjusted 
 
         "brackets": [
 

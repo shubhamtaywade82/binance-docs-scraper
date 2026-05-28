@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:54:29.464Z
 ---
 # Position Information(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Position-Information
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Position-Information>
 
 # Position Information(USER\_DATA)
 
@@ -33,9 +33,9 @@ GET `/dapi/v1/positionRisk`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   If neither `marginAsset` nor `pair` is sent, positions of all symbols with `TRADING` status will be returned.
-> -   for One-way Mode user, the response will only show the "BOTH" positions
-> -   for Hedge Mode user, the response will show "BOTH", "LONG", and "SHORT" positions.
+> - If neither `marginAsset` nor `pair` is sent, positions of all symbols with `TRADING` status will be returned.
+> - for One-way Mode user, the response will only show the "BOTH" positions
+> - for Hedge Mode user, the response will show "BOTH", "LONG", and "SHORT" positions.
 
 **Note**
 

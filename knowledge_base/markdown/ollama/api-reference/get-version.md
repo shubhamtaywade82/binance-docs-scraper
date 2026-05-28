@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:03:12.502Z
 ---
 # Get version - Ollama
 
-> Source: https://docs.ollama.com/api-reference/get-version
+> Source: <https://docs.ollama.com/api-reference/get-version>
 
 [Documentation
 
@@ -43,9 +43,9 @@ curl http://localhost:11434/api/version
 ```
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 #### Response
@@ -69,8 +69,6 @@ Version of Ollama
 Previous
 
 Delete
-
-
 
 ](/api/delete)
 

@@ -8,129 +8,129 @@ scraped_at: 2026-05-28T18:38:01.558Z
 ---
 # Public Endpoints Info
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/common-definition
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/common-definition>
 
 # Public Endpoints Info
 
 ## Terminology
 
--   `base asset` refers to the asset that is the `quantity` of a symbol.
--   `quote asset` refers to the asset that is the `price` of a symbol.
+- `base asset` refers to the asset that is the `quantity` of a symbol.
+- `quote asset` refers to the asset that is the `price` of a symbol.
 
 ## ENUM definitions
 
 **Symbol type:**
 
--   FUTURE
+- FUTURE
 
 **Contract type (contractType):**
 
--   PERPETUAL
--   CURRENT\_MONTH
--   NEXT\_MONTH
--   CURRENT\_QUARTER
--   NEXT\_QUARTER
--   PERPETUAL\_DELIVERING
+- PERPETUAL
+- CURRENT\_MONTH
+- NEXT\_MONTH
+- CURRENT\_QUARTER
+- NEXT\_QUARTER
+- PERPETUAL\_DELIVERING
 
 **Contract status (contractStatus, status):**
 
--   PENDING\_TRADING
--   TRADING
--   PRE\_DELIVERING
--   DELIVERING
--   DELIVERED
--   PRE\_SETTLE
--   SETTLING
--   CLOSE
+- PENDING\_TRADING
+- TRADING
+- PRE\_DELIVERING
+- DELIVERING
+- DELIVERED
+- PRE\_SETTLE
+- SETTLING
+- CLOSE
 
 **Order status (status):**
 
--   NEW
--   PARTIALLY\_FILLED
--   FILLED
--   CANCELED
--   REJECTED
--   EXPIRED
--   EXPIRED\_IN\_MATCH
+- NEW
+- PARTIALLY\_FILLED
+- FILLED
+- CANCELED
+- REJECTED
+- EXPIRED
+- EXPIRED\_IN\_MATCH
 
 **Order types (orderTypes, type):**
 
--   LIMIT
--   MARKET
--   STOP
--   STOP\_MARKET
--   TAKE\_PROFIT
--   TAKE\_PROFIT\_MARKET
--   TRAILING\_STOP\_MARKET
+- LIMIT
+- MARKET
+- STOP
+- STOP\_MARKET
+- TAKE\_PROFIT
+- TAKE\_PROFIT\_MARKET
+- TRAILING\_STOP\_MARKET
 
 **Order side (side):**
 
--   BUY
--   SELL
+- BUY
+- SELL
 
 **Position side (positionSide):**
 
--   BOTH
--   LONG
--   SHORT
+- BOTH
+- LONG
+- SHORT
 
 **Time in force (timeInForce):**
 
--   GTC - Good Till Cancel(GTC order valitidy is 1 year from placement)
--   IOC - Immediate or Cancel
--   FOK - Fill or Kill
--   GTX - Good Till Crossing (Post Only)
--   GTD - Good Till Date
--   RPI - Retail Price Improvement(RPI order is post only and only be matched with the order from APP or Web)
+- GTC - Good Till Cancel(GTC order valitidy is 1 year from placement)
+- IOC - Immediate or Cancel
+- FOK - Fill or Kill
+- GTX - Good Till Crossing (Post Only)
+- GTD - Good Till Date
+- RPI - Retail Price Improvement(RPI order is post only and only be matched with the order from APP or Web)
 
 **Working Type (workingType)**
 
--   MARK\_PRICE
--   CONTRACT\_PRICE
+- MARK\_PRICE
+- CONTRACT\_PRICE
 
 **Response Type (newOrderRespType)**
 
--   ACK
--   RESULT
+- ACK
+- RESULT
 
 **Kline/Candlestick chart intervals:**
 
 s -> seconds; m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
 
--   1s
--   1m
--   3m
--   5m
--   15m
--   30m
--   1h
--   2h
--   4h
--   6h
--   8h
--   12h
--   1d
--   3d
--   1w
--   1M
+- 1s
+- 1m
+- 3m
+- 5m
+- 15m
+- 30m
+- 1h
+- 2h
+- 4h
+- 6h
+- 8h
+- 12h
+- 1d
+- 3d
+- 1w
+- 1M
 
 **STP MODE (selfTradePreventionMode):**
 
--   EXPIRE\_TAKER
--   EXPIRE\_BOTH
--   EXPIRE\_MAKER
+- EXPIRE\_TAKER
+- EXPIRE\_BOTH
+- EXPIRE\_MAKER
 
 **Price Match (priceMatch)**
 
--   NONE (No price match)
--   OPPONENT (counterparty best price)
--   OPPONENT\_5 (the 5th best price from the counterparty)
--   OPPONENT\_10 (the 10th best price from the counterparty)
--   OPPONENT\_20 (the 20th best price from the counterparty)
--   QUEUE (the best price on the same side of the order book)
--   QUEUE\_5 (the 5th best price on the same side of the order book)
--   QUEUE\_10 (the 10th best price on the same side of the order book)
--   QUEUE\_20 (the 20th best price on the same side of the order book)
+- NONE (No price match)
+- OPPONENT (counterparty best price)
+- OPPONENT\_5 (the 5th best price from the counterparty)
+- OPPONENT\_10 (the 10th best price from the counterparty)
+- OPPONENT\_20 (the 20th best price from the counterparty)
+- QUEUE (the best price on the same side of the order book)
+- QUEUE\_5 (the 5th best price on the same side of the order book)
+- QUEUE\_10 (the 10th best price on the same side of the order book)
+- QUEUE\_20 (the 20th best price on the same side of the order book)
 
 **Rate limiters (rateLimitType)**
 
@@ -156,14 +156,13 @@ s -> seconds; m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
 }
 ```
 
--   REQUEST\_WEIGHT
-    
--   ORDERS
-    
+- REQUEST\_WEIGHT
+
+- ORDERS
 
 **Rate limit intervals (interval)**
 
--   MINUTE
+- MINUTE
 
 # Filters
 
@@ -186,15 +185,15 @@ Filters define trading rules on a symbol or an exchange.
 
 The `PRICE_FILTER` defines the `price` rules for a symbol. There are 3 parts:
 
--   `minPrice` defines the minimum `price`/`stopPrice` allowed; disabled on `minPrice` == 0.
--   `maxPrice` defines the maximum `price`/`stopPrice` allowed; disabled on `maxPrice` == 0.
--   `tickSize` defines the intervals that a `price`/`stopPrice` can be increased/decreased by; disabled on `tickSize` == 0.
+- `minPrice` defines the minimum `price`/`stopPrice` allowed; disabled on `minPrice` == 0.
+- `maxPrice` defines the maximum `price`/`stopPrice` allowed; disabled on `maxPrice` == 0.
+- `tickSize` defines the intervals that a `price`/`stopPrice` can be increased/decreased by; disabled on `tickSize` == 0.
 
 Any of the above variables can be set to 0, which disables that rule in the `price filter`. In order to pass the `price filter`, the following must be true for `price`/`stopPrice` of the enabled rules:
 
--   `price` >= `minPrice`
--   `price` <= `maxPrice`
--   (`price`\-`minPrice`) % `tickSize` == 0
+- `price` >= `minPrice`
+- `price` <= `maxPrice`
+- (`price`\-`minPrice`) % `tickSize` == 0
 
 ### LOT\_SIZE
 
@@ -211,15 +210,15 @@ Any of the above variables can be set to 0, which disables that rule in the `pri
 
 The `LOT_SIZE` filter defines the `quantity` (aka "lots" in auction terms) rules for a symbol. There are 3 parts:
 
--   `minQty` defines the minimum `quantity` allowed.
--   `maxQty` defines the maximum `quantity` allowed.
--   `stepSize` defines the intervals that a `quantity` can be increased/decreased by.
+- `minQty` defines the minimum `quantity` allowed.
+- `maxQty` defines the maximum `quantity` allowed.
+- `stepSize` defines the intervals that a `quantity` can be increased/decreased by.
 
 In order to pass the `lot size`, the following must be true for `quantity`:
 
--   `quantity` >= `minQty`
--   `quantity` <= `maxQty`
--   (`quantity`\-`minQty`) % `stepSize` == 0
+- `quantity` >= `minQty`
+- `quantity` <= `maxQty`
+- (`quantity`\-`minQty`) % `stepSize` == 0
 
 ### MARKET\_LOT\_SIZE
 
@@ -236,15 +235,15 @@ In order to pass the `lot size`, the following must be true for `quantity`:
 
 The `MARKET_LOT_SIZE` filter defines the `quantity` (aka "lots" in auction terms) rules for `MARKET` orders on a symbol. There are 3 parts:
 
--   `minQty` defines the minimum `quantity` allowed.
--   `maxQty` defines the maximum `quantity` allowed.
--   `stepSize` defines the intervals that a `quantity` can be increased/decreased by.
+- `minQty` defines the minimum `quantity` allowed.
+- `maxQty` defines the maximum `quantity` allowed.
+- `stepSize` defines the intervals that a `quantity` can be increased/decreased by.
 
 In order to pass the `market lot size`, the following must be true for `quantity`:
 
--   `quantity` >= `minQty`
--   `quantity` <= `maxQty`
--   (`quantity`\-`minQty`) % `stepSize` == 0
+- `quantity` >= `minQty`
+- `quantity` <= `maxQty`
+- (`quantity`\-`minQty`) % `stepSize` == 0
 
 ### MAX\_NUM\_ORDERS
 
@@ -293,8 +292,8 @@ The `PERCENT_PRICE` filter defines valid range for a price based on the mark pri
 
 In order to pass the `percent price`, the following must be true for `price`:
 
--   BUY: `price` <= `markPrice` \* `multiplierUp`
--   SELL: `price` >= `markPrice` \* `multiplierDown`
+- BUY: `price` <= `markPrice` \* `multiplierUp`
+- SELL: `price` >= `markPrice` \* `multiplierDown`
 
 ### MIN\_NOTIONAL
 

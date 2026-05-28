@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:45:34.252Z
 ---
 # BNB transfer(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/BNB-transfer
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/BNB-transfer>
 
 # BNB transfer(USER\_DATA)
 
@@ -33,7 +33,7 @@ POST `/sapi/v1/portfolio/bnb-transfer`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   You can only use this function 2 times per 10 minutes in a rolling manner
+> - You can only use this function 2 times per 10 minutes in a rolling manner
 
 ## Response Example
 

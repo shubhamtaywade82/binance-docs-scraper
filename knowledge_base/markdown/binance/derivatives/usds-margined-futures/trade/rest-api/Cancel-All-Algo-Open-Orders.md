@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:49:00.663Z
 ---
 # Cancel All Algo Open Orders (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Cancel-All-Algo-Open-Orders
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Cancel-All-Algo-Open-Orders>
 
 # Cancel All Algo Open Orders (TRADE)
 

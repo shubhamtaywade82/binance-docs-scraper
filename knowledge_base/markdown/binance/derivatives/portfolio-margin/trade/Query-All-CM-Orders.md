@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:52:16.902Z
 ---
 # Query All CM Orders (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-All-CM-Orders
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-All-CM-Orders>
 
 # Query All CM Orders (USER\_DATA)
 
@@ -37,12 +37,12 @@ GET `/papi/v1/cm/allOrders`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either `symbol` or `pair` must be sent.
-> -   If `orderId` is set, it will get orders >= that orderId. Otherwise most recent orders are returned.
-> -   These orders will not be found:
->     -   order status is `CANCELED` or `EXPIRED`, **AND**
->     -   order has NO filled trade, **AND**
->     -   created time + 3 days < current time
+> - Either `symbol` or `pair` must be sent.
+> - If `orderId` is set, it will get orders >= that orderId. Otherwise most recent orders are returned.
+> - These orders will not be found:
+>   - order status is `CANCELED` or `EXPIRED`, **AND**
+>   - order has NO filled trade, **AND**
+>   - created time + 3 days < current time
 
 ## Response Example
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:42:49.620Z
 ---
 # Get UM Futures Trade Download Link by Id(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-UM-Futures-Trade-Download-Link-by-Id
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-UM-Futures-Trade-Download-Link-by-Id>
 
 # Get UM Futures Trade Download Link by Id(USER\_DATA)
 
@@ -32,7 +32,7 @@ GET `/papi/v1/um/trade/asyn/id`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Download link expiration: 7 days
+> - Download link expiration: 7 days
 
 ## Response Example
 
@@ -41,19 +41,19 @@ GET `/papi/v1/um/trade/asyn/id`
 ```
 {
 
-	"downloadId":"545923594199212032",
+ "downloadId":"545923594199212032",
 
-  	"status":"completed",     // Enum：completed，processing
+   "status":"completed",     // Enum：completed，processing
 
-  	"url":"www.binance.com",  // The link is mapped to download id
+   "url":"www.binance.com",  // The link is mapped to download id
 
-	"s3Link": null,
+ "s3Link": null,
 
-  	"notified":true,          // ignore
+   "notified":true,          // ignore
 
-  	"expirationTimestamp":1645009771000,  // The link would expire after this timestamp
+   "expirationTimestamp":1645009771000,  // The link would expire after this timestamp
 
-  	"isExpired":null,
+   "isExpired":null,
 
 }
 
@@ -64,21 +64,21 @@ GET `/papi/v1/um/trade/asyn/id`
 ```
 {
 
-	"downloadId":"545923594199212032",
+ "downloadId":"545923594199212032",
 
-  	"status":"processing",
+   "status":"processing",
 
-  	"url":"", 
+   "url":"", 
 
-	"s3Link": null,
+ "s3Link": null,
 
-  	"notified":false,
+   "notified":false,
 
-  	"expirationTimestamp":-1
+   "expirationTimestamp":-1
 
-  	"isExpired":null,
+   "isExpired":null,
 
-  	
+   
 
 }
 

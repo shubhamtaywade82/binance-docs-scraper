@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:54:06.776Z
 ---
 # Cancel All Open Orders(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Cancel-All-Open-Orders
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Cancel-All-Open-Orders>
 
 # Cancel All Open Orders(TRADE)
 

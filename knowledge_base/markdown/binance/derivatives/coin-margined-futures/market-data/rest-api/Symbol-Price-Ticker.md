@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:58:48.106Z
 ---
 # Symbol Price Ticker
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Symbol-Price-Ticker
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Symbol-Price-Ticker>
 
 # Symbol Price Ticker
 
@@ -31,9 +31,9 @@ GET `/dapi/v1/ticker/price`
 | symbol | STRING | NO |  |
 | pair | STRING | NO |  |
 
-> -   Symbol and pair cannot be sent together
-> -   If a pair is sent,tickers for all symbols of the pair will be returned
-> -   If either a pair or symbol is sent, tickers for all symbols of all pairs will be returned
+> - Symbol and pair cannot be sent together
+> - If a pair is sent,tickers for all symbols of the pair will be returned
+> - If either a pair or symbol is sent, tickers for all symbols of all pairs will be returned
 
 ## Response Example
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:01:28.555Z
 ---
 # Postback
 
-> Source: https://dhanhq.co/docs/v2/postback
+> Source: <https://dhanhq.co/docs/v2/postback>
 
 # Postback
 
@@ -56,7 +56,6 @@ The JSON payload is sent as a raw HTTP POST body in below structure.
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -104,12 +103,9 @@ The JSON payload is sent as a raw HTTP POST body in below structure.
 
 To set up Postback API, you will need to provide a unique Postback URL to receive callbacks. You will need to follow the steps below to set up Postback URL:
 
--   While generating access token on [web.dhan.co](https://web.dhan.co), enter your URL in the 'Postback URL' field.
--   Click on 'Generate' to successfully set Postback and generate a new token.
+- While generating access token on [web.dhan.co](https://web.dhan.co), enter your URL in the 'Postback URL' field.
+- Click on 'Generate' to successfully set Postback and generate a new token.
 
-  
 Important: You will not receive postback calls if Postback URL is set to `localhost` or `127.0.0.1`.
-
-  
 
 > Note: To receive Postback originating for all orders placed from a platform/app, [Partner Login](https://dhanhq.co/docs/v2/#for-partners) module needs to be used.

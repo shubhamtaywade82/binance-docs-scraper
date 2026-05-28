@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:03:26.739Z
 ---
 # Streaming - Ollama
 
-> Source: https://docs.ollama.com/capabilities/streaming
+> Source: <https://docs.ollama.com/capabilities/streaming>
 
 [Documentation
 
@@ -17,14 +17,14 @@ scraped_at: 2026-05-28T19:03:26.739Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 Streaming allows you to render text as it is produced by the model. Streaming is enabled by default through the REST API, but disabled by default in the SDKs. To enable streaming in the SDKs, set the `stream` parameter to `True`.
 
-## 
+##
 
 [​
 
@@ -32,11 +32,11 @@ Streaming allows you to render text as it is produced by the model. Streaming is
 
 Key streaming concepts
 
-1.  Chatting: Stream partial assistant messages. Each chunk includes the `content` so you can render messages as they arrive.
-2.  Thinking: Thinking-capable models emit a `thinking` field alongside regular content in each chunk. Detect this field in streaming chunks to show or hide reasoning traces before the final answer arrives.
-3.  Tool calling: Watch for streamed `tool_calls` in each chunk, execute the requested tool, and append tool outputs back into the conversation.
+1. Chatting: Stream partial assistant messages. Each chunk includes the `content` so you can render messages as they arrive.
+2. Thinking: Thinking-capable models emit a `thinking` field alongside regular content in each chunk. Detect this field in streaming chunks to show or hide reasoning traces before the final answer arrives.
+3. Tool calling: Watch for streamed `tool_calls` in each chunk, execute the requested tool, and append tool outputs back into the conversation.
 
-## 
+##
 
 [​
 
@@ -46,10 +46,9 @@ Handling streamed chunks
 
 It is necessary to accumulate the partial fields in order to maintain the history of the conversation. This is particularly important for tool calling where the thinking, tool call from the model, and the executed tool result must be passed back to the model in the next request.
 
--   Python
-    
--   JavaScript
-    
+- Python
+
+- JavaScript
 
 ```
 from ollama import chat
@@ -129,8 +128,6 @@ main().catch(console.error)
 Thinking
 
 Next
-
-
 
 ](/capabilities/thinking)
 

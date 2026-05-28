@@ -8,12 +8,12 @@ scraped_at: 2026-05-28T18:38:36.670Z
 ---
 # Live Subscribing/Unsubscribing to streams
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Live-Subscribing-Unsubscribing-to-streams
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Live-Subscribing-Unsubscribing-to-streams>
 
 # Live Subscribing/Unsubscribing to streams
 
--   The following data can be sent through the websocket instance in order to subscribe/unsubscribe from streams. Examples can be seen below.
--   The `id` used in the JSON payloads is an unsigned INT used as an identifier to uniquely identify the messages going back and forth.
+- The following data can be sent through the websocket instance in order to subscribe/unsubscribe from streams. Examples can be seen below.
+- The `id` used in the JSON payloads is an unsigned INT used as an identifier to uniquely identify the messages going back and forth.
 
 ## Subscribe to a stream
 

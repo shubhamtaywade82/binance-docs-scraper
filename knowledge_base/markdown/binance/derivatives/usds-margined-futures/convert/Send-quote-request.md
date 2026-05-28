@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:46:51.142Z
 ---
 # Send Quote Request(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/convert/Send-quote-request
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/convert/Send-quote-request>
 
 # Send Quote Request(USER\_DATA)
 
@@ -38,8 +38,8 @@ POST `/fapi/v1/convert/getQuote`
 | recvWindow | LONG | NO | The value cannot be greater than 60000 |
 | timestamp | LONG | YES |  |
 
--   Either fromAmount or toAmount should be sent
--   `quoteId` will be returned only if you have enough funds to convert
+- Either fromAmount or toAmount should be sent
+- `quoteId` will be returned only if you have enough funds to convert
 
 ## Response Example
 

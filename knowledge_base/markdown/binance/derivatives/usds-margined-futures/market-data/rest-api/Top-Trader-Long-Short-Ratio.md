@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:57:36.879Z
 ---
 # Top Trader Long/Short Ratio (Positions)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Top-Trader-Long-Short-Ratio
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Top-Trader-Long-Short-Ratio>
 
 # Top Trader Long/Short Ratio (Positions)
 
@@ -34,9 +34,9 @@ GET `/futures/data/topLongShortPositionRatio`
 | startTime | LONG | NO |  |
 | endTime | LONG | NO |  |
 
-> -   If startTime and endTime are not sent, the most recent data is returned.
-> -   Only the data of the latest 30 days is available.
-> -   IP rate limit 1000 requests/5min
+> - If startTime and endTime are not sent, the most recent data is returned.
+> - Only the data of the latest 30 days is available.
+> - IP rate limit 1000 requests/5min
 
 ## Response Example
 
@@ -47,13 +47,13 @@ GET `/futures/data/topLongShortPositionRatio`
 
          "symbol":"BTCUSDT",
 
-	      "longShortRatio":"1.4342",// long/short position ratio of top traders
+       "longShortRatio":"1.4342",// long/short position ratio of top traders
 
-	      "longAccount": "0.5891", // long positions ratio of top traders
+       "longAccount": "0.5891", // long positions ratio of top traders
 
-	      "shortAccount":"0.4108", // short positions ratio of top traders
+       "shortAccount":"0.4108", // short positions ratio of top traders
 
-	      "timestamp":"1583139600000"
+       "timestamp":"1583139600000"
 
     
 
@@ -67,19 +67,19 @@ GET `/futures/data/topLongShortPositionRatio`
 
          "symbol":"BTCUSDT",
 
-	      "longShortRatio":"1.4337",
+       "longShortRatio":"1.4337",
 
-	      "longAccount": "0.3583", 
+       "longAccount": "0.3583", 
 
-	      "shortAccount":"0.6417", 	                
+       "shortAccount":"0.6417",                  
 
-	      "timestamp":"1583139900000"
+       "timestamp":"1583139900000"
 
-	               
+                
 
         },   
 
-	    
+     
 
 ]
 

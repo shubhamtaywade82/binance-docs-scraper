@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:59:32.713Z
 ---
 # Individual Symbol Book Ticker Streams
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/websocket-market-streams/Bookticker
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/websocket-market-streams/Bookticker>
 
 # Individual Symbol Book Ticker Streams
 

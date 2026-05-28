@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:42:34.971Z
 ---
 # Get CM Account Detail(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-CM-Account-Detail
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-CM-Account-Detail>
 
 # Get CM Account Detail(USER\_DATA)
 

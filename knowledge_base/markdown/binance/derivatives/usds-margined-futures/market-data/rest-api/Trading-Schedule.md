@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:55:15.195Z
 ---
 # Trading Schedule
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Trading-Schedule
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Trading-Schedule>
 
 # Trading Schedule
 

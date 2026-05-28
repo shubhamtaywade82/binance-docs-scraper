@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:43:05.320Z
 ---
 # Query User Rate Limit (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Query-User-Rate-Limit
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Query-User-Rate-Limit>
 
 # Query User Rate Limit (USER\_DATA)
 

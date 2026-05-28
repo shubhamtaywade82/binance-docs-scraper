@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:59:18.422Z
 ---
 # New Symbol Info
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/websocket-market-streams/New-Symbol-Info
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/websocket-market-streams/New-Symbol-Info>
 
 # New Symbol Info
 

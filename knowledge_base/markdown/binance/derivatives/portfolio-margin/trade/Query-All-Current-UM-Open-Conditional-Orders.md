@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:51:58.320Z
 ---
 # Query All Current UM Open Conditional Orders(Deprecated)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-All-Current-UM-Open-Conditional-Orders
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-All-Current-UM-Open-Conditional-Orders>
 
 # Query All Current UM Open Conditional Orders(Deprecated)
 
@@ -32,7 +32,7 @@ Get all open conditional orders on a symbol.
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   If the symbol is not sent, orders for all symbols will be returned in an array.
+> - If the symbol is not sent, orders for all symbols will be returned in an array.
 
 ## Response Example
 

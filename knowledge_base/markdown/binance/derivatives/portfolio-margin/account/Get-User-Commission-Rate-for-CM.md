@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:41:53.001Z
 ---
 # Get User Commission Rate for CM(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-User-Commission-Rate-for-CM
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-User-Commission-Rate-for-CM>
 
 # Get User Commission Rate for CM(USER\_DATA)
 

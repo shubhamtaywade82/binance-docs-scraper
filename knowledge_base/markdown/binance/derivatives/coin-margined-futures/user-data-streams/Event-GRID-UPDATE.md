@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:40:57.845Z
 ---
 # Event: GRID_UPDATE (Deprecated)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/user-data-streams/Event-GRID-UPDATE
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/user-data-streams/Event-GRID-UPDATE>
 
 # Event: GRID\_UPDATE (Deprecated)
 
@@ -18,10 +18,10 @@ scraped_at: 2026-05-28T18:40:57.845Z
 
 **Strategy Status**
 
--   NEW
--   WORKING
--   CANCELLED
--   EXPIRED
+- NEW
+- WORKING
+- CANCELLED
+- EXPIRED
 
 ## Event Name
 

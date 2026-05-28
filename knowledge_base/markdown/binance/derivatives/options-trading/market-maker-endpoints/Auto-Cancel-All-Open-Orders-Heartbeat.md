@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:50:11.103Z
 ---
 # Auto-Cancel All Open Orders (Kill-Switch) Heartbeat (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/market-maker-endpoints/Auto-Cancel-All-Open-Orders-Heartbeat
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/market-maker-endpoints/Auto-Cancel-All-Open-Orders-Heartbeat>
 
 # Auto-Cancel All Open Orders (Kill-Switch) Heartbeat (TRADE)
 
@@ -32,7 +32,7 @@ POST `/eapi/v1/countdownCancelAllHeartBeat`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   The response will only include underlying symbols where the heartbeat has been successfully updated.
+> - The response will only include underlying symbols where the heartbeat has been successfully updated.
 
 ## Response Example
 

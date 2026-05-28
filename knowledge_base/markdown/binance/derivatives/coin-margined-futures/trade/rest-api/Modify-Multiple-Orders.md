@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:53:53.994Z
 ---
 # Modify Multiple Orders(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Modify-Multiple-Orders
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Modify-Multiple-Orders>
 
 # Modify Multiple Orders(TRADE)
 
@@ -45,10 +45,10 @@ PUT `/dapi/v1/batchOrders`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Parameter rules are same with `Modify Order`
-> -   Batch modify orders are processed concurrently, and the order of matching is not guaranteed.
-> -   The order of returned contents for batch modify orders is the same as the order of the order list.
-> -   One order can only be modfied for less than 10000 times
+> - Parameter rules are same with `Modify Order`
+> - Batch modify orders are processed concurrently, and the order of matching is not guaranteed.
+> - The order of returned contents for batch modify orders is the same as the order of the order list.
+> - One order can only be modfied for less than 10000 times
 
 ## Response Example
 

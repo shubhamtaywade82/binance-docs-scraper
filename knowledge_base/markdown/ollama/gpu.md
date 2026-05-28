@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:05:10.022Z
 ---
 # Hardware support - Ollama
 
-> Source: https://docs.ollama.com/gpu
+> Source: <https://docs.ollama.com/gpu>
 
 [Documentation
 
@@ -17,12 +17,12 @@ scraped_at: 2026-05-28T19:05:10.022Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
-## 
+##
 
 [​
 
@@ -60,7 +60,7 @@ Ollama supports Nvidia GPUs with compute capability 5.0+ and driver version 531 
 
 For building locally to support older GPUs, see [developer](./development#linux-cuda-nvidia)
 
-### 
+###
 
 [​
 
@@ -70,7 +70,7 @@ GPU Selection
 
 If you have multiple NVIDIA GPUs in your system and want to limit Ollama to use a subset, you can set `CUDA_VISIBLE_DEVICES` to a comma separated list of GPUs. Numeric IDs may be used, however ordering may vary, so UUIDs are more reliable. You can discover the UUID of your GPUs by running `nvidia-smi -L` If you want to ignore the GPUs and force CPU usage, use an invalid GPU ID (e.g., “-1”)
 
-### 
+###
 
 [​
 
@@ -80,7 +80,7 @@ Linux Suspend Resume
 
 On linux, after a suspend/resume cycle, sometimes Ollama will fail to discover your NVIDIA GPU, and fallback to running on the CPU. You can workaround this driver bug by reloading the NVIDIA UVM driver with `sudo rmmod nvidia_uvm && sudo modprobe nvidia_uvm`
 
-## 
+##
 
 [​
 
@@ -92,7 +92,7 @@ Ollama supports the following AMD GPUs via the ROCm library:
 
 > **NOTE:** Additional AMD GPU support is provided by the Vulkan Library - see below.
 
-### 
+###
 
 [​
 
@@ -110,7 +110,7 @@ Ollama requires the AMD ROCm v7 driver on Linux. You can install or upgrade usin
 | AMD Ryzen AI | `Ryzen AI Max+ 395` `Ryzen AI Max 390` `Ryzen AI Max 385` `Ryzen AI 9 HX 475` `Ryzen AI 9 HX 470` `Ryzen AI 9 465` `Ryzen AI 9 HX 375` `Ryzen AI 9 HX 370` `Ryzen AI 9 365` |
 | AMD Instinct | `MI350X` `MI300X` `MI300A` `MI250X` `MI250` `MI210` `MI100` |
 
-### 
+###
 
 [​
 
@@ -125,7 +125,7 @@ With ROCm v6.1, the following GPUs are supported on Windows.
 | AMD Radeon RX | `7900 XTX` `7900 XT` `7900 GRE` `7800 XT` `7700 XT` `7600 XT` `7600` `6950 XT` `6900 XTX` `6900XT` `6800 XT` `6800` |
 | AMD Radeon PRO | `W7900` `W7800` `W7700` `W7600` `W7500` `W6900X` `W6800X Duo` `W6800X` `W6800` `V620` |
 
-### 
+###
 
 [​
 
@@ -155,7 +155,7 @@ Ollama leverages the AMD ROCm library, which does not support all AMD GPUs. In s
 
 Reach out on [Discord](https://discord.gg/ollama) or file an [issue](https://github.com/ollama/ollama/issues) for additional help.
 
-### 
+###
 
 [​
 
@@ -165,7 +165,7 @@ GPU Selection
 
 If you have multiple AMD GPUs in your system and want to limit Ollama to use a subset, you can set `ROCR_VISIBLE_DEVICES` to a comma separated list of GPUs. You can see the list of devices with `rocminfo`. If you want to ignore the GPUs and force CPU usage, use an invalid GPU ID (e.g., “-1”). When available, use the `Uuid` to uniquely identify the device instead of numeric value.
 
-### 
+###
 
 [​
 
@@ -175,7 +175,7 @@ Container Permission
 
 In some Linux distributions, SELinux can prevent containers from accessing the AMD GPU devices. On the host system you can run `sudo setsebool container_use_devices=1` to allow containers to use devices.
 
-## 
+##
 
 [​
 
@@ -185,7 +185,7 @@ Metal (Apple GPUs)
 
 Ollama supports GPU acceleration on Apple devices via the Metal API.
 
-## 
+##
 
 [​
 
@@ -197,8 +197,8 @@ Vulkan GPU Support
 
 Additional GPU support on Windows and Linux is provided via [Vulkan](https://www.vulkan.org/). On Windows most GPU vendors drivers come bundled with Vulkan support and require no additional setup steps. Most Linux distributions require installing additional components, and you may have multiple options for Vulkan drivers between Mesa and GPU Vendor specific packages
 
--   Linux Intel GPU Instructions - [https://dgpu-docs.intel.com/driver/client/overview.html](https://dgpu-docs.intel.com/driver/client/overview.html)
--   Linux AMD GPU Instructions - [https://amdgpu-install.readthedocs.io/en/latest/install-script.html#specifying-a-vulkan-implementation](https://amdgpu-install.readthedocs.io/en/latest/install-script.html#specifying-a-vulkan-implementation)
+- Linux Intel GPU Instructions - [https://dgpu-docs.intel.com/driver/client/overview.html](https://dgpu-docs.intel.com/driver/client/overview.html)
+- Linux AMD GPU Instructions - [https://amdgpu-install.readthedocs.io/en/latest/install-script.html#specifying-a-vulkan-implementation](https://amdgpu-install.readthedocs.io/en/latest/install-script.html#specifying-a-vulkan-implementation)
 
 For AMD GPUs on some Linux distributions, you may need to add the `ollama` user to the `render` group. The Ollama scheduler leverages available VRAM data reported by the GPU libraries to make optimal scheduling decisions. Vulkan requires additional capabilities or running as root to expose this available VRAM data. If neither root access or this capability are granted, Ollama will use approximate sizes of the models to make best effort scheduling decisions.
 
@@ -206,7 +206,7 @@ For AMD GPUs on some Linux distributions, you may need to add the `ollama` user 
 sudo setcap cap_perfmon+ep /usr/local/bin/ollama
 ```
 
-### 
+###
 
 [​
 
@@ -221,8 +221,6 @@ To select specific Vulkan GPU(s), you can set the environment variable `GGML_VK_
 TroubleshootingHow to troubleshoot issues encountered with Ollama
 
 Next
-
-
 
 ](/troubleshooting)
 

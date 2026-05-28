@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:03:41.819Z
 ---
 # Tool calling - Ollama
 
-> Source: https://docs.ollama.com/capabilities/tool-calling
+> Source: <https://docs.ollama.com/capabilities/tool-calling>
 
 [Documentation
 
@@ -17,14 +17,14 @@ scraped_at: 2026-05-28T19:03:41.819Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 Ollama supports tool calling (also known as function calling) which allows a model to invoke tools and incorporate their results into its replies.
 
-## 
+##
 
 [​
 
@@ -34,12 +34,11 @@ Calling a single tool
 
 Invoke a single tool and include its response in a follow-up request. Also known as “single-shot” tool calling.
 
--   cURL
-    
--   Python
-    
--   JavaScript
-    
+- cURL
+
+- Python
+
+- JavaScript
 
 ```
 curl -s http://localhost:11434/api/chat -H "Content-Type: application/json" -d '{
@@ -200,7 +199,7 @@ if (response.message.tool_calls?.length) {
 }
 ```
 
-## 
+##
 
 [​
 
@@ -208,12 +207,11 @@ if (response.message.tool_calls?.length) {
 
 Parallel tool calling
 
--   cURL
-    
--   Python
-    
--   JavaScript
-    
+- cURL
+
+- Python
+
+- JavaScript
 
 Request multiple tool calls in parallel, then send all tool responses back to the model.
 
@@ -457,7 +455,7 @@ if (response.message.tool_calls) {
 }
 ```
 
-## 
+##
 
 [​
 
@@ -467,10 +465,9 @@ Multi-turn tool calling (Agent loop)
 
 An agent loop allows the model to decide when to invoke tools and incorporate their results into its replies. It also might help to tell the model that it is in a loop and can make multiple tool calls.
 
--   Python
-    
--   JavaScript
-    
+- Python
+
+- JavaScript
 
 ```
 from ollama import chat, ChatResponse
@@ -621,7 +618,7 @@ async function agentLoop() {
 agentLoop().catch(console.error)
 ```
 
-## 
+##
 
 [​
 
@@ -631,10 +628,9 @@ Tool calling with streaming
 
 When streaming, gather every chunk of `thinking`, `content`, and `tool_calls`, then return those fields together with any tool results in the follow-up request.
 
--   Python
-    
--   JavaScript
-    
+- Python
+
+- JavaScript
 
 ```
 from ollama import chat 
@@ -789,7 +785,7 @@ agentLoop().catch(console.error)
 
 This loop streams the assistant response, accumulates partial fields, passes them back together, and appends the tool results so the model can complete its answer.
 
-## 
+##
 
 [​
 
@@ -829,8 +825,6 @@ response = chat(model='qwen3', messages=messages, tools=available_functions.valu
 Web search
 
 Next
-
-
 
 ](/capabilities/web-search)
 

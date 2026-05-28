@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:53:38.459Z
 ---
 # Order Book
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/websocket-api
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/websocket-api>
 
 # Order Book
 
@@ -16,8 +16,8 @@ scraped_at: 2026-05-28T18:53:38.459Z
 
 Get current order book. Note that this request returns limited market depth. If you need to continuously monitor order book updates, please consider using Websocket Market Streams:
 
--   `<symbol>@depth<levels>`
--   `<symbol>@depth`
+- `<symbol>@depth<levels>`
+- `<symbol>@depth`
 
 You can use `depth` request together with `<symbol>@depth` streams to maintain a local order book.
 

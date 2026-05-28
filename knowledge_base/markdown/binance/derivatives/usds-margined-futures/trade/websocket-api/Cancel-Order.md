@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:43:23.946Z
 ---
 # Cancel Order (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/websocket-api/Cancel-Order
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/websocket-api/Cancel-Order>
 
 # Cancel Order (TRADE)
 
@@ -50,7 +50,7 @@ Cancel an active order.
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either `orderId` or `origClientOrderId` must be sent.
+> - Either `orderId` or `origClientOrderId` must be sent.
 
 ## Response Example
 

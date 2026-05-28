@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:52:07.134Z
 ---
 # Query UM Algo Order History (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-UM-Algo-Order-History
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-UM-Algo-Order-History>
 
 # Query UM Algo Order History (USER\_DATA)
 
@@ -38,8 +38,8 @@ GET `/papi/v1/um/algo/allAlgoOrders`
 
 **Notes:**
 
-> -   If `algoId` is set, it will get orders >= that `algoId`. Otherwise most recent orders are returned.
-> -   The query time period must be less then 7 days( default as the recent 7 days).
+> - If `algoId` is set, it will get orders >= that `algoId`. Otherwise most recent orders are returned.
+> - The query time period must be less then 7 days( default as the recent 7 days).
 
 ## Response Example
 

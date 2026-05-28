@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:49:24.518Z
 ---
 # Futures Account Balance (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/account/rest-api/Futures-Account-Balance
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/account/rest-api/Futures-Account-Balance>
 
 # Futures Account Balance (USER\_DATA)
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:52:20.544Z
 ---
 # Query Current CM Open Order (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-Current-CM-Open-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-Current-CM-Open-Order>
 
 # Query Current CM Open Order (USER\_DATA)
 
@@ -36,8 +36,8 @@ GET `/papi/v1/cm/openOrder`
 
 Notes:
 
-> -   Either `orderId` or `origClientOrderId` must be sent.
-> -   If the queried order has been filled or cancelled, the error message "Order does not exist" will be returned.
+> - Either `orderId` or `origClientOrderId` must be sent.
+> - If the queried order has been filled or cancelled, the error message "Order does not exist" will be returned.
 
 ## Response Example
 

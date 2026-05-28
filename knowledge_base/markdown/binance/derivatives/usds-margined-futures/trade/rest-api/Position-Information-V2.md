@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:48:41.312Z
 ---
 # Position Information V2 (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Position-Information-V2
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Position-Information-V2>
 
 # Position Information V2 (USER\_DATA)
 
@@ -43,41 +43,41 @@ GET `/fapi/v2/positionRisk`
 ```
 [
 
-  	{
+   {
 
-  		"entryPrice": "0.00000",
+    "entryPrice": "0.00000",
 
         "breakEvenPrice": "0.0",  
 
-  		"marginType": "isolated", 
+    "marginType": "isolated", 
 
-  		"isAutoAddMargin": "false",
+    "isAutoAddMargin": "false",
 
-  		"isolatedMargin": "0.00000000",	
+    "isolatedMargin": "0.00000000", 
 
-  		"leverage": "10", 
+    "leverage": "10", 
 
-  		"liquidationPrice": "0", 
+    "liquidationPrice": "0", 
 
-  		"markPrice": "6679.50671178",	
+    "markPrice": "6679.50671178", 
 
-  		"maxNotionalValue": "20000000", 
+    "maxNotionalValue": "20000000", 
 
-  		"positionAmt": "0.000",
+    "positionAmt": "0.000",
 
-  		"notional": "0",, 
+    "notional": "0",, 
 
-  		"isolatedWallet": "0",
+    "isolatedWallet": "0",
 
-  		"symbol": "BTCUSDT", 
+    "symbol": "BTCUSDT", 
 
-  		"unRealizedProfit": "0.00000000", 
+    "unRealizedProfit": "0.00000000", 
 
-  		"positionSide": "BOTH",
+    "positionSide": "BOTH",
 
-  		"updateTime": 0
+    "updateTime": 0
 
-  	}
+   }
 
 ]
 

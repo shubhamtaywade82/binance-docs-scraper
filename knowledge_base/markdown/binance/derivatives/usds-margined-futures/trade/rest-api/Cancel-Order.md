@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:48:01.312Z
 ---
 # Cancel Order (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Cancel-Order
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Cancel-Order>
 
 # Cancel Order (TRADE)
 
@@ -34,7 +34,7 @@ DELETE `/fapi/v1/order`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either `orderId` or `origClientOrderId` must be sent.
+> - Either `orderId` or `origClientOrderId` must be sent.
 
 ## Response Example
 

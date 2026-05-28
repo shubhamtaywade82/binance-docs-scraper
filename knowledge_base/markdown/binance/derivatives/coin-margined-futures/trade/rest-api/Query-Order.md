@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:54:12.348Z
 ---
 # Query Order (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Query-Order
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Query-Order>
 
 # Query Order (USER\_DATA)
 
@@ -16,9 +16,9 @@ scraped_at: 2026-05-28T18:54:12.348Z
 
 Check an order's status.
 
--   These orders will not be found:
-    -   order status is CANCELED or EXPIRED AND order has NO filled trade AND created time + 3 days < current time
-    -   order create time + 90 days < current time
+- These orders will not be found:
+  - order status is CANCELED or EXPIRED AND order has NO filled trade AND created time + 3 days < current time
+  - order create time + 90 days < current time
 
 ## HTTP Request
 
@@ -38,7 +38,7 @@ GET `/dapi/v1/order`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either `orderId` or `origClientOrderId` must be sent.
+> - Either `orderId` or `origClientOrderId` must be sent.
 
 ## Response Example
 

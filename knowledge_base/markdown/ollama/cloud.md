@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:03:23.612Z
 ---
 # Cloud - Ollama
 
-> Source: https://docs.ollama.com/cloud
+> Source: <https://docs.ollama.com/cloud>
 
 [Documentation
 
@@ -17,12 +17,12 @@ scraped_at: 2026-05-28T19:03:23.612Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
-## 
+##
 
 [​
 
@@ -32,7 +32,7 @@ Cloud Models
 
 Ollama’s cloud models are a new kind of model in Ollama that can run without a powerful GPU. Instead, cloud models are automatically offloaded to Ollama’s cloud service while offering the same capabilities as local models, making it possible to keep using your local tools while running larger models that wouldn’t fit on a personal computer.
 
-### 
+###
 
 [​
 
@@ -42,7 +42,7 @@ Supported models
 
 For a list of supported models, see Ollama’s [model library](https://ollama.com/search?c=cloud).
 
-### 
+###
 
 [​
 
@@ -56,14 +56,13 @@ Ollama’s cloud models require an account on [ollama.com](https://ollama.com). 
 ollama signin
 ```
 
--   CLI
-    
--   Python
-    
--   JavaScript
-    
--   cURL
-    
+- CLI
+
+- Python
+
+- JavaScript
+
+- cURL
 
 To run a cloud model, open the terminal and run:
 
@@ -150,7 +149,7 @@ curl http://localhost:11434/api/chat -d '{
 }'
 ```
 
-## 
+##
 
 [​
 
@@ -160,7 +159,7 @@ Cloud API access
 
 Cloud models can also be accessed directly on ollama.com’s API. In this mode, ollama.com acts as a remote Ollama host.
 
-### 
+###
 
 [​
 
@@ -174,7 +173,7 @@ For direct access to ollama.com’s API, first create an [API key](https://ollam
 export OLLAMA_API_KEY=your_api_key
 ```
 
-### 
+###
 
 [​
 
@@ -188,7 +187,7 @@ For models available directly via Ollama’s API, models can be listed via:
 curl https://ollama.com/api/tags
 ```
 
-### 
+###
 
 [​
 
@@ -196,12 +195,11 @@ curl https://ollama.com/api/tags
 
 Generating a response
 
--   Python
-    
--   JavaScript
-    
--   cURL
-    
+- Python
+
+- JavaScript
+
+- cURL
 
 First, install [Ollama’s Python library](https://github.com/ollama/ollama-python)
 
@@ -275,7 +273,7 @@ curl https://ollama.com/api/chat \
   }'
 ```
 
-## 
+##
 
 [​
 
@@ -290,8 +288,6 @@ Ollama can run in local-only mode by [disabling Ollama’s cloud](./faq#how-do-i
 Streaming
 
 Next
-
-
 
 ](/capabilities/streaming)
 

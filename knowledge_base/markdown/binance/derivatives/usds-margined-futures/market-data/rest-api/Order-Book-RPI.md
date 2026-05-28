@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:56:42.691Z
 ---
 # RPI Order Book
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Order-Book-RPI
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Order-Book-RPI>
 
 # RPI Order Book
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:51:07.434Z
 ---
 # Cancel UM Conditional Order(Deprecated)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-UM-Conditional-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-UM-Conditional-Order>
 
 # Cancel UM Conditional Order(Deprecated)
 
@@ -34,7 +34,7 @@ DELETE `/papi/v1/um/conditional/order`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either `strategyId` or `newClientStrategyId` must be sent.
+> - Either `strategyId` or `newClientStrategyId` must be sent.
 
 ## Response Example
 

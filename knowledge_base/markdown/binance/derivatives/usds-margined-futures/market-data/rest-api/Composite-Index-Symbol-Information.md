@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:57:50.450Z
 ---
 # Composite Index Symbol Information
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Composite-Index-Symbol-Information
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Composite-Index-Symbol-Information>
 
 # Composite Index Symbol Information
 
@@ -30,7 +30,7 @@ GET `/fapi/v1/indexInfo`
 | --- | --- | --- | --- |
 | symbol | STRING | NO |  |
 
-> -   Only for composite index symbols
+> - Only for composite index symbols
 
 ## Response Example
 

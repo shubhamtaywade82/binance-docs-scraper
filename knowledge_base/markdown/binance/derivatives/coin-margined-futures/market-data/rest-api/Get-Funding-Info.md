@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:58:28.459Z
 ---
 # Get Funding Rate Info
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Get-Funding-Info
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Get-Funding-Info>
 
 # Get Funding Rate Info
 

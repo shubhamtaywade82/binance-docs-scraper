@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:42:40.761Z
 ---
 # UM Futures Symbol Configuration(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-UM-Futures-Symbol-Config
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-UM-Futures-Symbol-Config>
 
 # UM Futures Symbol Configuration(USER\_DATA)
 

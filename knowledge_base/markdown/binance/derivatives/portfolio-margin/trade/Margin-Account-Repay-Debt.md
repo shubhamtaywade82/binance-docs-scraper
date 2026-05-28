@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:53:32.793Z
 ---
 # Margin Account Repay Debt(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Margin-Account-Repay-Debt
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Margin-Account-Repay-Debt>
 
 # Margin Account Repay Debt(TRADE)
 
@@ -34,10 +34,10 @@ POST `/papi/v1/margin/repay-debt`
 | recvWindow | LONG | NO | The value cannot be greater than 60000 |
 | timestamp | LONG | YES |  |
 
-> -   The repay asset amount cannot exceed 50000 USD equivalent value for a single request.
-> -   If `amount` is not sent, all the asset loan will be repaid if having enough specific repay assets.
-> -   If `amount` is sent, only the certain amount of the asset loan will be repaid if having enough specific repay assets.
-> -   The system will use the same asset to repay the loan first (if have) no matter whether put the asset in `specifyRepayAssets`
+> - The repay asset amount cannot exceed 50000 USD equivalent value for a single request.
+> - If `amount` is not sent, all the asset loan will be repaid if having enough specific repay assets.
+> - If `amount` is sent, only the certain amount of the asset loan will be repaid if having enough specific repay assets.
+> - The system will use the same asset to repay the loan first (if have) no matter whether put the asset in `specifyRepayAssets`
 
 ## Response Example
 
@@ -46,7 +46,7 @@ POST `/papi/v1/margin/repay-debt`
 
     "amount": "0.10000000",
 
-	"asset": "BNB",
+ "asset": "BNB",
 
     "specifyRepayAssets": [
 
@@ -54,11 +54,11 @@ POST `/papi/v1/margin/repay-debt`
 
     "BTC"
 
-	],
+ ],
 
     "updateTime": 1636371437000
 
-	"success": true
+ "success": true
 
 }
 

@@ -1,6 +1,6 @@
 # delta Docs
 
-Seed: https://docs.delta.exchange
+Seed: <https://docs.delta.exchange>
 
 ## Pages
 

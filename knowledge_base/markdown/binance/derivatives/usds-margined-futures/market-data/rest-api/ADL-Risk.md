@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:58:01.737Z
 ---
 # ADL Risk
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/ADL-Risk
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/ADL-Risk>
 
 # ADL Risk
 

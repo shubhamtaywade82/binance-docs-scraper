@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:39:55.807Z
 ---
 # Query User Negative Balance Auto Exchange Record (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Query-User-Negative-Balance-Auto-Exchange-Record
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Query-User-Negative-Balance-Auto-Exchange-Record>
 
 # Query User Negative Balance Auto Exchange Record (USER\_DATA)
 
@@ -35,8 +35,8 @@ GET `/papi/v1/portfolio/negative-balance-exchange-record`
 
 **Note**
 
-> -   Response in descending order
-> -   The max interval between `startTime` and `endTime` is 3 months.
+> - Response in descending order
+> - The max interval between `startTime` and `endTime` is 3 months.
 
 ## Response Example
 

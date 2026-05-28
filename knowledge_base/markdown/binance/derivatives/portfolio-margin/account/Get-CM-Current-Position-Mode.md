@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:41:38.799Z
 ---
 # Get CM Current Position Mode(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-CM-Current-Position-Mode
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-CM-Current-Position-Mode>
 
 # Get CM Current Position Mode(USER\_DATA)
 

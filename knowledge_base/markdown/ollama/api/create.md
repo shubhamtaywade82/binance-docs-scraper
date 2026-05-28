@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:02:58.699Z
 ---
 # Create a model - Ollama
 
-> Source: https://docs.ollama.com/api/create
+> Source: <https://docs.ollama.com/api/create>
 
 [Documentation
 
@@ -47,9 +47,9 @@ curl http://localhost:11434/api/create -d '{
 ```
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 #### Body
@@ -175,8 +175,6 @@ Current status message
 Copy
 
 Next
-
-
 
 ](/api/copy)
 

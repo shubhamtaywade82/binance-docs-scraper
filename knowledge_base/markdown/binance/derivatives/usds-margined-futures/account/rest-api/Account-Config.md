@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:55:37.339Z
 ---
 # Futures Account Configuration(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Account-Config
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Account-Config>
 
 # Futures Account Configuration(USER\_DATA)
 

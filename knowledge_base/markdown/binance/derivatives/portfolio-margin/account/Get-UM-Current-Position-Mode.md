@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:41:36.098Z
 ---
 # Get UM Current Position Mode(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-UM-Current-Position-Mode
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Get-UM-Current-Position-Mode>
 
 # Get UM Current Position Mode(USER\_DATA)
 

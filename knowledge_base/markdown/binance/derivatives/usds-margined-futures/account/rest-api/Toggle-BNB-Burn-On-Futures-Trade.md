@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:56:21.927Z
 ---
 # Toggle BNB Burn On Futures Trade (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Toggle-BNB-Burn-On-Futures-Trade
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Toggle-BNB-Burn-On-Futures-Trade>
 
 # Toggle BNB Burn On Futures Trade (TRADE)
 

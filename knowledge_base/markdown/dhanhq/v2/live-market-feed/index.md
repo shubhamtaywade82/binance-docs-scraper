@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:01:05.487Z
 ---
 # Live Market Feed
 
-> Source: https://dhanhq.co/docs/v2/live-market-feed/
+> Source: <https://dhanhq.co/docs/v2/live-market-feed/>
 
 # Live Market Feed
 
@@ -22,19 +22,16 @@ All request messages over WebSocket are in JSON whereas all response messages ov
 
 Using DhanHQ Libraries for WebSockets
 
-  
 \- You can use [DhanHQ Python Library](https://github.com/dhan-oss/DhanHQ-py) to quick start with Live Market Feed.
 
 ## Establishing Connection
 
 To establish connection with DhanHQ WebSocket for Market Feed, you can to the below endpoint using WebSocket library.  
   
-
 ```
 wss://api-feed.dhan.co?version=2&token=eyxxxxx&clientId=100xxxxxxx&authType=2
 ```
 
-  
 **Query Parameters**
 
 | Field | Description |
@@ -75,7 +72,6 @@ You can only send upto 100 instruments in a single JSON message. You can send mu
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -104,9 +100,9 @@ The market feed data is sent as structured binary packet which is shared at supe
 
 DhanHQ Live Market Feed is real-time data and there are three modes in which you can receive the data, depending on your use case:
 
--   [Ticker Data](#ticker-packet)
--   [Quote Data](#quote-packet)
--   [Full Data](#full-packet)
+- [Ticker Data](#ticker-packet)
+- [Quote Data](#quote-packet)
+- [Full Data](#full-packet)
 
 ![Subscribing Instruments](../img/WS02.png)
 
@@ -225,8 +221,6 @@ Each of these 5 packets will be received in the following packet structure:
 | `13-16` | float32 | `4` | Bid Price |
 | `17-20` | float32 | `4` | Ask Price |
 
-  
-
 ## Feed Disconnect
 
 If you want to disconnect WebSocket, you can send below JSON request message via the connection.
@@ -239,9 +233,7 @@ If you want to disconnect WebSocket, you can send below JSON request message via
 
 In case of WebSocket disconnection from server side, you will receive disconnection packet, which will have disconnection reason code.
 
--   If more than 5 websockets are established, then the first socket will be disconnected with `805` with every additional connection.
-
-  
+- If more than 5 websockets are established, then the first socket will be disconnected with `805` with every additional connection.
 
 | Bytes | Type | Size | Description |
 | --- | --- | --- | --- |

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:50:47.933Z
 ---
 # New Margin Order(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/New-Margin-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/New-Margin-Order>
 
 # New Margin Order(TRADE)
 

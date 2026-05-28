@@ -8,17 +8,17 @@ scraped_at: 2026-05-28T19:02:18.382Z
 ---
 # Untitled
 
-> Source: https://docs.delta.exchange/api/swagger_v2.json
+> Source: <https://docs.delta.exchange/api/swagger_v2.json>
 
 {
   "swagger": "2.0",
   "info": {
-    "description": "## REST API for Delta Exchange\\nFind out more on \[https://delta.exchange\](https://delta.exchange)\\n",
+    "description": "## REST API for Delta Exchange\\nFind out more on \[<https://delta.exchange\>](<https://delta.exchange)\\n>",
     "version": "1.0.0",
     "title": "Delta Exchange Api V2",
-    "termsOfService": "https://docs.google.com/document/d/e/2PACX-1vSDARn3b\_VlmGZjJjlROm0MFpxX6KoLzVrqPZLSD4rh7sBhpP6kDP8WMSgUlaitwjCBUBd3-fV-MDId/pub",
+    "termsOfService": "<https://docs.google.com/document/d/e/2PACX-1vSDARn3b\_VlmGZjJjlROm0MFpxX6KoLzVrqPZLSD4rh7sBhpP6kDP8WMSgUlaitwjCBUBd3-fV-MDId/pub>",
     "contact": {
-      "email": "support@delta.exchange"
+      "email": "<support@delta.exchange>"
     }
   },
   "host": "api.india.delta.exchange",
@@ -124,7 +124,7 @@ scraped_at: 2026-05-28T19:02:18.382Z
         \],
         "operationId": "getIndices",
         "summary": "Get indices",
-        "description": "Indices refer to spot price indices that Delta Exchange creates by combining spot prices of prominent crypto exchanges. These indices form the underlying of futures and options contracts listed on Delta Exchange. All details of indices on Delta Exchange are available \[here\](https://www.delta.exchange/indices).",
+        "description": "Indices refer to spot price indices that Delta Exchange creates by combining spot prices of prominent crypto exchanges. These indices form the underlying of futures and options contracts listed on Delta Exchange. All details of indices on Delta Exchange are available \[here\](<https://www.delta.exchange/indices>).",
         "produces": \[
           "application/json"
         \],

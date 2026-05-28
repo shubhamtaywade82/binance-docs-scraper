@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:46:57.169Z
 ---
 # Position Information(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/websocket-api/Position-Information
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/websocket-api/Position-Information>
 
 # Position Information(USER\_DATA)
 
@@ -60,7 +60,7 @@ Get current position information.
 
 **Note**
 
-> -   Please use with user data stream `ACCOUNT_UPDATE` to meet your timeliness and accuracy needs.
+> - Please use with user data stream `ACCOUNT_UPDATE` to meet your timeliness and accuracy needs.
 
 ## Response Example
 

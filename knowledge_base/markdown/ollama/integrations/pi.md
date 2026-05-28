@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:04:18.023Z
 ---
 # Pi - Ollama
 
-> Source: https://docs.ollama.com/integrations/pi
+> Source: <https://docs.ollama.com/integrations/pi>
 
 [Documentation
 
@@ -17,14 +17,14 @@ scraped_at: 2026-05-28T19:04:18.023Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 Pi is a minimal and extensible coding agent.
 
-## 
+##
 
 [​
 
@@ -38,7 +38,7 @@ Install [Pi](https://github.com/badlogic/pi-mono):
 npm install -g @mariozechner/pi-coding-agent
 ```
 
-## 
+##
 
 [​
 
@@ -46,7 +46,7 @@ npm install -g @mariozechner/pi-coding-agent
 
 Usage with Ollama
 
-### 
+###
 
 [​
 
@@ -64,7 +64,7 @@ This installs Pi, configures Ollama as a provider including web tools, and drops
 ollama launch pi --config
 ```
 
-### 
+###
 
 [​
 
@@ -78,7 +78,7 @@ ollama launch pi --model qwen3.5:cloud
 
 Cloud models are also available at [ollama.com](https://ollama.com/search?c=cloud).
 
-## 
+##
 
 [​
 
@@ -95,7 +95,7 @@ pi install git:github.com/user/repo@v1
 
 See all packages at [pi.dev](https://pi.dev/packages)
 
-### 
+###
 
 [​
 
@@ -109,7 +109,7 @@ Pi can use web search and fetch tools via the `@ollama/pi-web-search` package. W
 pi install npm:@ollama/pi-web-search
 ```
 
-### 
+###
 
 [​
 
@@ -131,7 +131,7 @@ Tell Pi what to optimize. It runs experiments, benchmarks each one, keeps improv
 
 Each kept experiment is automatically committed. Each failed one is reverted. When you’re done, Pi can group improvements into independent branches for clean review and merge.
 
-## 
+##
 
 [​
 
@@ -172,8 +172,6 @@ Update `~/.pi/agent/settings.json` to set the default provider:
 Pool
 
 Next
-
-
 
 ](/integrations/pool)
 

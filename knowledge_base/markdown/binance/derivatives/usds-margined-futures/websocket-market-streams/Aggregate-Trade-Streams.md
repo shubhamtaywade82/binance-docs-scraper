@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:38:39.243Z
 ---
 # Aggregate Trade Streams
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Aggregate-Trade-Streams
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Aggregate-Trade-Streams>
 
 # Aggregate Trade Streams
 
@@ -43,7 +43,7 @@ The Aggregate Trade Streams push market trade information that is aggregated for
 
   "s": "BTCUSDT",   // Symbol
 
-  "a": 5933014,		  // Aggregate trade ID
+  "a": 5933014,    // Aggregate trade ID
 
   "p": "0.001",     // Price
 

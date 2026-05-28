@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:54:15.344Z
 ---
 # All Orders (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/All-Orders
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/All-Orders>
 
 # All Orders (USER\_DATA)
 
@@ -16,9 +16,9 @@ scraped_at: 2026-05-28T18:54:15.344Z
 
 Get all account orders; active, canceled, or filled.
 
--   These orders will not be found:
-    -   order status is CANCELED or EXPIRED AND order has NO filled trade AND created time + 3 days < current time
-    -   order create time + 90 days < current time
+- These orders will not be found:
+  - order status is CANCELED or EXPIRED AND order has NO filled trade AND created time + 3 days < current time
+  - order create time + 90 days < current time
 
 ## HTTP Request
 
@@ -43,11 +43,11 @@ GET `/dapi/v1/allOrders`
 
 **Notes:**
 
-> -   Either `symbol` or `pair` must be sent.
-> -   `pair` can't be sent with `orderId`
-> -   If `orderId` is set, it will get orders >= that `orderId`. Otherwise most recent orders are returned.
-> -   If orderId is set, it will get orders >= that orderId. Otherwise most recent orders are returned.
-> -   The query time period must be less then 7 days( default as the recent 7 days).
+> - Either `symbol` or `pair` must be sent.
+> - `pair` can't be sent with `orderId`
+> - If `orderId` is set, it will get orders >= that `orderId`. Otherwise most recent orders are returned.
+> - If orderId is set, it will get orders >= that orderId. Otherwise most recent orders are returned.
+> - The query time period must be less then 7 days( default as the recent 7 days).
 
 ## Response Example
 
@@ -56,57 +56,57 @@ GET `/dapi/v1/allOrders`
 
   {
 
-   	"avgPrice": "0.0",
+    "avgPrice": "0.0",
 
-  	"clientOrderId": "abc",
+   "clientOrderId": "abc",
 
-  	"cumBase": "0",
+   "cumBase": "0",
 
-  	"executedQty": "0",
+   "executedQty": "0",
 
-  	"orderId": 1917641,
+   "orderId": 1917641,
 
-  	"origQty": "0.40",
+   "origQty": "0.40",
 
-  	"origType": "TRAILING_STOP_MARKET",
+   "origType": "TRAILING_STOP_MARKET",
 
-  	"price": "0",
+   "price": "0",
 
-  	"reduceOnly": false,
+   "reduceOnly": false,
 
-  	"side": "BUY",
+   "side": "BUY",
 
-  	"positionSide": "SHORT",
+   "positionSide": "SHORT",
 
-  	"status": "NEW",
+   "status": "NEW",
 
-  	"stopPrice": "9300",				// please ignore when order type is TRAILING_STOP_MARKET
+   "stopPrice": "9300",    // please ignore when order type is TRAILING_STOP_MARKET
 
-  	"closePosition": false,   			// if Close-All
+   "closePosition": false,      // if Close-All
 
-  	"symbol": "BTCUSD_200925",
+   "symbol": "BTCUSD_200925",
 
-  	"pair": "BTCUSD",
+   "pair": "BTCUSD",
 
-  	"time": 1579276756075,				// order time
+   "time": 1579276756075,    // order time
 
-  	"timeInForce": "GTC",
+   "timeInForce": "GTC",
 
-  	"type": "TRAILING_STOP_MARKET",
+   "type": "TRAILING_STOP_MARKET",
 
-  	"activatePrice": "9020",			// activation price, only return with TRAILING_STOP_MARKET order
+   "activatePrice": "9020",   // activation price, only return with TRAILING_STOP_MARKET order
 
-  	"priceRate": "0.3",					// callback rate, only return with TRAILING_STOP_MARKET order
+   "priceRate": "0.3",     // callback rate, only return with TRAILING_STOP_MARKET order
 
-  	"updateTime": 1579276756075,		// update time
+   "updateTime": 1579276756075,  // update time
 
-  	"workingType": "CONTRACT_PRICE",
+   "workingType": "CONTRACT_PRICE",
 
-  	"priceProtect": false,              // if conditional order trigger is protected
+   "priceProtect": false,              // if conditional order trigger is protected
 
-  	"priceMatch": "NONE",               //price match mode
+   "priceMatch": "NONE",               //price match mode
 
-  	"selfTradePreventionMode": "NONE",  //self trading preventation mode
+   "selfTradePreventionMode": "NONE",  //self trading preventation mode
 
   }
 

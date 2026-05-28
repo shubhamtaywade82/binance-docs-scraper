@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:57:05.872Z
 ---
 # Premium index Kline Data
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Premium-Index-Kline-Data
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Premium-Index-Kline-Data>
 
 # Premium index Kline Data
 
@@ -41,7 +41,7 @@ based on parameter `LIMIT`
 | endTime | LONG | NO |  |
 | limit | INT | NO | Default 500; max 1500. |
 
-> -   If startTime and endTime are not sent, the most recent klines are returned.
+> - If startTime and endTime are not sent, the most recent klines are returned.
 
 ## Response Example
 

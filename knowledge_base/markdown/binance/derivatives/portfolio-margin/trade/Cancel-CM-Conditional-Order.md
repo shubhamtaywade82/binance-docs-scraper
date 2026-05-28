@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:51:22.042Z
 ---
 # Cancel CM Conditional Order(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-CM-Conditional-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-CM-Conditional-Order>
 
 # Cancel CM Conditional Order(TRADE)
 
@@ -34,7 +34,7 @@ DELETE `/papi/v1/cm/conditional/order`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either `strategyId` or `newClientStrategyId` must be sent.
+> - Either `strategyId` or `newClientStrategyId` must be sent.
 
 ## Response Example
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:57:42.531Z
 ---
 # Long/Short Ratio
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Long-Short-Ratio
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Long-Short-Ratio>
 
 # Long/Short Ratio
 
@@ -34,9 +34,9 @@ GET `/futures/data/globalLongShortAccountRatio`
 | startTime | LONG | NO |  |
 | endTime | LONG | NO |  |
 
-> -   If startTime and endTime are not sent, the most recent data is returned.
-> -   Only the data of the latest 30 days is available.
-> -   IP rate limit 1000 requests/5min
+> - If startTime and endTime are not sent, the most recent data is returned.
+> - Only the data of the latest 30 days is available.
+> - IP rate limit 1000 requests/5min
 
 ## Response Example
 
@@ -47,13 +47,13 @@ GET `/futures/data/globalLongShortAccountRatio`
 
          "symbol":"BTCUSDT",  // long/short account num ratio of all traders
 
-	      "longShortRatio":"0.1960",  //long account num ratio of all traders
+       "longShortRatio":"0.1960",  //long account num ratio of all traders
 
-	      "longAccount": "0.6622",   // short account num ratio of all traders
+       "longAccount": "0.6622",   // short account num ratio of all traders
 
-	      "shortAccount":"0.3378", 
+       "shortAccount":"0.3378", 
 
-	      "timestamp":"1583139600000"
+       "timestamp":"1583139600000"
 
     
 
@@ -67,19 +67,19 @@ GET `/futures/data/globalLongShortAccountRatio`
 
          "symbol":"BTCUSDT",
 
-	      "longShortRatio":"1.9559",
+       "longShortRatio":"1.9559",
 
-	      "longAccount": "0.6617", 
+       "longAccount": "0.6617", 
 
-	      "shortAccount":"0.3382", 	                
+       "shortAccount":"0.3382",                  
 
-	      "timestamp":"1583139900000"
+       "timestamp":"1583139900000"
 
-	               
+                
 
         },   
 
-	    
+     
 
 ]
 

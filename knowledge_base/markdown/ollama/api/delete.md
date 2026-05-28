@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:03:10.161Z
 ---
 # Delete a model - Ollama
 
-> Source: https://docs.ollama.com/api/delete
+> Source: <https://docs.ollama.com/api/delete>
 
 [Documentation
 
@@ -37,9 +37,9 @@ curl -X DELETE http://localhost:11434/api/delete -d '{
 ```
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 #### Body
@@ -69,8 +69,6 @@ Model successfully deleted
 Get versionRetrieve the version of the Ollama
 
 Next
-
-
 
 ](/api-reference/get-version)
 

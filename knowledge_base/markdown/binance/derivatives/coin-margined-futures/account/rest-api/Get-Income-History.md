@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:49:44.091Z
 ---
 # Get Income History(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/account/rest-api/Get-Income-History
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/account/rest-api/Get-Income-History>
 
 # Get Income History(USER\_DATA)
 
@@ -37,9 +37,9 @@ GET `/dapi/v1/income`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   If `incomeType` is not sent, all kinds of flow will be returned
-> -   "trandId" is unique in the same "incomeType" for a user
-> -   The time between `startTime` and `endTime` can not be longer than 1 year
+> - If `incomeType` is not sent, all kinds of flow will be returned
+> - "trandId" is unique in the same "incomeType" for a user
+> - The time between `startTime` and `endTime` can not be longer than 1 year
 
 ## Response Example
 

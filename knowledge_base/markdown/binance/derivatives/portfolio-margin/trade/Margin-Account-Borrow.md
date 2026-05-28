@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:50:50.967Z
 ---
 # Margin Account Borrow(MARGIN)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Margin-Account-Borrow
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Margin-Account-Borrow>
 
 # Margin Account Borrow(MARGIN)
 

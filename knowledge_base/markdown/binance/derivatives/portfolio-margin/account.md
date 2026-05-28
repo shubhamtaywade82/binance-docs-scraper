@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:41:06.151Z
 ---
 # Account Balance(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account>
 
 # Account Balance(USER\_DATA)
 

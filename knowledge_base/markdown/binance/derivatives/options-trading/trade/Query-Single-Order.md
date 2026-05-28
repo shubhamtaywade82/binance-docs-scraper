@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:00:05.583Z
 ---
 # Query Single Order (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/trade/Query-Single-Order
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/trade/Query-Single-Order>
 
 # Query Single Order (TRADE)
 
@@ -16,10 +16,10 @@ scraped_at: 2026-05-28T19:00:05.583Z
 
 Check an order status.
 
--   These orders will not be found:
-    -   order status is `CANCELED` or `REJECTED`, **AND**
-    -   order has NO filled trade, **AND**
-    -   created time + 3 days < current time
+- These orders will not be found:
+  - order status is `CANCELED` or `REJECTED`, **AND**
+  - order has NO filled trade, **AND**
+  - created time + 3 days < current time
 
 ## HTTP Request
 
@@ -39,7 +39,7 @@ GET `/eapi/v1/order`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either `orderId` or `clientOrderId` must be sent.
+> - Either `orderId` or `clientOrderId` must be sent.
 
 ## Response Example
 

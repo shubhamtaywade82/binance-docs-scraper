@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:58:07.107Z
 ---
 # Exchange Information
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Exchange-Information
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Exchange-Information>
 
 # Exchange Information
 

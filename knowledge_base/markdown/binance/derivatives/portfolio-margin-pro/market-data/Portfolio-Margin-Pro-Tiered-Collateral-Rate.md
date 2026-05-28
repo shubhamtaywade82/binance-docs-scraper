@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:40:06.468Z
 ---
 # Portfolio Margin Pro Tiered Collateral Rate(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/market-data/Portfolio-Margin-Pro-Tiered-Collateral-Rate
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/market-data/Portfolio-Margin-Pro-Tiered-Collateral-Rate>
 
 # Portfolio Margin Pro Tiered Collateral Rate(USER\_DATA)
 

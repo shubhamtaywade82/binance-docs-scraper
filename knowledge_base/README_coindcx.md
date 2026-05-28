@@ -1,6 +1,6 @@
 # coindcx Docs
 
-Seed: https://docs.coindcx.com
+Seed: <https://docs.coindcx.com>
 
 ## Pages
 

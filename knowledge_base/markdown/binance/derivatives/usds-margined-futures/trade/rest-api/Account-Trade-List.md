@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:48:25.102Z
 ---
 # Account Trade List (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Account-Trade-List
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Account-Trade-List>
 
 # Account Trade List (USER\_DATA)
 
@@ -37,10 +37,10 @@ GET `/fapi/v1/userTrades`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   If `startTime` and `endTime` are both not sent, then the last 7 days' data will be returned.
-> -   The time between `startTime` and `endTime` cannot be longer than 7 days.
-> -   The parameter `fromId` cannot be sent with `startTime` or `endTime`.
-> -   Only support querying trade in the past 6 months
+> - If `startTime` and `endTime` are both not sent, then the last 7 days' data will be returned.
+> - The time between `startTime` and `endTime` cannot be longer than 7 days.
+> - The parameter `fromId` cannot be sent with `startTime` or `endTime`.
+> - Only support querying trade in the past 6 months
 
 ## Response Example
 

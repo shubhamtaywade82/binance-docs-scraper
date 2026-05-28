@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:51:44.281Z
 ---
 # Query All UM Orders(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-All-UM-Orders
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-All-UM-Orders>
 
 # Query All UM Orders(USER\_DATA)
 
@@ -16,10 +16,10 @@ scraped_at: 2026-05-28T18:51:44.281Z
 
 Get all account UM orders; active, canceled, or filled.
 
--   These orders will not be found:
-    -   order status is `CANCELED` or `EXPIRED`, **AND**
-    -   order has NO filled trade, **AND**
-    -   created time + 3 days < current time
+- These orders will not be found:
+  - order status is `CANCELED` or `EXPIRED`, **AND**
+  - order has NO filled trade, **AND**
+  - created time + 3 days < current time
 
 ## HTTP Request
 
@@ -41,8 +41,8 @@ GET `/papi/v1/um/allOrders`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   If `orderId` is set, it will get orders >= that orderId. Otherwise most recent orders are returned.
-> -   The query time period must be less then 7 days( default as the recent 7 days).
+> - If `orderId` is set, it will get orders >= that orderId. Otherwise most recent orders are returned.
+> - The query time period must be less then 7 days( default as the recent 7 days).
 
 ## Response Example
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:42:22.284Z
 ---
 # BNB transfer (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/BNB-transfer
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/BNB-transfer>
 
 # BNB transfer (TRADE)
 
@@ -33,7 +33,7 @@ POST `/papi/v1/bnb-transfer`
 | recvWindow | LONG | NO | The value cannot be greater than 60000 |
 | timestamp | LONG | YES |  |
 
-> -   The endpoint can only be called 10 times per 10 minutes in a rolling manner
+> - The endpoint can only be called 10 times per 10 minutes in a rolling manner
 
 ## Response Example
 

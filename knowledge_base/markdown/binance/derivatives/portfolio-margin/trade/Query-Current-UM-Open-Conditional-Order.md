@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:52:01.276Z
 ---
 # Query Current UM Open Conditional Order(Deprecated)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-Current-UM-Open-Conditional-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-Current-UM-Open-Conditional-Order>
 
 # Query Current UM Open Conditional Order(Deprecated)
 
@@ -36,8 +36,8 @@ GET `/papi/v1/um/conditional/openOrder`
 
 Notes:
 
-> -   Either `strategyId` or `newClientStrategyId` must be sent.
-> -   If the queried order has been `CANCELED`, `TRIGGERED` or `EXPIRED`, the error message "Order does not exist" will be returned.
+> - Either `strategyId` or `newClientStrategyId` must be sent.
+> - If the queried order has been `CANCELED`, `TRIGGERED` or `EXPIRED`, the error message "Order does not exist" will be returned.
 
 ## Response Example
 

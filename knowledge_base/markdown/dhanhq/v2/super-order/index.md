@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:00:38.542Z
 ---
 # Super Order
 
-> Source: https://dhanhq.co/docs/v2/super-order/
+> Source: <https://dhanhq.co/docs/v2/super-order/>
 
 # Super Order
 
@@ -34,7 +34,6 @@ This API requires Static IP whitelisting - [here](/docs/v2/authentication/#setup
     --data '{Request JSON}'
 ```
 
-  
 **Request Structure**
 
 ```json
@@ -54,7 +53,6 @@ This API requires Static IP whitelisting - [here](/docs/v2/authentication/#setup
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -87,7 +85,6 @@ _required_ | float | Stop Loss Price for the Super Order |
 | trailingJump  
 _required_ | float | Price Jump by which Stop Loss should be trailed |
 
-  
 **Response Structure**
 
 ```
@@ -97,7 +94,6 @@ _required_ | float | Price Jump by which Stop Loss should be trailed |
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -124,7 +120,6 @@ This API requires Static IP whitelisting - [here](/docs/v2/authentication/#setup
     --data '{Request JSON}'
 ```
 
-  
 **Request Structure**
 
 [Entry Leg](#__tabbed_1_1)[Target](#__tabbed_1_2)[Stop Loss](#__tabbed_1_3)
@@ -162,7 +157,6 @@ This API requires Static IP whitelisting - [here](/docs/v2/authentication/#setup
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | description |
@@ -189,7 +183,6 @@ _conditionally required_ | float | Stop Loss Price to be modified - `ENTRY_LEG` 
 _conditionally required_ | float | Stop Loss Price jump to be modified - `ENTRY_LEG` or `STOP_LOSS_LEG`  
 If trailing jump is not added or passed as `0`, it will be cancelled |
 
-  
 **Response Structure**
 
 ```json
@@ -199,7 +192,6 @@ If trailing jump is not added or passed as `0`, it will be cancelled |
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -221,7 +213,6 @@ This API requires Static IP whitelisting - [here](/docs/v2/authentication/#setup
     --header 'access-token: JWT'
 ```
 
-  
 **Path Parameters**
 
 | Field | Description | Example |
@@ -233,7 +224,6 @@ _required_ | Order Leg to be cancelled | `ENTRY_LEG` `TARGET_LEG` `STOP_LOSS_LEG
 
 > Note: Cancelling main order ID cancels all legs. If particular target or stop loss leg is cancelled, then the same cannot be added again.
 
-  
 **Response Structure**
 
 ```json
@@ -243,7 +233,6 @@ _required_ | Order Leg to be cancelled | `ENTRY_LEG` `TARGET_LEG` `STOP_LOSS_LEG
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -263,12 +252,10 @@ This API lets you retrieve an array of all super orders placed in a day with the
     --header 'access-token: JWT'
 ```
 
-  
 **Request Structure**
 
 _No Body_
 
-  
 **Response Structure**
 
 ```json
@@ -325,7 +312,6 @@ _No Body_
 ]
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |

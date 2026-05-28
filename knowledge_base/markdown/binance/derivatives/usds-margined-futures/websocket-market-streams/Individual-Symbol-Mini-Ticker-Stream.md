@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:38:53.980Z
 ---
 # Individual Symbol Mini Ticker Stream
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Individual-Symbol-Mini-Ticker-Stream
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Individual-Symbol-Mini-Ticker-Stream>
 
 # Individual Symbol Mini Ticker Stream
 

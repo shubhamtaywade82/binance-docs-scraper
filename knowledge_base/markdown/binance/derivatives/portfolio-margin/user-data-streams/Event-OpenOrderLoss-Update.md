@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:47:19.491Z
 ---
 # Event: OpenOrderLoss Update
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-OpenOrderLoss-Update
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-OpenOrderLoss-Update>
 
 # Event: OpenOrderLoss Update
 

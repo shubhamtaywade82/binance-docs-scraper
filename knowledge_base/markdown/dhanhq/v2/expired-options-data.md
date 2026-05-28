@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:01:43.281Z
 ---
 # Expired Options Data
 
-> Source: https://dhanhq.co/docs/v2/expired-options-data
+> Source: <https://dhanhq.co/docs/v2/expired-options-data>
 
 # Expired Options Data
 
@@ -31,7 +31,6 @@ curl --request POST \
 --data '{}'
 ```
 
-  
 **Request Structure**
 
 ```json
@@ -56,7 +55,6 @@ curl --request POST \
 }
 ```
 
-  
 **Parameters**
 
 | Field | Field Type | Description |
@@ -89,7 +87,6 @@ _required_ | string | Start date of the desired range |
 | toDate  
 _required_ | string | End date of the desired range (non-inclusive) |
 
-  
 **Response Structure**
 
 ```json
@@ -129,5 +126,4 @@ _required_ | string | End date of the desired range (non-inclusive) |
 | volume | int | Volume traded in the timeframe |
 | timestamp | int | Epoch timestamp |
 
-  
 Note: For description of enum values, refer [Annexure](https://dhanhq.co/docs/v2/annexure)

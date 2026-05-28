@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:46:27.509Z
 ---
 # Cancel Block Trade Order (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/market-maker-block-trade/Cancel-Block-Trade-Order
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/market-maker-block-trade/Cancel-Block-Trade-Order>
 
 # Cancel Block Trade Order (TRADE)
 

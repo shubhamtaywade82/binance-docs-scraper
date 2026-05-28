@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:45:18.779Z
 ---
 # Contract Info Stream
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Contract-Info-Stream
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Contract-Info-Stream>
 
 # Contract Info Stream
 

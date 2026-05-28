@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:52:47.049Z
 ---
 # Query CM Modify Order History(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-CM-Modify-Order-History
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-CM-Modify-Order-History>
 
 # Query CM Modify Order History(TRADE)
 
@@ -37,7 +37,7 @@ GET `/papi/v1/cm/orderAmendment`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either `orderId` or `origClientOrderId` must be sent, and the `orderId` will prevail if both are sent.
+> - Either `orderId` or `origClientOrderId` must be sent, and the `orderId` will prevail if both are sent.
 
 ## Response Example
 

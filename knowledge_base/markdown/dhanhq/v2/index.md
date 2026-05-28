@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:00:29.656Z
 ---
 # Introduction
 
-> Source: https://dhanhq.co/docs/v2/
+> Source: <https://dhanhq.co/docs/v2/>
 
 # Introduction
 
@@ -26,17 +26,11 @@ We offer resource-based URLs that accept JSON or form-encoded requests. The resp
 
   Developer Kit
 
-[Explore Now ![sandbox](img/dhanhq-arrow.png)](https://api.dhan.co/v2/#) 
-
-  
+[Explore Now ![sandbox](img/dhanhq-arrow.png)](https://api.dhan.co/v2/#)
 
 ![sandbox](img/btn2sandbox.png)
 
- 
-
   Developer Kit
-
-   
 
 [Explore Now](https://api.dhan.co/v2/#) ![sandbox](img/dhanhq-arrow.png)
 
@@ -44,17 +38,11 @@ We offer resource-based URLs that accept JSON or form-encoded requests. The resp
 
   DhanHQ Python Client
 
-[Explore Now ![python](img/dhanhq-arrow.png)](https://pypi.org/project/dhanhq/) 
-
-  
+[Explore Now ![python](img/dhanhq-arrow.png)](https://pypi.org/project/dhanhq/)
 
 ![python](img/btn2pydhanhq.png)
 
- 
-
   DhanHQ Python Client
-
-   
 
 [Explore Now](https://pypi.org/project/dhanhq/) ![python](img/dhanhq-arrow.png)
 
@@ -62,7 +50,6 @@ We offer resource-based URLs that accept JSON or form-encoded requests. The resp
 
 [REST](#__tabbed_1_1)[Python](#__tabbed_1_2)
 
-  
 All GET and DELETE request parameters go as query parameters, and POST and PUT parameters as form-encoded. User has to input an access token in the header for every request.
 
 ```
@@ -73,7 +60,6 @@ curl --request POST \
 --data '{Request JSON}'
 ```
 
-  
 Install Python Package directly using following command in command line.
 
 ```

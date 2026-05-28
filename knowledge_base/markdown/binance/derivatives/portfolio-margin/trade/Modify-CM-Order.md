@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:51:38.970Z
 ---
 # Modify CM Order(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Modify-CM-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Modify-CM-Order>
 
 # Modify CM Order(TRADE)
 
@@ -38,12 +38,12 @@ PUT `/papi/v1/cm/order`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either `orderId` or `origClientOrderId` must be sent, and the `orderId` will prevail if both are sent.
-> -   Both `quantity` and `price` must be sent
-> -   When the new `quantity` or `price` doesn't satisfy PRICE\_FILTER / PERCENT\_FILTER / LOT\_SIZE, amendment will be rejected and the order will stay as it is.
-> -   However the order will be cancelled by the amendment in the following situations:
->     -   when the order is in partially filled status and the new `quantity` <= `executedQty`
->     -   When the order is `GTX` and the new price will cause it to be executed immediately
+> - Either `orderId` or `origClientOrderId` must be sent, and the `orderId` will prevail if both are sent.
+> - Both `quantity` and `price` must be sent
+> - When the new `quantity` or `price` doesn't satisfy PRICE\_FILTER / PERCENT\_FILTER / LOT\_SIZE, amendment will be rejected and the order will stay as it is.
+> - However the order will be cancelled by the amendment in the following situations:
+>   - when the order is in partially filled status and the new `quantity` <= `executedQty`
+>   - When the order is `GTX` and the new price will cause it to be executed immediately
 
 ## Response Example
 

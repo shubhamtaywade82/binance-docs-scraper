@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:47:31.686Z
 ---
 # Event: Futures Order update
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-Futures-Order-update
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-Futures-Order-update>
 
 # Event: Futures Order update
 
@@ -18,45 +18,45 @@ When new order created, order status changed will push such event. event type is
 
 **Side**
 
--   BUY
--   SELL
+- BUY
+- SELL
 
 **Order Type**
 
--   MARKET
--   LIMIT
--   LIQUIDATION
+- MARKET
+- LIMIT
+- LIQUIDATION
 
 **Execution Type**
 
--   NEW
--   CANCELED
--   CALCULATED - Liquidation Execution
--   EXPIRED
--   TRADE
+- NEW
+- CANCELED
+- CALCULATED - Liquidation Execution
+- EXPIRED
+- TRADE
 
 **Order Status**
 
--   NEW
--   PARTIALLY\_FILLED
--   FILLED
--   CANCELED
--   EXPIRED
--   EXPIRED\_IN\_MATCH
+- NEW
+- PARTIALLY\_FILLED
+- FILLED
+- CANCELED
+- EXPIRED
+- EXPIRED\_IN\_MATCH
 
 **Time in force**
 
--   GTC
--   IOC
--   FOK
--   GTX
+- GTC
+- IOC
+- FOK
+- GTX
 
 **Liquidation and ADL:**
 
--   If user gets liquidated due to insufficient margin balance:
-    -   c shows as "autoclose-XXX"，X shows as "NEW"
--   If user has enough margin balance but gets ADL:
-    -   c shows as “adl\_autoclose”，X shows as “NEW”
+- If user gets liquidated due to insufficient margin balance:
+  - c shows as "autoclose-XXX"，X shows as "NEW"
+- If user has enough margin balance but gets ADL:
+  - c shows as “adl\_autoclose”，X shows as “NEW”
 
 ## Event Name
 

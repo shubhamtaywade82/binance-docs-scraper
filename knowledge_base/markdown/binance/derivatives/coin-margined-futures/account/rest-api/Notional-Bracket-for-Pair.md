@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:49:38.602Z
 ---
 # Notional Bracket for Pair(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/account/rest-api/Notional-Bracket-for-Pair
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/account/rest-api/Notional-Bracket-for-Pair>
 
 # Notional Bracket for Pair(USER\_DATA)
 
@@ -57,7 +57,7 @@ GET `/dapi/v1/leverageBracket`
 
                 "maintMarginRatio": 0.004 // maintenance margin rate
 
-				"cum": 0.0  // Auxiliary number for quick calculation 
+    "cum": 0.0  // Auxiliary number for quick calculation 
 
             },
 

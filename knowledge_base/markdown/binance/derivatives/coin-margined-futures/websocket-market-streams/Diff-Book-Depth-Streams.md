@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:45:24.063Z
 ---
 # Diff. Book Depth Streams
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Diff-Book-Depth-Streams
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Diff-Book-Depth-Streams>
 
 # Diff. Book Depth Streams
 

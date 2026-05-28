@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:51:47.244Z
 ---
 # Query Current UM Open Order(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-Current-UM-Open-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-Current-UM-Open-Order>
 
 # Query Current UM Open Order(USER\_DATA)
 
@@ -36,8 +36,8 @@ GET `/papi/v1/um/openOrder`
 
 Notes:
 
-> -   Either `orderId` or `origClientOrderId` must be sent.
-> -   If the queried order has been filled or cancelled, the error message "Order does not exist" will be returned.
+> - Either `orderId` or `origClientOrderId` must be sent.
+> - If the queried order has been filled or cancelled, the error message "Order does not exist" will be returned.
 
 ## Response Example
 

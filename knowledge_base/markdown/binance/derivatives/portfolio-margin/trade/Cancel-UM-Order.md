@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:50:58.775Z
 ---
 # Cancel UM Order(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-UM-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-UM-Order>
 
 # Cancel UM Order(TRADE)
 
@@ -34,7 +34,7 @@ DELETE `/papi/v1/um/order`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either `orderId` or `origClientOrderId` must be sent.
+> - Either `orderId` or `origClientOrderId` must be sent.
 
 ## Response Example
 

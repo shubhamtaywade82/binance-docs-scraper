@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:03:03.633Z
 ---
 # Pull a model - Ollama
 
-> Source: https://docs.ollama.com/api/pull
+> Source: <https://docs.ollama.com/api/pull>
 
 [Documentation
 
@@ -30,7 +30,7 @@ cURL
 
 Default
 
-curl http://localhost:11434/api/pull -d '{ "model": "gemma3" }'
+curl <http://localhost:11434/api/pull> -d '{ "model": "gemma3" }'
 
 200
 
@@ -41,9 +41,9 @@ curl http://localhost:11434/api/pull -d '{ "model": "gemma3" }'
 ```
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 #### Body
@@ -108,8 +108,6 @@ Push
 
 Next
 
-
-
 ](/api/push)
 
 ⌘I
@@ -118,7 +116,7 @@ cURL
 
 Default
 
-curl http://localhost:11434/api/pull -d '{ "model": "gemma3" }'
+curl <http://localhost:11434/api/pull> -d '{ "model": "gemma3" }'
 
 200
 

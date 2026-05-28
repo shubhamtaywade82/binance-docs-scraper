@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:41:08.548Z
 ---
 # Account Information(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Account-Information
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Account-Information>
 
 # Account Information(USER\_DATA)
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:03:32.566Z
 ---
 # Structured Outputs - Ollama
 
-> Source: https://docs.ollama.com/capabilities/structured-outputs
+> Source: <https://docs.ollama.com/capabilities/structured-outputs>
 
 [Documentation
 
@@ -17,16 +17,16 @@ scraped_at: 2026-05-28T19:03:32.566Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 Ollama’s Cloud currently does not support structured outputs.
 
 Structured outputs let you enforce a JSON schema on model responses so you can reliably extract structured data, describe images, or keep every reply consistent.
 
-## 
+##
 
 [​
 
@@ -34,12 +34,11 @@ Structured outputs let you enforce a JSON schema on model responses so you can r
 
 Generating structured JSON
 
--   cURL
-    
--   Python
-    
--   JavaScript
-    
+- cURL
+
+- Python
+
+- JavaScript
 
 ```
 curl -X POST http://localhost:11434/api/chat -H "Content-Type: application/json" -d '{
@@ -72,7 +71,7 @@ const response = await ollama.chat({
 console.log(response.message.content)
 ```
 
-## 
+##
 
 [​
 
@@ -84,12 +83,11 @@ Provide a JSON schema to the `format` field.
 
 It is ideal to also pass the JSON schema as a string in the prompt to ground the model’s response.
 
--   cURL
-    
--   Python
-    
--   JavaScript
-    
+- cURL
+
+- Python
+
+- JavaScript
 
 ```
 curl -X POST http://localhost:11434/api/chat -H "Content-Type: application/json" -d '{
@@ -155,7 +153,7 @@ const country = Country.parse(JSON.parse(response.message.content))
 console.log(country)
 ```
 
-## 
+##
 
 [​
 
@@ -189,7 +187,7 @@ pets = PetList.model_validate_json(response.message.content)
 print(pets)
 ```
 
-## 
+##
 
 [​
 
@@ -233,7 +231,7 @@ image_description = ImageDescription.model_validate_json(response.message.conten
 print(image_description)
 ```
 
-## 
+##
 
 [​
 
@@ -241,17 +239,15 @@ print(image_description)
 
 Tips for reliable structured outputs
 
--   Define schemas with Pydantic (Python) or Zod (JavaScript) so they can be reused for validation.
--   Lower the temperature (e.g., set it to `0`) for more deterministic completions.
--   Structured outputs work through the OpenAI-compatible API via `response_format`
+- Define schemas with Pydantic (Python) or Zod (JavaScript) so they can be reused for validation.
+- Lower the temperature (e.g., set it to `0`) for more deterministic completions.
+- Structured outputs work through the OpenAI-compatible API via `response_format`
 
 [Previous](/capabilities/thinking)[
 
 Vision
 
 Next
-
-
 
 ](/capabilities/vision)
 

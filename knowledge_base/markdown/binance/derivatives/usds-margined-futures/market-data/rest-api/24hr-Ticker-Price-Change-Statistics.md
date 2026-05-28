@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:57:17.527Z
 ---
 # 24hr Ticker Price Change Statistics
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/24hr-Ticker-Price-Change-Statistics
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/24hr-Ticker-Price-Change-Statistics>
 
 # 24hr Ticker Price Change Statistics
 
@@ -32,7 +32,7 @@ GET `/fapi/v1/ticker/24hr`
 | --- | --- | --- | --- |
 | symbol | STRING | NO |  |
 
-> -   If the symbol is not sent, tickers for all symbols will be returned in an array.
+> - If the symbol is not sent, tickers for all symbols will be returned in an array.
 
 ## Response Example
 

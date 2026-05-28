@@ -8,16 +8,16 @@ scraped_at: 2026-05-28T18:55:08.923Z
 ---
 # Event: Account data
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/user-data-streams/Event-Account-data
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/user-data-streams/Event-Account-data>
 
 # Event: Account data
 
 ## Event Description
 
--   Update under the following conditions:
-    -   Account deposit or withdrawal
-    -   Position info change
-    -   Periodic update every 10s when having position
+- Update under the following conditions:
+  - Account deposit or withdrawal
+  - Position info change
+  - Periodic update every 10s when having position
 
 ## URL PATH
 

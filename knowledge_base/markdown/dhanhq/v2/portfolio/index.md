@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:00:46.368Z
 ---
 # Portfolio and Positions
 
-> Source: https://dhanhq.co/docs/v2/portfolio/
+> Source: <https://dhanhq.co/docs/v2/portfolio/>
 
 # Portfolio and Positions
 
@@ -27,12 +27,10 @@ Users can retrieve all holdings bought/sold in previous trading sessions. All T1
     --header 'access-token: JWT'
 ```
 
-  
 **Request Structure**
 
 _No Body_
 
-  
 **Response Structure**
 
 ```json
@@ -52,7 +50,6 @@ _No Body_
 ]
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -79,12 +76,10 @@ Users can retrieve a list of all open positions for the day. This includes all F
     --header 'access-token: JWT'
 ```
 
-  
 **Request Structure**
 
 _No Body_
 
-  
 **Response Structure**
 
 ```
@@ -122,7 +117,6 @@ _No Body_
 ]
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -173,7 +167,6 @@ curl --request POST \
 --data '{}'
 ```
 
-  
 **Request Structure**
 
 ```json
@@ -189,7 +182,6 @@ curl --request POST \
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -206,7 +198,6 @@ curl --request POST \
 | toProductType | enum string | Desired product type  
 `CNC`  `INTRADAY` `MARGIN` `CO` `BO` |
 
-  
 **Response Structure**
 
 ```
@@ -235,5 +226,4 @@ No Body
 `SUCCESS` `ERROR` |
 | message | string | Confirmation message |
 
-  
 Note: For description of enum values, refer [Annexure](https://dhanhq.co/docs/v2/annexure)

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:01:40.807Z
 ---
 # Conditional Trigger
 
-> Source: https://dhanhq.co/docs/v2/conditional-trigger
+> Source: <https://dhanhq.co/docs/v2/conditional-trigger>
 
 # Conditional Trigger
 
@@ -20,9 +20,9 @@ When the conditional order is triggered, you will receive a postback update if s
 
 Note
 
--   Conditional Triggers are currently supported only for Equities and Indices.  
-    
--   You can receive a postback update by providing a Webhook URL ([here](/postback)) while generating the Access Token.
+- Conditional Triggers are currently supported only for Equities and Indices.  
+
+- You can receive a postback update by providing a Webhook URL ([here](/postback)) while generating the Access Token.
 
 ## Place Conditional Trigger
 
@@ -308,5 +308,4 @@ _required_ | string | Trigger frequency | ONCE |
 | orders.discQuantity | string | Number of shares visible (Keep more than 30% of quantity) | 0 |
 | orders.triggerPrice | string | Price at which the order is triggered, in case of SL-M & SL-L | 0 |
 
-  
 Note: For description of enum values, refer [Annexure](https://dhanhq.co/docs/v2/annexure)

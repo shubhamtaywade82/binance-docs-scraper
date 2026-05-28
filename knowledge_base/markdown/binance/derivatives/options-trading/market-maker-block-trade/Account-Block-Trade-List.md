@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:43:16.299Z
 ---
 # Account Block Trade List (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/market-maker-block-trade/Account-Block-Trade-List
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/market-maker-block-trade/Account-Block-Trade-List>
 
 # Account Block Trade List (USER\_DATA)
 

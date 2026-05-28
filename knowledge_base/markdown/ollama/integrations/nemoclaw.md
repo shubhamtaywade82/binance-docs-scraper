@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:05:28.075Z
 ---
 # NemoClaw - Ollama
 
-> Source: https://docs.ollama.com/integrations/nemoclaw
+> Source: <https://docs.ollama.com/integrations/nemoclaw>
 
 [Documentation
 
@@ -17,14 +17,14 @@ scraped_at: 2026-05-28T19:05:28.075Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 NemoClaw is NVIDIA’s open source security stack for [OpenClaw](/integrations/openclaw). It wraps OpenClaw with the NVIDIA OpenShell runtime to provide kernel-level sandboxing, network policy controls, and audit trails for AI agents.
 
-## 
+##
 
 [​
 
@@ -62,7 +62,7 @@ openclaw tui
 
 Ollama support in NemoClaw is still experimental.
 
-## 
+##
 
 [​
 
@@ -80,7 +80,7 @@ CMD and PowerShell are not supported on Windows — WSL2 is required.
 
 Ollama must be installed and running before the installer runs. When running inside WSL2 or a container, ensure Ollama is reachable from the sandbox (e.g. `OLLAMA_HOST=0.0.0.0`).
 
-## 
+##
 
 [​
 
@@ -88,13 +88,13 @@ Ollama must be installed and running before the installer runs. When running ins
 
 System requirements
 
--   CPU: 4 vCPU minimum
--   RAM: 8 GB minimum (16 GB recommended)
--   Disk: 20 GB free (40 GB recommended for local models)
--   Node.js 20+ and npm 10+
--   Container runtime (Docker preferred)
+- CPU: 4 vCPU minimum
+- RAM: 8 GB minimum (16 GB recommended)
+- Disk: 20 GB free (40 GB recommended for local models)
+- Node.js 20+ and npm 10+
+- Container runtime (Docker preferred)
 
-## 
+##
 
 [​
 
@@ -102,11 +102,11 @@ System requirements
 
 Recommended models
 
--   `nemotron-3-super:cloud` — Strong reasoning and coding
--   `qwen3.5:cloud` — 397B; reasoning and code generation
--   `nemotron-3-nano:30b` — Recommended local model; fits in 24 GB VRAM
--   `qwen3.5:27b` — Fast local reasoning (~18 GB VRAM)
--   `glm-4.7-flash` — Reasoning and code generation (~25 GB VRAM)
+- `nemotron-3-super:cloud` — Strong reasoning and coding
+- `qwen3.5:cloud` — 397B; reasoning and code generation
+- `nemotron-3-nano:30b` — Recommended local model; fits in 24 GB VRAM
+- `qwen3.5:27b` — Fast local reasoning (~18 GB VRAM)
+- `glm-4.7-flash` — Reasoning and code generation (~25 GB VRAM)
 
 More models at [ollama.com/search](https://ollama.com/search).
 
@@ -115,8 +115,6 @@ More models at [ollama.com/search](https://ollama.com/search).
 Modelfile Reference
 
 Next
-
-
 
 ](/modelfile)
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:03:01.241Z
 ---
 # Copy a model - Ollama
 
-> Source: https://docs.ollama.com/api/copy
+> Source: <https://docs.ollama.com/api/copy>
 
 [Documentation
 
@@ -38,9 +38,9 @@ curl http://localhost:11434/api/copy -d '{
 ```
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 #### Body
@@ -82,8 +82,6 @@ Model successfully copied
 Pull
 
 Next
-
-
 
 ](/api/pull)
 

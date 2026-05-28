@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:55:43.868Z
 ---
 # Query User Rate Limit (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Query-Rate-Limit
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Query-Rate-Limit>
 
 # Query User Rate Limit (USER\_DATA)
 

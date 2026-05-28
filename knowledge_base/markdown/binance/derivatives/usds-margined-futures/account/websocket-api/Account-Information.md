@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:49:12.077Z
 ---
 # Account Information(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/account/websocket-api/Account-Information
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/account/websocket-api/Account-Information>
 
 # Account Information(USER\_DATA)
 

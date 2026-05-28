@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:54:50.454Z
 ---
 # Start User Data Stream (USER_STREAM)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/user-data-streams/Start-User-Data-Stream
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/user-data-streams/Start-User-Data-Stream>
 
 # Start User Data Stream (USER\_STREAM)
 

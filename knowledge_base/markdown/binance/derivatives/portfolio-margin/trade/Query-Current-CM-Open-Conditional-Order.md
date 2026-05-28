@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:52:29.947Z
 ---
 # Query Current CM Open Conditional Order(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-Current-CM-Open-Conditional-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-Current-CM-Open-Conditional-Order>
 
 # Query Current CM Open Conditional Order(USER\_DATA)
 
@@ -36,8 +36,8 @@ GET `/papi/v1/cm/conditional/openOrder`
 
 Notes:
 
-> -   Either `strategyId` or `newClientStrategyId` must be sent.
-> -   If the queried order has been triggered, cancelled or expired, the error message "Order does not exist" will be returned.
+> - Either `strategyId` or `newClientStrategyId` must be sent.
+> - If the queried order has been triggered, cancelled or expired, the error message "Order does not exist" will be returned.
 
 ## Response Example
 

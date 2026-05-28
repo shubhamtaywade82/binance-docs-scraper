@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:57:55.571Z
 ---
 # Query Index Price Constituents
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Index-Constituents
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Index-Constituents>
 
 # Query Index Price Constituents
 

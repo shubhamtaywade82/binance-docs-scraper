@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:40:37.385Z
 ---
 # Close User Data Stream (USER_STREAM)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/user-data-streams/Close-User-Data-Stream-Wsp
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/user-data-streams/Close-User-Data-Stream-Wsp>
 
 # Close User Data Stream (USER\_STREAM)
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:56:36.554Z
 ---
 # Delist Schedule
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Delist-Schedule
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Delist-Schedule>
 
 # Delist Schedule
 

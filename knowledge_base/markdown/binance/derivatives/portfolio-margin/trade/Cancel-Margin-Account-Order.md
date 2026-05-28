@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:51:27.788Z
 ---
 # Cancel Margin Account Order(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-Margin-Account-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-Margin-Account-Order>
 
 # Cancel Margin Account Order(TRADE)
 
@@ -35,7 +35,7 @@ DELETE `/papi/v1/margin/order`
 | recvWindow | LONG | NO | The value cannot be greater than `60000` |
 | timestamp | LONG | YES |  |
 
-> -   Either `orderId` or `origClientOrderId` must be sent.
+> - Either `orderId` or `origClientOrderId` must be sent.
 
 ## Response Example
 

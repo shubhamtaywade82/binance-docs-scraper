@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:59:56.797Z
 ---
 # Cancel Multiple Option Orders (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/trade/Cancel-Multiple-Option-Orders
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/trade/Cancel-Multiple-Option-Orders>
 
 # Cancel Multiple Option Orders (TRADE)
 
@@ -34,7 +34,7 @@ DELETE `/eapi/v1/batchOrders`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   At least one instance of `orderId` and `clientOrderId` must be sent.
+> - At least one instance of `orderId` and `clientOrderId` must be sent.
 
 ## Response Example
 

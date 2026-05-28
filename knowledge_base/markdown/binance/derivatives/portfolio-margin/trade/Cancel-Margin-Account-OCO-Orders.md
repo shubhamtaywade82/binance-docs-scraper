@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:51:30.769Z
 ---
 # Cancel Margin Account OCO Orders(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-Margin-Account-OCO-Orders
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Cancel-Margin-Account-OCO-Orders>
 
 # Cancel Margin Account OCO Orders(TRADE)
 
@@ -35,7 +35,7 @@ DELETE `/papi/v1/margin/orderList`
 | recvWindow | LONG | NO | The value cannot be greater than 60000 |
 | timestamp | LONG | YES |  |
 
-> -   Additional notes: Canceling an individual leg will cancel the entire OCO
+> - Additional notes: Canceling an individual leg will cancel the entire OCO
 
 ## Response Example
 

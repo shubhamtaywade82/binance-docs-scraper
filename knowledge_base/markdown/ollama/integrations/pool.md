@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:04:20.424Z
 ---
 # Pool - Ollama
 
-> Source: https://docs.ollama.com/integrations/pool
+> Source: <https://docs.ollama.com/integrations/pool>
 
 [Documentation
 
@@ -17,14 +17,14 @@ scraped_at: 2026-05-28T19:04:20.424Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 Pool is Poolside’s software agent for the terminal, built for enterprise development workflows.
 
-## 
+##
 
 [​
 
@@ -34,7 +34,7 @@ Install
 
 Install [Pool](https://github.com/poolsideai/pool):
 
-## 
+##
 
 [​
 
@@ -42,7 +42,7 @@ Install [Pool](https://github.com/poolsideai/pool):
 
 Usage with Ollama
 
-### 
+###
 
 [​
 
@@ -54,7 +54,7 @@ Quick setup
 ollama launch pool
 ```
 
-### 
+###
 
 [​
 
@@ -66,7 +66,7 @@ Run directly with a model
 ollama launch pool --model kimi-k2.6:cloud
 ```
 
-### 
+###
 
 [​
 
@@ -80,7 +80,7 @@ Arguments after `--` are passed directly to Pool:
 ollama launch pool -- --help
 ```
 
-## 
+##
 
 [​
 
@@ -90,14 +90,14 @@ Manual setup
 
 Pool connects to Ollama using the OpenAI-compatible API via environment variables.
 
-1.  Set the environment variables:
+1. Set the environment variables:
 
 ```
 export POOLSIDE_STANDALONE_BASE_URL=http://localhost:11434/v1
 export POOLSIDE_API_KEY=ollama
 ```
 
-2.  Run Pool with an Ollama model:
+1. Run Pool with an Ollama model:
 
 ```
 pool -m kimi-k2.6:cloud
@@ -114,8 +114,6 @@ POOLSIDE_STANDALONE_BASE_URL=http://localhost:11434/v1 POOLSIDE_API_KEY=ollama p
 Cline
 
 Next
-
-
 
 ](/integrations/cline)
 

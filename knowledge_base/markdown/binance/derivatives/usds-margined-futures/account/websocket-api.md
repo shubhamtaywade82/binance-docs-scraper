@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:50:19.440Z
 ---
 # Futures Account Balance V2(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/account/websocket-api
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/account/websocket-api>
 
 # Futures Account Balance V2(USER\_DATA)
 
@@ -60,7 +60,7 @@ Query account balance info
 
         "accountAlias": "SgsR",              // unique account code
 
-        "asset": "USDT",  	                // asset name
+        "asset": "USDT",                   // asset name
 
         "balance": "122607.35137903",        // wallet balance
 

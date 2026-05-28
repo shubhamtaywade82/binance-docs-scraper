@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:44:40.891Z
 ---
 # Mark Price Stream
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Mark-Price-Stream
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Mark-Price-Stream>
 
 # Mark Price Stream
 

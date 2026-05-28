@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:57:34.194Z
 ---
 # Open Interest Statistics
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Open-Interest-Statistics
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Open-Interest-Statistics>
 
 # Open Interest Statistics
 
@@ -34,9 +34,9 @@ GET `/futures/data/openInterestHist`
 | startTime | LONG | NO |  |
 | endTime | LONG | NO |  |
 
-> -   If startTime and endTime are not sent, the most recent data is returned.
-> -   Only the data of the latest 1 month is available.
-> -   IP rate limit 1000 requests/5min
+> - If startTime and endTime are not sent, the most recent data is returned.
+> - Only the data of the latest 1 month is available.
+> - IP rate limit 1000 requests/5min
 
 ## Response Example
 
@@ -47,13 +47,13 @@ GET `/futures/data/openInterestHist`
 
          "symbol":"BTCUSDT",
 
-	      "sumOpenInterest":"20403.63700000",  // total open interest 
+       "sumOpenInterest":"20403.63700000",  // total open interest 
 
-	      "sumOpenInterestValue": "150570784.07809979",   // total open interest value
+       "sumOpenInterestValue": "150570784.07809979",   // total open interest value
 
           "CMCCirculatingSupply": "165880.538", // circulating supply provided by CMC
 
-	      "timestamp":"1583127900000"
+       "timestamp":"1583127900000"
 
     },     
 

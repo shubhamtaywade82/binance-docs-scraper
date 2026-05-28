@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:47:53.751Z
 ---
 # Modify Order (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Modify-Order
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Modify-Order>
 
 # Modify Order (TRADE)
 
@@ -38,13 +38,13 @@ PUT `/fapi/v1/order`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either `orderId` or `origClientOrderId` must be sent, and the `orderId` will prevail if both are sent.
-> -   Both `quantity` and `price` must be sent, which is different from dapi modify order endpoint.
-> -   When the new `quantity` or `price` doesn't satisfy PRICE\_FILTER / PERCENT\_FILTER / LOT\_SIZE, amendment will be rejected and the order will stay as it is.
-> -   However the order will be cancelled by the amendment in the following situations:
->     -   when the order is in partially filled status and the new `quantity` <= `executedQty`
->     -   When the order is `GTX` and the new price will cause it to be executed immediately
-> -   One order can only be modfied for less than 10000 times
+> - Either `orderId` or `origClientOrderId` must be sent, and the `orderId` will prevail if both are sent.
+> - Both `quantity` and `price` must be sent, which is different from dapi modify order endpoint.
+> - When the new `quantity` or `price` doesn't satisfy PRICE\_FILTER / PERCENT\_FILTER / LOT\_SIZE, amendment will be rejected and the order will stay as it is.
+> - However the order will be cancelled by the amendment in the following situations:
+>   - when the order is in partially filled status and the new `quantity` <= `executedQty`
+>   - When the order is `GTX` and the new price will cause it to be executed immediately
+> - One order can only be modfied for less than 10000 times
 
 ## Response Example
 

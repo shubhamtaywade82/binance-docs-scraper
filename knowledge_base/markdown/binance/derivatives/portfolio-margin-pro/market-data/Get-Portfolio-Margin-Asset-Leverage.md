@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:40:01.125Z
 ---
 # Get Portfolio Margin Asset Leverage(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/market-data/Get-Portfolio-Margin-Asset-Leverage
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/market-data/Get-Portfolio-Margin-Asset-Leverage>
 
 # Get Portfolio Margin Asset Leverage(USER\_DATA)
 

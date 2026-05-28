@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:57:19.810Z
 ---
 # Symbol Price Ticker(Deprecated)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Symbol-Price-Ticker
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Symbol-Price-Ticker>
 
 # Symbol Price Ticker(Deprecated)
 
@@ -31,7 +31,7 @@ GET `/fapi/v1/ticker/price`
 | --- | --- | --- | --- |
 | symbol | STRING | NO |  |
 
-> -   If the symbol is not sent, prices for all symbols will be returned in an array.
+> - If the symbol is not sent, prices for all symbols will be returned in an array.
 
 ## Response Example
 

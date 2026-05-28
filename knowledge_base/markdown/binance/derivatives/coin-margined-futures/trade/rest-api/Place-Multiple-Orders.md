@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:53:48.737Z
 ---
 # Place Multiple Orders(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Place-Multiple-Orders
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Place-Multiple-Orders>
 
 # Place Multiple Orders(TRADE)
 
@@ -16,9 +16,9 @@ scraped_at: 2026-05-28T18:53:48.737Z
 
 Place multiple orders
 
--   Parameter rules are same with `New Order`
--   Batch orders are processed concurrently, and the order of matching is not guaranteed.
--   The order of returned contents for batch orders is the same as the order of the order list.
+- Parameter rules are same with `New Order`
+- Batch orders are processed concurrently, and the order of matching is not guaranteed.
+- The order of returned contents for batch orders is the same as the order of the order list.
 
 ## HTTP Request
 
@@ -38,7 +38,7 @@ POST `/dapi/v1/batchOrders`
 
 **Where `batchOrders` is the list of order parameters in JSON**
 
--   **Example:** /dapi/v1/batchOrders?batchOrders=\[{"type":"LIMIT","timeInForce":"GTC",  
+- **Example:** /dapi/v1/batchOrders?batchOrders=\[{"type":"LIMIT","timeInForce":"GTC",  
     "symbol":"BTCUSD\_PERP","side":"BUY","price":"10001","quantity":"1"}\]
 
 | Name | Type | Mandatory | Description |

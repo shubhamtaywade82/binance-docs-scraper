@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:56:47.997Z
 ---
 # Old Trades Lookup (MARKET_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Old-Trades-Lookup
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Old-Trades-Lookup>
 
 # Old Trades Lookup (MARKET\_DATA)
 
@@ -32,8 +32,8 @@ GET `/fapi/v1/historicalTrades`
 | limit | INT | NO | Default 100; max 500. |
 | fromId | LONG | NO | TradeId to fetch from. Default gets most recent trades. |
 
-> -   Market trades means trades filled in the order book. Only market trades will be returned, which means the insurance fund trades and ADL trades won't be returned.
-> -   Only supports data from within the last one month
+> - Market trades means trades filled in the order book. Only market trades will be returned, which means the insurance fund trades and ADL trades won't be returned.
+> - Only supports data from within the last one month
 
 ## Response Example
 

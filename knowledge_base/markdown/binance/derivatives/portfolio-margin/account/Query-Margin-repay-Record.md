@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:41:58.734Z
 ---
 # Query Margin repay Record(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Query-Margin-repay-Record
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Query-Margin-repay-Record>
 
 # Query Margin repay Record(USER\_DATA)
 
@@ -38,11 +38,11 @@ GET `/papi/v1/margin/repayLoan`
 | recvWindow | LONG | NO | The value cannot be greater than 60000 |
 | timestamp | LONG | YES |  |
 
-> -   txId or startTime must be sent. txId takes precedence.
-> -   Response in descending order
-> -   The max interval between `startTime` and `endTime` is 30 days.
-> -   If `startTime` and `endTime` not sent, return records of the last 7 days by default
-> -   Set `archived` to `true` to query data from 6 months ago
+> - txId or startTime must be sent. txId takes precedence.
+> - Response in descending order
+> - The max interval between `startTime` and `endTime` is 30 days.
+> - If `startTime` and `endTime` not sent, return records of the last 7 days by default
+> - Set `archived` to `true` to query data from 6 months ago
 
 ## Response Example
 

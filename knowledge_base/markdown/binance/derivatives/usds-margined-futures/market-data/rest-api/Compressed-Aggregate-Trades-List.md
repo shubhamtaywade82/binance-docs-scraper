@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:56:51.079Z
 ---
 # Compressed/Aggregate Trades List
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Compressed-Aggregate-Trades-List
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Compressed-Aggregate-Trades-List>
 
 # Compressed/Aggregate Trades List
 
@@ -38,11 +38,11 @@ GET `/fapi/v1/aggTrades`
 | endTime | LONG | NO | Timestamp in ms to get aggregate trades until INCLUSIVE. |
 | limit | INT | NO | Default 500; max 1000. |
 
-> -   support querying futures trade histories that are not older than 24 hours
-> -   If both `startTime` and `endTime` are sent, time between `startTime` and `endTime` must be less than 1 hour.
-> -   If `fromId`, `startTime`, and `endTime` are not sent, the most recent aggregate trades will be returned.
-> -   Only market trades will be aggregated and returned, which means the insurance fund trades and ADL trades won't be aggregated.
-> -   Sending both `startTime`/`endTime` and `fromId` might cause response timeout, please send either `fromId` or `startTime`/`endTime`
+> - support querying futures trade histories that are not older than 24 hours
+> - If both `startTime` and `endTime` are sent, time between `startTime` and `endTime` must be less than 1 hour.
+> - If `fromId`, `startTime`, and `endTime` are not sent, the most recent aggregate trades will be returned.
+> - Only market trades will be aggregated and returned, which means the insurance fund trades and ADL trades won't be aggregated.
+> - Sending both `startTime`/`endTime` and `fromId` might cause response timeout, please send either `fromId` or `startTime`/`endTime`
 
 ## Response Example
 

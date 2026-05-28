@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:41:20.979Z
 ---
 # Query CM Position Information(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Query-CM-Position-Information
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Query-CM-Position-Information>
 
 # Query CM Position Information(USER\_DATA)
 
@@ -33,17 +33,17 @@ GET `/papi/v1/cm/positionRisk`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   If neither `marginAsset` nor `pair` is sent, positions of all symbols with `TRADING` status will be returned.
-> -   for One-way Mode user, the response will only show the "BOTH" positions
-> -   for Hedge Mode user, the response will show "LONG", and "SHORT" positions.
+> - If neither `marginAsset` nor `pair` is sent, positions of all symbols with `TRADING` status will be returned.
+> - for One-way Mode user, the response will only show the "BOTH" positions
+> - for Hedge Mode user, the response will show "LONG", and "SHORT" positions.
 
 **Note**
 
-> -   Please use with user data stream `ACCOUNT_UPDATE` to meet your timeliness and accuracy needs.
+> - Please use with user data stream `ACCOUNT_UPDATE` to meet your timeliness and accuracy needs.
 
 ## Response Example
 
--   For One-way position mode:
+- For One-way position mode:
 
 ```json
 [
@@ -63,7 +63,7 @@ GET `/papi/v1/cm/positionRisk`
 ]
 ```
 
-> -   For Hedge position mode(only return with position):
+> - For Hedge position mode(only return with position):
 
 ```json
 [

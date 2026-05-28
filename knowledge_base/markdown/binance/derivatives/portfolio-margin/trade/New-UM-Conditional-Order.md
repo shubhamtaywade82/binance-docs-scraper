@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:50:38.818Z
 ---
 # New UM Conditional Order (Deprecated)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/New-UM-Conditional-Order
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/New-UM-Conditional-Order>
 
 # New UM Conditional Order (Deprecated)
 
@@ -56,38 +56,37 @@ Additional mandatory parameters based on type:
 | `STOP_MARKET/TAKE_PROFIT_MARKET` | `stopPrice` |
 | `TRAILING_STOP_MARKET` | `callbackRate` |
 
--   Order with type `STOP/TAKE_PROFIT`, parameter `timeInForce` can be sent ( default `GTC`).
-    
--   Condition orders will be triggered when:
-    
-    -   `STOP`, `STOP_MARKET`:
-        -   BUY: "MARK\_PRICE" >= `stopPrice`
-        -   SELL: "MARK\_PRICE" <= `stopPrice`
-    -   `TAKE_PROFIT`, `TAKE_PROFIT_MARKET`:
-        -   BUY: "MARK\_PRICE" <= `stopPrice`
-        -   SELL: "MARK\_PRICE" >= `stopPrice`
-    -   `TRAILING_STOP_MARKET`:
-        -   BUY: the lowest mark price after order placed `<=` activationPrice`, and the latest mark price >`\= the lowest mark price \* (1 + `callbackRate`)
-        -   SELL: the highest mark price after order placed >= `activationPrice`, and the latest mark price <= the highest mark price \* (1 - `callbackRate`)
--   For `TRAILING_STOP_MARKET`, if you got such error code. `{"code": -2021, "msg": "Order would immediately trigger."}` means that the parameters you send do not meet the following requirements:
-    
-    -   BUY: `activationPrice` should be smaller than latest mark price.
-    -   SELL: `activationPrice` should be larger than latest mark price.
--   Condition orders will be triggered when:
-    
-    -   If parameter`priceProtect`is sent as true:
-        -   when price reaches the `stopPrice` ，the difference rate between "MARK\_PRICE" and "CONTRACT\_PRICE" cannot be larger than the "triggerProtect" of the symbol
-        -   "triggerProtect" of a symbol can be got from `GET /fapi/v1/exchangeInfo`
-    -   `STOP`, `STOP_MARKET`:
-        -   BUY: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") >= `stopPrice`
-        -   SELL: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") <= `stopPrice`
-    -   `TAKE_PROFIT`, `TAKE_PROFIT_MARKET`:
-        -   BUY: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") <= `stopPrice`
-        -   SELL: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") >= `stopPrice`
--   `selfTradePreventionMode` is only effective when `timeInForce` set to `IOC` or `GTC` or `GTD`.
-    
--   In extreme market conditions, timeInForce `GTD` order auto cancel time might be delayed comparing to `goodTillDate`
-    
+- Order with type `STOP/TAKE_PROFIT`, parameter `timeInForce` can be sent ( default `GTC`).
+
+- Condition orders will be triggered when:
+
+  - `STOP`, `STOP_MARKET`:
+    - BUY: "MARK\_PRICE" >= `stopPrice`
+    - SELL: "MARK\_PRICE" <= `stopPrice`
+  - `TAKE_PROFIT`, `TAKE_PROFIT_MARKET`:
+    - BUY: "MARK\_PRICE" <= `stopPrice`
+    - SELL: "MARK\_PRICE" >= `stopPrice`
+  - `TRAILING_STOP_MARKET`:
+    - BUY: the lowest mark price after order placed `<=` activationPrice`, and the latest mark price >`\= the lowest mark price \* (1 + `callbackRate`)
+    - SELL: the highest mark price after order placed >= `activationPrice`, and the latest mark price <= the highest mark price \* (1 - `callbackRate`)
+- For `TRAILING_STOP_MARKET`, if you got such error code. `{"code": -2021, "msg": "Order would immediately trigger."}` means that the parameters you send do not meet the following requirements:
+
+  - BUY: `activationPrice` should be smaller than latest mark price.
+  - SELL: `activationPrice` should be larger than latest mark price.
+- Condition orders will be triggered when:
+
+  - If parameter`priceProtect`is sent as true:
+    - when price reaches the `stopPrice` ，the difference rate between "MARK\_PRICE" and "CONTRACT\_PRICE" cannot be larger than the "triggerProtect" of the symbol
+    - "triggerProtect" of a symbol can be got from `GET /fapi/v1/exchangeInfo`
+  - `STOP`, `STOP_MARKET`:
+    - BUY: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") >= `stopPrice`
+    - SELL: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") <= `stopPrice`
+  - `TAKE_PROFIT`, `TAKE_PROFIT_MARKET`:
+    - BUY: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") <= `stopPrice`
+    - SELL: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") >= `stopPrice`
+- `selfTradePreventionMode` is only effective when `timeInForce` set to `IOC` or `GTC` or `GTD`.
+
+- In extreme market conditions, timeInForce `GTD` order auto cancel time might be delayed comparing to `goodTillDate`
 
 ## Response Example
 

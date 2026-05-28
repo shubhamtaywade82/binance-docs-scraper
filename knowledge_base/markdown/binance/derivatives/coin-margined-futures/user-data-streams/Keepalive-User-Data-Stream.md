@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:40:26.391Z
 ---
 # Keepalive User Data Stream (USER_STREAM)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/user-data-streams/Keepalive-User-Data-Stream
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/user-data-streams/Keepalive-User-Data-Stream>
 
 # Keepalive User Data Stream (USER\_STREAM)
 

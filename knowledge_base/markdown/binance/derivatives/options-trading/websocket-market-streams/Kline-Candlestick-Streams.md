@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:59:26.824Z
 ---
 # Kline/Candlestick Streams
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/websocket-market-streams/Kline-Candlestick-Streams
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/websocket-market-streams/Kline-Candlestick-Streams>
 
 # Kline/Candlestick Streams
 

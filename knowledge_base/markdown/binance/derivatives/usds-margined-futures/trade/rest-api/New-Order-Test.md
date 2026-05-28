@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:48:52.334Z
 ---
 # Test Order(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/New-Order-Test
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/New-Order-Test>
 
 # Test Order(TRADE)
 
@@ -56,45 +56,45 @@ Additional mandatory parameters based on `type`:
 | `STOP_MARKET/TAKE_PROFIT_MARKET` | `stopPrice` |
 | `TRAILING_STOP_MARKET` | `callbackRate` |
 
-> -   Order with type `STOP`, parameter `timeInForce` can be sent ( default `GTC`).
->     
-> -   Order with type `TAKE_PROFIT`, parameter `timeInForce` can be sent ( default `GTC`).
->     
-> -   Condition orders will be triggered when:
->     
->     -   If parameter`priceProtect`is sent as true:
->         -   when price reaches the `stopPrice` ，the difference rate between "MARK\_PRICE" and "CONTRACT\_PRICE" cannot be larger than the "triggerProtect" of the symbol
->         -   "triggerProtect" of a symbol can be got from `GET /fapi/v1/exchangeInfo`
->     -   `STOP`, `STOP_MARKET`:
->         -   BUY: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") >= `stopPrice`
->         -   SELL: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") <= `stopPrice`
->     -   `TAKE_PROFIT`, `TAKE_PROFIT_MARKET`:
->         -   BUY: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") <= `stopPrice`
->         -   SELL: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") >= `stopPrice`
->     -   `TRAILING_STOP_MARKET`:
->         -   BUY: the lowest price after order placed `<=` activationPrice`, and the latest price >`\= the lowest price \* (1 + `callbackRate`)
->         -   SELL: the highest price after order placed >= `activationPrice`, and the latest price <= the highest price \* (1 - `callbackRate`)
-> -   For `TRAILING_STOP_MARKET`, if you got such error code.  
+> - Order with type `STOP`, parameter `timeInForce` can be sent ( default `GTC`).
+>
+> - Order with type `TAKE_PROFIT`, parameter `timeInForce` can be sent ( default `GTC`).
+>
+> - Condition orders will be triggered when:
+>
+>   - If parameter`priceProtect`is sent as true:
+>     - when price reaches the `stopPrice` ，the difference rate between "MARK\_PRICE" and "CONTRACT\_PRICE" cannot be larger than the "triggerProtect" of the symbol
+>     - "triggerProtect" of a symbol can be got from `GET /fapi/v1/exchangeInfo`
+>   - `STOP`, `STOP_MARKET`:
+>     - BUY: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") >= `stopPrice`
+>     - SELL: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") <= `stopPrice`
+>   - `TAKE_PROFIT`, `TAKE_PROFIT_MARKET`:
+>     - BUY: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") <= `stopPrice`
+>     - SELL: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") >= `stopPrice`
+>   - `TRAILING_STOP_MARKET`:
+>     - BUY: the lowest price after order placed `<=` activationPrice`, and the latest price >`\= the lowest price \* (1 + `callbackRate`)
+>     - SELL: the highest price after order placed >= `activationPrice`, and the latest price <= the highest price \* (1 - `callbackRate`)
+> - For `TRAILING_STOP_MARKET`, if you got such error code.  
 >     `{"code": -2021, "msg": "Order would immediately trigger."}`  
 >     means that the parameters you send do not meet the following requirements:
->     
->     -   BUY: `activationPrice` should be smaller than latest price.
->     -   SELL: `activationPrice` should be larger than latest price.
-> -   If `newOrderRespType` is sent as `RESULT` :
->     
->     -   `MARKET` order: the final FILLED result of the order will be return directly.
->     -   `LIMIT` order with special `timeInForce`: the final status result of the order(FILLED or EXPIRED) will be returned directly.
-> -   `STOP_MARKET`, `TAKE_PROFIT_MARKET` with `closePosition`\=`true`:
->     
->     -   Follow the same rules for condition orders.
->     -   If triggered，**close all** current long position( if `SELL`) or current short position( if `BUY`).
->     -   Cannot be used with `quantity` paremeter
->     -   Cannot be used with `reduceOnly` parameter
->     -   In Hedge Mode,cannot be used with `BUY` orders in `LONG` position side. and cannot be used with `SELL` orders in `SHORT` position side
-> -   `selfTradePreventionMode` is only effective when `timeInForce` set to `IOC` or `GTC` or `GTD`.
->     
-> -   In extreme market conditions, timeInForce `GTD` order auto cancel time might be delayed comparing to `goodTillDate`
->     
+>
+>   - BUY: `activationPrice` should be smaller than latest price.
+>   - SELL: `activationPrice` should be larger than latest price.
+> - If `newOrderRespType` is sent as `RESULT` :
+>
+>   - `MARKET` order: the final FILLED result of the order will be return directly.
+>   - `LIMIT` order with special `timeInForce`: the final status result of the order(FILLED or EXPIRED) will be returned directly.
+> - `STOP_MARKET`, `TAKE_PROFIT_MARKET` with `closePosition`\=`true`:
+>
+>   - Follow the same rules for condition orders.
+>   - If triggered，**close all** current long position( if `SELL`) or current short position( if `BUY`).
+>   - Cannot be used with `quantity` paremeter
+>   - Cannot be used with `reduceOnly` parameter
+>   - In Hedge Mode,cannot be used with `BUY` orders in `LONG` position side. and cannot be used with `SELL` orders in `SHORT` position side
+> - `selfTradePreventionMode` is only effective when `timeInForce` set to `IOC` or `GTC` or `GTD`.
+>
+> - In extreme market conditions, timeInForce `GTD` order auto cancel time might be delayed comparing to `goodTillDate`
+>
 
 ## Response Example
 

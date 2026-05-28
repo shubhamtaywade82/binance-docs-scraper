@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:45:55.677Z
 ---
 # Query Portfolio Margin Pro Negative Balance Interest History(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Query-Classic-Portfolio-Margin-Negative-Balance-Interest-History
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Query-Classic-Portfolio-Margin-Negative-Balance-Interest-History>
 
 # Query Portfolio Margin Pro Negative Balance Interest History(USER\_DATA)
 

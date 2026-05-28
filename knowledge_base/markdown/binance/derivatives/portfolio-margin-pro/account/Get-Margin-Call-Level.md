@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:46:21.607Z
 ---
 # Get Margin Call Level (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Get-Margin-Call-Level
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Get-Margin-Call-Level>
 
 # Get Margin Call Level (USER\_DATA)
 

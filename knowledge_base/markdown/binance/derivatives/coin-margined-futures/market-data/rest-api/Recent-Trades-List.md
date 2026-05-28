@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:58:15.200Z
 ---
 # Recent Trades List
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Recent-Trades-List
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Recent-Trades-List>
 
 # Recent Trades List
 
@@ -31,7 +31,7 @@ GET `/dapi/v1/trades`
 | symbol | STRING | YES |  |
 | limit | INT | NO | Default 500; max 1000. |
 
--   Market trades means trades filled in the order book. Only market trades will be returned, which means the insurance fund trades and ADL trades won't be returned.
+- Market trades means trades filled in the order book. Only market trades will be returned, which means the insurance fund trades and ADL trades won't be returned.
 
 ## Response Example
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:46:33.587Z
 ---
 # Query Block Trade Order (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/market-maker-block-trade/Query-Block-Trade-Order
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/market-maker-block-trade/Query-Block-Trade-Order>
 
 # Query Block Trade Order (TRADE)
 

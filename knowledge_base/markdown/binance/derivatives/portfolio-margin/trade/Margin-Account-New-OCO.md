@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:50:56.208Z
 ---
 # Margin Account New OCO(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Margin-Account-New-OCO
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Margin-Account-New-OCO>
 
 # Margin Account New OCO(TRADE)
 
@@ -47,14 +47,14 @@ POST `/papi/v1/margin/order/oco`
 
 Other Info:
 
-> -   Price Restrictions:
->     -   `SELL`: Limit Price > Last Price > Stop Price
->     -   `BUY`: Limit Price < Last Price < Stop Price
-> -   Quantity Restrictions:
->     -   Both legs must have the same quantity
->     -   `ICEBERG` quantities however do not have to be the same.
-> -   Order Rate Limit
->     -   `OCO` counts as 2 orders against the order rate limit.
+> - Price Restrictions:
+>   - `SELL`: Limit Price > Last Price > Stop Price
+>   - `BUY`: Limit Price < Last Price < Stop Price
+> - Quantity Restrictions:
+>   - Both legs must have the same quantity
+>   - `ICEBERG` quantities however do not have to be the same.
+> - Order Rate Limit
+>   - `OCO` counts as 2 orders against the order rate limit.
 
 ## Response Example
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:53:57.374Z
 ---
 # Get Order Modify History (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Get-Order-Modify-History
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Get-Order-Modify-History>
 
 # Get Order Modify History (USER\_DATA)
 
@@ -37,8 +37,8 @@ GET `/dapi/v1/orderAmendment`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either `orderId` or `origClientOrderId` must be sent, and the `orderId` will prevail if both are sent.
-> -   Order modify history longer than 3 month is not avaliable
+> - Either `orderId` or `origClientOrderId` must be sent, and the `orderId` will prevail if both are sent.
+> - Order modify history longer than 3 month is not avaliable
 
 ## Response Example
 

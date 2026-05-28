@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:46:43.374Z
 ---
 # Futures TradFi Perps Contract(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/TradFi-Perps
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/TradFi-Perps>
 
 # Futures TradFi Perps Contract(USER\_DATA)
 

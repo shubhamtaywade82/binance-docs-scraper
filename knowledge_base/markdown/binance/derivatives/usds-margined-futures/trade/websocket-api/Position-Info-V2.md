@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:43:30.276Z
 ---
 # Position Information V2 (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/websocket-api/Position-Info-V2
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/websocket-api/Position-Info-V2>
 
 # Position Information V2 (USER\_DATA)
 
@@ -49,7 +49,7 @@ Get current position information(only symbol that has position or open orders wi
 
 **Note**
 
-> -   Please use with user data stream `ACCOUNT_UPDATE` to meet your timeliness and accuracy needs.
+> - Please use with user data stream `ACCOUNT_UPDATE` to meet your timeliness and accuracy needs.
 
 ## Response Example
 

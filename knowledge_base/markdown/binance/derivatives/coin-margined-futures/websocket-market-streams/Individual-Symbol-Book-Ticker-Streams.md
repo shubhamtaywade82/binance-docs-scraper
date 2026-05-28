@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:45:07.515Z
 ---
 # Individual Symbol Book Ticker Streams
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Individual-Symbol-Book-Ticker-Streams
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Individual-Symbol-Book-Ticker-Streams>
 
 # Individual Symbol Book Ticker Streams
 

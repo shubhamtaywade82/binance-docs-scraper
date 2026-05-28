@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:02:31.524Z
 ---
 # Errors - Ollama
 
-> Source: https://docs.ollama.com/api/errors
+> Source: <https://docs.ollama.com/api/errors>
 
 [Documentation
 
@@ -17,12 +17,12 @@ scraped_at: 2026-05-28T19:02:31.524Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
-## 
+##
 
 [​
 
@@ -32,14 +32,14 @@ Status codes
 
 Endpoints return appropriate HTTP status codes based on the success or failure of the request in the HTTP status line (e.g. `HTTP/1.1 200 OK` or `HTTP/1.1 400 Bad Request`). Common status codes are:
 
--   `200`: Success
--   `400`: Bad Request (missing parameters, invalid JSON, etc.)
--   `404`: Not Found (model doesn’t exist, etc.)
--   `429`: Too Many Requests (e.g. when a rate limit is exceeded)
--   `500`: Internal Server Error
--   `502`: Bad Gateway (e.g. when a cloud model cannot be reached)
+- `200`: Success
+- `400`: Bad Request (missing parameters, invalid JSON, etc.)
+- `404`: Not Found (model doesn’t exist, etc.)
+- `429`: Too Many Requests (e.g. when a rate limit is exceeded)
+- `500`: Internal Server Error
+- `502`: Bad Gateway (e.g. when a cloud model cannot be reached)
 
-## 
+##
 
 [​
 
@@ -55,7 +55,7 @@ Errors are returned in the `application/json` format with the following structur
 }
 ```
 
-## 
+##
 
 [​
 
@@ -78,8 +78,6 @@ If an error occurs mid-stream, the error will be returned as an object in the `a
 OpenAI compatibility
 
 Next
-
-
 
 ](/api/openai-compatibility)
 

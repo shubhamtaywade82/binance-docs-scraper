@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:00:08.906Z
 ---
 # Query Option Order History (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/trade/Query-Option-Order-History
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/trade/Query-Option-Order-History>
 
 # Query Option Order History (TRADE)
 

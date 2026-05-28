@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:50:13.802Z
 ---
 # Reset Market Maker Protection Config (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/market-maker-endpoints/Reset-Market-Maker-Protection-Config
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/market-maker-endpoints/Reset-Market-Maker-Protection-Config>
 
 # Reset Market Maker Protection Config (TRADE)
 

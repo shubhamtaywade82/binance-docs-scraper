@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:56:59.687Z
 ---
 # Index Price Kline/Candlestick Data
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Index-Price-Kline-Candlestick-Data
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Index-Price-Kline-Candlestick-Data>
 
 # Index Price Kline/Candlestick Data
 
@@ -41,7 +41,7 @@ based on parameter `LIMIT`
 | endTime | LONG | NO |  |
 | limit | INT | NO | Default 500; max 1500. |
 
--   If startTime and endTime are not sent, the most recent klines are returned.
+- If startTime and endTime are not sent, the most recent klines are returned.
 
 ## Response Example
 
@@ -50,29 +50,29 @@ based on parameter `LIMIT`
 
   [
 
-    1591256400000,      	// Open time
+    1591256400000,       // Open time
 
-    "9653.69440000",    	// Open
+    "9653.69440000",     // Open
 
-    "9653.69640000",     	// High
+    "9653.69640000",      // High
 
-    "9651.38600000",     	// Low
+    "9651.38600000",      // Low
 
-    "9651.55200000",     	// Close (or latest price)
+    "9651.55200000",      // Close (or latest price)
 
-    "0	", 					// Ignore
+    "0 ",      // Ignore
 
-    1591256459999,      	// Close time
+    1591256459999,       // Close time
 
-    "0",    				// Ignore
+    "0",        // Ignore
 
-    60,                		// Ignore
+    60,                  // Ignore
 
-    "0",    				// Ignore
+    "0",        // Ignore
 
-    "0",      				// Ignore
+    "0",          // Ignore
 
-    "0" 					// Ignore
+    "0"      // Ignore
 
   ]
 

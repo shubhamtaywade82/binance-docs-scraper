@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:48:38.409Z
 ---
 # Modify Isolated Position Margin(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Modify-Isolated-Position-Margin
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Modify-Isolated-Position-Margin>
 
 # Modify Isolated Position Margin(TRADE)
 
@@ -35,7 +35,7 @@ POST `/fapi/v1/positionMargin`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Only for isolated symbol
+> - Only for isolated symbol
 
 ## Response Example
 

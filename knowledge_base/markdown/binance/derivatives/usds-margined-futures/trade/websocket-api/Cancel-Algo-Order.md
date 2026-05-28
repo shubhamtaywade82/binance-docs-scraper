@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:40:15.619Z
 ---
 # Cancel Algo Order (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/websocket-api/Cancel-Algo-Order
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/websocket-api/Cancel-Algo-Order>
 
 # Cancel Algo Order (TRADE)
 
@@ -49,7 +49,7 @@ Cancel an active algo order.
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either `algoId` or `clientAlgoId` must be sent.
+> - Either `algoId` or `clientAlgoId` must be sent.
 
 ## Response Example
 

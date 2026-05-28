@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:45:31.706Z
 ---
 # Delete Margin Call Level (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Delete-Margin-Call-Level
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Delete-Margin-Call-Level>
 
 # Delete Margin Call Level (USER\_DATA)
 

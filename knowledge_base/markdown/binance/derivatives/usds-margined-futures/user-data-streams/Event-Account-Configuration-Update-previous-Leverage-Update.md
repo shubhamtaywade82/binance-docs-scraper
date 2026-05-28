@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:44:09.267Z
 ---
 # Event: Account Configuration Update previous Leverage Update
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Event-Account-Configuration-Update-previous-Leverage-Update
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Event-Account-Configuration-Update-previous-Leverage-Update>
 
 # Event: Account Configuration Update previous Leverage Update
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:54:04.028Z
 ---
 # Cancel Multiple Orders(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Cancel-Multiple-Orders
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api/Cancel-Multiple-Orders>
 
 # Cancel Multiple Orders(TRADE)
 
@@ -36,7 +36,7 @@ e.g. \["my\_id\_1","my\_id\_2"\], encode the double quotes. No space after comma
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either `orderIdList` or `origClientOrderIdList` must be sent.
+> - Either `orderIdList` or `origClientOrderIdList` must be sent.
 
 ## Response Example
 

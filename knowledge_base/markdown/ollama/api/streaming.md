@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:02:27.073Z
 ---
 # Streaming - Ollama
 
-> Source: https://docs.ollama.com/api/streaming
+> Source: <https://docs.ollama.com/api/streaming>
 
 [Documentation
 
@@ -17,9 +17,9 @@ scraped_at: 2026-05-28T19:02:27.073Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 Certain API endpoints stream responses by default, such as `/api/generate`. These responses are provided in the newline-delimited JSON format (i.e. the `application/x-ndjson` content type). For example:
@@ -34,7 +34,7 @@ Certain API endpoints stream responses by default, such as `/api/generate`. Thes
 {"model":"gemma3","created_at":"2025-10-26T17:15:24.166576Z","response":"!","done":true, "done_reason": "stop"}
 ```
 
-## 
+##
 
 [​
 
@@ -53,7 +53,7 @@ Streaming can be disabled by providing `{"stream": false}` in the request body f
 }
 ```
 
-## 
+##
 
 [​
 
@@ -63,23 +63,21 @@ When to use streaming vs non-streaming
 
 **Streaming (default)**:
 
--   Real-time response generation
--   Lower perceived latency
--   Better for long generations
+- Real-time response generation
+- Lower perceived latency
+- Better for long generations
 
 **Non-streaming**:
 
--   Simpler to process
--   Better for short responses, or structured outputs
--   Easier to handle in some applications
+- Simpler to process
+- Better for short responses, or structured outputs
+- Easier to handle in some applications
 
 [Previous](/api/authentication)[
 
 Usage
 
 Next
-
-
 
 ](/api/usage)
 

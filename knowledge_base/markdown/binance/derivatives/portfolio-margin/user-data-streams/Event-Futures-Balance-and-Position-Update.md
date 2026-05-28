@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:47:34.627Z
 ---
 # Event: Futures Balance and Position Update
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-Futures-Balance-and-Position-Update
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-Futures-Balance-and-Position-Update>
 
 # Event: Futures Balance and Position Update
 
@@ -16,36 +16,35 @@ scraped_at: 2026-05-28T18:47:34.627Z
 
 Event type is `ACCOUNT_UPDATE`.
 
--   When balance or position get updated, this event will be pushed.
-    
-    -   `ACCOUNT_UPDATE` will be pushed only when update happens on user's account, including changes on balances, positions, or margin type.
-    -   Unfilled orders or cancelled orders will not make the event `ACCOUNT_UPDATE` pushed, since there's no change on positions.
-    -   "position" in `ACCOUNT_UPDATE`: Only symbols of changed positions will be pushed.
--   When "FUNDING FEE" changes to the user's balance, the event will be pushed with the brief message:
-    
-    -   When "FUNDING FEE" occurs in a **crossed position**, `ACCOUNT_UPDATE` will be pushed with only the balance `B`(including the "FUNDING FEE" asset only), without any position `P` message.
-    -   When "FUNDING FEE" occurs in an **isolated position**, `ACCOUNT_UPDATE` will be pushed with only the balance `B`(including the "FUNDING FEE" asset only) and the relative position message `P`( including the isolated position on which the "FUNDING FEE" occurs only, without any other position message).
--   The field "m" represents the reason type for the event and may shows the following possible types:
-    
-    -   DEPOSIT
-    -   WITHDRAW
-    -   ORDER
-    -   FUNDING\_FEE
-    -   WITHDRAW\_REJECT
-    -   ADJUSTMENT
-    -   INSURANCE\_CLEAR
-    -   ADMIN\_DEPOSIT
-    -   ADMIN\_WITHDRAW
-    -   MARGIN\_TRANSFER
-    -   MARGIN\_TYPE\_CHANGE
-    -   ASSET\_TRANSFER
-    -   OPTIONS\_PREMIUM\_FEE
-    -   OPTIONS\_SETTLE\_PROFIT
-    -   AUTO\_EXCHANGE
-    -   COIN\_SWAP\_DEPOSIT
-    -   COIN\_SWAP\_WITHDRAW
--   The field "bc" represents the balance change except for PnL and commission.
-    
+- When balance or position get updated, this event will be pushed.
+
+  - `ACCOUNT_UPDATE` will be pushed only when update happens on user's account, including changes on balances, positions, or margin type.
+  - Unfilled orders or cancelled orders will not make the event `ACCOUNT_UPDATE` pushed, since there's no change on positions.
+  - "position" in `ACCOUNT_UPDATE`: Only symbols of changed positions will be pushed.
+- When "FUNDING FEE" changes to the user's balance, the event will be pushed with the brief message:
+
+  - When "FUNDING FEE" occurs in a **crossed position**, `ACCOUNT_UPDATE` will be pushed with only the balance `B`(including the "FUNDING FEE" asset only), without any position `P` message.
+  - When "FUNDING FEE" occurs in an **isolated position**, `ACCOUNT_UPDATE` will be pushed with only the balance `B`(including the "FUNDING FEE" asset only) and the relative position message `P`( including the isolated position on which the "FUNDING FEE" occurs only, without any other position message).
+- The field "m" represents the reason type for the event and may shows the following possible types:
+
+  - DEPOSIT
+  - WITHDRAW
+  - ORDER
+  - FUNDING\_FEE
+  - WITHDRAW\_REJECT
+  - ADJUSTMENT
+  - INSURANCE\_CLEAR
+  - ADMIN\_DEPOSIT
+  - ADMIN\_WITHDRAW
+  - MARGIN\_TRANSFER
+  - MARGIN\_TYPE\_CHANGE
+  - ASSET\_TRANSFER
+  - OPTIONS\_PREMIUM\_FEE
+  - OPTIONS\_SETTLE\_PROFIT
+  - AUTO\_EXCHANGE
+  - COIN\_SWAP\_DEPOSIT
+  - COIN\_SWAP\_WITHDRAW
+- The field "bc" represents the balance change except for PnL and commission.
 
 ## Event Name
 

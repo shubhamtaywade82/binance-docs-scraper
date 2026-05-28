@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:05:15.341Z
 ---
 # Introduction - Ollama
 
-> Source: https://docs.ollama.com/api
+> Source: <https://docs.ollama.com/api>
 
 [Documentation
 
@@ -17,14 +17,14 @@ scraped_at: 2026-05-28T19:05:15.341Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
 Ollama’s API allows you to run and interact with models programatically.
 
-## 
+##
 
 [​
 
@@ -34,7 +34,7 @@ Get started
 
 If you’re just getting started, follow the [quickstart](/quickstart) documentation to get up and running with Ollama’s API.
 
-## 
+##
 
 [​
 
@@ -54,7 +54,7 @@ For running cloud models on **ollama.com**, the same API is available with the f
 https://ollama.com/api
 ```
 
-## 
+##
 
 [​
 
@@ -71,7 +71,7 @@ curl http://localhost:11434/api/generate -d '{
 }'
 ```
 
-## 
+##
 
 [​
 
@@ -81,12 +81,12 @@ Libraries
 
 Ollama has official libraries for Python and JavaScript:
 
--   [Python](https://github.com/ollama/ollama-python)
--   [JavaScript](https://github.com/ollama/ollama-js)
+- [Python](https://github.com/ollama/ollama-python)
+- [JavaScript](https://github.com/ollama/ollama-js)
 
 Several community-maintained libraries are available for Ollama. For a full list, see the [Ollama GitHub repository](https://github.com/ollama/ollama?tab=readme-ov-file#libraries-1).
 
-## 
+##
 
 [​
 
@@ -101,8 +101,6 @@ Ollama’s API isn’t strictly versioned, but the API is expected to be stable 
 Authentication
 
 Next
-
-
 
 ](/api/authentication)
 

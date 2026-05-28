@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:46:01.559Z
 ---
 # Get Portfolio Margin Pro Account Balance(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Get-Classic-Portfolio-Margin-Balance-Info
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Get-Classic-Portfolio-Margin-Balance-Info>
 
 # Get Portfolio Margin Pro Account Balance(USER\_DATA)
 

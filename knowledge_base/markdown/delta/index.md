@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:02:15.783Z
 ---
 # Introduction
 
-> Source: https://docs.delta.exchange/
+> Source: <https://docs.delta.exchange/>
 
 # Introduction
 
@@ -24,12 +24,11 @@ We have language bindings in Shell, Python, Ruby and Nodejs! You can view code e
 
 **Assets:** are cryptocurrencies or fiat currencies. Each asset has a 3/4 letter code (e.g. BTC, USDC). A derivative contract on Delta Exchange will entail multiple assets, namely:
 
--   **Underlying Asset:** This is the asset over which a futures or perpetual contract is defined. For e.g. the underlying asset of the BTCUSD perpetual contract is BTC.
-    
--   **Quoting Asset:** The asset in which price of the quoting is called the quoting asset. For e.g. the BTCUSD contract is quoted in USD. Therefore, the quoting asset of the contract is USD.
-    
--   **Settling Asset:** The asset in which the margin and Profit/ Loss of a contract is denominated. For e.g. the BTCUSD contract is margined and settled in USD. Therefore, the settling asset of the contract is USD.
-    
+- **Underlying Asset:** This is the asset over which a futures or perpetual contract is defined. For e.g. the underlying asset of the BTCUSD perpetual contract is BTC.
+
+- **Quoting Asset:** The asset in which price of the quoting is called the quoting asset. For e.g. the BTCUSD contract is quoted in USD. Therefore, the quoting asset of the contract is USD.
+
+- **Settling Asset:** The asset in which the margin and Profit/ Loss of a contract is denominated. For e.g. the BTCUSD contract is margined and settled in USD. Therefore, the settling asset of the contract is USD.
 
 **Products**: are the derivative contracts listed on Delta Exchange. Each contract can be referred by either its Product ID (e.g. 27 is the Product ID of BTCUSD contract) or Symbol (BTCUSD is the symbol for BTCUSD contract). It is worth noting that Orders, Orderbook APIs expect Product IDs. e.g.
 
@@ -74,12 +73,12 @@ Pagination can be called in following APIs
 
 **Pagination parameters**
 
--   after
-    -   after cursor to fetch the next page
--   before
-    -   before cursor to fetch the previous page
--   page\_size
-    -   page size for pagination
+- after
+  - after cursor to fetch the next page
+- before
+  - before cursor to fetch the previous page
+- page\_size
+  - page size for pagination
 
 In API response, meta data will contain the cursors as show below
 
@@ -96,9 +95,9 @@ In API response, meta data will contain the cursors as show below
 
 **Example**
 
-https://api.india.delta.exchange/v2/products?page\_size=30
+<https://api.india.delta.exchange/v2/products?page\_size=30>
 
-https://api.india.delta.exchange/v2/products?page\_size=30&after=after\_cursor\_from\_last\_request
+<https://api.india.delta.exchange/v2/products?page\_size=30&after=after\_cursor\_from\_last\_request>
 
 ## Data Centers
 
@@ -112,7 +111,7 @@ Api endpoints that place orders or fetch account related information needs to au
 
 ### SignatureExpired Error
 
--   `{ "error": "SignatureExpired", "message": "your signature has expired" }`
+- `{ "error": "SignatureExpired", "message": "your signature has expired" }`
 
 **Explanation:** This error occurs when the timestamp used to generate your API request signature is more than **5 seconds** old by the time it reaches Delta Exchange servers. The platform enforces this time window to prevent replay attacks. You can check server time and request time in the api error response too.
 
@@ -120,22 +119,22 @@ Api endpoints that place orders or fetch account related information needs to au
 
 **1\. Sync Your System Clock**
 
--   Ensure your system time is accurate using NTP (Network Time Protocol).
-    -   **Linux/macOS:** `sudo ntpdate pool.ntp.org`
-    -   **Windows:** Make sure the _Windows Time_ service is running and properly synced.
--   Enable automatic time synchronization in your system settings to prevent future drifts.
+- Ensure your system time is accurate using NTP (Network Time Protocol).
+  - **Linux/macOS:** `sudo ntpdate pool.ntp.org`
+  - **Windows:** Make sure the _Windows Time_ service is running and properly synced.
+- Enable automatic time synchronization in your system settings to prevent future drifts.
 
 **2\. Check Network Latency**
 
--   Check for any network latency on your side.
--   Use a stable and high-speed internet connection.
+- Check for any network latency on your side.
+- Use a stable and high-speed internet connection.
 
 **3\. Verify Timestamp Generation**
 
--   Use Unix timestamp format (seconds since epoch).
--   Don't reuse stale timestamps; update the timestamp before every request.
--   Ensure the timestamp used in the signature matches the one sent in the request.
--   Refer to the sample code block on the right.
+- Use Unix timestamp format (seconds since epoch).
+- Don't reuse stale timestamps; update the timestamp before every request.
+- Ensure the timestamp used in the signature matches the one sent in the request.
+- Refer to the sample code block on the right.
 
 ```
 # python code to generate signature
@@ -146,7 +145,7 @@ signature = generate_signature(api_secret, signature_data)
 
 ### InvalidApiKey Error
 
--   `{ "error": "InvalidApiKey", "message": "Api Key not found" }`
+- `{ "error": "InvalidApiKey", "message": "Api Key not found" }`
 
 **Explanation:** The API key in your request doesn't exist or is invalid. This can happen due to using keys from the wrong environment or deleted keys.
 
@@ -154,19 +153,19 @@ signature = generate_signature(api_secret, signature_data)
 
 **1\. Verify the Correct Environment**
 
--   API keys created at [Delta India](https://www.delta.exchange) account must be used only with production apis.(prod api - [https://api.india.delta.exchange](https://api.india.delta.exchange))
--   API keys created at [Demo](https://demo.delta.exchange) account must be used only with testnet apis.(testnet api - [https://cdn-ind.testnet.deltaex.org](https://cdn-ind.testnet.deltaex.org))
--   Please not that the api url [https://api.delta.exchange](https://api.delta.exchange) belongs to Delta Global and it can not used here.
+- API keys created at [Delta India](https://www.delta.exchange) account must be used only with production apis.(prod api - [https://api.india.delta.exchange](https://api.india.delta.exchange))
+- API keys created at [Demo](https://demo.delta.exchange) account must be used only with testnet apis.(testnet api - [https://cdn-ind.testnet.deltaex.org](https://cdn-ind.testnet.deltaex.org))
+- Please not that the api url [https://api.delta.exchange](https://api.delta.exchange) belongs to Delta Global and it can not used here.
 
 **2\. Check API Key Validity**
 
--   Log into Delta Exchange and confirm the key exists and is active.  
-    
--   Check for any typos in the key too.
+- Log into Delta Exchange and confirm the key exists and is active.  
+
+- Check for any typos in the key too.
 
 ### UnauthorizedApiAccess Error
 
--   `{ "error": "UnauthorizedApiAccess", "message": "Api Key not authorised to access this endpoint" }`
+- `{ "error": "UnauthorizedApiAccess", "message": "Api Key not authorised to access this endpoint" }`
 
 **Explanation:** Your API key doesn't have permission to access this endpoint. Delta Exchange allows permission-based control for each key. There are two permissions given 1. Read Data ✅ 2. Trading ✅
 
@@ -174,25 +173,25 @@ signature = generate_signature(api_secret, signature_data)
 
 **1\. Check API Key Permissions**
 
--   Go to API Management on Delta Exchange.  
-    
--   Verify respective permissions: 1. Read Data 2. Trading, are enabled ✅ or not.
--   If required, create a new api key with the right permissions enabled ✅.
+- Go to API Management on Delta Exchange.  
+
+- Verify respective permissions: 1. Read Data 2. Trading, are enabled ✅ or not.
+- If required, create a new api key with the right permissions enabled ✅.
 
 **2\. Verify Endpoint Requirements**
 
--   Market data: requires Read Data permissions only.
--   Orders, Positions, Wallets: requires Trading permission.
+- Market data: requires Read Data permissions only.
+- Orders, Positions, Wallets: requires Trading permission.
 
 **3\. Consider Security Best Practices**
 
--   Grant only necessary permissions.  
-    
--   Use separate keys for different use-cases.
+- Grant only necessary permissions.  
+
+- Use separate keys for different use-cases.
 
 ### IP Not Whitelisted Error
 
--   `{ "success": false, "error": { "code": "ip_not_whitelisted_for_api_key" } }`
+- `{ "success": false, "error": { "code": "ip_not_whitelisted_for_api_key" } }`
 
 **Explanation:** This occurs when the request originates from an IP not allowed for the given API key. Delta Exchange enforces IP whitelisting as a security measure. Consider whitelisting he IP returned into the api error response.
 
@@ -200,21 +199,21 @@ signature = generate_signature(api_secret, signature_data)
 
 **1\. Update IP Whitelist**
 
--   Log into Delta Exchange > API Management  
-    
--   Add your IP to the API key’s whitelist. The IP can be found into the api error response.
--   You can whitelist a list of IPs too. Enter them as comma separated list.
--   Delta support both IPv4 and IPv6 formats for whitelisting.
+- Log into Delta Exchange > API Management  
+
+- Add your IP to the API key’s whitelist. The IP can be found into the api error response.
+- You can whitelist a list of IPs too. Enter them as comma separated list.
+- Delta support both IPv4 and IPv6 formats for whitelisting.
 
 **2\. Consider Network Behavior**
 
--   VPNs or ISPs with dynamic IPs may require frequent updates.  
-    
--   Consider cloud hosted machine with static IP for production to avoid whitelisting repeatedly.
+- VPNs or ISPs with dynamic IPs may require frequent updates.  
+
+- Consider cloud hosted machine with static IP for production to avoid whitelisting repeatedly.
 
 ### Request Forbidden Error
 
--   `{ "error": "Forbidden", "message": "Request blocked by CDN" }`
+- `{ "error": "Forbidden", "message": "Request blocked by CDN" }`
 
 **Explanation:** Your request was blocked before reaching the Delta API gateway. This usually happens when required headers are missing (e.g., User-Agent), or when requests originate from environments where the IP is hidden or blocked by the CDN.
 
@@ -222,22 +221,22 @@ signature = generate_signature(api_secret, signature_data)
 
 **1\. Add a User-Agent Manually**
 
--   Some HTTP clients (e.g., in certain programming languages) do not send a User-Agent header by default.
--   Set a valid User-Agent string in your request to avoid being rejected.
+- Some HTTP clients (e.g., in certain programming languages) do not send a User-Agent header by default.
+- Set a valid User-Agent string in your request to avoid being rejected.
 
 **2\. Trace Request Headers**
 
--   Inspect the request/response headers using tools like curl -v, Postman, or your language’s HTTP client debugger.
--   Check if required headers are present and correctly passed through.
+- Inspect the request/response headers using tools like curl -v, Postman, or your language’s HTTP client debugger.
+- Check if required headers are present and correctly passed through.
 
 **3\. Verify Request IP**
 
--   Some hosted environments or proxies mask the client IP.
--   Confirm that the request includes a valid IP address visible to the CDN. If the IP is hidden or blocked, the request will be rejected.
+- Some hosted environments or proxies mask the client IP.
+- Confirm that the request includes a valid IP address visible to the CDN. If the IP is hidden or blocked, the request will be rejected.
 
 ### Signature Mismatch Error
 
--   `{ "success": false, "error": { "code": "Signature Mismatch" } }`
+- `{ "success": false, "error": { "code": "Signature Mismatch" } }`
 
 **Explanation:** This error occurs when the signature generated on your end does not match the one received by Delta Exchange. This can happen due to incorrect timestamp, payload, or method used in the signature generation.
 
@@ -245,13 +244,13 @@ signature = generate_signature(api_secret, signature_data)
 
 **1\. Verify Signature Generation**
 
--   Ensure you are using the correct http method (GET/POST) and the same payload as in the request.
--   Check that the timestamp used in the signature matches the one sent in the request.
--   Ensure you are using the correct API secret for the signature generation.
--   Make sure you are using the correct endpoint path and query parameters in the signature generation.
--   Ensure that the payload is properly formatted and matches the request body.
--   Check for any extra spaces or characters in the signature string.
--   Refer to the sample code block (see [Signing a Message](/#signing-a-message)).
+- Ensure you are using the correct http method (GET/POST) and the same payload as in the request.
+- Check that the timestamp used in the signature matches the one sent in the request.
+- Ensure you are using the correct API secret for the signature generation.
+- Make sure you are using the correct endpoint path and query parameters in the signature generation.
+- Ensure that the payload is properly formatted and matches the request body.
+- Check for any extra spaces or characters in the signature string.
+- Refer to the sample code block (see [Signing a Message](/#signing-a-message)).
 
 By following these troubleshooting steps, you can resolve common Delta Exchange API authentication and authorization issues. For persistent problems, contact Delta Exchange support.
 
@@ -274,7 +273,7 @@ Common issues:
 
 You can restrict the functionality of API keys. Before creating the key, you must choose what permissions you would like the key to have. The permissions are:
 
--   Trading - Allow a key to have trading permissions. This includes placing new orders, cancelling orders, closing positions, changing margin & leverage.
+- Trading - Allow a key to have trading permissions. This includes placing new orders, cancelling orders, closing positions, changing margin & leverage.
 
 ## Creating a Request
 
@@ -455,9 +454,9 @@ Most identifiers are big integers unless otherwise specified. When making a requ
 
 To ensure that you are effectively using the api, we encourage you to go through this section.
 
-1.  All responses coming from the server, either from rest api or socket rpc calls will have the following success and error formats.
-2.  All timestamps reported in the apis will be in microseconds
-3.  All big decimal values are sent as string
+1. All responses coming from the server, either from rest api or socket rpc calls will have the following success and error formats.
+2. All timestamps reported in the apis will be in microseconds
+3. All big decimal values are sent as string
 
 ```
 // The new format supports sending meta data alongside response body. 
@@ -497,8 +496,8 @@ If you are looking for the old api documentation, here is the link to [v1 api](h
 
 REST API Endpoint URL for [Delta Exchange](https://www.delta.exchange)
 
--   **Production** - https://api.india.delta.exchange
--   **Testnet(Demo Account)** - https://cdn-ind.testnet.deltaex.org
+- **Production** - <https://api.india.delta.exchange>
+- **Testnet(Demo Account)** - <https://cdn-ind.testnet.deltaex.org>
 
 # Assets
 
@@ -548,7 +547,7 @@ p JSON.parse(result)
 `GET /assets`
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -637,7 +636,7 @@ p JSON.parse(result)
 Indices refer to spot price indices that Delta Exchange creates by combining spot prices of prominent crypto exchanges. These indices form the underlying of futures and options contracts listed on Delta Exchange. All details of indices on Delta Exchange are available [here](https://www.delta.exchange/indices).
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -741,7 +740,7 @@ The endpoint provides details about all available trading products on the platfo
 | expiry | query | string | false | Expiry date in YYYY-MM-DD format to filter products by current & future expiry date. |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -916,7 +915,7 @@ The endpoint retrieves details of a specific product identified by its symbol (e
 | symbol | path | string | true | symbol of the desired product like BTCUSD, ETHUSD |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -1091,7 +1090,7 @@ This endpoint retrieves the live tickers for available trading products, with an
 | expiry\_date | query | string | false | Expiry date(format: DD-MM-YYYY) to filter the tickers. |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -1207,7 +1206,7 @@ This endpoint retrieves the ticker data for a specific product, identified by it
 | symbol | path | string | true | The symbol(s) of the product, comma-separated. Maximum 10 symbols allowed. Example: (e.g., BTCUSD, ETHUSD). |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -1327,7 +1326,7 @@ For example, to get BTC call and put options expiring on 04-04-2025, use:
 | expiry\_date | query | string | false | Expiry date of the contracts in `DD-MM-YYYY` format to filter by current & future expiry date. |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -1486,7 +1485,7 @@ p JSON.parse(result)
 | body | body | [CreateOrderRequest](#schemacreateorderrequest) | true | Order which needs to be created. Rate limits apply. |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -1613,7 +1612,7 @@ p JSON.parse(result)
 | body | body | [DeleteOrderRequest](#schemadeleteorderrequest) | true | Order which needs to be cancelled |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -1746,7 +1745,7 @@ p JSON.parse(result)
 | body | body | [EditOrderRequest](#schemaeditorderrequest) | true | Order which needs to be edited. Rate limits apply. |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -1882,7 +1881,7 @@ p JSON.parse(result)
 | order\_types | all\_stop | All stop orders (stop\_market and stop\_limit) |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -2027,7 +2026,7 @@ A bracket order is a set of TP and SL order. For a bracket order , size need not
 | body | body | [CreateBracketOrderRequest](#schemacreatebracketorderrequest) | true | Bracket Order which needs to be updated |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -2125,7 +2124,7 @@ A bracket order is a set of TP and SL order. You can specify bracket order with 
 | body | body | [EditBracketOrderRequest](#schemaeditbracketorderrequest) | true | Bracket Order which needs to be updated |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -2219,7 +2218,7 @@ Cancels all orders for a given product id. If product id is not provided, it can
 | body | body | [CancelAllFilterObject](#schemacancelallfilterobject) | false | Filters for selecting orders that needs to be cancelled |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -2322,7 +2321,7 @@ Orders in a batch should belong to the same contract. Max allowed size limit in 
 | body | body | [BatchCreateOrdersRequest](#schemabatchcreateordersrequest) | true | Does not support time\_in\_force flag for orders, All orders in batch create are assumed to be gtc orders. batch create does not support stop orders, it support only limit orders |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -2461,7 +2460,7 @@ Orders to be edited in a batch. Rate limits apply.
 | body | body | [BatchEditOrdersRequest](#schemabatcheditordersrequest) | true | none |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -2595,7 +2594,7 @@ p JSON.parse(result)
 | body | body | [BatchDeleteOrdersRequest](#schemabatchdeleteordersrequest) | true | none |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -2711,7 +2710,7 @@ p JSON.parse(result)
 | order\_id | path | string | true | Id of the order |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -2824,7 +2823,7 @@ p JSON.parse(result)
 | client\_oid | path | string | true | Custom user provided order id (max 32 length) |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -2951,7 +2950,7 @@ p JSON.parse(result)
 | » leverage | body | string | true | Order leverage |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -3035,7 +3034,7 @@ p JSON.parse(result)
 | product\_id | path | integer | true | Product id of the ordered product |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -3133,7 +3132,7 @@ Change in position may take upto 10secs to reflect. Use 'GET /position' for real
 | contract\_types | put\_options | Put option contracts |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -3231,7 +3230,7 @@ Get real-time positions data.
 | underlying\_asset\_symbol | query | string | false | Underlying asset symbol. e.g. 'BTC', 'ETH'. This gives a list of all positions in products which have the given underlying asset. Only send either product\_id or underlying\_asset\_symbol. |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -3329,7 +3328,7 @@ Changes position auto topup flag. Positions automatically inherits auto topup fl
 | » auto\_topup | body | boolean | true | none |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -3436,7 +3435,7 @@ p JSON.parse(result)
 | » delta\_margin | body | string | true | Delta in the position margin, positive in case of adding margin & negative in case of removing margin |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -3545,7 +3544,7 @@ p JSON.parse(result)
 | » user\_id | body | integer | true | none |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -3643,7 +3642,7 @@ p JSON.parse(result)
 | order\_types | all\_stop | All stop orders (stop\_market and stop\_limit) |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -3768,7 +3767,7 @@ p JSON.parse(result)
 | page\_size | query | integer | false | number of records per page |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -3958,7 +3957,7 @@ p JSON.parse(result)
 | depth | query | integer | false | number of levels on each side |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -4049,7 +4048,7 @@ p JSON.parse(result)
 | symbol | path | string | true | none |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -4142,7 +4141,7 @@ p JSON.parse(result)
 `GET /wallet/balances`
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -4254,7 +4253,7 @@ p JSON.parse(result)
 | transaction\_types | query | [TransactionTypes](#schematransactiontypes) | false | transaction types to retrieve |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -4472,7 +4471,7 @@ This api transfers asset from one subaccount to another subaccount or to the mai
 | body | body | [AssetTransferSubaccountReq](#schemaassettransfersubaccountreq) | true | none |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -4493,7 +4492,7 @@ This api transfers asset from one subaccount to another subaccount or to the mai
 
 To perform this operation, you must be sign the request using your api key and secret. See Authentication section for more details.
 
-## Request subaccount balance transfer history.
+## Request subaccount balance transfer history
 
 > Code samples
 
@@ -4568,7 +4567,7 @@ This api returns the wallet balance transfers for subaccounts belonging to the p
 | body | body | [SubaccountTransferHistory](#schemasubaccounttransferhistory) | true | none |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -4651,7 +4650,7 @@ p JSON.parse(result)
 `GET /stats`
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -4757,7 +4756,7 @@ Channel provides updates when MMP is triggered. Market maker protection is avail
 | body | body | [MMPConfigUpdateRequest](#schemammpconfigupdaterequest) | true | mmp config for a given underlying asset |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -4882,7 +4881,7 @@ p JSON.parse(result)
 | body | body | [MMPResetRequest](#schemammpresetrequest) | true | reset mmp config for a given underlying asset |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -4957,7 +4956,7 @@ p JSON.parse(result)
 `GET /users/trading_preferences`
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -5098,7 +5097,7 @@ p JSON.parse(result)
 | body | body | [EditUserPreference](#schemaedituserpreference) | true | trading preferences |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -5206,7 +5205,7 @@ p JSON.parse(result)
 This api returns all the subaccounts belonging to the same parent/main user. Make sure to call this api from the parent user.
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -5296,7 +5295,7 @@ p JSON.parse(result)
 This api returns the user object.
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -5400,7 +5399,7 @@ p JSON.parse(result)
 | body | body | [ChangeMarginModeRequest](#schemachangemarginmoderequest) | true | changes margin mode of the user |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -5468,7 +5467,7 @@ p JSON.parse(result)
 `GET /rate_limits/quota`
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -5575,7 +5574,7 @@ p JSON.parse(result)
 | body | body | [CreateHeartbeat](#schemacreateheartbeat) | true | heartbeat creation details |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -5670,7 +5669,7 @@ p JSON.parse(result)
 | body | body | [HeartbeatAck](#schemaheartbeatack) | true | heartbeat acknowledgment details |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -5755,7 +5754,7 @@ p JSON.parse(result)
 | heartbeat\_id | query | string | false | Specific heartbeat ID to retrieve |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -5856,11 +5855,11 @@ p JSON.parse(result)
 
 | Parameter | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| states | query | string | false | Comma separated list of states e.g. to get expired contracts https://api.india.delta.exchange/v2/products?contract\_types=call\_options&states=expired |
+| states | query | string | false | Comma separated list of states e.g. to get expired contracts <https://api.india.delta.exchange/v2/products?contract\_types=call\_options&states=expired> |
 | page\_size | query | string | false | size of a single page for paginated request, default: 100 |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -6058,7 +6057,7 @@ It returns historical Open-High-Low-Close(ohlc) candles data of the symbol as pe
 | resolution | 1w | 1-week candles |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -6138,7 +6137,7 @@ p JSON.parse(result)
 | symbols | query | string | true | comma separated product symbols |
 
 > Example responses
-> 
+>
 > 200 Response
 
 ```json
@@ -8766,9 +8765,9 @@ The Deadman Switch is a safety mechanism that automatically cancels orders or ta
 
 The Deadman Switch system consists of several components:
 
--   **Heartbeat Creation**: Clients register a heartbeat with specific configuration
--   **Heartbeat Acknowledgment**: Clients periodically send acknowledgments to keep the heartbeat alive
--   **Automatic Actions**: When heartbeats expire, the system automatically executes configured actions
+- **Heartbeat Creation**: Clients register a heartbeat with specific configuration
+- **Heartbeat Acknowledgment**: Clients periodically send acknowledgments to keep the heartbeat alive
+- **Automatic Actions**: When heartbeats expire, the system automatically executes configured actions
 
 ## Authentication
 
@@ -8827,8 +8826,8 @@ Creates a new heartbeat with specific configuration for automatic actions.
 
 **Config Actions:**
 
--   `cancel_orders`: Cancels all open orders
--   `spreads`: Adds spreads to orders
+- `cancel_orders`: Cancels all open orders
+- `spreads`: Adds spreads to orders
 
 **Response:**
 
@@ -8924,10 +8923,10 @@ Retrieves all active heartbeats for a user.
 
 ### Best Practices
 
-1.  **Regular Heartbeats**: Send heartbeat acknowledgments at regular intervals (recommended: every 30 seconds)
-2.  **Error Handling**: Implement proper error handling for heartbeat failures
-3.  **Monitoring**: Monitor heartbeat status and implement alerts for failures
-4.  **Graceful Shutdown**: Properly disable heartbeats when shutting down trading systems
+1. **Regular Heartbeats**: Send heartbeat acknowledgments at regular intervals (recommended: every 30 seconds)
+2. **Error Handling**: Implement proper error handling for heartbeat failures
+3. **Monitoring**: Monitor heartbeat status and implement alerts for failures
+4. **Graceful Shutdown**: Properly disable heartbeats when shutting down trading systems
 
 ### Python Example
 
@@ -9084,10 +9083,10 @@ deadman.startHeartbeatLoop();
 
 ## Security Considerations
 
-1.  **API Key Security**: Keep your API keys secure and never expose them in client-side code
-2.  **Network Security**: Use HTTPS for all API communications
-3.  **Monitoring**: Implement proper monitoring and alerting for heartbeat failures
-4.  **Backup Systems**: Consider implementing backup heartbeat mechanisms for critical trading systems
+1. **API Key Security**: Keep your API keys secure and never expose them in client-side code
+2. **Network Security**: Use HTTPS for all API communications
+3. **Monitoring**: Implement proper monitoring and alerting for heartbeat failures
+4. **Backup Systems**: Consider implementing backup heartbeat mechanisms for critical trading systems
 
 # Place order errors
 
@@ -9142,8 +9141,8 @@ You can find the swagger spec json for Delta Api [here](https://docs.delta.excha
 
 We also have Rest Api Clients available for the following languages
 
--   [Nodejs](https://www.npmjs.com/package/delta-rest-client)
--   [Python](https://pypi.org/project/delta-rest-client)
+- [Nodejs](https://www.npmjs.com/package/delta-rest-client)
+- [Python](https://pypi.org/project/delta-rest-client)
 
 ## CCXT
 
@@ -9155,18 +9154,18 @@ For more information, please visit [ccxt website](https://ccxt.trade).
 
 Websocket api can be used for the following use cases
 
--   Get real time feed of market data, \_pricethis includes L2 orderbook and recent trades.
--   Get price feeds - Mark prices of different contracts, price feed of underlying indexes etc.
--   Get account specific notifications like fills, liquidations, [ADL](https://guides.delta.exchange/delta-exchange-india-user-guide) and PnL updates.
--   Get account specific updates on orders, positions and wallets.
+- Get real time feed of market data, \_pricethis includes L2 orderbook and recent trades.
+- Get price feeds - Mark prices of different contracts, price feed of underlying indexes etc.
+- Get account specific notifications like fills, liquidations, [ADL](https://guides.delta.exchange/delta-exchange-india-user-guide) and PnL updates.
+- Get account specific updates on orders, positions and wallets.
 
 Websocket url for [Delta Exchange](https://www.delta.exchange)
 
--   **Production private channel endpoint** - wss://socket.india.delta.exchange
--   **Production public channel endpoint** - wss://public-socket.india.delta.exchange
+- **Production private channel endpoint** - wss://socket.india.delta.exchange
+- **Production public channel endpoint** - wss://public-socket.india.delta.exchange
   
--   **Testnet(Demo Account) private channel endpoint** - wss://socket-ind.testnet.deltaex.org
--   **Testnet(Demo Account) public channel endpoint** - wss://socket-ind-pub.testnet.deltaex.org
+- **Testnet(Demo Account) private channel endpoint** - wss://socket-ind.testnet.deltaex.org
+- **Testnet(Demo Account) public channel endpoint** - wss://socket-ind-pub.testnet.deltaex.org
 
 There is a limit of 150 connections every 5 minutes per IP address. A connection attempt that goes beyond the limit will be disconnected with 429 HTTP status error. On receiving this error, wait for 5 to 10 minutes before making new connection requests.
 
@@ -9340,10 +9339,6 @@ Note: Same timestamp must be used for TIMESTAMP and in generating SIGNATURE.
 
 Refer to the right side for a sample code.
 
-  
-  
-  
-
 **Authentication Responses**  
 All authentication responses will be json containing following keys:  
 **"type"** will always be "key-auth"  
@@ -9357,24 +9352,23 @@ Success response:
 
 Error responses:
 
-1.  Lacking 'api-key' or 'sign' or 'timestamp' in the payload:  
+1. Lacking 'api-key' or 'sign' or 'timestamp' in the payload:  
     `{"type":"key-auth", "success":false, "status_code":400, "status":"incomplete_payload", "message":"Incomplete payload"}`
-    
-2.  Request received after 5 secs:  
+
+2. Request received after 5 secs:  
     `{"type":"key-auth", "success":false, "status_code":408, "status":"request_expired", "message":"Timestamp header outside of allowed time window"}}`
-    
-3.  ApiKey does not exist:  
+
+3. ApiKey does not exist:  
     `{"type":"key-auth", "success":false, "status_code":404, "status":"api_key_not_found", "message":"ApiKey not found"}}`
-    
-4.  Invalid/wrong Signature:  
+
+4. Invalid/wrong Signature:  
     `{"type":"key-auth", "success":false, "status_code":401, "status":"invalid_signature", "message":"Invalid Signature"}`
-    
-5.  IP address not whitelisted for the API-key:  
+
+5. IP address not whitelisted for the API-key:  
     `{"type":"key-auth", "success":false, "status_code":401, "status":"ip_not_whitelisted", "message":"IP address not whitelisted. Your IP: 172.16.19.91"}`
-    
-6.  Some internal server error:  
+
+6. Some internal server error:  
     `{"type":"key-auth", "success":false, "status_code":500, "status":"internal_server_error", "message": "Internal Server Error. Code: 1001"`
-    
 
 ## Old method
 
@@ -9396,12 +9390,12 @@ To unsubscribe from all private channels, just send a **'unauth'** message on th
 
 **Summary:** The python script(right panel) connects to the Delta Exchange WebSocket to receive real-time market data.
 
--   It opens a connection.
--   Subscribes to `v2/ticker`(tickers data) and `candlestick_1m`(1 minute ohlc candlesticks) channels. (**MARK:BTCUSD** - mark price ohlc in candlesticks channel)
--   When data arrives, it processes and prints it.
--   If an error occurs, it prints an error message.
--   If the connection closes, it notifies the user.
--   The connection remains open indefinitely to keep receiving updates.
+- It opens a connection.
+- Subscribes to `v2/ticker`(tickers data) and `candlestick_1m`(1 minute ohlc candlesticks) channels. (**MARK:BTCUSD** - mark price ohlc in candlesticks channel)
+- When data arrives, it processes and prints it.
+- If an error occurs, it prints an error message.
+- If the connection closes, it notifies the user.
+- The connection remains open indefinitely to keep receiving updates.
 
 ```
 import websocket
@@ -9452,13 +9446,13 @@ if __name__ == "__main__":
 
 **Summary:** The python script(right panel) connects to the Delta Exchange WebSocket to receive real-time market data.
 
--   It opens a connection.
--   Sends authentication payload over socket with api\_key, signature & timestamp.
--   When authentication update arrives, it checks for success and then sends subscription for `orders` and `positions` channels for all contracts.
--   Prints all other updates in json format.
--   If an error occurs, it prints an error message.
--   If the connection closes, it notifies the user.
--   The connection remains open indefinitely to keep receiving updates.
+- It opens a connection.
+- Sends authentication payload over socket with api\_key, signature & timestamp.
+- When authentication update arrives, it checks for success and then sends subscription for `orders` and `positions` channels for all contracts.
+- Prints all other updates in json format.
+- If an error occurs, it prints an error message.
+- If the connection closes, it notifies the user.
+- The connection remains open indefinitely to keep receiving updates.
 
 ```
 import websocket
@@ -9550,10 +9544,10 @@ The client can enable heartbeat on the socket. If heartbeat is enabled, the serv
 
 ### How to Implement on client side
 
--   Enable heartbeat (check sample code) after each successful socket connection
--   Set a timer with duration of 35 seconds (We take 5 seconds buffer for heartbeat to arrive).
--   When you receive a new heartbeat message, you reset the timer
--   If the timer is called, that means the client didn't receive any heartbeat in last 35 seconds. In this case, the client should exit the existing connection and try to reconnect.
+- Enable heartbeat (check sample code) after each successful socket connection
+- Set a timer with duration of 35 seconds (We take 5 seconds buffer for heartbeat to arrive).
+- When you receive a new heartbeat message, you reset the timer
+- If the timer is called, that means the client didn't receive any heartbeat in last 35 seconds. In this case, the client should exit the existing connection and try to reconnect.
 
 ```
 // Enable Heartbeat on successful connection
@@ -9841,7 +9835,7 @@ Publish interval: 100 millisecs
 }
 ```
 
-### How to maintain orderbook locally using this channel:
+### How to maintain orderbook locally using this channel
 
 1) When you subscribe to this channel, the first message with "action"= "snapshot" resembles the complete orderbook at this time. json\_key "a" (asks) and json\_key "b" (bids) are arrays of \["price", "size"\]. (size is number of contracts at this price)
 
@@ -9860,6 +9854,7 @@ e.g. for the shown snapshot and update messages to create the new orderbook: in 
 
 Checksum: Using this, users can verify the accuracy of orderbook data created using ob\_updates. checksum is the "cs" key in the message payload.  
 Steps to calculate checksum:  
+
 1) Edit the old in-memory orderbook with the "update" message received.  
 2) Create asks\_string and bids\_string as shown below. where priceN = price at Nth level, sizeN = size at Nth level. Asks are sorted in increasing order and bids in decreasing order by price.  
 asks\_string = price0:size0,price1:size1,…,price9:size9  
@@ -10248,13 +10243,13 @@ This is a public websocket channel that provides updates on system-wide status e
 
 snapshot → This event is sent as soon as you subscribe to the system\_status channel. The data in this event contains the current system status details.
 
-1.  "event": "maintenance\_scheduled" is sent when maintenance is scheduled, usually 6 to 24 hours before the actual maintenance. It includes the estimated start and finish times.  
-    
-2.  "event": "maintenance\_started" is sent when maintenance begins. It indicates service disruption and includes the estimated finish time. For unscheduled maintenance, this event may be sent directly without the prior maintenance\_scheduled event.  
-    
-3.  "event": "maintenance\_finished" is sent when maintenance is complete. Usually, after this event, there is an auction period lasting around 5 to 10 minutes.  
-    
-4.  "event": "maintenance\_cancelled" is sent when upcoming scheduled maintenance has been cancelled.
+1. "event": "maintenance\_scheduled" is sent when maintenance is scheduled, usually 6 to 24 hours before the actual maintenance. It includes the estimated start and finish times.  
+
+2. "event": "maintenance\_started" is sent when maintenance begins. It indicates service disruption and includes the estimated finish time. For unscheduled maintenance, this event may be sent directly without the prior maintenance\_scheduled event.  
+
+3. "event": "maintenance\_finished" is sent when maintenance is complete. Usually, after this event, there is an auction period lasting around 5 to 10 minutes.  
+
+4. "event": "maintenance\_cancelled" is sent when upcoming scheduled maintenance has been cancelled.
 
 Note: Maintenance start and finish times are approximate estimates. The actual start time is confirmed by the maintenance\_started event, and the actual completion is confirmed by the maintenance\_finished event.
 
@@ -10262,14 +10257,13 @@ These values describe the current state of the entire system.
 
 The payload\["status"\] describe the current state of the entire system. Below are the possible values:
 
-1.  "live": The system is operating normally. All services (REST APIs, WebSocket, backend processes) are functioning as expected.  
-    
-2.  "maintenance": The system is currently under maintenance. Some features or services may be temporarily unavailable or disrupted.  
-    
-3.  "api\_fallback": Our system might be facing some technical issues, but most core functions remain available. Mostly used by our internal system. You can treat this as "live" mode, and check with our support team.  
-    
-4.  "degraded\_mode": Our system might be facing some technical issues, but most core functions remain available. Mostly used by our internal system. You can treat this as "live" mode, and check with our support team.  
-    
+1. "live": The system is operating normally. All services (REST APIs, WebSocket, backend processes) are functioning as expected.  
+
+2. "maintenance": The system is currently under maintenance. Some features or services may be temporarily unavailable or disrupted.  
+
+3. "api\_fallback": Our system might be facing some technical issues, but most core functions remain available. Mostly used by our internal system. You can treat this as "live" mode, and check with our support team.  
+
+4. "degraded\_mode": Our system might be facing some technical issues, but most core functions remain available. Mostly used by our internal system. You can treat this as "live" mode, and check with our support team.  
 
 Changing status to between these three: \["api\_fallback", "degraded\_mode", "live"\] is done by sending message with
 
@@ -10427,12 +10421,12 @@ All updates including snapshot will have incremental seq\_id. seq\_id is separat
 
 Any of the following events can be tracked by the reason field in this channel
 
--   fill
--   stop\_update
--   stop\_trigger
--   stop\_cancel
--   liquidation
--   self\_trade
+- fill
+- stop\_update
+- stop\_trigger
+- stop\_cancel
+- liquidation
+- self\_trade
 
 You need to send the list of symbols for which you would like to subscribe to orders channel. You can also subscribe to orders updates for category of products by sending [category-names](/#schemaproductcategories). For example: to receive updates for put options and futures, refer this: `{"symbols": ["put_options", "futures"]}`. If you would like to subscribe for all the listed contracts, pass: `{ "symbols": ["all"] }`. Please note that if you subscribe to orders channel without specifying the symbols list, you will not receive any data.
 
@@ -10776,14 +10770,13 @@ Channel provides updates when MMP is triggered. Market maker protection is avail
 
 ## 20.05.26
 
-1.  Added a **Description** column to all "Enumerated Values" tables in the REST API docs, so each value now has a clear explanation of what it means. Covers values like `side`, `order_type`, `state`, `transaction_type`, `mmp`, `time_in_force`, `resolution`, and more. Updated across Products, Orders, Positions, TradeHistory, Trades, Wallet, Heartbeat Management, Historical OHLC Candles/Sparklines, and the Schemas section. This is a documentation update only — no API behaviour has changed.
+1. Added a **Description** column to all "Enumerated Values" tables in the REST API docs, so each value now has a clear explanation of what it means. Covers values like `side`, `order_type`, `state`, `transaction_type`, `mmp`, `time_in_force`, `resolution`, and more. Updated across Products, Orders, Positions, TradeHistory, Trades, Wallet, Heartbeat Management, Historical OHLC Candles/Sparklines, and the Schemas section. This is a documentation update only — no API behaviour has changed.
 
 ## 17.04.26
 
-1.  The following WebSocket channels have been migrated to the **new public WebSocket endpoint** (`wss://public-socket.india.delta.exchange`). The new channels provide the same data with a more compact response format. The old channels on the **legacy private endpoint** (`wss://socket.india.delta.exchange`) will continue to work but are planned to be deprecated and removed on **31st July 2026** — please update your integrations before that date. The new channels are: [`mark_price`](#mark_price), [`candlesticks`](#candlesticks), [`spot_price`](#spot_price), [`funding_rate`](#funding_rate), [`system_status`](#system_status).
-    
-2.  The following legacy WebSocket channels have been migrated to the **new public WebSocket endpoint** (`wss://public-socket.india.delta.exchange`). The old channels on the **legacy private endpoint** (`wss://socket.india.delta.exchange`) will continue to work but are planned to be deprecated and removed on **31st July 2026** — please update your integrations before that date.
-    
+1. The following WebSocket channels have been migrated to the **new public WebSocket endpoint** (`wss://public-socket.india.delta.exchange`). The new channels provide the same data with a more compact response format. The old channels on the **legacy private endpoint** (`wss://socket.india.delta.exchange`) will continue to work but are planned to be deprecated and removed on **31st July 2026** — please update your integrations before that date. The new channels are: [`mark_price`](#mark_price), [`candlesticks`](#candlesticks), [`spot_price`](#spot_price), [`funding_rate`](#funding_rate), [`system_status`](#system_status).
+
+2. The following legacy WebSocket channels have been migrated to the **new public WebSocket endpoint** (`wss://public-socket.india.delta.exchange`). The old channels on the **legacy private endpoint** (`wss://socket.india.delta.exchange`) will continue to work but are planned to be deprecated and removed on **31st July 2026** — please update your integrations before that date.
 
 | Removed Channel | New Channel |
 | --- | --- |
@@ -10796,66 +10789,66 @@ Channel provides updates when MMP is triggered. Market maker protection is avail
 
 ## 15.04.26
 
-1.  Introduced validation changes for `limit_price` parameter:
-    -   Any value ≤ 0 will now be rejected
-    -   If `limit_price` is not required, remove field from payload or send it as `null`
+1. Introduced validation changes for `limit_price` parameter:
+    - Any value ≤ 0 will now be rejected
+    - If `limit_price` is not required, remove field from payload or send it as `null`
 
 Please update your integrations accordingly to avoid request failures.
 
 ## 13.01.26
 
-1.  Order History `GET /v2/orders/history` and Fills `GET /v2/fills` history APIs will no longer include the total field in pagination meta, these changes are now live. We are planning to change max page\_size allowed for these API endpoints to be 50, higher values than 50 will return only 50 items. These changes will go live on 28th January 2026 (tentative).
-2.  Updated parameter descriptions for product\_ids and ticker symbol to clarify comma-separated format with maximum 10 Product\_ids/symbols. Affected APIs endpoints are `GET /v2/tickers/{symbol}`, `GET /v2/orders`, `GET/v2/positions/margined`, `GET /v2/orders/history`, and `GET /v2/fills`. These changes will go live on 28th January 2026 (tentative). Passing more than 10 product\_ids/symbols will return HTTP 4xx error. By default, if the product\_ids parameter is not provided, these APIs returns data for all products.
+1. Order History `GET /v2/orders/history` and Fills `GET /v2/fills` history APIs will no longer include the total field in pagination meta, these changes are now live. We are planning to change max page\_size allowed for these API endpoints to be 50, higher values than 50 will return only 50 items. These changes will go live on 28th January 2026 (tentative).
+2. Updated parameter descriptions for product\_ids and ticker symbol to clarify comma-separated format with maximum 10 Product\_ids/symbols. Affected APIs endpoints are `GET /v2/tickers/{symbol}`, `GET /v2/orders`, `GET/v2/positions/margined`, `GET /v2/orders/history`, and `GET /v2/fills`. These changes will go live on 28th January 2026 (tentative). Passing more than 10 product\_ids/symbols will return HTTP 4xx error. By default, if the product\_ids parameter is not provided, these APIs returns data for all products.
 
 ## 11.12.25
 
-1.  Added a new WebSocket system\_status channel which includes maintenance events such as maintenance\_scheduled, maintenance\_started, maintenance\_finished, and maintenance\_cancelled, along with real-time system status updates (live, api\_fallback, degraded\_mode) and an initial snapshot event providing the current system state.
-2.  We will be deprecating the announcements channel on 28 February 2026. All maintenance-related updates will be migrated to and provided through the system\_status channel.
+1. Added a new WebSocket system\_status channel which includes maintenance events such as maintenance\_scheduled, maintenance\_started, maintenance\_finished, and maintenance\_cancelled, along with real-time system status updates (live, api\_fallback, degraded\_mode) and an initial snapshot event providing the current system state.
+2. We will be deprecating the announcements channel on 28 February 2026. All maintenance-related updates will be migrated to and provided through the system\_status channel.
 
 ## 08.10.25
 
-1.  Added new websocket authentication method, {"type":"key-auth"}, which includes new formats of request and responses.  
-    
-2.  Previous websocket authentication method, {"type":"auth"}, is now marked as deprecated. This method will stop working after 31st December 2025, users are requested to migrate to the newer websocket authentication.
-3.  We will be deprecating support for historical candlestick OHLC resolution 7d, 2w and 30d from 18th October 2025. The REST API `/history/candles` and websocket public channel `candlesticks` will stop supporting these resolutions. These resolutions have been removed from the documentation.
-4.  'client\_order\_id' parameter in all Orders API is now restricted to max 32 length. e.g. REST API `POST /orders` parameter 'client\_order\_id' can be max 32 length string.
+1. Added new websocket authentication method, {"type":"key-auth"}, which includes new formats of request and responses.  
+
+2. Previous websocket authentication method, {"type":"auth"}, is now marked as deprecated. This method will stop working after 31st December 2025, users are requested to migrate to the newer websocket authentication.
+3. We will be deprecating support for historical candlestick OHLC resolution 7d, 2w and 30d from 18th October 2025. The REST API `/history/candles` and websocket public channel `candlesticks` will stop supporting these resolutions. These resolutions have been removed from the documentation.
+4. 'client\_order\_id' parameter in all Orders API is now restricted to max 32 length. e.g. REST API `POST /orders` parameter 'client\_order\_id' can be max 32 length string.
 
 ## 01.06.25
 
-1.  Added reason:"liquidation" for v2/user\_trades websocket channel. Updated documentation for the v2/user\_trades channel.
-2.  Added Connection rate limit for websocket URL endpoint of 150 connections per IP address per 5 minutes. Updated this info under 'Websocket Info' tab.
+1. Added reason:"liquidation" for v2/user\_trades websocket channel. Updated documentation for the v2/user\_trades channel.
+2. Added Connection rate limit for websocket URL endpoint of 150 connections per IP address per 5 minutes. Updated this info under 'Websocket Info' tab.
 
 ## 21.03.25
 
-1.  Better documentation for Websocket public channel 'candlesticks', now clearly states even Mark Price candles can be fetched.
-2.  /positions REST API fixed documentation for query parameters.
-3.  Better documentation for Websocket public channel 'announcements'.
+1. Better documentation for Websocket public channel 'candlesticks', now clearly states even Mark Price candles can be fetched.
+2. /positions REST API fixed documentation for query parameters.
+3. Better documentation for Websocket public channel 'announcements'.
 
 ## 20.02.25
 
-1.  Removed Websocket RPC section. Use REST API endpoints with normal HTTP requests (RPC requests still work, it is recommended not to use them).
-2.  Fixed documentation: "User-Agent" header is necessary for authenticated HTTP requests.
-3.  Fixed documentation: Better examples and documentation under 'General Information', 'Authentication', etc tabs.
-4.  Created separate documentation site for Indian and Global site for easier understanding and better examples for both.
+1. Removed Websocket RPC section. Use REST API endpoints with normal HTTP requests (RPC requests still work, it is recommended not to use them).
+2. Fixed documentation: "User-Agent" header is necessary for authenticated HTTP requests.
+3. Fixed documentation: Better examples and documentation under 'General Information', 'Authentication', etc tabs.
+4. Created separate documentation site for Indian and Global site for easier understanding and better examples for both.
 
 ## 18.10.2024
 
-1.  Added clickable links to the corresponding API response json schemas under some API "Responses" table. Updated some schemas to match the response. (This is a documentation fix, no changes in API)
-2.  Added "Testnet-India" REST and Websocket host endpoints.
-3.  Changed "Rate Limits" description and added an example.
+1. Added clickable links to the corresponding API response json schemas under some API "Responses" table. Updated some schemas to match the response. (This is a documentation fix, no changes in API)
+2. Added "Testnet-India" REST and Websocket host endpoints.
+3. Changed "Rate Limits" description and added an example.
 
 ## 01.05.2024
 
-1.  Added "po" positions key in /v2/user\_trades websocket private channel.
-2.  Removed "fok" type for orders, as they are no longer supported.
+1. Added "po" positions key in /v2/user\_trades websocket private channel.
+2. Removed "fok" type for orders, as they are no longer supported.
 
 ## V2 Rest Api
 
 Our v2 Api is significantly faster than the v1 api. Our focus while rebuilding v2 Apis was on the following
 
-1.  Remove Api gateway overheads as much as possible.
-2.  Remove overheads due to deep nesting in response payload.
-3.  Better Api structure to query only required data.
+1. Remove Api gateway overheads as much as possible.
+2. Remove overheads due to deep nesting in response payload.
+3. Better Api structure to query only required data.
 
 > New Response Format
 
@@ -10885,36 +10878,36 @@ Our v2 Api is significantly faster than the v1 api. Our focus while rebuilding v
 
 ### Key Api changes
 
--   We have completely removed nested product/asset payloads from live orders and live positions. This ensures the payload is light.
--   Rate limiting now works on a fixed window instead of a rolling window.
--   Ticker Api - now includes turnover in USD, mark price, spot price.
--   Orderbook and trades are now returned in separate Apis.
--   For supporting trading strategies which require latest positions, Now we have two different Apis to query position.
+- We have completely removed nested product/asset payloads from live orders and live positions. This ensures the payload is light.
+- Rate limiting now works on a fixed window instead of a rolling window.
+- Ticker Api - now includes turnover in USD, mark price, spot price.
+- Orderbook and trades are now returned in separate Apis.
+- For supporting trading strategies which require latest positions, Now we have two different Apis to query position.
 
 /v2/positions - returns only size and entry price. This should be used when you want to get the latest position, but dont need the margin dependent fields like liquidation price, bankruptcy price etc
 
 /v2/positions/margined - returns all fields including margin dependent fields. When the position is updated due to a fill, changes might take some time to reflect in this Api.
 
--   All Apis that support pagination now use cursor based pagination, instead of fixed page size pagination. Check more details in our [python rest client docs](https://github.com/delta-exchange/python-rest-client)
+- All Apis that support pagination now use cursor based pagination, instead of fixed page size pagination. Check more details in our [python rest client docs](https://github.com/delta-exchange/python-rest-client)
 
 ## New Socket Channels
 
--   Socket Api interface hasn't changed much in terms of connection management and authentication.
--   We have deprecated old channels and created new channels which make integration easier.
--   To support easy management of live data, all private data channels now support initial snapshots and sequence numbers.
+- Socket Api interface hasn't changed much in terms of connection management and authentication.
+- We have deprecated old channels and created new channels which make integration easier.
+- To support easy management of live data, all private data channels now support initial snapshots and sequence numbers.
 
 ### List of new public channels
 
--   v2/ticker - now includes turnover in USD, mark price, spot price
--   candlesticks - subscribe to ohlc candle updates for different resolutions
--   all\_trades - subscribe to all public trades for a symbol
+- v2/ticker - now includes turnover in USD, mark price, spot price
+- candlesticks - subscribe to ohlc candle updates for different resolutions
+- all\_trades - subscribe to all public trades for a symbol
 
 ### List of new private channels
 
--   orders - subscribe to lifecycle of live orders
--   user\_trades - subscribe to live user trades/fills feed
--   positions - subscribe to position updates
--   margins - get margin/wallet updates
+- orders - subscribe to lifecycle of live orders
+- user\_trades - subscribe to live user trades/fills feed
+- positions - subscribe to position updates
+- margins - get margin/wallet updates
 
 # Security
 
@@ -10922,26 +10915,26 @@ We take the security, integrity, availability of our services, and the privacy o
 
 ## Targets In scope
 
--   https://\*.delta.exchange
+- https://\*.delta.exchange
 
 Any domain/property of Delta Exchange Network not listed in the targets section is out of scope. This includes any/all subdomains not listed above.
 
 ## How to access
 
--   You will access the Delta Exchange service using test accounts and unauthenticated guests.
--   Please create a Delta Exchange test account on your own using your test email address. Your email must contain keyword 'test' for example _test_@gmail.com.
--   All emails will go to the email address associated with your account. You will need to activate your account by confirming receipt of the activation email.
--   NOTE: Once a vulnerability is found please file a submission immediately. Our security team will investigate and assess the impact.
+- You will access the Delta Exchange service using test accounts and unauthenticated guests.
+- Please create a Delta Exchange test account on your own using your test email address. Your email must contain keyword 'test' for example <_test_@gmail.com>.
+- All emails will go to the email address associated with your account. You will need to activate your account by confirming receipt of the activation email.
+- NOTE: Once a vulnerability is found please file a submission immediately. Our security team will investigate and assess the impact.
 
 ## Reward range
 
 **Focus Areas**
 
--   User Data / User information Leaks
--   Injection attacks (Server/Client side)
--   RCE(Remote Code Execution)
--   Authentication bypass/validation (Client/Server side)
--   Privilege escalation (Vertical/Horizontal)
+- User Data / User information Leaks
+- Injection attacks (Server/Client side)
+- RCE(Remote Code Execution)
+- Authentication bypass/validation (Client/Server side)
+- Privilege escalation (Vertical/Horizontal)
 
 | Technical | Severity | Reward |
 | --- | --- | --- |
@@ -10953,29 +10946,29 @@ Any domain/property of Delta Exchange Network not listed in the targets section 
 
 We are interested in hearing about security issues in Production/Dev Delta Exchange environments. There are some things we explicitly ask you not to do
 
--   Do not run automated scans without checking with us first. They are often very noisy.(If running any automated testing tools, be sure to keep well under 75-100 requests per second - otherwise you're likely to get locked out.)
--   Do not test the physical security of Delta Exchange offices, employees, equipment, etc.
--   Do not run Full fledged exploits which can cause application crashes and affect integrity of our active services. (If you believe you have a exploit that need serious fixes please email us, and we will provide you with said instance for said service.)
--   Do not test using social engineering techniques (phishing, vishing, etc.)
--   Do not test against any type of customer account without explicit permission from our side.
--   Do not access, Destroy or otherwise negatively impact any residential or business customers, or customer data in any way.
--   Do not perform DoS or DDoS attacks (Application level, Network Level DOS / DDOS / port flooding attacks are strictly not appreciated as this can cause delay in delivery of our services to our users we suggest you to not to use such methodologies).
--   Do not engage In any way attack our end users, or in the trade of stolen user credentials.
--   Interacting with real customers or real customer accounts is forbidden.
+- Do not run automated scans without checking with us first. They are often very noisy.(If running any automated testing tools, be sure to keep well under 75-100 requests per second - otherwise you're likely to get locked out.)
+- Do not test the physical security of Delta Exchange offices, employees, equipment, etc.
+- Do not run Full fledged exploits which can cause application crashes and affect integrity of our active services. (If you believe you have a exploit that need serious fixes please email us, and we will provide you with said instance for said service.)
+- Do not test using social engineering techniques (phishing, vishing, etc.)
+- Do not test against any type of customer account without explicit permission from our side.
+- Do not access, Destroy or otherwise negatively impact any residential or business customers, or customer data in any way.
+- Do not perform DoS or DDoS attacks (Application level, Network Level DOS / DDOS / port flooding attacks are strictly not appreciated as this can cause delay in delivery of our services to our users we suggest you to not to use such methodologies).
+- Do not engage In any way attack our end users, or in the trade of stolen user credentials.
+- Interacting with real customers or real customer accounts is forbidden.
 
 ## Rules of reporting
 
-We take our Internal process and workflow seriously, We have a dedicated security team working and testing round the clock, so we would like you to send your reports to only security@delta.exchange and follow below said rules or not following will void you from our bug bounty benefits, Also we would like you to encrypt emails sent to us with a PGP key provided below if the Vulnerability is Severe or Critical.
+We take our Internal process and workflow seriously, We have a dedicated security team working and testing round the clock, so we would like you to send your reports to only <security@delta.exchange> and follow below said rules or not following will void you from our bug bounty benefits, Also we would like you to encrypt emails sent to us with a PGP key provided below if the Vulnerability is Severe or Critical.
 
--   We recommend you to use emails which contain test as a keyword in the email address for example _test_@gmail.com.
--   For testing and reporting so that we can identify your activity on our environments, also whitelist for IDS/FDS blocks)
--   Do not CC or tag other staff while reporting.
--   Do not callout on social media or make blog posts to report or without reporting (this can lead to legal actions to be taken against you.)
--   Do not discuss this with any, but only Delta Exchange technical staff.
--   Do not send us external-links/executable/scripts in report if possible attach a text file or pdf. Without zipp'ing or rar'ing it.
--   Screenshots are accepted if only in PNG and JIF formats for internal security reasons.
--   POC Videos are accepted if only in MP4,AVI, WEBM, MOV formats for internal security reasons.
--   Any or All reports must only reach security@delta.exchange.
+- We recommend you to use emails which contain test as a keyword in the email address for example <_test_@gmail.com>.
+- For testing and reporting so that we can identify your activity on our environments, also whitelist for IDS/FDS blocks)
+- Do not CC or tag other staff while reporting.
+- Do not callout on social media or make blog posts to report or without reporting (this can lead to legal actions to be taken against you.)
+- Do not discuss this with any, but only Delta Exchange technical staff.
+- Do not send us external-links/executable/scripts in report if possible attach a text file or pdf. Without zipp'ing or rar'ing it.
+- Screenshots are accepted if only in PNG and JIF formats for internal security reasons.
+- POC Videos are accepted if only in MP4,AVI, WEBM, MOV formats for internal security reasons.
+- Any or All reports must only reach <security@delta.exchange>.
 
 ## Recommended Reporting format
 
@@ -10989,7 +10982,7 @@ Help us get an idea of what this vulnerability is about.
 
 Select the vulnerable target Domain name / Subdomain name
 
-(eg. "so and so on https://example.delta.exchange")
+(eg. "so and so on <https://example.delta.exchange>")
 
 **Vulnerability details**
 
@@ -11021,37 +11014,37 @@ Attach proof-of-concept scripts, screenshots, screen recordings, etc.
 
 These issues Will be closed as out of scope hence not rewardable.
 
--   Theoretical vulnerabilities without actual proof of concept
--   Open redirects (through headers and parameters) / Lack of security speed bump when leaving the site.
--   Internal IP address / version disclosure.
--   Email verification deficiencies, expiration of password reset links, and password complexity policies
--   Invalid or missing SPF (Sender Policy Framework) records (incomplete or missing SPF/DKIM/DMARC)
--   Click jacking/UI redressing with minimal security impact
--   Text/code injection without any impact.
--   Email or mobile enumeration (E.g. the ability to identify emails via password reset)
--   Information disclosure with minimal security impact (E.g. stack traces, path disclosure, directory listings, logs)
--   Internally known issues, duplicate issues, or issues which have already been made public
--   Rate limiting issues / Tab-nabbing
--   Non url Selfless / HTMLi
--   Known CVE without proper testing.
--   Vulnerabilities only exploitable on out-of-date browsers or platforms
--   CSRF issues that don't impact the integrity of an account (e.g. log in or out, contact forms and other publicly accessible forms)
--   Vulnerabilities related to auto-fill web forms
--   Use of known vulnerable libraries without actual proof of concept
--   Lack of security flags in cookies
--   Issues related to unsafe SSL/TLS cipher suites or protocol version
--   Session expiry / Cookie issues / Content spoofing
--   Cache-control related issues
--   Missing security headers that do not lead to direct exploitation
--   CSRF with negligible security impact (E.g. adding to favorites, adding to cart, subscribing to a non-critical feature)
--   Vulnerabilities that require root/jailbreak
--   Vulnerabilities that require physical access to a user's device
--   Issues that have no security impact (E.g. Failure to load a web page)
--   Phishing (E.g. HTTP Basic Authentication Phishing)
--   Any activity (like DoS/DDoS) that disrupts our services
--   Installation Path Permissions
--   Reports from automated tools or scans
+- Theoretical vulnerabilities without actual proof of concept
+- Open redirects (through headers and parameters) / Lack of security speed bump when leaving the site.
+- Internal IP address / version disclosure.
+- Email verification deficiencies, expiration of password reset links, and password complexity policies
+- Invalid or missing SPF (Sender Policy Framework) records (incomplete or missing SPF/DKIM/DMARC)
+- Click jacking/UI redressing with minimal security impact
+- Text/code injection without any impact.
+- Email or mobile enumeration (E.g. the ability to identify emails via password reset)
+- Information disclosure with minimal security impact (E.g. stack traces, path disclosure, directory listings, logs)
+- Internally known issues, duplicate issues, or issues which have already been made public
+- Rate limiting issues / Tab-nabbing
+- Non url Selfless / HTMLi
+- Known CVE without proper testing.
+- Vulnerabilities only exploitable on out-of-date browsers or platforms
+- CSRF issues that don't impact the integrity of an account (e.g. log in or out, contact forms and other publicly accessible forms)
+- Vulnerabilities related to auto-fill web forms
+- Use of known vulnerable libraries without actual proof of concept
+- Lack of security flags in cookies
+- Issues related to unsafe SSL/TLS cipher suites or protocol version
+- Session expiry / Cookie issues / Content spoofing
+- Cache-control related issues
+- Missing security headers that do not lead to direct exploitation
+- CSRF with negligible security impact (E.g. adding to favorites, adding to cart, subscribing to a non-critical feature)
+- Vulnerabilities that require root/jailbreak
+- Vulnerabilities that require physical access to a user's device
+- Issues that have no security impact (E.g. Failure to load a web page)
+- Phishing (E.g. HTTP Basic Authentication Phishing)
+- Any activity (like DoS/DDoS) that disrupts our services
+- Installation Path Permissions
+- Reports from automated tools or scans
 
 Not following any one of the above rule will disqualify you from our bug bounty program.
 
-If any doubts related to your submissions or creative dialogue please feel free to email saurabh.goyal@delta.exchange or venkatesh.sharma@delta.exchange.
+If any doubts related to your submissions or creative dialogue please feel free to email <saurabh.goyal@delta.exchange> or <venkatesh.sharma@delta.exchange>.

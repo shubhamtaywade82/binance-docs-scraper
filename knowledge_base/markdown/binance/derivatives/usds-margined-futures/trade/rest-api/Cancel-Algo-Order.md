@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:48:57.706Z
 ---
 # Cancel Algo Order (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Cancel-Algo-Order
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Cancel-Algo-Order>
 
 # Cancel Algo Order (TRADE)
 
@@ -33,7 +33,7 @@ DELETE `/fapi/v1/algoOrder`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either `algoId` or `clientAlgoId` must be sent.
+> - Either `algoId` or `clientAlgoId` must be sent.
 
 ## Response Example
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:58:25.891Z
 ---
 # Get Funding Rate History of Perpetual Futures
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Get-Funding-Rate-History-of-Perpetual-Futures
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Get-Funding-Rate-History-of-Perpetual-Futures>
 
 # Get Funding Rate History of Perpetual Futures
 
@@ -33,7 +33,7 @@ GET `/dapi/v1/fundingRate`
 | endTime | LONG | NO | Timestamp in ms to get funding rate until INCLUSIVE. |
 | limit | INT | NO | Default 100; max 1000 |
 
-> -   empty array will be returned for delivery symbols.
+> - empty array will be returned for delivery symbols.
 
 ## Response Example
 

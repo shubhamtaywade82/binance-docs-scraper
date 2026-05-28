@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:43:54.861Z
 ---
 # Event: User Data Stream Expired
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Event-User-Data-Stream-Expired
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Event-User-Data-Stream-Expired>
 
 # Event: User Data Stream Expired
 
@@ -18,9 +18,9 @@ When the `listenKey` used for the user data stream turns expired, this event wil
 
 **Notice:**
 
-> -   This event is not related to the websocket disconnection.
-> -   This event will be received only when a valid `listenKey` in connection got expired.
-> -   No more user data event will be updated after this event received until a new valid `listenKey` used.
+> - This event is not related to the websocket disconnection.
+> - This event will be received only when a valid `listenKey` in connection got expired.
+> - No more user data event will be updated after this event received until a new valid `listenKey` used.
 
 ## URL PATH
 

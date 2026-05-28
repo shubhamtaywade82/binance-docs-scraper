@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:00:21.364Z
 ---
 # Account Trade List (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/trade/Account-Trade-List
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/trade/Account-Trade-List>
 
 # Account Trade List (USER\_DATA)
 
@@ -36,7 +36,7 @@ Get trades for a specific account and symbol.
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Only support querying trades in the past 3 months
+> - Only support querying trades in the past 3 months
 
 ## Response Example
 

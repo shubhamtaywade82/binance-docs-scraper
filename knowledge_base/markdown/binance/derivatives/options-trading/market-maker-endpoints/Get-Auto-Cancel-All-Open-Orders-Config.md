@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:50:06.123Z
 ---
 # Get Auto-Cancel All Open Orders (Kill-Switch) Config (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/market-maker-endpoints/Get-Auto-Cancel-All-Open-Orders-Config
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/market-maker-endpoints/Get-Auto-Cancel-All-Open-Orders-Config>
 
 # Get Auto-Cancel All Open Orders (Kill-Switch) Config (TRADE)
 
@@ -18,7 +18,7 @@ This endpoint returns the auto-cancel parameters for each underlying symbol. Not
 
 ## HTTP Request
 
-GET `/eapi/v1/countdownCancelAll` 
+GET `/eapi/v1/countdownCancelAll`
 
 ## Request Weight
 
@@ -32,7 +32,7 @@ GET `/eapi/v1/countdownCancelAll` 
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   countdownTime = 0 means the function is disabled.
+> - countdownTime = 0 means the function is disabled.
 
 ## Response Example
 

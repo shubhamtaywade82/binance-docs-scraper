@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:44:35.046Z
 ---
 # Aggregate Trade Streams
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Aggregate-Trade-Streams
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Aggregate-Trade-Streams>
 
 # Aggregate Trade Streams
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:48:19.548Z
 ---
 # Query Current Open Order (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Query-Current-Open-Order
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Query-Current-Open-Order>
 
 # Query Current Open Order (USER\_DATA)
 
@@ -34,8 +34,8 @@ GET `/fapi/v1/openOrder`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Either`orderId` or `origClientOrderId` must be sent
-> -   If the queried order has been filled or cancelled, the error message "Order does not exist" will be returned.
+> - Either`orderId` or `origClientOrderId` must be sent
+> - If the queried order has been filled or cancelled, the error message "Order does not exist" will be returned.
 
 ## Response Example
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:53:46.194Z
 ---
 # New Order (TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api
+> Source: <https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/rest-api>
 
 # New Order (TRADE)
 
@@ -60,100 +60,100 @@ Additional mandatory parameters based on `type`:
 | `STOP_MARKET/TAKE_PROFIT_MARKET` | `stopPrice` |
 | `TRAILING_STOP_MARKET` | `callbackRate` |
 
-> -   Order with type `STOP`, parameter `timeInForce` can be sent ( default `GTC`).
->     
-> -   Order with type `TAKE_PROFIT`, parameter `timeInForce` can be sent ( default `GTC`).
->     
-> -   Condition orders will be triggered when:
->     
->     -   If parameter`priceProtect`is sent as true:
->         -   when price reaches the `stopPrice` ，the difference rate between "MARK\_PRICE" and "CONTRACT\_PRICE" cannot be larger than the "triggerProtect" of the symbol
->         -   "triggerProtect" of a symbol can be got from `GET /dapi/v1/exchangeInfo`
->     -   `STOP`, `STOP_MARKET`:
->         -   BUY: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") >= `stopPrice`
->         -   SELL: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") <= `stopPrice`
->     -   `TAKE_PROFIT`, `TAKE_PROFIT_MARKET`:
->         -   BUY: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") <= `stopPrice`
->         -   SELL: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") >= `stopPrice`
->     -   `TRAILING_STOP_MARKET`:
->         -   BUY: the lowest price after order placed `<=` activationPrice`, and the latest price >`\= the lowest price \* (1 + `callbackRate`)
->         -   SELL: the highest price after order placed >= `activationPrice`, and the latest price <= the highest price \* (1 - `callbackRate`)
-> -   For `TRAILING_STOP_MARKET`, if you got such error code.  
+> - Order with type `STOP`, parameter `timeInForce` can be sent ( default `GTC`).
+>
+> - Order with type `TAKE_PROFIT`, parameter `timeInForce` can be sent ( default `GTC`).
+>
+> - Condition orders will be triggered when:
+>
+>   - If parameter`priceProtect`is sent as true:
+>     - when price reaches the `stopPrice` ，the difference rate between "MARK\_PRICE" and "CONTRACT\_PRICE" cannot be larger than the "triggerProtect" of the symbol
+>     - "triggerProtect" of a symbol can be got from `GET /dapi/v1/exchangeInfo`
+>   - `STOP`, `STOP_MARKET`:
+>     - BUY: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") >= `stopPrice`
+>     - SELL: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") <= `stopPrice`
+>   - `TAKE_PROFIT`, `TAKE_PROFIT_MARKET`:
+>     - BUY: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") <= `stopPrice`
+>     - SELL: latest price ("MARK\_PRICE" or "CONTRACT\_PRICE") >= `stopPrice`
+>   - `TRAILING_STOP_MARKET`:
+>     - BUY: the lowest price after order placed `<=` activationPrice`, and the latest price >`\= the lowest price \* (1 + `callbackRate`)
+>     - SELL: the highest price after order placed >= `activationPrice`, and the latest price <= the highest price \* (1 - `callbackRate`)
+> - For `TRAILING_STOP_MARKET`, if you got such error code.  
 >     `{"code": -2021, "msg": "Order would immediately trigger."}`  
 >     means that the parameters you send do not meet the following requirements:
->     
->     -   BUY: `activationPrice` should be smaller than latest price.
->     -   SELL: `activationPrice` should be larger than latest price.
-> -   If `newOrderRespType` is sent as `RESULT` :
->     
->     -   `MARKET` order: the final FILLED result of the order will be return directly.
->     -   `LIMIT` order with special `timeInForce`: the final status result of the order(FILLED or EXPIRED) will be returned directly.
-> -   `STOP_MARKET`, `TAKE_PROFIT_MARKET` with `closePosition`\=`true`:
->     
->     -   Follow the same rules for condition orders.
->     -   If triggered,**close all** current long position( if `SELL`) or current short position( if `BUY`).
->     -   Cannot be used with `quantity` parameter
->     -   Cannot be used with `reduceOnly` parameter
->     -   In Hedge Mode,cannot be used with `BUY` orders in `LONG` position side. and cannot be used with `SELL` orders in `SHORT` position side
-> -   `selfTradePreventionMode` is only effective when `timeInForce` set to `IOC` or `GTC`.
->     
+>
+>   - BUY: `activationPrice` should be smaller than latest price.
+>   - SELL: `activationPrice` should be larger than latest price.
+> - If `newOrderRespType` is sent as `RESULT` :
+>
+>   - `MARKET` order: the final FILLED result of the order will be return directly.
+>   - `LIMIT` order with special `timeInForce`: the final status result of the order(FILLED or EXPIRED) will be returned directly.
+> - `STOP_MARKET`, `TAKE_PROFIT_MARKET` with `closePosition`\=`true`:
+>
+>   - Follow the same rules for condition orders.
+>   - If triggered,**close all** current long position( if `SELL`) or current short position( if `BUY`).
+>   - Cannot be used with `quantity` parameter
+>   - Cannot be used with `reduceOnly` parameter
+>   - In Hedge Mode,cannot be used with `BUY` orders in `LONG` position side. and cannot be used with `SELL` orders in `SHORT` position side
+> - `selfTradePreventionMode` is only effective when `timeInForce` set to `IOC` or `GTC`.
+>
 
 ## Response Example
 
 ```
 {
 
- 	"clientOrderId": "testOrder",
+  "clientOrderId": "testOrder",
 
- 	"cumQty": "0",
+  "cumQty": "0",
 
- 	"cumBase": "0",
+  "cumBase": "0",
 
- 	"executedQty": "0",
+  "executedQty": "0",
 
- 	"orderId": 22542179,
+  "orderId": 22542179,
 
- 	"avgPrice": "0.0",
+  "avgPrice": "0.0",
 
- 	"origQty": "10",
+  "origQty": "10",
 
-  	"price": "0",
+   "price": "0",
 
-  	"reduceOnly": false,
+   "reduceOnly": false,
 
-  	"side": "BUY",
+   "side": "BUY",
 
-  	"positionSide": "SHORT", 
+   "positionSide": "SHORT", 
 
-  	"status": "NEW",
+   "status": "NEW",
 
-  	"stopPrice": "9300",			   // please ignore when order type is TRAILING_STOP_MARKET
+   "stopPrice": "9300",      // please ignore when order type is TRAILING_STOP_MARKET
 
-  	"closePosition": false,  		   // if Close-All
+   "closePosition": false,       // if Close-All
 
-  	"symbol": "BTCUSD_200925",
+   "symbol": "BTCUSD_200925",
 
-  	"pair": "BTCUSD",
+   "pair": "BTCUSD",
 
-  	"timeInForce": "GTC",
+   "timeInForce": "GTC",
 
-  	"type": "TRAILING_STOP_MARKET",
+   "type": "TRAILING_STOP_MARKET",
 
-  	"origType": "TRAILING_STOP_MARKET",
+   "origType": "TRAILING_STOP_MARKET",
 
-  	"activatePrice": "9020",			// activation price, only return with TRAILING_STOP_MARKET order
+   "activatePrice": "9020",   // activation price, only return with TRAILING_STOP_MARKET order
 
-  	"priceRate": "0.3",					// callback rate, only return with TRAILING_STOP_MARKET order
+   "priceRate": "0.3",     // callback rate, only return with TRAILING_STOP_MARKET order
 
- 	"updateTime": 1566818724722,
+  "updateTime": 1566818724722,
 
- 	"workingType": "CONTRACT_PRICE",
+  "workingType": "CONTRACT_PRICE",
 
- 	"priceProtect": false,              // if conditional order trigger is protected
+  "priceProtect": false,              // if conditional order trigger is protected
 
-	"priceMatch": "NONE",               //price match mode
+ "priceMatch": "NONE",               //price match mode
 
- 	"selfTradePreventionMode": "NONE",  //self trading preventation mode
+  "selfTradePreventionMode": "NONE",  //self trading preventation mode
 
 }
 

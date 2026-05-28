@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:42:13.267Z
 ---
 # Query Portfolio Margin Negative Balance Interest History(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/Query-Portfolio-Margin-Negative-Balance-Interest-History
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/Query-Portfolio-Margin-Negative-Balance-Interest-History>
 
 # Query Portfolio Margin Negative Balance Interest History(USER\_DATA)
 
@@ -35,11 +35,11 @@ Query interest history of negative balance for portfolio margin.
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   Response in descending order
-> -   The max interval between startTime and endTime is 30 days. It is a MUST to ensure data correctness.
-> -   If `startTime` and `endTime` not sent, return records of the last 7 days by default
-> -   If `startTime` is sent and `endTime` is not sent, the records from `startTime` to the present will be returned; if `startTime` is more than 30 days ago, the records of the past 30 days will be returned.
-> -   If `startTime` is not sent and `endTime` is sent, the records of the 7 days before `endTime` is returned.
+> - Response in descending order
+> - The max interval between startTime and endTime is 30 days. It is a MUST to ensure data correctness.
+> - If `startTime` and `endTime` not sent, return records of the last 7 days by default
+> - If `startTime` is sent and `endTime` is not sent, the records from `startTime` to the present will be returned; if `startTime` is more than 30 days ago, the records of the past 30 days will be returned.
+> - If `startTime` is not sent and `endTime` is sent, the records of the 7 days before `endTime` is returned.
 
 ## Response Example
 

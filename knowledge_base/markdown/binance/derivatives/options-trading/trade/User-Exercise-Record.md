@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:00:18.324Z
 ---
 # User Exercise Record (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/trade/User-Exercise-Record
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/trade/User-Exercise-Record>
 
 # User Exercise Record (USER\_DATA)
 

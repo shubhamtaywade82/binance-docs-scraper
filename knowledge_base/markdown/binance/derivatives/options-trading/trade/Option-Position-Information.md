@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:00:15.167Z
 ---
 # Option Position Information (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/trade/Option-Position-Information
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/trade/Option-Position-Information>
 
 # Option Position Information (USER\_DATA)
 

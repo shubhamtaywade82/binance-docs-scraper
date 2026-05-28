@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:57:39.798Z
 ---
 # Top Trader Long/Short Ratio (Accounts)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Top-Long-Short-Account-Ratio
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Top-Long-Short-Account-Ratio>
 
 # Top Trader Long/Short Ratio (Accounts)
 
@@ -30,9 +30,9 @@ GET `/futures/data/topLongShortAccountRatio`
 | startTime | LONG | NO |  |
 | endTime | LONG | NO |  |
 
-> -   If startTime and endTime are not sent, the most recent data is returned.
-> -   Only the data of the latest 30 days is available.
-> -   IP rate limit 1000 requests/5min
+> - If startTime and endTime are not sent, the most recent data is returned.
+> - Only the data of the latest 30 days is available.
+> - IP rate limit 1000 requests/5min
 
 ## Response Example
 

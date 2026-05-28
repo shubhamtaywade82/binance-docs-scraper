@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:01:10.517Z
 ---
 # Historical Data
 
-> Source: https://dhanhq.co/docs/v2/historical-data/
+> Source: <https://dhanhq.co/docs/v2/historical-data/>
 
 # Historical Data
 
@@ -28,7 +28,6 @@ curl --request POST \
 --data '{}'
 ```
 
-  
 **Request Structure**
 
 ```json
@@ -43,7 +42,6 @@ curl --request POST \
 }
 ```
 
-  
 **Parameters**
 
 | Field | Field Type | Description |
@@ -63,7 +61,6 @@ _required_ | string | Start date of the desired range |
 | toDate  
 _required_ | string | End date of the desired range (non-inclusive) |
 
-  
 **Response Structure**
 
 ```json
@@ -249,7 +246,6 @@ Retrieve Open, High, Low, Close, OI & Volume of 1, 5, 15, 25 and 60 min candle f
     --data '{}'
 ```
 
-  
 **Request Structure**
 
 ```json
@@ -264,7 +260,6 @@ Retrieve Open, High, Low, Close, OI & Volume of 1, 5, 15, 25 and 60 min candle f
 }
 ```
 
-  
 **Parameters**
 
 | Field | Field Type | Description |
@@ -287,10 +282,8 @@ _required_ | string | End date of the desired range |
 
 Note
 
-  
 The data size is very large in this scenario and only 90 days of data can be polled at once for any of the above time intervals. It is recommended that you store this data at your end for day-to-day analysis.
 
-  
 **Response Structure**
 
 ```json
@@ -1178,5 +1171,4 @@ The data size is very large in this scenario and only 90 days of data can be pol
 | volume | int | Volume traded in the timeframe |
 | timestamp | int | Epoch timestamp |
 
-  
 Note: For description of enum values, refer [Annexure](https://dhanhq.co/docs/v2/annexure)

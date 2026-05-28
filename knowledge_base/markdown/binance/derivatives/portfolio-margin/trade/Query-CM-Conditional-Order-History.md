@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:52:35.794Z
 ---
 # Query CM Conditional Order History(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-CM-Conditional-Order-History
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Query-CM-Conditional-Order-History>
 
 # Query CM Conditional Order History(USER\_DATA)
 
@@ -36,12 +36,12 @@ GET `/papi/v1/cm/conditional/orderHistory`
 
 **Notes:**
 
-> -   Either `strategyId` or `newClientStrategyId` must be sent.
-> -   `NEW` orders will not be found.
-> -   These orders will not be found:
->     -   order status is `CANCELED` or `EXPIRED`, **AND**
->     -   order has NO filled trade, **AND**
->     -   created time + 7 days < current time
+> - Either `strategyId` or `newClientStrategyId` must be sent.
+> - `NEW` orders will not be found.
+> - These orders will not be found:
+>   - order status is `CANCELED` or `EXPIRED`, **AND**
+>   - order has NO filled trade, **AND**
+>   - created time + 7 days < current time
 
 ## Response Example
 

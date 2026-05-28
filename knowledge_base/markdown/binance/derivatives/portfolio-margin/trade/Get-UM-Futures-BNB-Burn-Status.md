@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:53:07.974Z
 ---
 # Get UM Futures BNB Burn Status (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Get-UM-Futures-BNB-Burn-Status
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/trade/Get-UM-Futures-BNB-Burn-Status>
 
 # Get UM Futures BNB Burn Status (USER\_DATA)
 

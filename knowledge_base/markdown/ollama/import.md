@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:05:04.494Z
 ---
 # Importing a Model - Ollama
 
-> Source: https://docs.ollama.com/import
+> Source: <https://docs.ollama.com/import>
 
 [Documentation
 
@@ -17,12 +17,12 @@ scraped_at: 2026-05-28T19:05:04.494Z
 ](/api/introduction)
 
 > ## Documentation Index
-> 
+>
 > Fetch the complete documentation index at: [https://docs.ollama.com/llms.txt](https://docs.ollama.com/llms.txt)
-> 
+>
 > Use this file to discover all available pages before exploring further.
 
-## 
+##
 
 [​
 
@@ -30,12 +30,12 @@ scraped_at: 2026-05-28T19:05:04.494Z
 
 Table of Contents
 
--   [Importing a Safetensors adapter](#Importing-a-fine-tuned-adapter-from-Safetensors-weights)
--   [Importing a Safetensors model](#Importing-a-model-from-Safetensors-weights)
--   [Importing a GGUF file](#Importing-a-GGUF-based-model-or-adapter)
--   [Sharing models on ollama.com](#Sharing-your-model-on-ollamacom)
+- [Importing a Safetensors adapter](#Importing-a-fine-tuned-adapter-from-Safetensors-weights)
+- [Importing a Safetensors model](#Importing-a-model-from-Safetensors-weights)
+- [Importing a GGUF file](#Importing-a-GGUF-based-model-or-adapter)
+- [Sharing models on ollama.com](#Sharing-your-model-on-ollamacom)
 
-## 
+##
 
 [​
 
@@ -64,17 +64,17 @@ ollama run my-model
 
 Ollama supports importing adapters based on several different model architectures including:
 
--   Llama (including Llama 2, Llama 3, Llama 3.1, and Llama 3.2);
--   Mistral (including Mistral 1, Mistral 2, and Mixtral); and
--   Gemma (including Gemma 1 and Gemma 2)
+- Llama (including Llama 2, Llama 3, Llama 3.1, and Llama 3.2);
+- Mistral (including Mistral 1, Mistral 2, and Mixtral); and
+- Gemma (including Gemma 1 and Gemma 2)
 
 You can create the adapter using a fine tuning framework or tool which can output adapters in the Safetensors format, such as:
 
--   Hugging Face [fine tuning framework](https://huggingface.co/docs/transformers/en/training)
--   [Unsloth](https://github.com/unslothai/unsloth)
--   [MLX](https://github.com/ml-explore/mlx)
+- Hugging Face [fine tuning framework](https://huggingface.co/docs/transformers/en/training)
+- [Unsloth](https://github.com/unslothai/unsloth)
+- [MLX](https://github.com/ml-explore/mlx)
 
-## 
+##
 
 [​
 
@@ -102,14 +102,14 @@ ollama run my-model
 
 Ollama supports importing models for several different architectures including:
 
--   Llama (including Llama 2, Llama 3, Llama 3.1, and Llama 3.2);
--   Mistral (including Mistral 1, Mistral 2, and Mixtral);
--   Gemma (including Gemma 1 and Gemma 2); and
--   Phi3
+- Llama (including Llama 2, Llama 3, Llama 3.1, and Llama 3.2);
+- Mistral (including Mistral 1, Mistral 2, and Mixtral);
+- Gemma (including Gemma 1 and Gemma 2); and
+- Phi3
 
 This includes importing foundation models as well as any fine tuned models which have been _fused_ with a foundation model.
 
-## 
+##
 
 [​
 
@@ -119,9 +119,9 @@ Importing a GGUF based model or adapter
 
 If you have a GGUF based model or adapter it is possible to import it into Ollama. You can obtain a GGUF model or adapter by:
 
--   converting a Safetensors model with the `convert_hf_to_gguf.py` from Llama.cpp;
--   converting a Safetensors adapter with the `convert_lora_to_gguf.py` from Llama.cpp; or
--   downloading a model or adapter from a place such as HuggingFace
+- converting a Safetensors model with the `convert_hf_to_gguf.py` from Llama.cpp;
+- converting a Safetensors adapter with the `convert_lora_to_gguf.py` from Llama.cpp; or
+- downloading a model or adapter from a place such as HuggingFace
 
 To import a GGUF model, create a `Modelfile` containing:
 
@@ -138,9 +138,9 @@ ADAPTER /path/to/file.gguf
 
 When importing a GGUF adapter, it’s important to use the same base model as the base model that the adapter was created with. You can use:
 
--   a model from Ollama
--   a GGUF file
--   a Safetensors based model
+- a model from Ollama
+- a GGUF file
+- a Safetensors based model
 
 Once you have created your `Modelfile`, use the `ollama create` command to build the model.
 
@@ -148,7 +148,7 @@ Once you have created your `Modelfile`, use the `ollama create` command to build
 ollama create my-model
 ```
 
-## 
+##
 
 [​
 
@@ -174,7 +174,7 @@ writing manifest
 success
 ```
 
-### 
+###
 
 [​
 
@@ -182,9 +182,9 @@ success
 
 Supported Quantizations
 
--   `q8_0`
+- `q8_0`
 
-#### 
+####
 
 [​
 
@@ -192,10 +192,10 @@ Supported Quantizations
 
 K-means Quantizations
 
--   `q4_K_S`
--   `q4_K_M`
+- `q4_K_S`
+- `q4_K_M`
 
-## 
+##
 
 [​
 
@@ -221,8 +221,6 @@ ollama run myuser/mymodel
 FAQ
 
 Next
-
-
 
 ](/faq)
 

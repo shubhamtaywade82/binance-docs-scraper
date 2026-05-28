@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:45:41.491Z
 ---
 # Portfolio Margin Pro Bankruptcy Loan Repay
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Classic-Portfolio-Margin-Bankruptcy-Loan-Repay
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Classic-Portfolio-Margin-Bankruptcy-Loan-Repay>
 
 # Portfolio Margin Pro Bankruptcy Loan Repay
 
@@ -32,7 +32,7 @@ POST `/sapi/v1/portfolio/repay`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
--   Please note that the API Key has enabled Spot & Margin Trading permissions to access this endpoint.
+- Please note that the API Key has enabled Spot & Margin Trading permissions to access this endpoint.
 
 ## Response Example
 

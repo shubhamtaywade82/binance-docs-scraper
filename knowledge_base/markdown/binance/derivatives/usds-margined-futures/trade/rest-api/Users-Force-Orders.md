@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:48:22.151Z
 ---
 # User's Force Orders (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Users-Force-Orders
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Users-Force-Orders>
 
 # User's Force Orders (USER\_DATA)
 
@@ -36,9 +36,9 @@ GET `/fapi/v1/forceOrders`
 | recvWindow | LONG | NO |  |
 | timestamp | LONG | YES |  |
 
-> -   If "autoCloseType" is not sent, orders with both of the types will be returned
-> -   If "startTime" is not sent, data within 7 days before "endTime" can be queried
-> -   Only support querying data in the past 90 days
+> - If "autoCloseType" is not sent, orders with both of the types will be returned
+> - If "startTime" is not sent, data within 7 days before "endTime" can be queried
+> - Only support querying data in the past 90 days
 
 ## Response Example
 
@@ -47,89 +47,89 @@ GET `/fapi/v1/forceOrders`
 
   {
 
-  	"orderId": 6071832819, 
+   "orderId": 6071832819, 
 
-  	"symbol": "BTCUSDT", 
+   "symbol": "BTCUSDT", 
 
-  	"status": "FILLED", 
+   "status": "FILLED", 
 
-  	"clientOrderId": "autoclose-1596107620040000020", 
+   "clientOrderId": "autoclose-1596107620040000020", 
 
-  	"price": "10871.09", 
+   "price": "10871.09", 
 
-  	"avgPrice": "10913.21000", 
+   "avgPrice": "10913.21000", 
 
-  	"origQty": "0.001", 
+   "origQty": "0.001", 
 
-  	"executedQty": "0.001", 
+   "executedQty": "0.001", 
 
-  	"cumQuote": "10.91321", 
+   "cumQuote": "10.91321", 
 
-  	"timeInForce": "IOC", 
+   "timeInForce": "IOC", 
 
-  	"type": "LIMIT", 
+   "type": "LIMIT", 
 
-  	"reduceOnly": false, 
+   "reduceOnly": false, 
 
-  	"closePosition": false, 
+   "closePosition": false, 
 
-  	"side": "SELL", 
+   "side": "SELL", 
 
-  	"positionSide": "BOTH", 
+   "positionSide": "BOTH", 
 
-  	"stopPrice": "0", 
+   "stopPrice": "0", 
 
-  	"workingType": "CONTRACT_PRICE", 
+   "workingType": "CONTRACT_PRICE", 
 
-  	"origType": "LIMIT", 
+   "origType": "LIMIT", 
 
-  	"time": 1596107620044, 
+   "time": 1596107620044, 
 
-  	"updateTime": 1596107620087
+   "updateTime": 1596107620087
 
   }
 
   {
 
-   	"orderId": 6072734303, 
+    "orderId": 6072734303, 
 
-   	"symbol": "BTCUSDT", 
+    "symbol": "BTCUSDT", 
 
-   	"status": "FILLED", 
+    "status": "FILLED", 
 
-   	"clientOrderId": "adl_autoclose", 
+    "clientOrderId": "adl_autoclose", 
 
-   	"price": "11023.14", 
+    "price": "11023.14", 
 
-   	"avgPrice": "10979.82000", 
+    "avgPrice": "10979.82000", 
 
-   	"origQty": "0.001", 
+    "origQty": "0.001", 
 
-   	"executedQty": "0.001", 
+    "executedQty": "0.001", 
 
-   	"cumQuote": "10.97982", 
+    "cumQuote": "10.97982", 
 
-   	"timeInForce": "GTC", 
+    "timeInForce": "GTC", 
 
-   	"type": "LIMIT", 
+    "type": "LIMIT", 
 
-   	"reduceOnly": false, 
+    "reduceOnly": false, 
 
-   	"closePosition": false, 
+    "closePosition": false, 
 
-   	"side": "BUY", 
+    "side": "BUY", 
 
-   	"positionSide": "SHORT", 
+    "positionSide": "SHORT", 
 
-   	"stopPrice": "0", 
+    "stopPrice": "0", 
 
-   	"workingType": "CONTRACT_PRICE", 
+    "workingType": "CONTRACT_PRICE", 
 
-   	"origType": "LIMIT", 
+    "origType": "LIMIT", 
 
-   	"time": 1596110725059, 
+    "time": 1596110725059, 
 
-   	"updateTime": 1596110725071
+    "updateTime": 1596110725071
 
   }
 

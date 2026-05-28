@@ -8,13 +8,13 @@ scraped_at: 2026-05-28T18:39:58.843Z
 ---
 # Event: pmProAccountUpdate
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/portfolio-margin-pro-user-data-stream/Event-pmProAccountUpdate
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/portfolio-margin-pro-user-data-stream/Event-pmProAccountUpdate>
 
 # Event: pmProAccountUpdate
 
 ## Event Description
 
--   The stream would be pushed every 5 seconds.
+- The stream would be pushed every 5 seconds.
 
 ## Event Name
 

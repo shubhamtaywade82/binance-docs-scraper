@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:41:44.286Z
 ---
 # CM Notional and Leverage Brackets(USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/account/CM-Notional-and-Leverage-Brackets
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/account/CM-Notional-and-Leverage-Brackets>
 
 # CM Notional and Leverage Brackets(USER\_DATA)
 

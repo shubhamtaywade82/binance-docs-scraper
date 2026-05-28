@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:46:07.209Z
 ---
 # Transfer LDUSDT/RWUSD for Portfolio Margin(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Transfer-LDUSDT-Portfolio-Margin
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Transfer-LDUSDT-Portfolio-Margin>
 
 # Transfer LDUSDT/RWUSD for Portfolio Margin(TRADE)
 

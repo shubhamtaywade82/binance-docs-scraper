@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:43:26.690Z
 ---
 # Query Order (USER_DATA)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/websocket-api/Query-Order
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/websocket-api/Query-Order>
 
 # Query Order (USER\_DATA)
 
@@ -16,9 +16,9 @@ scraped_at: 2026-05-28T18:43:26.690Z
 
 Check an order's status.
 
--   These orders will not be found:
-    -   order status is `CANCELED` or `EXPIRED` **AND** order has NO filled trade **AND** created time + 3 days < current time
-    -   order create time + 90 days < current time
+- These orders will not be found:
+  - order status is `CANCELED` or `EXPIRED` **AND** order has NO filled trade **AND** created time + 3 days < current time
+  - order create time + 90 days < current time
 
 ## Method
 
@@ -56,8 +56,8 @@ Check an order's status.
 
 Notes:
 
-> -   Either `orderId` or `origClientOrderId` must be sent.
-> -   `orderId` is self-increment for each specific `symbol`
+> - Either `orderId` or `origClientOrderId` must be sent.
+> - `orderId` is self-increment for each specific `symbol`
 
 ## Response Example
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:47:16.514Z
 ---
 # Event: Conditional Order Trade Update
 
-> Source: https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-Conditional-Order-Trade-Update
+> Source: <https://developers.binance.com/docs/derivatives/portfolio-margin/user-data-streams/Event-Conditional-Order-Trade-Update>
 
 # Event: Conditional Order Trade Update
 
@@ -18,39 +18,39 @@ When new order created, order status changed will push such event. event type is
 
 **Side**
 
--   BUY
--   SELL
+- BUY
+- SELL
 
 **Conditional Order Type**
 
--   STOP
--   TAKE\_PROFIT
--   STOP\_MARKET
--   TAKE\_PROFIT\_MARKET
--   TRAILING\_STOP\_MARKET
+- STOP
+- TAKE\_PROFIT
+- STOP\_MARKET
+- TAKE\_PROFIT\_MARKET
+- TRAILING\_STOP\_MARKET
 
 **Execution Type**
 
--   NEW
--   CANCELED
--   CALCULATED - Liquidation Execution
--   EXPIRED
--   TRADE
+- NEW
+- CANCELED
+- CALCULATED - Liquidation Execution
+- EXPIRED
+- TRADE
 
 **Order Status**
 
--   NEW
--   CANCELED
--   EXPIRED
--   TRIGGERED
--   FINISHED
+- NEW
+- CANCELED
+- EXPIRED
+- TRIGGERED
+- FINISHED
 
 **Time in force**
 
--   GTC
--   IOC
--   FOK
--   GTX
+- GTC
+- IOC
+- FOK
+- GTX
 
 ## Event Name
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:53:35.834Z
 ---
 # Event: Greek Update
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/user-data-streams/Event-Greek-Update
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/user-data-streams/Event-Greek-Update>
 
 # Event: Greek Update
 

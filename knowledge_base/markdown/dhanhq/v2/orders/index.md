@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T19:00:35.415Z
 ---
 # Orders
 
-> Source: https://dhanhq.co/docs/v2/orders/
+> Source: <https://dhanhq.co/docs/v2/orders/>
 
 # Orders
 
@@ -30,7 +30,6 @@ curl --request POST \
 --data '{Request JSON}'
 ```
 
-  
 **Request Structure**
 
 ```json
@@ -54,7 +53,6 @@ curl --request POST \
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -95,7 +93,6 @@ _conditionally required_ | float | Bracket Order Target Price change |
 | boStopLossValue  
 _conditionally required_ | float | Bracket Order Stop Loss Price change |
 
-  
 **Response Structure**
 
 ```
@@ -105,7 +102,6 @@ _conditionally required_ | float | Bracket Order Stop Loss Price change |
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -126,7 +122,6 @@ curl --request PUT \
 --data '{Request JSON}'
 ```
 
-  
 **Request Structure**
 
 ```json
@@ -143,7 +138,6 @@ curl --request PUT \
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | description |
@@ -169,7 +163,6 @@ _conditionally required_ | float | Price at which the order is triggered, in cas
 _required_ | enum string | Validity of Order  
 `DAY` `IOC` |
 
-  
 **Response Structure**
 
 ```json
@@ -179,7 +172,6 @@ _required_ | enum string | Validity of Order
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -199,12 +191,10 @@ curl --request DELETE \
 --header 'access-token: JWT'
 ```
 
-  
 **Request Structure**
 
 _No Body_
 
-  
 **Response Structure**
 
 ```json
@@ -214,7 +204,6 @@ _No Body_
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -235,7 +224,6 @@ curl --request POST \
 --data '{Request JSON}'
 ```
 
-  
 **Request Structure**
 
 ```json
@@ -259,7 +247,6 @@ curl --request POST \
 }
 ```
 
-  
 **Parameters**
 
 Exchange standard ID for each scrip. Refer [here](../instruments/)
@@ -313,12 +300,10 @@ curl --request GET \
 --header 'access-token: JWT'
 ```
 
-  
 **Request Structure**
 
 _No Body_
 
-  
 **Response Structure**
 
 ```
@@ -359,7 +344,6 @@ _No Body_
 ]
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -415,12 +399,10 @@ Users can retrieve the details and status of an order from the orderbook placed 
     --header 'access-token: JWT'
 ```
 
-  
 **Request Structure**
 
 _No Body_
 
-  
 **Response Structure**
 
 ```
@@ -459,7 +441,6 @@ _No Body_
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -515,12 +496,10 @@ In case the user has missed order id due to unforeseen reason, this API retrieve
     --header 'access-token: JWT'
 ```
 
-  
 **Request Structure**
 
 _No Body_
 
-  
 **Response Structure**
 
 ```
@@ -559,7 +538,6 @@ _No Body_
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -615,12 +593,10 @@ This API lets you retrieve an array of all trades executed in a day.
     --header 'access-token: JWT'
 ```
 
-  
 **Request Structure**
 
 _No Body_
 
-  
 **Response Structure**
 
 ```
@@ -648,7 +624,6 @@ _No Body_
 ]
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |
@@ -693,12 +668,10 @@ curl --request GET \
 dhan.get_trade_book(order_id)
 ```
 
-  
 **Request Structure**
 
 _No Body_
 
-  
 **Response Structure**
 
 ```json
@@ -724,7 +697,6 @@ _No Body_
 }
 ```
 
-  
 **Parameters**
 
 | Field | Type | Description |

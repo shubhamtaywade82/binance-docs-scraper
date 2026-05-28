@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:59:30.125Z
 ---
 # Index Price Streams
 
-> Source: https://developers.binance.com/docs/derivatives/options-trading/websocket-market-streams/Index-Price-Streams
+> Source: <https://developers.binance.com/docs/derivatives/options-trading/websocket-market-streams/Index-Price-Streams>
 
 # Index Price Streams
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:39:34.923Z
 ---
 # Multi-Assets Mode Asset Index
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Multi-Assets-Mode-Asset-Index
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Multi-Assets-Mode-Asset-Index>
 
 # Multi-Assets Mode Asset Index
 

@@ -8,7 +8,7 @@ scraped_at: 2026-05-28T18:48:33.048Z
 ---
 # Change Initial Leverage(TRADE)
 
-> Source: https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Change-Initial-Leverage
+> Source: <https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Change-Initial-Leverage>
 
 # Change Initial Leverage(TRADE)
 
