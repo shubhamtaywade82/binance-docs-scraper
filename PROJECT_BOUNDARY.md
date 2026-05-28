@@ -22,12 +22,14 @@ Problem solved:
 - Runtime execution metadata generation
 
 ### Supported exchanges (initial)
+
 - Binance
 - DhanHQ
 - CoinDCX
 - Delta Exchange
 
 ### Supported doc providers (initial)
+
 - Docusaurus
 - Swagger
 - Redoc
@@ -61,6 +63,7 @@ Those are separate downstream systems.
 ## Definition of Done (DoD)
 
 ### A) Documentation Ingestion
+
 - Crawl complete docs sites
 - Detect provider automatically
 - Ingest OpenAPI + AsyncAPI
@@ -69,13 +72,17 @@ Those are separate downstream systems.
 - Incremental sync without full recrawl
 
 ### B) Semantic Extraction
+
 REST:
+
 - endpoints, methods, auth, params, enums, rate limits, examples, constraints
 
 WebSocket:
+
 - channels, subscription formats, payload schemas, state models, heartbeat/reconnect, snapshot/reconciliation semantics
 
 ### C) Knowledge Base Generation
+
 Generate valid outputs under:
 
 ```text
@@ -92,6 +99,7 @@ docs/
 ```
 
 ### D) Semantic Registry
+
 - normalized endpoint IDs
 - websocket IDs
 - capability flags
@@ -100,19 +108,23 @@ docs/
 - semantic diff detection
 
 ### E) Runtime Compilation (metadata only)
+
 REST definitions:
+
 - validate flow
 - auth/sign flow
 - retry metadata
 - reconciliation metadata
 
 WebSocket definitions:
+
 - connect flow
 - subscribe flow
 - heartbeat flow
 - resync flow
 
 ### F) Reliability
+
 - crawl telemetry
 - failure persistence
 - integrity checks
@@ -121,13 +133,17 @@ WebSocket definitions:
 - content quality validation
 
 ### G) Queryability
+
 Deterministic queries available:
+
 - `findEndpoints()`
 - `validateOrder()`
 - `validateExecutionPolicy()`
 
 ### H) Exchange Coverage
+
 Support Binance, DhanHQ, CoinDCX
+
 - Delta Exchange across REST docs, WebSocket docs, OpenAPI, AsyncAPI via exchange adapters.
 
 ## Final Boundary

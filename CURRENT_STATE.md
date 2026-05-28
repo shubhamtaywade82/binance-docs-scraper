@@ -7,6 +7,7 @@ This repository is a **deterministic exchange knowledge compiler**.
 It compiles heterogeneous exchange API documentation/specifications into structured, queryable, runtime-safe exchange intelligence.
 
 It is **not**:
+
 - a trading bot
 - a live execution engine
 - a strategy engine
@@ -35,6 +36,7 @@ It is **not**:
 Use this compiler as upstream source-of-truth for downstream systems that need deterministic API understanding and safer integration behavior.
 
 ### Typical downstream consumers
+
 - trading runtimes
 - validator/tool generators
 - exchange integration services
@@ -59,10 +61,10 @@ This project ends at **compiled deterministic exchange intelligence**.
 Execution, strategy, risk, and autonomous orchestration are separate downstream projects.
 
 See also:
+
 - `PROJECT_BOUNDARY.md`
 - `RELEASE_STATUS.md`
 - `OUTPUT_STRUCTURE.md`
-
 
 ## Local Agent Fit
 

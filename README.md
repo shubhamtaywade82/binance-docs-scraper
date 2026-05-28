@@ -3,6 +3,7 @@
 A semantic exchange intelligence platform that converts exchange documentation, OpenAPI specs, AsyncAPI specs, and websocket protocols into executable runtime semantics for autonomous trading systems.
 
 ## Features
+
 - Multi-provider documentation ingestion
 - OpenAPI + AsyncAPI support
 - REST + WebSocket semantic extraction
@@ -16,6 +17,7 @@ A semantic exchange intelligence platform that converts exchange documentation, 
 - Runtime tool schema generation
 
 ## Supported Documentation Providers
+
 - Docusaurus
 - Swagger UI
 - Redoc
@@ -24,7 +26,9 @@ A semantic exchange intelligence platform that converts exchange documentation, 
 - Generic HTML documentation
 
 ## Supported Semantic Layers
+
 ### REST APIs
+
 - Endpoint extraction
 - Parameter normalization
 - Auth modeling
@@ -32,6 +36,7 @@ A semantic exchange intelligence platform that converts exchange documentation, 
 - Runtime compilation
 
 ### WebSocket APIs
+
 - Stream extraction
 - Event schema normalization
 - Stateful synchronization semantics
@@ -84,6 +89,7 @@ npm run scrape
 ```
 
 ### CoinDCX
+
 - Delta Exchange
 
 ```bash
@@ -135,6 +141,7 @@ docs/
 ## Documentation
 
 See `USAGE.md` for:
+
 - advanced ingestion
 - custom providers
 - runtime compilation
@@ -143,40 +150,33 @@ See `USAGE.md` for:
 - execution policy validation
 - multi-exchange workflows
 
-
 ## Live Runtime Classes
 
 The platform now includes initial live runtime skeletons for direct integration:
+
 - `src/runtime/live/BinanceRestClient.js`
 - `src/runtime/live/DepthStreamRuntime.js`
 - `src/runtime/state/OrderLifecycleStateMachine.js`
 
-
 For a detailed artifact map, see `OUTPUT_STRUCTURE.md`.
 
-
 Complete output architecture is documented in `OUTPUT_STRUCTURE.md`.
-
 
 ## Project Boundary and DoD
 
 See `PROJECT_BOUNDARY.md` for strict scope, non-goals, and Definition of Done.
 
-
 ## Release Status
 
 Current release status and maintenance scope are defined in `RELEASE_STATUS.md`.
-
 
 ## Current State
 
 For a concise project status and usage expectation, see `CURRENT_STATE.md`.
 
-
 ## Ollama / Local-Agent Integration
 
 For local-first agent grounding patterns, see `OLLAMA_INTEGRATION.md`.
-
 
 ## Retrieval Strategy
 
