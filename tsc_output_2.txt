@@ -1,0 +1,130 @@
+src/compiler/compileSpecsToRuntime.ts(3,34): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean '../specs/compilers/compileOpenApi.js'?
+src/compiler/compileSpecsToRuntime.ts(4,35): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean '../specs/compilers/compileAsyncApi.js'?
+src/exchanges/coindcx/adapter.ts(17,20): error TS2322: Type 'string | null' is not assignable to type 'string'.
+  Type 'null' is not assignable to type 'string'.
+src/exchanges/delta/adapter.ts(17,20): error TS2322: Type 'string | null' is not assignable to type 'string'.
+  Type 'null' is not assignable to type 'string'.
+src/normalizers/binanceRest.ts(36,33): error TS2345: Argument of type 'ApiParameter[]' is not assignable to parameter of type 'never[]'.
+  Type 'ApiParameter' is not assignable to type 'never'.
+src/registry/buildRegistry.ts(3,36): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean '../runtime/validators/validateRegistry.js'?
+src/registry/buildRegistry.ts(4,31): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean '../runtime/diffs/diffSchemas.js'?
+src/runtime/compiler/compileWebsocketRuntime.ts(2,34): error TS7006: Parameter 'schema' implicitly has an 'any' type.
+src/runtime/constraints/validateOrder.ts(2,26): error TS7031: Binding element 'registryNode' implicitly has an 'any' type.
+src/runtime/constraints/validateOrder.ts(2,40): error TS7031: Binding element 'intent' implicitly has an 'any' type.
+src/runtime/constraints/validateOrder.ts(7,9): error TS7034: Variable 'warnings' implicitly has type 'any[]' in some locations where its type cannot be determined.
+src/runtime/constraints/validateOrder.ts(11,81): error TS7005: Variable 'warnings' implicitly has an 'any[]' type.
+src/runtime/constraints/validateOrder.ts(15,83): error TS7005: Variable 'warnings' implicitly has an 'any[]' type.
+src/runtime/diffs/diffSchemas.ts(2,22): error TS7006: Parameter 'previousSchema' implicitly has an 'any' type.
+src/runtime/diffs/diffSchemas.ts(2,38): error TS7006: Parameter 'nextSchema' implicitly has an 'any' type.
+src/runtime/diffs/diffSchemas.ts(11,69): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/runtime/diffs/diffSchemas.ts(12,65): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/runtime/execution/buildExecutionRuntime.ts(3,39): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean '../compiler/compileRestExecutor.js'?
+src/runtime/execution/buildExecutionRuntime.ts(4,43): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean '../compiler/compileWebsocketRuntime.js'?
+src/runtime/execution/buildExecutionRuntime.ts(7,40): error TS7031: Binding element 'outputDir' implicitly has an 'any' type.
+src/runtime/execution/buildExecutionRuntime.ts(13,9): error TS7034: Variable 'restExecutors' implicitly has type 'any[]' in some locations where its type cannot be determined.
+src/runtime/execution/buildExecutionRuntime.ts(14,9): error TS7034: Variable 'websocketRuntimes' implicitly has type 'any[]' in some locations where its type cannot be determined.
+src/runtime/execution/buildExecutionRuntime.ts(20,34): error TS7006: Parameter 'endpoint' implicitly has an 'any' type.
+src/runtime/execution/buildExecutionRuntime.ts(26,32): error TS7006: Parameter 'schema' implicitly has an 'any' type.
+src/runtime/execution/buildExecutionRuntime.ts(34,32): error TS7006: Parameter 'schema' implicitly has an 'any' type.
+src/runtime/execution/buildExecutionRuntime.ts(38,68): error TS7005: Variable 'restExecutors' implicitly has an 'any[]' type.
+src/runtime/execution/buildExecutionRuntime.ts(39,72): error TS7005: Variable 'websocketRuntimes' implicitly has an 'any[]' type.
+src/runtime/live/BinanceRestClient.ts(6,17): error TS7031: Binding element 'signer' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(6,25): error TS7031: Binding element 'httpClient' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(6,37): error TS7031: Binding element 'orderValidator' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(6,53): error TS7031: Binding element 'policyValidator' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(7,10): error TS2551: Property 'signer' does not exist on type 'BinanceRestClient'. Did you mean 'sign'?
+src/runtime/live/BinanceRestClient.ts(8,10): error TS2339: Property 'httpClient' does not exist on type 'BinanceRestClient'.
+src/runtime/live/BinanceRestClient.ts(9,10): error TS2339: Property 'orderValidator' does not exist on type 'BinanceRestClient'.
+src/runtime/live/BinanceRestClient.ts(10,10): error TS2339: Property 'policyValidator' does not exist on type 'BinanceRestClient'.
+src/runtime/live/BinanceRestClient.ts(14,14): error TS7031: Binding element 'registryNode' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(14,28): error TS7031: Binding element 'intent' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(14,36): error TS7031: Binding element 'policy' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(15,29): error TS2339: Property 'orderValidator' does not exist on type 'BinanceRestClient'.
+src/runtime/live/BinanceRestClient.ts(17,17): error TS2339: Property 'policyValidator' does not exist on type 'BinanceRestClient'.
+src/runtime/live/BinanceRestClient.ts(21,10): error TS7031: Binding element 'method' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(21,18): error TS7031: Binding element 'path' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(22,17): error TS2551: Property 'signer' does not exist on type 'BinanceRestClient'. Did you mean 'sign'?
+src/runtime/live/BinanceRestClient.ts(26,19): error TS7031: Binding element 'method' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(26,27): error TS7031: Binding element 'path' implicitly has an 'any' type.
+src/runtime/live/BinanceRestClient.ts(27,17): error TS2339: Property 'httpClient' does not exist on type 'BinanceRestClient'.
+src/runtime/live/BinanceRestClient.ts(31,13): error TS7006: Parameter 'response' implicitly has an 'any' type.
+src/runtime/live/DepthStreamRuntime.ts(6,17): error TS7031: Binding element 'wsClient' implicitly has an 'any' type.
+src/runtime/live/DepthStreamRuntime.ts(6,27): error TS7031: Binding element 'snapshotFetcher' implicitly has an 'any' type.
+src/runtime/live/DepthStreamRuntime.ts(6,44): error TS7031: Binding element 'symbol' implicitly has an 'any' type.
+src/runtime/live/DepthStreamRuntime.ts(6,52): error TS7031: Binding element 'onUpdate' implicitly has an 'any' type.
+src/runtime/live/DepthStreamRuntime.ts(7,10): error TS2339: Property 'wsClient' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(8,10): error TS2339: Property 'snapshotFetcher' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(9,10): error TS2339: Property 'symbol' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(10,10): error TS2339: Property 'onUpdate' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(11,10): error TS2339: Property 'lastSequence' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(12,10): error TS2339: Property 'snapshot' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(16,10): error TS2339: Property 'snapshot' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(16,32): error TS2339: Property 'snapshotFetcher' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(16,53): error TS2339: Property 'symbol' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(17,10): error TS2339: Property 'lastSequence' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(17,30): error TS2339: Property 'snapshot' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(18,16): error TS2339: Property 'wsClient' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(19,16): error TS2339: Property 'wsClient' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(19,43): error TS2339: Property 'symbol' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(22,20): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/runtime/live/DepthStreamRuntime.ts(25,14): error TS2339: Property 'lastSequence' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(26,26): error TS2339: Property 'lastSequence' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(26,54): error TS2339: Property 'lastSequence' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(29,17): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/runtime/live/DepthStreamRuntime.ts(34,10): error TS2339: Property 'lastSequence' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(34,41): error TS2339: Property 'lastSequence' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(35,10): error TS2339: Property 'onUpdate' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(39,10): error TS2339: Property 'snapshot' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(39,32): error TS2339: Property 'snapshotFetcher' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(39,53): error TS2339: Property 'symbol' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(40,10): error TS2339: Property 'lastSequence' does not exist on type 'DepthStreamRuntime'.
+src/runtime/live/DepthStreamRuntime.ts(40,30): error TS2339: Property 'snapshot' does not exist on type 'DepthStreamRuntime'.
+src/runtime/normalization/normalizeParams.ts(15,7): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ BOOLEAN: string; BOOL: string; STRING: string; LONG: string; INT: string; INTEGER: string; DECIMAL: string; FLOAT: string; DOUBLE: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ BOOLEAN: string; BOOL: string; STRING: string; LONG: string; INT: string; INTEGER: string; DECIMAL: string; FLOAT: string; DOUBLE: string; }'.
+src/runtime/normalization/normalizeParams.ts(15,36): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ BOOLEAN: string; BOOL: string; STRING: string; LONG: string; INT: string; INTEGER: string; DECIMAL: string; FLOAT: string; DOUBLE: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ BOOLEAN: string; BOOL: string; STRING: string; LONG: string; INT: string; INTEGER: string; DECIMAL: string; FLOAT: string; DOUBLE: string; }'.
+src/runtime/normalization/normalizeParams.ts(27,17): error TS2339: Property 'markets' does not exist on type '{}'.
+src/runtime/normalization/normalizeParams.ts(30,17): error TS2339: Property 'orderTypes' does not exist on type '{}'.
+src/runtime/normalization/normalizeParams.ts(33,17): error TS2339: Property 'orderTypes' does not exist on type '{}'.
+src/runtime/normalization/normalizeParams.ts(42,17): error TS2339: Property 'name' does not exist on type 'never'.
+src/runtime/normalization/normalizeParams.ts(43,27): error TS2339: Property 'type' does not exist on type 'never'.
+src/runtime/normalization/normalizeParams.ts(43,39): error TS2339: Property 'name' does not exist on type 'never'.
+src/runtime/normalization/normalizeParams.ts(44,48): error TS2339: Property 'description' does not exist on type 'never'.
+src/runtime/normalization/normalizeParams.ts(45,41): error TS2339: Property 'name' does not exist on type 'never'.
+src/runtime/normalization/normalizeParams.ts(45,53): error TS2339: Property 'description' does not exist on type 'never'.
+src/runtime/normalization/normalizeParams.ts(46,24): error TS2339: Property 'description' does not exist on type 'never'.
+src/runtime/policies/validateExecutionPolicy.ts(2,36): error TS7031: Binding element 'intent' implicitly has an 'any' type.
+src/runtime/policies/validateExecutionPolicy.ts(2,44): error TS7031: Binding element 'policy' implicitly has an 'any' type.
+src/runtime/query/findEndpoints.ts(2,24): error TS7006: Parameter 'nodes' implicitly has an 'any' type.
+src/runtime/query/findEndpoints.ts(3,24): error TS7006: Parameter 'node' implicitly has an 'any' type.
+src/runtime/query/findEndpoints.ts(4,17): error TS2339: Property 'action' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(4,51): error TS2339: Property 'action' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(5,17): error TS2339: Property 'market' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(5,51): error TS2339: Property 'market' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(6,17): error TS2339: Property 'auth' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(6,47): error TS2339: Property 'auth' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(7,17): error TS2339: Property 'transport' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(7,57): error TS2339: Property 'transport' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(8,17): error TS2339: Property 'supportsTrailingStop' does not exist on type '{}'.
+src/runtime/query/findEndpoints.ts(9,17): error TS2339: Property 'supportsReduceOnly' does not exist on type '{}'.
+src/runtime/state/OrderLifecycleStateMachine.ts(13,14): error TS7006: Parameter 'current' implicitly has an 'any' type.
+src/runtime/state/OrderLifecycleStateMachine.ts(13,23): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/runtime/state/OrderLifecycleStateMachine.ts(16,10): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ NEW: string[]; PARTIALLY_FILLED: string[]; FILLED: never[]; CANCELED: never[]; REJECTED: never[]; EXPIRED: never[]; }'.
+src/runtime/tools/generateToolSchema.ts(2,29): error TS7006: Parameter 'endpoint' implicitly has an 'any' type.
+src/runtime/tools/generateToolSchema.ts(4,9): error TS7034: Variable 'required' implicitly has type 'any[]' in some locations where its type cannot be determined.
+src/runtime/tools/generateToolSchema.ts(6,40): error TS7006: Parameter 'param' implicitly has an 'any' type.
+src/runtime/tools/generateToolSchema.ts(7,5): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+src/runtime/tools/generateToolSchema.ts(20,7): error TS7005: Variable 'required' implicitly has an 'any[]' type.
+src/runtime/validators/validateRegistry.ts(2,27): error TS7006: Parameter 'nodes' implicitly has an 'any' type.
+src/runtime/validators/validateRegistry.ts(2,34): error TS7006: Parameter 'graph' implicitly has an 'any' type.
+src/runtime/validators/validateRegistry.ts(3,9): error TS7034: Variable 'errors' implicitly has type 'any[]' in some locations where its type cannot be determined.
+src/runtime/validators/validateRegistry.ts(6,18): error TS7006: Parameter 'node' implicitly has an 'any' type.
+src/runtime/validators/validateRegistry.ts(12,38): error TS7006: Parameter 'n' implicitly has an 'any' type.
+src/runtime/validators/validateRegistry.ts(13,40): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/runtime/validators/validateRegistry.ts(15,36): error TS7006: Parameter 'relatedId' implicitly has an 'any' type.
+src/runtime/validators/validateRegistry.ts(20,40): error TS7005: Variable 'errors' implicitly has an 'any[]' type.
+src/scrape.ts(21,27): error TS2305: Module '"cheerio"' has no exported member 'Element'.
+src/scrape.ts(178,67): error TS18046: 'err' is of type 'unknown'.
+src/scrape.ts(251,71): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/scrape.ts(347,16): error TS2345: Argument of type 'string | null' is not assignable to parameter of type 'string'.
+  Type 'null' is not assignable to type 'string'.

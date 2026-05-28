@@ -13,14 +13,14 @@ npm run scrape
 ### DhanHQ
 
 ```bash
-START_URL=https://dhanhq.co/docs/v2 \
+START_URL=https://dhanhq.co/docs/v2/ \
 EXCHANGE=dhanhq \
 npm run scrape
 ```
 
 ### CoinDCX
+
 - Delta Exchange
-- Ollama Docs
 
 ```bash
 START_URL=https://docs.coindcx.com \
@@ -31,6 +31,7 @@ npm run scrape
 ## 2. OpenAPI / AsyncAPI Ingestion
 
 The compiler automatically detects:
+
 - OpenAPI specs
 - AsyncAPI specs
 - Swagger UI
@@ -77,6 +78,7 @@ docs/_compiled/
 ## 4. WebSocket Semantic Modeling
 
 The platform extracts:
+
 - websocket endpoints
 - subscription schemas
 - payload schemas
@@ -106,8 +108,8 @@ docs/_registry/
 ```js
 const results = findEndpoints({
   action: 'create_order',
-  market: 'futures'
-})
+  market: 'futures',
+});
 ```
 
 ## 7. Runtime Validation
@@ -118,16 +120,16 @@ const results = findEndpoints({
 validateOrder({
   exchange: 'binance',
   market: 'usdm_futures',
-  reduceOnly: true
-})
+  reduceOnly: true,
+});
 ```
 
 ### Execution Policy Validation
 
 ```js
 validateExecutionPolicy({
-  maxLeverage: 5
-})
+  maxLeverage: 5,
+});
 ```
 
 ## 8. Schema Diff Detection
@@ -166,6 +168,7 @@ docs/_failures/
 ```
 
 Each failure includes:
+
 - URL
 - stack trace
 - retry count
@@ -225,6 +228,7 @@ npm run scrape
 ### Step 2 — Generate Runtime Intelligence
 
 Automatically produces:
+
 - semantic registry
 - websocket semantics
 - compiled runtimes
@@ -234,12 +238,13 @@ Automatically produces:
 ### Step 3 — Generate Runtime Tools
 
 ```js
-generateToolSchema(compiledEndpoint)
+generateToolSchema(compiledEndpoint);
 ```
 
 ### Step 4 — Integrate Into Trading Runtime
 
 Use compiled runtime semantics for:
+
 - execution validation
 - websocket synchronization
 - autonomous planners
@@ -252,7 +257,6 @@ Use compiled runtime semantics for:
 - If too many pages fail validation, reduce `MIN_MARKDOWN_LENGTH` temporarily and inspect selectors/provider detection.
 - Check `docs/_failures` and `docs/_runs` first when diagnosing crawl issues.
 
-
 ## 15. Execution Runtime Artifacts
 
 Generated runtime executors are written to:
@@ -264,9 +268,9 @@ docs/_execution_runtime/
 ```
 
 These artifacts are intended for direct trading runtime integration:
+
 - REST: `validate → sign → execute → retry → reconcile`
 - WebSocket: `connect → subscribe → heartbeat → reconcile → resync`
-
 
 ## 16. Live Runtime Integration (Next Step)
 
@@ -285,14 +289,13 @@ src/runtime/state/OrderLifecycleStateMachine.js
 ```
 
 These bridge semantic compilation to live execution behavior:
+
 - REST: validate → sign → execute → reconcile
 - WS: connect → subscribe → sequence validate → resync
-
 
 ## 17. Output Folder Reference
 
 See `OUTPUT_STRUCTURE.md` for a full artifact-by-artifact map from crawl outputs to execution runtime definitions.
-
 
 ## 18. Exchange/Raw/Markdown Separation
 
@@ -301,26 +304,21 @@ See `OUTPUT_STRUCTURE.md` for a full artifact-by-artifact map from crawl outputs
 - `docs/markdown/<exchange>/` clean markdown knowledge base
 - `_specs/openapi/` and `_specs/asyncapi/` separate spec classes
 
-
 ## 19. Scope Boundary
 
 Before extending architecture, check `PROJECT_BOUNDARY.md` to ensure changes remain in compiler scope and do not drift into live execution/risk/strategy systems.
-
 
 ## 20. Stabilization Mode
 
 This project is now in boundary-controlled stabilization mode. See `RELEASE_STATUS.md` and `PROJECT_BOUNDARY.md` before proposing new features.
 
-
 ## 21. Current State Reference
 
 If you are onboarding downstream consumers, start with `CURRENT_STATE.md` before integration work.
 
-
 ## 22. Ollama Integration
 
 See `OLLAMA_INTEGRATION.md` for retrieval priority, chunk embedding strategy, and deterministic lookup flow.
-
 
 ## 23. Retrieval Strategy
 

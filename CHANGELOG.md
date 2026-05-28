@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-05-27
+
 - Add incremental crawl state (`docs/_crawl_state.json`) using content SHA-256, ETag, and Last-Modified to skip unchanged pages.
 - Add content quality validation and reusable Playwright page worker pool.
 - Add semantic extraction outputs (`docs/_schemas`, `docs/_chunks`) and page kind classification.
@@ -41,5 +42,3 @@
 - Add `OLLAMA_INTEGRATION.md` describing deterministic local-agent grounding using `_compiled`/`_registry`/`_websocket` with `_chunks` as retrieval fallback.
 
 - Add `RETRIEVAL_STRATEGY.md` to formalize hybrid deterministic+semantic retrieval flow for Ollama/local-agent grounding.
-
-- Add Ollama docs adapter support (`EXCHANGE=ollama`) for compiling docs.ollama.com and API introduction pages through the same pipeline.
