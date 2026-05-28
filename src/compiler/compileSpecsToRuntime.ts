@@ -4,16 +4,16 @@ import { compileOpenApi } from '../specs/compilers/compileOpenApi.js';
 import { compileAsyncApi } from '../specs/compilers/compileAsyncApi.js';
 
 async function compileSpecsToRuntime({
-  outputDir,
+  kbDir,
   exchange,
   market = 'unknown',
 }: {
-  outputDir: string;
+  kbDir: string;
   exchange: string;
   market?: string;
 }) {
-  const specsDir = path.join(outputDir, '_specs');
-  const outDir = path.join(outputDir, '_compiled');
+  const specsDir = path.join(kbDir, 'specs');
+  const outDir = path.join(kbDir, 'compiled');
   await fs.ensureDir(outDir);
   if (!(await fs.pathExists(specsDir))) return { openapi: 0, asyncapi: 0 };
 

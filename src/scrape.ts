@@ -21,7 +21,8 @@ import { buildExecutionRuntime } from './runtime/execution/buildExecutionRuntime
 import type { CheerioAPI } from 'cheerio';
 import type { Adapter, RunStats } from './types.js';
 
-const OUTPUT_DIR = path.resolve(process.env.OUTPUT_DIR || 'docs');
+const KB_DIR = path.resolve(process.env.KB_DIR || 'knowledge_base');
+const BUILD_DIR = path.resolve(process.env.BUILD_DIR || '.build');
 const COMBINED_README = (process.env.COMBINED_README || 'true').toLowerCase() === 'true';
 const MAX_RETRIES = Number(process.env.MAX_RETRIES || 3);
 const REQUEST_DELAY_MS = Number(process.env.REQUEST_DELAY_MS || 750);
@@ -45,7 +46,6 @@ turndown.addRule('fencedCodeWithLanguage', {
 
 class ExchangeScraper {
   private adapter: Adapter;
-  private exchangeDir: string;
   private rawDir: string;
   private markdownDir: string;
   private assetDir: string;
@@ -79,17 +79,20 @@ class ExchangeScraper {
 
   constructor(public exchange: string) {
     this.adapter = getAdapter(exchange);
-    this.exchangeDir = path.join(OUTPUT_DIR, 'exchange', exchange);
-    this.rawDir = path.join(OUTPUT_DIR, 'raw', exchange);
-    this.markdownDir = path.join(OUTPUT_DIR, 'markdown', exchange);
-    this.assetDir = path.join(OUTPUT_DIR, '_assets');
-    this.metadataDir = path.join(OUTPUT_DIR, '_metadata');
-    this.schemasDir = path.join(OUTPUT_DIR, '_schemas');
-    this.chunksDir = path.join(OUTPUT_DIR, '_chunks');
-    this.failuresDir = path.join(OUTPUT_DIR, '_failures');
-    this.runsDir = path.join(OUTPUT_DIR, '_runs');
-    this.websocketDir = path.join(OUTPUT_DIR, '_websocket');
-    this.stateFile = path.join(OUTPUT_DIR, `_crawl_state_${exchange}.json`);
+    
+    // KB (Final Outputs)
+    this.markdownDir = path.join(KB_DIR, 'markdown', exchange);
+    this.assetDir = path.join(KB_DIR, '_assets');
+    this.chunksDir = path.join(KB_DIR, 'chunks');
+    this.websocketDir = path.join(KB_DIR, 'websocket');
+    
+    // Build Cache (Intermediate)
+    this.rawDir = path.join(BUILD_DIR, 'raw', exchange);
+    this.metadataDir = path.join(BUILD_DIR, 'metadata');
+    this.schemasDir = path.join(BUILD_DIR, 'schemas');
+    this.failuresDir = path.join(BUILD_DIR, 'failures');
+    this.runsDir = path.join(BUILD_DIR, 'runs');
+    this.stateFile = path.join(BUILD_DIR, `crawl_state_${exchange}.json`);
   }
 
   private buildOutputPath(url: string) {
@@ -334,23 +337,23 @@ class ExchangeScraper {
     });
 
     const pageSlug = slugify(new URL(url).pathname, { lower: true, strict: true });
-    const specArtifacts = await ingestSpecs({ outputDir: OUTPUT_DIR, pageSlug, discovered: discoveredSpecs });
+    const specArtifacts = await ingestSpecs({ kbDir: KB_DIR, pageSlug, discovered: discoveredSpecs });
 
     const metadata = {
       title,
       url,
       kind,
       provider,
-      output_path: path.relative(OUTPUT_DIR, outPath),
+      output_path: path.relative(KB_DIR, outPath),
       extracted_at: new Date().toISOString(),
-      assets: assets.map((a) => ({ remote: a.remote, local: path.relative(OUTPUT_DIR, a.local) })),
-      schema_path: path.relative(OUTPUT_DIR, schemaPath),
+      assets: assets.map((a) => ({ remote: a.remote, local: path.relative(KB_DIR, a.local) })),
+      schema_path: path.relative(BUILD_DIR, schemaPath),
       normalized_id:
         pageNormalizedSchemas
           .map((s) => s.id)
           .filter(Boolean)
           .join(',') || null,
-      chunks_path: path.relative(OUTPUT_DIR, chunksPath),
+      chunks_path: path.relative(KB_DIR, chunksPath),
       websocket_schemas: websocketSchemas.length > 0 ? websocketSchemas.length : 0,
       specs: { openapi: specArtifacts.openapi.length, asyncapi: specArtifacts.asyncapi.length },
     };
@@ -364,7 +367,7 @@ class ExchangeScraper {
       etag,
       lastModified,
       contentHash,
-      outputPath: path.relative(OUTPUT_DIR, outPath),
+      outputPath: path.relative(KB_DIR, outPath),
       updated_at: new Date().toISOString(),
     });
     this.pageResults.push({ title, url, outPath });
@@ -378,15 +381,15 @@ class ExchangeScraper {
     this.pageResults
       .sort((a, b) => a.outPath.localeCompare(b.outPath))
       .forEach((page) =>
-        lines.push(`- [${page.title}](./${path.relative(OUTPUT_DIR, page.outPath).replace(/\\/g, '/')})`),
+        lines.push(`- [${page.title}](./${path.relative(KB_DIR, page.outPath).replace(/\\/g, '/')})`),
       );
-    await fs.writeFile(path.join(OUTPUT_DIR, `README_${this.exchange}.md`), `${lines.join('\n')}\n`);
+    await fs.writeFile(path.join(KB_DIR, `README_${this.exchange}.md`), `${lines.join('\n')}\n`);
   }
 
   public async run(browserPages: Page[]) {
     console.log(`\nStarting scraper for exchange: ${this.exchange}`);
-    await fs.ensureDir(OUTPUT_DIR);
-    await fs.ensureDir(this.exchangeDir);
+    await fs.ensureDir(KB_DIR);
+    await fs.ensureDir(BUILD_DIR);
     await fs.ensureDir(this.rawDir);
     await fs.ensureDir(this.markdownDir);
     await this.loadState();
@@ -417,15 +420,15 @@ class ExchangeScraper {
       }
 
       if (COMBINED_README) await this.writeReadme();
-      await buildRegistry({ outputDir: OUTPUT_DIR, normalizedRecords: this.normalizedSchemas });
+      await buildRegistry({ kbDir: KB_DIR, normalizedRecords: this.normalizedSchemas });
       const compiledSummary = await compileSpecsToRuntime({
-        outputDir: OUTPUT_DIR,
+        kbDir: KB_DIR,
         exchange: this.exchange,
         market: 'usdm_futures', // Defaults; can be dynamic later if needed
       });
       this.runStats.compiledOpenApi = compiledSummary.openapi;
       this.runStats.compiledAsyncApi = compiledSummary.asyncapi;
-      const executionSummary = await buildExecutionRuntime({ outputDir: OUTPUT_DIR });
+      const executionSummary = await buildExecutionRuntime({ kbDir: KB_DIR });
       this.runStats.runtimeRestExecutors = executionSummary.restExecutors;
       this.runStats.runtimeWebsocketExecutors = executionSummary.websocketRuntimes;
       await this.saveState();

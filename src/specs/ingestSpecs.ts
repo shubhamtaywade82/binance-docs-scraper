@@ -21,15 +21,15 @@ async function fetchJsonOrText(url: string) {
 
 /** Ingest discovered OpenAPI/AsyncAPI specs for semantic-first compilation. */
 async function ingestSpecs({
-  outputDir,
+  kbDir,
   pageSlug,
   discovered,
 }: {
-  outputDir: string;
+  kbDir: string;
   pageSlug: string;
   discovered: { openapi?: string[]; asyncapi?: string[] };
 }) {
-  const outDir = path.join(outputDir, '_specs');
+  const outDir = path.join(kbDir, 'specs');
   const openapiDir = path.join(outDir, 'openapi');
   const asyncapiDir = path.join(outDir, 'asyncapi');
   await fs.ensureDir(openapiDir);
