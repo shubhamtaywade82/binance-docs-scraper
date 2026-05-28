@@ -2,7 +2,7 @@
 
 ## Status
 
-**Universal Exchange Knowledge Compiler: v1.0 COMPLETE**
+### Universal Exchange Knowledge Compiler: v1.0 COMPLETE
 
 Completion is measured against `PROJECT_BOUNDARY.md` Definition of Done and is satisfied.
 
@@ -11,6 +11,7 @@ Completion is measured against `PROJECT_BOUNDARY.md` Definition of Done and is s
 This repository is now in **stabilization mode**.
 
 Allowed changes:
+
 - bug fixes
 - provider compatibility fixes
 - regression fixes
@@ -18,6 +19,7 @@ Allowed changes:
 - dependency/security updates
 
 Out-of-scope changes (move to downstream projects):
+
 - live execution engine
 - strategy/risk engine
 - autonomous planner runtime
@@ -28,15 +30,17 @@ Out-of-scope changes (move to downstream projects):
 
 Recommended next project:
 
-**Exchange Execution Runtime**
+### Exchange Execution Runtime
 
 Consumes compiler outputs:
+
 - `docs/_compiled/`
 - `docs/_registry/`
 - `docs/_execution_runtime/`
 - `docs/_websocket/`
 
 Builds:
+
 - authenticated exchange clients
 - websocket synchronization/reconciliation
 - deterministic order lifecycle runtime

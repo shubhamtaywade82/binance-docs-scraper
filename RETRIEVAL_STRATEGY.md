@@ -14,15 +14,15 @@ Use a hybrid retrieval stack:
 
 ## Retrieval Priority by Output Folder
 
-| Priority | Folder | Role |
-|---|---|---|
-| Tier 1 | `docs/_compiled/` | deterministic endpoint/runtime facts |
-| Tier 1 | `docs/_registry/` | capabilities, constraints, relationships |
-| Tier 1 | `docs/_execution_runtime/` | execution flow grounding |
-| Tier 1 | `docs/_websocket/` | stream/state synchronization semantics |
-| Tier 2 | `docs/_chunks/` | semantic explanation/examples |
-| Tier 2 | `docs/_metadata/` | filter dimensions (exchange/kind/provider) |
-| Tier 3 | `docs/markdown/` | fallback prose context |
+| Priority | Folder                     | Role                                       |
+| -------- | -------------------------- | ------------------------------------------ |
+| Tier 1   | `docs/_compiled/`          | deterministic endpoint/runtime facts       |
+| Tier 1   | `docs/_registry/`          | capabilities, constraints, relationships   |
+| Tier 1   | `docs/_execution_runtime/` | execution flow grounding                   |
+| Tier 1   | `docs/_websocket/`         | stream/state synchronization semantics     |
+| Tier 2   | `docs/_chunks/`            | semantic explanation/examples              |
+| Tier 2   | `docs/_metadata/`          | filter dimensions (exchange/kind/provider) |
+| Tier 3   | `docs/markdown/`           | fallback prose context                     |
 
 ## Query-Time Flow
 
@@ -76,6 +76,7 @@ This retrieval strategy is downstream consumption guidance.
 It does not expand this compiler project into execution/risk/strategy runtimes.
 
 See:
+
 - `PROJECT_BOUNDARY.md`
 - `CURRENT_STATE.md`
 - `OLLAMA_INTEGRATION.md`

@@ -73,9 +73,9 @@ Then answer with grounded constraints (no raw-doc guessing).
 This integration uses compiler outputs as inputs for downstream runtimes. It does **not** turn this project into a live execution engine.
 
 See:
+
 - `PROJECT_BOUNDARY.md`
 - `RELEASE_STATUS.md`
 - `CURRENT_STATE.md`
-
 
 For detailed query-time retrieval contract and priority tiers, see `RETRIEVAL_STRATEGY.md`.
