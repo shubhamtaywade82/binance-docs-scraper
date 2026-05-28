@@ -138,3 +138,11 @@ See `USAGE.md` for:
 - semantic registry usage
 - execution policy validation
 - multi-exchange workflows
+
+
+## Live Runtime Classes
+
+The platform now includes initial live runtime skeletons for direct integration:
+- `src/runtime/live/BinanceRestClient.js`
+- `src/runtime/live/DepthStreamRuntime.js`
+- `src/runtime/state/OrderLifecycleStateMachine.js`

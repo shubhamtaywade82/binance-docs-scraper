@@ -21,3 +21,5 @@
 - Split documentation into high-level `README.md` and operational `USAGE.md` to keep platform architecture and workflows clearly separated.
 
 - Add execution runtime compiler that generates REST/WebSocket executor artifacts in `docs/_execution_runtime` for direct live trading runtime integration.
+
+- Add live runtime integration skeletons (REST executor client, websocket depth runtime, order lifecycle state machine) to bridge compiled semantics to deterministic execution behavior.

@@ -264,3 +264,24 @@ docs/_execution_runtime/
 These artifacts are intended for direct trading runtime integration:
 - REST: `validate → sign → execute → retry → reconcile`
 - WebSocket: `connect → subscribe → heartbeat → reconcile → resync`
+
+
+## 16. Live Runtime Integration (Next Step)
+
+Use generated runtime artifacts with concrete live runtime classes:
+
+```text
+src/runtime/live/
+├── BinanceRestClient.js
+└── DepthStreamRuntime.js
+```
+
+Order lifecycle reconciliation state machine:
+
+```text
+src/runtime/state/OrderLifecycleStateMachine.js
+```
+
+These bridge semantic compilation to live execution behavior:
+- REST: validate → sign → execute → reconcile
+- WS: connect → subscribe → sequence validate → resync
