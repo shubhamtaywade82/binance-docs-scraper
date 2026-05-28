@@ -2,18 +2,19 @@ import fs from 'fs-extra';
 import path from 'path';
 import { compileOpenApi } from '../specs/compilers/compileOpenApi.js';
 import { compileAsyncApi } from '../specs/compilers/compileAsyncApi.js';
+import yaml from 'js-yaml';
 
 async function compileSpecsToRuntime({
-  outputDir,
+  kbDir,
   exchange,
   market = 'unknown',
 }: {
-  outputDir: string;
+  kbDir: string;
   exchange: string;
   market?: string;
 }) {
-  const specsDir = path.join(outputDir, '_specs');
-  const outDir = path.join(outputDir, '_compiled');
+  const specsDir = path.join(kbDir, 'specs');
+  const outDir = path.join(kbDir, 'compiled');
   await fs.ensureDir(outDir);
   if (!(await fs.pathExists(specsDir))) return { openapi: 0, asyncapi: 0 };
 
@@ -30,16 +31,28 @@ async function compileSpecsToRuntime({
   for (const file of files) {
     const full = path.join(specsDir, file);
     const blob = await fs.readJson(full);
+    let doc = typeof blob.body === 'object' ? blob.body : null;
+    if (!doc && typeof blob.body === 'string') {
+      try {
+        doc = JSON.parse(blob.body);
+      } catch {
+        try {
+          doc = yaml.load(blob.body);
+        } catch {
+          // ignore
+        }
+      }
+    }
+
     if (blob.url?.toLowerCase().includes('asyncapi')) {
-      const compiled = compileAsyncApi({ exchange, market, doc: blob.body });
-      const name = file.replace(`${pageSlug}-openapi-`, '').replace('.json', '').replace(/-/g, '/');
+      const compiled = compileAsyncApi({ exchange, market, doc });
+      const name = file.split('/').pop()?.replace('.json', '').replace(/-/g, '/') || 'ws';
       await fs.writeJson(path.join(outDir, `${name}-compiled-ws.json`), compiled, { spaces: 2 });
       asyncapiCount += compiled.length;
     } else {
-      const doc = typeof blob.body === 'object' ? blob.body : null;
       const compiled = compileOpenApi({ exchange, market, doc });
       await fs.writeJson(
-        path.join(outDir, `${file.replace(/[\/]/g, '-').replace('.json', '')}-compiled-rest.json`),
+        path.join(outDir, `${file.replaceAll('/', '-').replace('.json', '')}-compiled-rest.json`),
         compiled,
         { spaces: 2 },
       );

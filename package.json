@@ -1,8 +1,8 @@
 {
-  "name": "binance-docs-scraper",
+  "name": "universal-api-semantic-compiler",
   "version": "1.0.0",
   "type": "module",
-  "description": "Recursive Binance USDⓈ-M Futures docs scraper to Markdown",
+  "description": "Deterministic API docs/spec compiler to runtime-safe semantic artifacts",
   "main": "src/scrape.ts",
   "scripts": {
     "scrape": "tsx src/scrape.ts",
@@ -14,6 +14,12 @@
     "format": "prettier --write \"src/**/*.ts\" \"**/*.md\""
   },
   "keywords": [
+    "api",
+    "compiler",
+    "openapi",
+    "asyncapi",
+    "semantic",
+    "runtime",
     "binance",
     "docs",
     "scraper",

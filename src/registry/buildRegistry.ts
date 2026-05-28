@@ -4,8 +4,8 @@ import { validateRegistry } from '../runtime/validators/validateRegistry.js';
 import { diffSchemas } from '../runtime/diffs/diffSchemas.js';
 
 /** Build semantic registry files from normalized schemas. */
-async function buildRegistry({ outputDir, normalizedRecords }: { outputDir: string; normalizedRecords: any[] }) {
-  const registryDir = path.join(outputDir, '_registry');
+async function buildRegistry({ kbDir, normalizedRecords }: { kbDir: string; normalizedRecords: any[] }) {
+  const registryDir = path.join(kbDir, 'registry');
   const endpointsDir = path.join(registryDir, 'endpoints');
   const relationshipsDir = path.join(registryDir, 'relationships');
   const diffsDir = path.join(registryDir, 'diffs');

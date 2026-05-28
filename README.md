@@ -1,4 +1,4 @@
-# Universal Exchange Semantic Compiler
+# Universal API Semantic Compiler
 
 A semantic exchange intelligence platform that converts exchange documentation, OpenAPI specs, AsyncAPI specs, and websocket protocols into executable runtime semantics for autonomous trading systems.
 
@@ -91,6 +91,7 @@ npm run scrape
 ### CoinDCX
 
 - Delta Exchange
+- Ollama Docs
 
 ```bash
 START_URL=https://docs.coindcx.com \

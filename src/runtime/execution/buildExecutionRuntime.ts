@@ -4,10 +4,10 @@ import { compileRestExecutor } from '../compiler/compileRestExecutor.js';
 import { compileWebsocketRuntime } from '../compiler/compileWebsocketRuntime.js';
 
 /** Build executable runtime artifacts from compiled REST/WS semantics. */
-async function buildExecutionRuntime({ outputDir }: { outputDir: string }) {
-  const compiledDir = path.join(outputDir, '_compiled');
-  const websocketDir = path.join(outputDir, '_websocket');
-  const runtimeDir = path.join(outputDir, '_execution_runtime');
+async function buildExecutionRuntime({ kbDir }: { kbDir: string }) {
+  const compiledDir = path.join(kbDir, 'compiled');
+  const websocketDir = path.join(kbDir, 'websocket');
+  const runtimeDir = path.join(kbDir, 'execution_runtime');
   await fs.ensureDir(runtimeDir);
 
   const restExecutors: any[] = [];
