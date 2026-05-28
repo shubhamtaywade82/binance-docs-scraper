@@ -43,10 +43,11 @@ turndown.addRule('fencedCodeWithLanguage', {
     
     if (code.trim().startsWith('{') || code.trim().startsWith('[')) {
       try {
-        code = JSON.stringify(JSON.parse(code), null, 2);
+        const cleanCode = code.replace(/\/\/.*$/gm, '').trim();
+        code = JSON.stringify(JSON.parse(cleanCode), null, 2);
         if (!lang) lang = 'json';
       } catch {
-        // ignore invalid json
+        // ignore invalid json, preserve formatting with comments
       }
     }
     
@@ -250,6 +251,11 @@ class ExchangeScraper {
     await fs.ensureDir(path.dirname(rawPath));
     await fs.writeFile(rawPath, html);
     const $ = cheerio.load(html);
+
+    // Preserve newlines inside code blocks for sites that use <br> for formatting
+    $('pre br').replaceWith('\n');
+    $('.token-line').append('\n');
+
     const links = this.adapter.discoverLinks($, url);
     const provider = detectProvider(html);
     const discoveredSpecs = discoverSpecUrls($, url);
