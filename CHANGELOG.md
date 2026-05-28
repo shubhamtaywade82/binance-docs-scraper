@@ -17,3 +17,5 @@
 - Add provider detection (Swagger/Redoc/Docusaurus/Mintlify/GitBook/custom) and spec-first ingestion discovery for OpenAPI/AsyncAPI with persisted `_specs` artifacts.
 
 - Add spec runtime compiler to transform discovered OpenAPI/AsyncAPI artifacts into compiled executable REST/WS runtime types under `docs/_compiled`.
+
+- Split documentation into high-level `README.md` and operational `USAGE.md` to keep platform architecture and workflows clearly separated.

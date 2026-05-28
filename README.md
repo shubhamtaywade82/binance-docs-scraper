@@ -1,37 +1,139 @@
-# binance-docs-scraper
+# Universal Exchange Semantic Compiler
 
-Deterministic Binance docs synchronization + semantic extraction pipeline for USDⓈ-M Futures pages.
+A semantic exchange intelligence platform that converts exchange documentation, OpenAPI specs, AsyncAPI specs, and websocket protocols into executable runtime semantics for autonomous trading systems.
 
 ## Features
-- Canonical URL normalization and queue-based bounded-concurrency crawling.
-- Stateful incremental sync with persisted hash/etag/last-modified crawl state.
-- Reusable Playwright page workers (pool) for lower churn.
-- Aggressive DOM sanitization + deterministic content extraction.
-- GFM markdown output with code-fence language preservation + frontmatter.
-- Semantic outputs: page classification, raw+normalized API schema JSON, chunk JSON.
-- Semantic registry compiler for endpoint/capability/relationship graph outputs.
-- Runtime safety primitives: order constraint checks, registry integrity validation, semantic diffs, query helpers.
-- Asset mirroring, failure persistence, and crawl-run observability manifests.
+- Multi-provider documentation ingestion
+- OpenAPI + AsyncAPI support
+- REST + WebSocket semantic extraction
+- Typed runtime compilation
+- Exchange capability normalization
+- Constraint-aware runtime validation
+- Semantic relationship graph generation
+- Registry integrity validation
+- Drift detection and schema diffing
+- Incremental crawl + synchronization
+- Runtime tool schema generation
 
-## Output
-- `docs/**/*.md` — normalized markdown pages
-- `docs/_metadata/*.json` — per-page metadata
-- `docs/_schemas/*.json` — raw + normalized endpoint schemas
-- `docs/_chunks/*.json` — semantic chunks for embedding/retrieval
-- `docs/_registry/endpoints/*.json` — exchange semantic registry nodes
-- `docs/_registry/relationships/graph.json` — endpoint relationship graph
-- `docs/_registry/diffs/*.json` — semantic schema diffs
-- `docs/_registry/integrity.json` — graph integrity validation report
-- `docs/_crawl_state.json` — incremental sync state
-- `docs/_runs/crawl-run-*.json` — crawl observability summaries
-- `docs/_failures/*.json` — persistent failure records
+## Supported Documentation Providers
+- Docusaurus
+- Swagger UI
+- Redoc
+- Mintlify
+- GitBook
+- Generic HTML documentation
 
-- Runtime typed parameter semantics and tool schema generation primitives.
+## Supported Semantic Layers
+### REST APIs
+- Endpoint extraction
+- Parameter normalization
+- Auth modeling
+- Constraint validation
+- Runtime compilation
 
-- `EXCHANGE` (`binance`, `dhanhq`, `coindcx`)
+### WebSocket APIs
+- Stream extraction
+- Event schema normalization
+- Stateful synchronization semantics
+- Snapshot/reconciliation modeling
+- Reliability validation
 
-- `docs/_websocket/*.json` — normalized websocket stream/state schemas
+## Architecture
 
-- `docs/_specs/*.json` — discovered OpenAPI/AsyncAPI spec artifacts (preferred over HTML fallback)
+```text
+Docs / Specs
+      ↓
+Provider Detection
+      ↓
+Spec Discovery
+      ↓
+Semantic Extraction
+      ↓
+Normalization
+      ↓
+Runtime Compilation
+      ↓
+Constraint Validation
+      ↓
+Executable Exchange Intelligence
+```
 
-- `docs/_compiled/*.json` — compiled runtime types from discovered OpenAPI/AsyncAPI specs
+## Installation
+
+```bash
+npm install
+npx playwright install chromium
+```
+
+## Quick Start
+
+### Binance
+
+```bash
+START_URL=https://developers.binance.com/docs/derivatives/change-log \
+EXCHANGE=binance \
+npm run scrape
+```
+
+### DhanHQ
+
+```bash
+START_URL=https://dhanhq.co/docs/v2 \
+EXCHANGE=dhanhq \
+npm run scrape
+```
+
+### CoinDCX
+
+```bash
+START_URL=https://docs.coindcx.com \
+EXCHANGE=coindcx \
+npm run scrape
+```
+
+## Outputs
+
+```text
+docs/
+├── _compiled/
+├── _schemas/
+├── _registry/
+├── _websocket/
+├── _specs/
+├── _chunks/
+├── _metadata/
+├── _runs/
+└── _failures/
+```
+
+## Core Runtime Outputs
+
+### Compiled REST Runtime
+
+```json
+{
+  "id": "binance.futures.create_order",
+  "method": "POST",
+  "path": "/fapi/v1/order"
+}
+```
+
+### Compiled WebSocket Runtime
+
+```json
+{
+  "channel": "depth",
+  "stateModel": "incremental_orderbook"
+}
+```
+
+## Documentation
+
+See `USAGE.md` for:
+- advanced ingestion
+- custom providers
+- runtime compilation
+- websocket semantics
+- semantic registry usage
+- execution policy validation
+- multi-exchange workflows

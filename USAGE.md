@@ -1,0 +1,251 @@
+# Usage Guide
+
+## 1. Basic Documentation Ingestion
+
+### Binance Futures
+
+```bash
+START_URL=https://developers.binance.com/docs/derivatives \
+EXCHANGE=binance \
+npm run scrape
+```
+
+### DhanHQ
+
+```bash
+START_URL=https://dhanhq.co/docs/v2 \
+EXCHANGE=dhanhq \
+npm run scrape
+```
+
+### CoinDCX
+
+```bash
+START_URL=https://docs.coindcx.com \
+EXCHANGE=coindcx \
+npm run scrape
+```
+
+## 2. OpenAPI / AsyncAPI Ingestion
+
+The compiler automatically detects:
+- OpenAPI specs
+- AsyncAPI specs
+- Swagger UI
+- Redoc
+- embedded spec references
+
+Generated specs are written to:
+
+```text
+docs/_specs/
+```
+
+Compiled runtime artifacts are written to:
+
+```text
+docs/_compiled/
+```
+
+## 3. Runtime Compilation
+
+### OpenAPI Runtime Compilation
+
+```json
+{
+  "id": "binance.futures.create_order",
+  "method": "POST",
+  "path": "/fapi/v1/order",
+  "inputSchema": {},
+  "outputSchema": {}
+}
+```
+
+### AsyncAPI Runtime Compilation
+
+```json
+{
+  "channel": "depth",
+  "publish": {},
+  "subscribe": {},
+  "stateModel": "incremental_orderbook"
+}
+```
+
+## 4. WebSocket Semantic Modeling
+
+The platform extracts:
+- websocket endpoints
+- subscription schemas
+- payload schemas
+- sequence semantics
+- snapshot requirements
+- heartbeat semantics
+- reconnect requirements
+
+Generated websocket artifacts:
+
+```text
+docs/_websocket/
+```
+
+## 5. Registry Outputs
+
+```text
+docs/_registry/
+├── endpoints/
+├── relationships/
+├── diffs/
+└── integrity.json
+```
+
+## 6. Semantic Querying
+
+```js
+const results = findEndpoints({
+  action: 'create_order',
+  market: 'futures'
+})
+```
+
+## 7. Runtime Validation
+
+### Order Validation
+
+```js
+validateOrder({
+  exchange: 'binance',
+  market: 'usdm_futures',
+  reduceOnly: true
+})
+```
+
+### Execution Policy Validation
+
+```js
+validateExecutionPolicy({
+  maxLeverage: 5
+})
+```
+
+## 8. Schema Diff Detection
+
+Generated diffs:
+
+```text
+docs/_registry/diffs/
+```
+
+Example:
+
+```json
+{
+  "type": "parameter_added",
+  "parameter": "priceMatch"
+}
+```
+
+## 9. Incremental Crawling
+
+The platform stores crawl state in:
+
+```text
+docs/_crawl_state.json
+```
+
+Unchanged pages are skipped automatically.
+
+## 10. Failure Tracking
+
+Failures are persisted under:
+
+```text
+docs/_failures/
+```
+
+Each failure includes:
+- URL
+- stack trace
+- retry count
+- timestamp
+
+## 11. Run Telemetry
+
+Run metrics are written to:
+
+```text
+docs/_runs/
+```
+
+Example:
+
+```json
+{
+  "pagesVisited": 120,
+  "pagesWritten": 98,
+  "compiledOpenApi": 44,
+  "compiledAsyncApi": 12
+}
+```
+
+## 12. Multi-Exchange Architecture
+
+Exchange-specific adapters:
+
+```text
+src/exchanges/
+├── binance/
+├── dhanhq/
+├── coindcx/
+└── shared/
+```
+
+Provider-specific adapters (current + planned):
+
+```text
+src/providers/
+├── detectProvider.js
+├── swagger/
+├── redoc/
+├── docusaurus/
+├── mintlify/
+└── gitbook/
+```
+
+## 13. Recommended Workflow
+
+### Step 1 — Ingest Documentation
+
+```bash
+npm run scrape
+```
+
+### Step 2 — Generate Runtime Intelligence
+
+Automatically produces:
+- semantic registry
+- websocket semantics
+- compiled runtimes
+- constraints
+- relationships
+
+### Step 3 — Generate Runtime Tools
+
+```js
+generateToolSchema(compiledEndpoint)
+```
+
+### Step 4 — Integrate Into Trading Runtime
+
+Use compiled runtime semantics for:
+- execution validation
+- websocket synchronization
+- autonomous planners
+- exchange capability checks
+
+## 14. Troubleshooting
+
+- If no pages are discovered, verify `START_URL` and `ALLOWED_PATH_PREFIX`.
+- If runtime compiled outputs are empty, inspect `docs/_specs` for discovered spec artifacts.
+- If too many pages fail validation, reduce `MIN_MARKDOWN_LENGTH` temporarily and inspect selectors/provider detection.
+- Check `docs/_failures` and `docs/_runs` first when diagnosing crawl issues.
