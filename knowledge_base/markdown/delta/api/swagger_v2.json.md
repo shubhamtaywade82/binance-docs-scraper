@@ -1,0 +1,5768 @@
+---
+title: "Untitled"
+url: https://docs.delta.exchange/api/swagger_v2.json
+kind: websocket_stream
+category: docs
+source: delta
+scraped_at: 2026-05-28T19:02:18.382Z
+---
+# Untitled
+
+> Source: https://docs.delta.exchange/api/swagger_v2.json
+
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "## REST API for Delta Exchange\\nFind out more on \[https://delta.exchange\](https://delta.exchange)\\n",
+    "version": "1.0.0",
+    "title": "Delta Exchange Api V2",
+    "termsOfService": "https://docs.google.com/document/d/e/2PACX-1vSDARn3b\_VlmGZjJjlROm0MFpxX6KoLzVrqPZLSD4rh7sBhpP6kDP8WMSgUlaitwjCBUBd3-fV-MDId/pub",
+    "contact": {
+      "email": "support@delta.exchange"
+    }
+  },
+  "host": "api.india.delta.exchange",
+  "basePath": "/v2",
+  "tags": \[
+    {
+      "name": "Assets",
+      "description": "Get Asset List"
+    },
+    {
+      "name": "Indices",
+      "description": "Get Indices List"
+    },
+    {
+      "name": "Products",
+      "description": "Get Product List"
+    },
+    {
+      "name": "Orders",
+      "description": "Placing Orders, Cancelling Orders, Placing batch orders, Cancelling batch orders, Get Open orders, Change Orders Leverage. Rate limits have been introduced recently that allows only set number of operations inside a matching engine in a timeframe. The current rate limits is 500 operations/sec for each product. For ex - placing 50 orders in a batch is equivalent to 50 operations as these orders will be processed by matching engine. Rate limits do not apply when cancelling orders."
+    },
+    {
+      "name": "Positions",
+      "description": "Get Open positions, Change Position Margin, Close Position, Close All Position"
+    },
+    {
+      "name": "TradeHistory",
+      "description": "Get Orders History, Get Fill History"
+    },
+    {
+      "name": "Orderbook",
+      "description": "L2Orderbook"
+    },
+    {
+      "name": "Trades",
+      "description": "Get Trades of a contract"
+    },
+    {
+      "name": "Wallet",
+      "description": "Get balances, Get transaction history"
+    },
+    {
+      "name": "OHLC Candles",
+      "description": "Get price data"
+    },
+    {
+      "name": "Stats",
+      "description": "Get Volume Stats"
+    },
+    {
+      "name": "MMP",
+      "description": "Market maker protection"
+    },
+    {
+      "name": "Dead Man's Switch (Auto Cancel)",
+      "description": "Set up timers for auto orders cancel in case of network malfunctions "
+    },
+    {
+      "name": "Account",
+      "description": "Account level settings"
+    }
+  \],
+  "schemes": \[
+    "https"
+  \],
+  "paths": {
+    "/assets": {
+      "get": {
+        "tags": \[
+          "Assets"
+        \],
+        "summary": "Get list of all assets",
+        "operationId": "getAssets",
+        "produces": \[
+          "application/json"
+        \],
+        "responses": {
+          "200": {
+            "description": "List of \[Asset schema\](#tocSasset)",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ArrayOfAssets"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/indices": {
+      "get": {
+        "tags": \[
+          "Indices"
+        \],
+        "operationId": "getIndices",
+        "summary": "Get indices",
+        "description": "Indices refer to spot price indices that Delta Exchange creates by combining spot prices of prominent crypto exchanges. These indices form the underlying of futures and options contracts listed on Delta Exchange. All details of indices on Delta Exchange are available \[here\](https://www.delta.exchange/indices).",
+        "produces": \[
+          "application/json"
+        \],
+        "responses": {
+          "200": {
+            "description": "List of \[Spot Index schema\](#tocSindex)",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ArrayOfIndices"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "tags": \[
+          "Products"
+        \],
+        "summary": "Get list of products",
+        "description": "The endpoint provides details about all available trading products on the platform. Each product represents a financial instrument like perpetual futures, options, or contracts for specific asset pairs.",
+        "operationId": "getProducts",
+        "produces": \[
+          "application/json"
+        \],
+        "parameters": \[
+          {
+            "in": "query",
+            "name": "contract\_types",
+            "description": "Comma separated list of contract types e.g. perpetual\_futures,call\_options, put\_options",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "states",
+            "description": "Comma separated list of states e.g. upcoming,live,expired,settled to get expired contracts.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "after",
+            "description": "after cursor for paginated request",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "before",
+            "description": "before cursor for paginated request",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page\_size",
+            "description": "size of a single page for paginated request, default: 100",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "expiry",
+            "description": "Expiry date in YYYY-MM-DD format to filter products by current & future expiry date.",
+            "type": "string"
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "List of \[Products\](#tocSproduct)",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ArrayOfProducts"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/products/{symbol}": {
+      "get": {
+        "tags": \[
+          "Products"
+        \],
+        "summary": "Get product by symbol",
+        "description": "The endpoint retrieves details of a specific product identified by its symbol (e.g., BTCUSD, ETHUSD).",
+        "operationId": "getProduct",
+        "produces": \[
+          "application/json"
+        \],
+        "parameters": \[
+          {
+            "in": "path",
+            "name": "symbol",
+            "description": "symbol of the desired product like BTCUSD, ETHUSD",
+            "type": "string"
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "\[Product\](#tocSproduct)",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/Product"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/tickers": {
+      "get": {
+        "tags": \[
+          "Products"
+        \],
+        "summary": "Get tickers for products",
+        "description": "This endpoint retrieves the live tickers for available trading products, with an optional filter by specified contract types. The contract types should be provided as a comma-separated list (e.g., futures, perpetual\_futures, call\_options). If no contract type is specified, data for all available products will be returned.",
+        "operationId": "getTickers",
+        "produces": \[
+          "application/json"
+        \],
+        "parameters": \[
+          {
+            "name": "contract\_types",
+            "in": "query",
+            "description": "A comma-separated list of contract types to filter the tickers. Example values include perpetual\_futures, call\_options, put\_options.",
+            "required": false,
+            "type": "string",
+            "example": "futures,perpetual\_futures,call\_options,put\_options"
+          },
+          {
+            "name": "underlying\_asset\_symbols",
+            "in": "query",
+            "description": "A comma-separated list of underlying asset symbols to filter the tickers. Example values include BTC, ETH, SOL etc.",
+            "required": false,
+            "type": "string",
+            "example": "BTC,ETH,SOL"
+          },
+          {
+            "name": "expiry\_date",
+            "in": "query",
+            "description": "Expiry date(format: DD-MM-YYYY) to filter the tickers.",
+            "required": false,
+            "type": "string",
+            "example": "03-04-2025"
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "List of live \[tickers\](#tocSticker) for all products, including implied volatility (IV) for option strikes.",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ArrayOfTickers"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/tickers/{symbol}": {
+      "get": {
+        "tags": \[
+          "Products"
+        \],
+        "summary": "Get ticker for a product by symbol",
+        "description": "This endpoint retrieves the ticker data for a specific product, identified by its symbol. The ticker data includes live price data, open interest, implied volatility (IV) for options, and other related market data.",
+        "operationId": "getTicker",
+        "produces": \[
+          "application/json"
+        \],
+        "parameters": \[
+          {
+            "in": "path",
+            "name": "symbol",
+            "description": "The symbol(s) of the product, comma-separated. Maximum 10 symbols allowed. Example: (e.g., BTCUSD, ETHUSD).",
+            "type": "string",
+            "required": true,
+            "example": "BTCUSD"
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "\[Ticker\](#tocSticker) data for the requested product, including implied volatility (IV) for option strikes, if applicable.",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/Ticker"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/tickers?contract\_types=call\_options,put\_options&underlying\_asset\_symbols={underlying\_asset\_symbols}&expiry\_date={expiry\_date}": {
+      "get": {
+        "tags": \[
+          "Products"
+        \],
+        "summary": "Get option chain",
+        "description": "Fetch option chain data for a given product and expiry date.\\n\\nFor example, to get BTC call and put options expiring on 04-04-2025, use:\\n\\n\\n\*\*contract\_types=call\_options,put\_options&underlying\_asset\_symbols=BTC&expiry\_date=04-04-2025\*\*\\n",
+        "operationId": "getOptionChain",
+        "produces": \[
+          "application/json"
+        \],
+        "parameters": \[
+          {
+            "name": "contract\_types",
+            "in": "query",
+            "description": "A comma-separated list of contract types to filter the products. Only \`call\_options\` and \`put\_options\` are supported.",
+            "type": "string",
+            "example": "call\_options,put\_options"
+          },
+          {
+            "name": "underlying\_asset\_symbols",
+            "in": "query",
+            "description": "The underlying asset symbol (single value) for the option chain. Examples: \`BTC\`, \`ETH\`, \`SOL\`.",
+            "type": "string",
+            "example": "BTC"
+          },
+          {
+            "name": "expiry\_date",
+            "in": "query",
+            "description": "Expiry date of the contracts in \`DD-MM-YYYY\` format to filter by current & future expiry date.",
+            "type": "string",
+            "example": "03-04-2025"
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "Returns a list of live \[tickers\](#tocSticker) for all products, including \*\*implied volatility (IV)\*\* for option strikes.",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ArrayOfTickers"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/orders": {
+      "post": {
+        "tags": \[
+          "Orders"
+        \],
+        "summary": "Place Order",
+        "operationId": "placeOrder",
+        "consumes": \[
+          "application/json"
+        \],
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "order",
+            "description": "Order which needs to be created. Rate limits apply.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateOrderRequest"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "Returns back the order object with assigned id and latest state",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/Order"
+                    }
+                  }
+                }
+              \]
+            }
+          },
+          "400": {
+            "description": "Returns \[error\](#place-order-error-description) if order could not be placed",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": \[
+          "Orders"
+        \],
+        "summary": "Cancel Order",
+        "operationId": "cancelOrder",
+        "consumes": \[
+          "application/json"
+        \],
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "order",
+            "description": "Order which needs to be cancelled",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DeleteOrderRequest"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "Returns back the order object",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/Order"
+                    }
+                  }
+                }
+              \]
+            }
+          },
+          "400": {
+            "description": "Returns error if order could not be cancelled",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": \[
+          "Orders"
+        \],
+        "summary": "Edit Order",
+        "operationId": "editOrder",
+        "consumes": \[
+          "application/json"
+        \],
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "order",
+            "description": "Order which needs to be edited. Rate limits apply.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/EditOrderRequest"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "Returns back the order object with assigned id and latest state",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/Order"
+                    }
+                  }
+                }
+              \]
+            }
+          },
+          "400": {
+            "description": "Returns \[error\](#place-order-error-description) if order could not be placed",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get Active Orders",
+        "tags": \[
+          "Orders"
+        \],
+        "operationId": "getOrders",
+        "deprecated": false,
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "query",
+            "name": "product\_ids",
+            "description": "Comma-separated product IDs. Maximum 10 IDs allowed. If not specified, all the orders will be returned",
+            "type": "string",
+            "example": "27,5"
+          },
+          {
+            "in": "query",
+            "name": "states",
+            "description": "comma separated list of states - open,pending",
+            "type": "string",
+            "example": "open, pending, closed"
+          },
+          {
+            "in": "query",
+            "name": "contract\_types",
+            "description": "comma separated list of desired contract types, if not specified any parameters then, all the orders will be returned",
+            "type": "string",
+            "enum":\[
+              "futures",
+              "perpetual\_futures",
+              "call\_options",
+              "put\_options"
+            \],
+            "x-enumDescriptions": {
+              "futures": "Dated futures contracts with a fixed expiry",
+              "perpetual\_futures": "Futures contracts with no expiry, funded via funding rate",
+              "call\_options": "Call option contracts",
+              "put\_options": "Put option contracts"
+            },
+            "example": "futures, perpetual\_futures, call\_options"
+          },
+          {
+            "in": "query",
+            "name": "order\_types",
+            "description": "comma separated order types",
+            "type": "string",
+            "enum": \[
+              "market",
+              "limit",
+              "stop\_market",
+              "stop\_limit",
+              "all\_stop"
+            \],
+            "x-enumDescriptions": {
+              "market": "Market order executed at the best available price",
+              "limit": "Limit order placed at a specified price",
+              "stop\_market": "Stop order that triggers a market order at the stop price",
+              "stop\_limit": "Stop order that triggers a limit order at the stop price",
+              "all\_stop": "All stop orders (stop\_market and stop\_limit)"
+            },
+            "example": "market, limit, stop\_limit"
+          },
+          {
+            "in": "query",
+            "name": "start\_time",
+            "description": "from time in micro-seconds in epoc; referring to the order creation time",
+            "type": "integer",
+            "example": 1725174294000000
+          },
+          {
+            "in": "query",
+            "name": "end\_time",
+            "description": "from time in micro-seconds in epoc; referring to the order creation time",
+            "type": "integer",
+            "example": 1725865494000000
+          },
+          {
+            "in": "query",
+            "name": "after",
+            "description": "after cursor for pagination; becomes null if page after the current one does not exist",
+            "type": "string",
+            "example": "g3QAAAACZAAKY3JlYXRlZF9hdHQAAAAN"
+          },
+          {
+            "in": "query",
+            "name": "before",
+            "description": "before cursor for pagination; becomes null if page before the current one does not exist",
+            "type": "string",
+            "example": "a2PQRSACZAAKY3JlYXRlZF3fnqHBBBNZL"
+          },
+          {
+            "in": "query",
+            "name": "page\_size",
+            "description": "number of records per page",
+            "type": "integer",
+            "default": 10,
+            "example": 50
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "List of orders as per the query",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ArrayOfOrders"
+                    },
+                    "meta": {
+                      "$ref": "#/definitions/PaginationMeta"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/orders/bracket": {
+      "post": {
+        "tags": \[
+          "Orders"
+        \],
+        "summary": "Place Bracket order",
+        "description": "A bracket order is a set of TP and SL order. For a bracket order , size need not be specified as it closes the entire position. For a given contract, you can have multiple bracket orders for open orders but only a single bracket order for any open position.",
+        "operationId": "bracketOrder",
+        "consumes": \[
+          "application/json"
+        \],
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "order",
+            "description": "Bracket Order which needs to be updated ",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateBracketOrderRequest"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "returns back success response",
+            "schema": {
+              "$ref": "#/definitions/ApiSuccessResponse"
+            }
+          },
+          "400": {
+            "description": "Returns error if orders could not be updated",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": \[
+          "Orders"
+        \],
+        "summary": "Edit Bracket order",
+        "description": "A bracket order is a set of TP and SL order. You can specify bracket order with an order that will create a new position. Use this api to change the bracket params attached with an order.",
+        "operationId": "bracketOrder",
+        "consumes": \[
+          "application/json"
+        \],
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "order",
+            "description": "Bracket Order which needs to be updated ",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/EditBracketOrderRequest"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "returns back success response",
+            "schema": {
+              "$ref": "#/definitions/ApiSuccessResponse"
+            }
+          },
+          "400": {
+            "description": "Returns error if orders could not be updated",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/orders/all": {
+      "delete": {
+        "tags": \[
+          "Orders"
+        \],
+        "summary": "Cancel all open orders",
+        "description": "Cancels all orders for a given product id. If product id is not provided, it cancels orders for provided contract types. If none of them are provided, it cancels all the orders. Provide either product id or list of contract types at a time. If both are provided, contract types will be ignored.",
+        "operationId": "cancelAllOrders",
+        "consumes": \[
+          "application/json"
+        \],
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "filters",
+            "description": "Filters for selecting orders that needs to be cancelled",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CancelAllFilterObject"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "returns back success response",
+            "schema": {
+              "$ref": "#/definitions/ApiSuccessResponse"
+            }
+          },
+          "400": {
+            "description": "Returns error if orders could not be cancelled",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/orders/batch": {
+      "post": {
+        "tags": \[
+          "Orders"
+        \],
+        "summary": "Create batch orders",
+        "description": "Orders in a batch should belong to the same contract. Max allowed size limit in a batch is 50. Rate limits apply. Please note that ioc is not valid time in force values for creating batch orders.",
+        "operationId": "batchCreate",
+        "consumes": \[
+          "application/json"
+        \],
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "payload",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/BatchCreateOrdersRequest"
+            },
+            "description": "Does not support time\_in\_force flag for orders, All orders in batch create are assumed to be gtc orders. batch create does not support stop orders, it support only limit orders"
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "returns the orders placed",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ArrayOfOrders"
+                    }
+                  }
+                }
+              \]
+            }
+          },
+          "400": {
+            "description": "returns error if orders couldnt be placed",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "description": "Orders to be edited in a batch. Rate limits apply.",
+        "summary": "Edit batch orders",
+        "tags": \[
+          "Orders"
+        \],
+        "operationId": "batchEdit",
+        "deprecated": false,
+        "produces": \[
+          "application/json"
+        \],
+        "consumes": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "payload",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/BatchEditOrdersRequest"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "List of edited orders",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ArrayOfOrders"
+                    }
+                  }
+                }
+              \]
+            }
+          },
+          "400": {
+            "description": "returns error if orders couldnt be edited",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": \[
+          "Orders"
+        \],
+        "summary": "Delete batch orders",
+        "operationId": "batchDelete",
+        "consumes": \[
+          "application/json"
+        \],
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "payload",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/BatchDeleteOrdersRequest"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "returns the orders deleted",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ArrayOfOrders"
+                    }
+                  }
+                }
+              \]
+            }
+          },
+          "400": {
+            "description": "returns error if orders couldnt be deleted",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      }
+    },
+
+    "/heartbeat/create": {
+      "post": {
+        "tags": \[
+          "Heartbeat Management"
+        \],
+        "summary": "Create Heartbeat",
+        "operationId": "createHeartbeat",
+        "consumes": \[
+          "application/json"
+        \],
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "heartbeat creation details",
+            "description": "heartbeat creation details",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateHeartbeat"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "Heartbeat created successfully",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/HeartbeatResponse"
+                    }
+                  }
+                }
+              \]
+            }
+          },
+          "400": {
+            "description": "Returns if heartbeat couldnt be created",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/heartbeat": {
+      "post": {
+        "tags": \[
+          "Heartbeat Management"
+        \],
+        "summary": "Send Heartbeat Acknowledgment",
+        "operationId": "sendHeartbeat",
+        "consumes": \[
+          "application/json"
+        \],
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "heartbeat acknowledgment details",
+            "description": "heartbeat acknowledgment details",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/HeartbeatAck"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "Heartbeat acknowledged successfully",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/HeartbeatAckResponse"
+                    }
+                  }
+                }
+              \]
+            }
+          },
+          "400": {
+            "description": "Returns if heartbeat acknowledgment failed",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": \[
+          "Heartbeat Management"
+        \],
+        "summary": "Get Heartbeats",
+        "operationId": "getHeartbeats",
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "query",
+            "name": "user\_id",
+            "description": "User ID",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "heartbeat\_id",
+            "description": "Specific heartbeat ID to retrieve",
+            "type": "string",
+            "required": false
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "List of active heartbeats",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ArrayOfHeartbeats"
+                    }
+                  }
+                }
+              \]
+            }
+          },
+          "400": {
+            "description": "Returns if heartbeats couldnt be retrieved",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/orders/{order\_id}": {
+      "get": {
+        "tags": \[
+          "Orders"
+        \],
+        "summary": "Get Order by id",
+        "operationId": "getOrderById",
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "path",
+            "name": "order\_id",
+            "description": "Id of the order",
+            "type": "string"
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "Returns back the order object with assigned id and latest state",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/Order"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/orders/client\_order\_id/{client\_oid}": {
+      "get": {
+        "tags": \[
+          "Orders"
+        \],
+        "summary": "Get Order by client oid",
+        "operationId": "getOrderByCOI",
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "path",
+            "name": "client\_oid",
+            "description": "Custom user provided order id (max 32 length)",
+            "type": "string"
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "Returns back the order object with assigned client order id and latest state",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/Order"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/products/{product\_id}/orders/leverage": {
+      "post": {
+        "tags": \[
+          "Orders"
+        \],
+        "summary": "Change order leverage",
+        "operationId": "changeOrderLeverage",
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "order\_leverage",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": \[
+                "leverage"
+              \],
+              "properties": {
+                "leverage": {
+                  "type": "string",
+                  "description": "Order leverage",
+                  "example": 10
+                }
+              }
+            }
+          },
+          {
+            "in": "path",
+            "name": "product\_id",
+            "description": "Product id of the ordered product. Either product\_id or product\_symbol must be preseent.",
+            "type": "integer",
+            "required": false,
+            "example": 27
+          },
+          {
+            "in": "path",
+            "name": "product\_symbol",
+            "description": "Product symbol of the ordered product. Either product\_id or product\_symbol must be preseent.",
+            "type": "string",
+            "required": false,
+            "example": "BTCUSD"
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "returns the OrderLeverage object",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/OrderLeverage"
+                    }
+                  }
+                }
+              \]
+            }
+          },
+          "400": {
+            "description": "Returns error if leverage couldnt be changed",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": \[
+          "Orders"
+        \],
+        "summary": "Get order leverage",
+        "operationId": "getOrderLeverage",
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "path",
+            "name": "product\_id",
+            "description": "Product id of the ordered product",
+            "type": "integer",
+            "required": true,
+            "example": 27
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "returns the OrderLeverage object",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/OrderLeverage"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/orders/history": {
+      "get": {
+        "tags": \[
+          "TradeHistory"
+        \],
+        "summary": "Get order history (cancelled and closed)",
+        "operationId": "getOrderHistory",
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "query",
+            "name": "product\_ids",
+            "description": "Comma separated product IDs. Maximum 10 IDs allowed.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "contract\_types",
+            "description": "comma separated list of desired contract types",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "order\_types",
+            "description": "comma separated order types",
+            "type": "string",
+            "enum": \[
+              "market",
+              "limit",
+              "stop\_market",
+              "stop\_limit",
+              "all\_stop"
+            \],
+            "x-enumDescriptions": {
+              "market": "Market order executed at the best available price",
+              "limit": "Limit order placed at a specified price",
+              "stop\_market": "Stop order that triggers a market order at the stop price",
+              "stop\_limit": "Stop order that triggers a limit order at the stop price",
+              "all\_stop": "All stop orders (stop\_market and stop\_limit)"
+            }
+          },
+          {
+            "in": "query",
+            "name": "start\_time",
+            "description": "from time in micro-seconds in epoc",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "end\_time",
+            "description": "from time in micro-seconds in epoc",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "after",
+            "description": "after cursor for pagination",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "before",
+            "description": "before cursor for pagination",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page\_size",
+            "description": "number of records per page",
+            "type": "integer",
+            "default": 10
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "List of closed and cancelled orders. \[Order schema\](#tocSorder)",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ArrayOfOrders"
+                    },
+                    "meta": {
+                      "$ref": "#/definitions/PaginationMeta"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/fills": {
+      "get": {
+        "summary": "GET user fills by filters",
+        "tags": \[
+          "TradeHistory"
+        \],
+        "operationId": "getUserfills",
+        "deprecated": false,
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "query",
+            "name": "product\_ids",
+            "description": "Comma separated product IDs. Maximum 10 IDs allowed.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "contract\_types",
+            "description": "comma separated list of desired contract types",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "start\_time",
+            "description": "from time in micro-seconds in epoc",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "end\_time",
+            "description": "from time in micro-seconds in epoc",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "after",
+            "description": "after cursor for pagination",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "before",
+            "description": "before cursor for pagination",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page\_size",
+            "description": "number of records per page",
+            "type": "integer",
+            "default": 10
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "Array of \[fills\](#tocSfill)",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ArrayOfFills"
+                    },
+                    "meta": {
+                      "$ref": "#/definitions/PaginationMeta"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/fills/history/download/csv": {
+      "get": {
+        "tags": \[
+          "TradeHistory"
+        \],
+        "summary": "Download Fills history",
+        "operationId": "downloadFillsHistory",
+        "produces": \[
+          "application/json"
+        \],
+        "consumes": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "query",
+            "name": "product\_ids",
+            "description": "comma separated product ids",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "contract\_types",
+            "description": "comma separated list of desired contract types",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "start\_time",
+            "description": "from time in micro-seconds in epoc",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "end\_time",
+            "description": "from time in micro-seconds in epoc",
+            "type": "integer"
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "csv of fills for the filter query"
+          }
+        }
+      }
+    },
+    "/positions/margined": {
+      "get": {
+        "description": "Change in position may take upto 10secs to reflect. Use 'GET /position' for real-time data.",
+        "tags": \[
+          "Positions"
+        \],
+        "operationId": "getMarginedPositions",
+        "summary": "Get margined positions",
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "query",
+            "name": "product\_ids",
+            "description": "Comma-separated product IDs. Maximum 10 IDs allowed. If not specified, all the open positions will be returned",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "contract\_types",
+            "description": "comma separated list of desired contract types. If not specified any parameters then, all the open positions will be returned",
+            "type": "string",
+            "enum":\[
+              "perpetual\_futures",
+              "call\_options",
+              "put\_options"
+            \],
+            "x-enumDescriptions": {
+              "perpetual\_futures": "Futures contracts with no expiry, funded via funding rate",
+              "call\_options": "Call option contracts",
+              "put\_options": "Put option contracts"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "List of all \[open positions\](#tocSposition)",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ArrayOfPositions"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/positions": {
+      "get": {
+        "description": "Get real-time positions data.",
+        "tags": \[
+          "Positions"
+        \],
+        "operationId": "getPositions",
+        "summary": "Get position",
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "name": "product\_id",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "description": "id of the product. Only send either product\_id or underlying\_asset\_symbol."
+          },
+          {
+            "name": "underlying\_asset\_symbol",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Underlying asset symbol. e.g. 'BTC', 'ETH'. This gives a list of all positions in products which have the given underlying asset. Only send either product\_id or underlying\_asset\_symbol."
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "Open position for the give product id",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "size": {
+                          "type": "integer",
+                          "description": "Position size, negative for short and positive for long"
+                        },
+                        "entry\_price": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/positions/auto\_topup": {
+      "put": {
+        "tags": \[
+          "Positions"
+        \],
+        "operationId": "changeAutoTopup",
+        "summary": "Auto Topup",
+        "description": "Changes position auto topup flag. Positions automatically inherits auto topup flag of the account. If account level auto topop is set to false, use this api to change auto topup flag for individual positions.",
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "auto\_topup",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": \[
+                "product\_id",
+                "auto\_topup"
+              \],
+              "properties": {
+                "product\_id": {
+                  "type": "integer"
+                },
+                "auto\_topup": {
+                  "type": "boolean",
+                  "default": "false"
+                }
+              }
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "returns the position object",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/Position"
+                    }
+                  }
+                }
+              \]
+            }
+          },
+          "400": {
+            "description": "Returns error if position margin could not be changed",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/positions/change\_margin": {
+      "post": {
+        "tags": \[
+          "Positions"
+        \],
+        "operationId": "changePositionMargin",
+        "summary": "Add/Remove position margin",
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "position\_margin",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": \[
+                "product\_id",
+                "delta\_margin"
+              \],
+              "properties": {
+                "product\_id": {
+                  "type": "integer"
+                },
+                "delta\_margin": {
+                  "type": "string",
+                  "description": "Delta in the position margin, positive in case of adding margin & negative in case of removing margin"
+                }
+              }
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "returns the position object",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/Position"
+                    }
+                  }
+                }
+              \]
+            }
+          },
+          "400": {
+            "description": "Returns error if position margin could not be changed",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/positions/close\_all": {
+      "post": {
+        "tags": \[
+          "Positions"
+        \],
+        "operationId": "closeAllPosition",
+        "summary": "Close all positions ",
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "close\_all",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": \[
+                "close\_all\_portfolio",
+                "close\_all\_isolated",
+                "user\_id"
+              \],
+              "properties": {
+                "close\_all\_portfolio": {
+                  "type": "boolean"
+                },
+                "close\_all\_isolated": {
+                  "type": "boolean"
+                },
+                "user\_id": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "returns back success response",
+            "schema": {
+              "$ref": "#/definitions/ApiSuccessResponse"
+            }
+          },
+          "400": {
+            "description": "Returns error if not able to close all positions",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/l2orderbook/{symbol}": {
+      "get": {
+        "tags": \[
+          "Orderbook"
+        \],
+        "operationId": "getL2Orderbook",
+        "summary": "Get L2 orderbook",
+        "produces": \[
+          "application/json"
+        \],
+        "parameters": \[
+          {
+            "in": "path",
+            "name": "symbol",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "depth",
+            "description": "number of levels on each side",
+            "type": "integer"
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "L2 orderbook for the product",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/L2Orderbook"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/trades/{symbol}": {
+      "get": {
+        "tags": \[
+          "Trades"
+        \],
+        "operationId": "getTrades",
+        "summary": "Get public trades",
+        "produces": \[
+          "application/json"
+        \],
+        "parameters": \[
+          {
+            "in": "path",
+            "name": "symbol",
+            "type": "string",
+            "required": true
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "List of recent trades of the product",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/Trades"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/wallet/balances": {
+      "get": {
+        "tags": \[
+          "Wallet"
+        \],
+        "operationId": "getBalances",
+        "summary": "Get Wallet Balances",
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "List of wallets attached to the user account",
+            "schema": {
+                "type": "object",
+                "$ref": "#/definitions/WalletPayload"
+              }
+            }
+        }
+      }
+    },
+    "/wallet/transactions": {
+      "get": {
+        "tags": \[
+          "Wallet"
+        \],
+        "summary": "Get Wallet transactions",
+        "operationId": "getTransactions",
+        "produces": \[
+          "application/json"
+        \],
+        "consumes": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "query",
+            "name": "asset\_ids",
+            "description": "comma separated list of asset\_ids for which to get txns logs",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "start\_time",
+            "description": "from time in micro-seconds in epoc",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "end\_time",
+            "description": "from time in micro-seconds in epoc",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "after",
+            "description": "after cursor for pagination",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "before",
+            "description": "before cursor for pagination",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page\_size",
+            "description": "number of records per page",
+            "type": "integer",
+            "default": 10
+          },
+          {
+            "in": "query",
+            "name": "transaction\_types",
+            "description": "transaction types to retrieve",
+            "type": "string\_array",
+            "schema": {
+              "$ref": "#/definitions/TransactionTypes"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "list of \[Wallet transactions\](#tocStransaction)",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ArrayOfTransactions"
+                    },
+                    "meta": {
+                      "$ref": "#/definitions/PaginationMeta"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/wallet/transactions/download": {
+      "get": {
+        "tags": \[
+          "Wallet"
+        \],
+        "summary": "Download Wallet transactions",
+        "operationId": "downloadTransactions",
+        "produces": \[
+          "application/json"
+        \],
+        "consumes": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "query",
+            "name": "asset\_ids",
+            "description": "comma separated list of asset\_ids",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "start\_time",
+            "description": "from time in micro-seconds in epoc",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "end\_time",
+            "description": "from time in micro-seconds in epoc",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "after",
+            "description": "after cursor for pagination",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "before",
+            "description": "before cursor for pagination",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page\_size",
+            "description": "number of records per page",
+            "type": "integer",
+            "default": 10
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "csv of transactions for that wallet"
+          }
+        }
+      }
+    },
+    "/wallets/sub\_account\_balance\_transfer": {
+      "post": {
+        "tags": \[
+          "Wallet"
+        \],
+        "summary": "Request asset transfer",
+        "description": "This api transfers asset from one subaccount to another subaccount or to the main/parent account. Please ensure that the subaccounts involved in the transfer should belong to the same parent account. Requests to transfer assets across subaccounts that belong to different parent accounts will fail. Please make sure that the api key used to make this api request belongs to the main/parent account.",
+        "operationId": "assetTransfer",
+        "consumes": \[
+          "application/json"
+        \],
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "assetTransfer",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AssetTransferSubaccountReq"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "Returns success message",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {}
+                  }
+                }
+              \]
+            }
+          },
+          "400": {
+            "description": "Returns error code",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/wallets/sub\_accounts\_transfer\_history": {
+      "get": {
+        "tags": \[
+          "Wallet"
+        \],
+        "summary": "Request subaccount balance transfer history.",
+        "description": "This api returns the wallet balance transfers for subaccounts belonging to the parent/main account of an api user. Make sure you are calling this api from the main account. If no subaccount is mentioned in the request, data for all the subacounts will be returned. Use page size to get more entries in a single request.",
+        "operationId": "SubaccountTransferHistory",
+        "consumes": \[
+          "application/json"
+        \],
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "subaccountTransferHistory",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SubaccountTransferHistory"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "Returns success message",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ArrayOfSubaccountTransferLog"
+                    },
+                    "meta": {
+                      "$ref": "#/definitions/PaginationMeta"
+                    }
+                  }
+                }
+              \]
+            }
+          },
+          "400": {
+            "description": "Returns error code",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/products/?states=expired": {
+      "get": {
+        "tags": \[
+          "Settlement Prices"
+        \],
+        "summary": "Get product settlement prices",
+        "operationId": "getProduct",
+        "produces": \[
+          "application/json"
+        \],
+        "parameters": \[
+          {
+            "in": "query",
+            "name": "states",
+            "description": "Comma separated list of states e.g. to get expired contracts https://api.india.delta.exchange/v2/products?contract\_types=call\_options&states=expired ",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page\_size",
+            "description": "size of a single page for paginated request, default: 100",
+            "type": "string"
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "List of products",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/Product"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/history/candles": {
+      "get": {
+        "summary": "GET historical ohlc candles",
+        "description": "It returns historical Open-High-Low-Close(ohlc) candles data of the symbol as per input values for resolution, start time and end time. Also, it can return only upto 2000 candles maximum in a response.",
+        "tags": \[
+          "Historical OHLC Candles/Sparklines"
+        \],
+        "operationId": "getCandles",
+        "deprecated": false,
+        "produces": \[
+          "application/json"
+        \],
+        "parameters": \[
+          {
+            "in": "query",
+            "name": "resolution",
+            "type": "string",
+            "description": "ohlc candle time frames like 1m, 5m, 1h",
+            "enum": \[
+              "1m","3m","5m","15m","30m","1h","2h","4h","6h","1d","1w"
+            \],
+            "x-enumDescriptions": {
+              "1m": "1-minute candles",
+              "3m": "3-minute candles",
+              "5m": "5-minute candles",
+              "15m": "15-minute candles",
+              "30m": "30-minute candles",
+              "1h": "1-hour candles",
+              "2h": "2-hour candles",
+              "4h": "4-hour candles",
+              "6h": "6-hour candles",
+              "1d": "1-day candles",
+              "1w": "1-week candles"
+            },
+            "required": true,
+            "example": "5m"
+          },
+          {
+            "in": "query",
+            "name": "symbol",
+            "type": "string",
+            "description": "To get funding history pass symbol as FUNDING:${symbol}, mark price MARK:${symbol} and OI data OI:${symbol} for e.g. - FUNDING:BTCUSD, MARK:C-BTC-66400-010824, OI:ETHUSD",
+            "required": true,
+            "example": "BTCUSD"
+          },
+          {
+            "in": "query",
+            "name": "start",
+            "description": "Start time: unix timestamp in seconds",
+            "type": "integer",
+            "required": true,
+            "example": 1685618835
+          },
+          {
+            "in": "query",
+            "name": "end",
+            "description": "End time: unix timestamp in seconds",
+            "type": "integer",
+            "required": true,
+            "example": 1722511635
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "ohlc",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ArrayOfOHLCData"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/history/sparklines": {
+      "get": {
+        "summary": "GET product history sparklines",
+        "tags": \[
+          "Historical OHLC Candles/Sparklines"
+        \],
+        "operationId": "getSparklines",
+        "deprecated": false,
+        "produces": \[
+          "application/json"
+        \],
+        "parameters": \[
+          {
+            "in": "query",
+            "name": "symbols",
+            "type": "string",
+            "description": "comma separated product symbols",
+            "required": true,
+            "example": "ETHUSD,MARK:BTCUSD"
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "product history sparkline",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/SparklineData"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/stats": {
+      "get": {
+        "tags": \[
+          "Stats"
+        \],
+        "summary": "Get volume stats",
+        "operationId": "getStat",
+        "produces": \[
+          "application/json"
+        \],
+        "responses": {
+          "200": {
+            "description": "sum of turnover in the last 7 and 30 days along with  Total Volume in the last 24 hours (in USD)",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/Stats"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/users/update\_mmp": {
+      "put": {
+        "tags": \[
+          "MMP"
+        \],
+        "summary": "Update MMP config",
+        "operationId": "updateMMP",
+        "description": "Channel provides updates when MMP is triggered. Market maker protection is available to registered market makers by default. Others can reach out to support for getting access to MMP. More info \[here\](https://guides.delta.exchange/delta-exchange-india-user-guide).",
+        "consumes": \[
+          "application/json"
+        \],
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "mmp\_config",
+            "description": "mmp config for a given underlying asset",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MMPConfigUpdateRequest"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "Returns back the User Preference which contains mmp config",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/UserPreference"
+                    }
+                  }
+                }
+              \]
+            }
+          },
+          "400": {
+            "description": "Returns error if mmp is not enabled on the account",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/users/reset\_mmp": {
+      "put": {
+        "tags": \[
+          "MMP"
+        \],
+        "summary": "Reset MMP",
+        "operationId": "resetMMP",
+        "consumes": \[
+          "application/json"
+        \],
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "reset\_mmp",
+            "description": "reset mmp config for a given underlying asset",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MMPResetRequest"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "Returns back the User Preference which contains mmp config",
+            "schema": {
+              "$ref": "#/definitions/ApiSuccessResponse"
+            }
+          },
+          "400": {
+            "description": "Returns error if mmp is not enabled on the account",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/users/trading\_preferences": {
+      "get": {
+        "tags": \[
+          "Account"
+        \],
+        "summary": "Get users trading preferences",
+        "operationId": "getTradingPreferences",
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "User trading preferences attached to the account",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/UserPreference"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": \[
+          "Account"
+        \],
+        "summary": "Update users trading preferences",
+        "operationId": "updateTradingPreferences",
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "trading\_preferences",
+            "description": "trading preferences",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/EditUserPreference"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "User trading preferences attached to the account",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/UserPreference"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/sub\_accounts": {
+      "get": {
+        "tags": \[
+          "Account"
+        \],
+        "summary": "Get subaccounts",
+        "description": "This api returns all the subaccounts belonging to the same parent/main user. Make sure to call this api from the parent user.",
+        "operationId": "getSubaccounts",
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "Subaccounts belonging to the same parent account.",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ArrayOfSubaccouns"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/profile": {
+      "get": {
+        "tags": \[
+          "Account"
+        \],
+        "summary": "Get user",
+        "description": "This api returns the user object.",
+        "operationId": "getUser",
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "User Object",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/User"
+                    }
+                  }
+                }
+              \]
+            }
+          }
+        }
+      }
+    },
+    "/users/margin\_mode": {
+      "put": {
+        "tags": \[
+          "Account"
+        \],
+        "summary": "Change margin mode",
+        "operationId": "changeMarginMode",
+        "consumes": \[
+          "application/json"
+        \],
+        "produces": \[
+          "application/json"
+        \],
+        "security": \[
+          {
+            "api-key": \[\],
+            "signature": \[\],
+            "timestamp": \[\]
+          }
+        \],
+        "parameters": \[
+          {
+            "in": "body",
+            "name": "change\_margin\_mode",
+            "description": "changes margin mode of the user",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ChangeMarginModeRequest"
+            }
+          }
+        \],
+        "responses": {
+          "200": {
+            "description": "Returns the \[ChangeMarginModeResponse\](#tocSchangemarginmoderesponse) with the updated margin mode",
+            "schema": {
+              "allOf": \[
+                {
+                  "$ref": "#/definitions/ApiSuccessResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "$ref": "#/definitions/ChangeMarginModeResponse"
+                    }
+                  }
+                }
+              \]
+            }
+          },
+          "400": {
+            "description": "Returns error if margin mode could not be changed",
+            "schema": {
+              "$ref": "#/definitions/ApiErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/rate\_limits/quota": {
+      "get":{
+        "tags":\[
+          "Account"
+        \],
+        "summary": "Get current rate limit quota",
+        "operationId": "currentRateLimitQuota",
+        "produces": \[
+          "application/json"
+        \],
+        "responses": {
+          "200": {
+            "description": "This api returns the current rate limit quota.",
+            "schema": {
+              "$ref": "#/definitions/RateLimitQuotaResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "api-key": {
+      "type": "apiKey",
+      "name": "api-key",
+      "in": "header"
+    },
+    "signature": {
+      "type": "apiKey",
+      "name": "signature",
+      "in": "header"
+    },
+    "timestamp": {
+      "type": "apiKey",
+      "name": "timestamp",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "ApiSuccessResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "ApiErrorResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean",
+          "default": false
+        },
+        "error": {
+          "type": "object"
+        }
+      }
+    },
+    "Index": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Unique identifier for the index.",
+          "example": 14
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Symbol representing the index, typically prefixed by '.DE' followed by base asset and quoting asset.",
+          "example": ".DEXBTUSD"
+        },
+        "constituent\_exchanges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Name of the constituent exchange.",
+                "example": "ExchangeA"
+              },
+              "weight": {
+                "type": "number",
+                "description": "Weight of the exchange in the index.",
+                "example": 0.25
+              }
+            }
+          },
+          "description": "Details of constituent exchanges, including their names and weights in the index."
+        },
+        "underlying\_asset\_id": {
+          "type": "integer",
+          "description": "ID of the underlying asset for the index.",
+          "example": 13
+        },
+        "quoting\_asset\_id": {
+          "type": "integer",
+          "description": "ID of the quoting asset for the index.",
+          "example": 14
+        },
+        "tick\_size": {
+          "type": "string",
+          "description": "Precision of the spot price in decimal format.",
+          "example": "0.5"
+        },
+        "index\_type": {
+          "type": "string",
+          "description": "Type of the index.",
+          "enum": \["spot\_pair", "fixed\_interest\_rate", "floating\_interest\_rate"\],
+          "x-enumDescriptions": {
+            "spot\_pair": "Index based on a spot trading pair",
+            "fixed\_interest\_rate": "Index based on a fixed interest rate",
+            "floating\_interest\_rate": "Index based on a floating interest rate"
+          },
+          "example": "spot\_pair"
+        }
+      },
+      "description": "Details of an index used in trading, including its constituents and characteristics."
+    },
+    "ArrayOfIndices": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Index"
+      }
+    },
+    "ProductSpecs": {
+      "type": "object",
+      "properties": {
+        "funding\_clamp\_value": {
+          "type": "number",
+          "description": "The maximum allowable funding rate clamp value.",
+          "example": 0.05
+        },
+        "only\_reduce\_only\_orders\_allowed": {
+          "type": "boolean",
+          "description": "Indicates whether only reduce-only orders are allowed.",
+          "example": false
+        },
+        "expiry\_interval": {
+          "type": "number",
+          "description": "The time interval, in seconds, after which the product or contract expires or settles.",
+          "example": 28800
+        },
+        "isolated\_liq\_penalty\_factor": {
+          "type": "number",
+          "description": "The penalty factor applied when an isolated margin position is liquidated.",
+          "example": 0.01
+        },
+        "rate\_exchange\_interval": {
+          "type": "number",
+          "description": "The time interval, in seconds, at which funding rates are exchanged between long and short positions.",
+          "example": 28800
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Tags associated with the product specifications.",
+          "example": \["layer\_1"\]
+        }
+      },
+      "description": "Specifications related to the specific product or contract."
+    },
+    "Asset": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Unique identifier for the asset.",
+          "example": 14
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Symbol representing the asset.",
+          "example": "USD"
+        },
+        "precision": {
+          "type": "integer",
+          "description": "Number of decimal places supported for the asset.",
+          "example": 8
+        },
+        "deposit\_status": {
+          "type": "string",
+          "enum": \["enabled", "disabled"\],
+          "x-enumDescriptions": {
+            "enabled": "Deposits are currently allowed for the asset",
+            "disabled": "Deposits are currently not allowed for the asset"
+          },
+          "description": "Indicates if deposits are enabled for the asset.",
+          "example": "enabled"
+        },
+        "withdrawal\_status": {
+          "type": "string",
+          "enum": \["enabled", "disabled"\],
+          "x-enumDescriptions": {
+            "enabled": "Withdrawals are currently allowed for the asset",
+            "disabled": "Withdrawals are currently not allowed for the asset"
+          },
+          "description": "Indicates if withdrawals are enabled for the asset.",
+          "example": "enabled"
+        },
+        "base\_withdrawal\_fee": {
+          "type": "string",
+          "description": "Fixed withdrawal fee for the asset.",
+          "example": "0.000000000000000000"
+        },
+        "min\_withdrawal\_amount": {
+          "type": "string",
+          "description": "Minimum allowable withdrawal amount for the asset.",
+          "example": "0.000000000000000000"
+        }
+      },
+      "description": "Details of the asset used in the product or contract."
+    },
+    "ArrayOfAssets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Asset"
+      }
+    },
+    "Product": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Unique identifier of a product or contract.",
+          "example": 27
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Symbol of the product or contract like BTCUSD, ETHUSD.",
+          "example": "BTCUSD"
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of the product or contract.",
+          "example": "Bitcoin Perpetual futures, quoted, settled & margined in USD"
+        },
+        "created\_at": {
+          "type": "string",
+          "description": "Creation timestamp of the product or contract.",
+          "example": "2023-12-18T13:10:39Z"
+        },
+        "updated\_at": {
+          "type": "string",
+          "description": "Last update timestamp of the product or contract.",
+          "example": "2024-11-15T02:47:50Z"
+        },
+        "settlement\_time": {
+          "type": "string",
+          "description": "Settlement timestamp for futures contracts.",
+          "example": null
+        },
+        "notional\_type": {
+          "type": "string",
+          "enum": \["vanilla", "inverse"\],
+          "x-enumDescriptions": {
+            "vanilla": "Contract is quoted, settled, and margined in the quote currency",
+            "inverse": "Contract is quoted in the quote currency but settled and margined in the base currency"
+          },
+          "description": "Type of notional calculation.",
+          "example": "vanilla"
+        },
+        "impact\_size": {
+          "type": "integer",
+          "description": "Size of a typical trade used for mark price computation.",
+          "example": 10000
+        },
+        "initial\_margin": {
+          "type": "string",
+          "description": "Margin required to open a position.",
+          "example": "0.5"
+        },
+        "maintenance\_margin": {
+          "type": "string",
+          "description": "Minimum margin required to maintain a position.",
+          "example": "0.25"
+        },
+        "contract\_value": {
+          "type": "string",
+          "description": "Notional value of the contract (spot price x contract amount).",
+          "example": "0.001"
+        },
+        "contract\_unit\_currency": {
+          "type": "string",
+          "description": "Unit of the contract (underlying asset or settling asset).",
+          "example": "BTC"
+        },
+        "tick\_size": {
+          "type": "string",
+          "description": "Minimum price interval between two successive prices.",
+          "example": "0.5"
+        },
+        "product\_specs": {
+          "type": "object",
+          "description": "Specifications related to contract types.",
+          "$ref": "#/definitions/ProductSpecs"
+        },
+        "state": {
+          "type": "string",
+          "enum": \["live", "expired", "upcoming"\],
+          "x-enumDescriptions": {
+            "live": "Product is currently active and tradable",
+            "expired": "Product has expired and is no longer tradable",
+            "upcoming": "Product is scheduled to go live in the future"
+          },
+          "description": "Current state of the product.",
+          "example": "live"
+        },
+        "trading\_status": {
+          "type": "string",
+          "enum": \["operational", "disrupted\_cancel\_only", "disrupted\_post\_only"\],
+          "x-enumDescriptions": {
+            "operational": "Trading is fully operational; orders can be placed and cancelled",
+            "disrupted\_cancel\_only": "Trading is disrupted; only order cancellations are allowed",
+            "disrupted\_post\_only": "Trading is disrupted; only post-only orders are accepted"
+          },
+          "description": "Trading status of the contract.",
+          "example": "operational"
+        },
+        "max\_leverage\_notional": {
+          "type": "string",
+          "description": "Maximum notional position size at the highest leverage.",
+          "example": "100000"
+        },
+        "default\_leverage": {
+          "type": "string",
+          "description": "Default leverage assigned to the product.",
+          "example": "200"
+        },
+        "initial\_margin\_scaling\_factor": {
+          "type": "string",
+          "description": "Scaling factor for initial margin.",
+          "example": "0.0000025"
+        },
+        "maintenance\_margin\_scaling\_factor": {
+          "type": "string",
+          "description": "Scaling factor for maintenance margin.",
+          "example": "0.00000125"
+        },
+        "taker\_commission\_rate": {
+          "type": "string",
+          "description": "Commission rate for taker trades.",
+          "example": "0.0005"
+        },
+        "maker\_commission\_rate": {
+          "type": "string",
+          "description": "Commission rate for maker trades.",
+          "example": "0.0002"
+        },
+        "liquidation\_penalty\_factor": {
+          "type": "string",
+          "description": "Factor used to calculate liquidation penalty.",
+          "example": "0.5"
+        },
+        "contract\_type": {
+          "type": "string",
+          "description": "Type of contract (e.g., futures, perpetual).",
+          "example": "perpetual\_futures"
+        },
+        "position\_size\_limit": {
+          "type": "integer",
+          "description": "Maximum size for a single contract order.",
+          "example": 229167
+        },
+        "basis\_factor\_max\_limit": {
+          "type": "string",
+          "description": "Maximum value for annualized basis.",
+          "example": "10.95"
+        },
+        "is\_quanto": {
+          "type": "boolean",
+          "description": "Indicates if the contract is quanto.",
+          "example": false
+        },
+        "funding\_method": {
+          "type": "string",
+          "description": "Method used for funding calculation.",
+          "example": "mark\_price"
+        },
+        "annualized\_funding": {
+          "type": "string",
+          "description": "Maximum allowed annualized funding rate.",
+          "example": "10.95"
+        },
+        "price\_band": {
+          "type": "string",
+          "description": "Price range allowed around the mark price (percentage).",
+          "example": "2.5"
+        },
+        "underlying\_asset": {
+          "$ref": "#/definitions/Asset",
+          "description": "Details of the underlying asset."
+        },
+        "quoting\_asset": {
+          "$ref": "#/definitions/Asset",
+          "description": "Details of the quoting asset."
+        },
+        "settling\_asset": {
+          "$ref": "#/definitions/Asset",
+          "description": "Details of the settling asset."
+        },
+        "spot\_index": {
+          "$ref": "#/definitions/Index",
+          "description": "Spot index used for the product."
+        }
+      }
+    },
+    "ProductCategories": {
+      "type": "object",
+      "description": "List of all the product category names on delta exchange. Please refer to this list while subscribing to various public and private channels on delta exchange websocket",
+      "properties": {
+        "PutOptions": {
+          "type": "string",
+          "description": "put\_options"
+        },
+        "CallOptions": {
+          "type": "string",
+          "description": "call\_options"
+        },
+        "MoveOptions": {
+          "type": "string",
+          "description": "move\_options"
+        },
+        "Spot": {
+          "type": "string",
+          "description": "spot"
+        },
+        "Futures": {
+          "type": "string",
+          "description": "futures"
+        },
+        "Perpetual Futures": {
+          "type": "string",
+          "description": "perpetual\_futures"
+        }
+      }
+    },
+    "ArrayOfProducts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Product"
+      }
+    },
+    "Order": {
+      "type": "object",
+      "description": "An Order object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Genraeted order id",
+          "example": 123
+        },
+        "user\_id": {
+          "type": "integer",
+          "description": "Client id",
+          "example": 453671
+        },
+        "size": {
+          "type": "integer",
+          "description": "Order size",
+          "example": 10
+        },
+        "unfilled\_size": {
+          "type": "integer",
+          "description": "Order size which is not filled yet",
+          "example": 2
+        },
+        "side": {
+          "type": "string",
+          "description": "Side for which to place order",
+          "enum": \[
+            "buy",
+            "sell"
+          \],
+          "x-enumDescriptions": {
+            "buy": "Buy order on the product",
+            "sell": "Sell order on the product"
+          },
+          "example": "buy"
+        },
+        "order\_type": {
+          "type": "string",
+          "description": "Order type - limit\_order/market\_order",
+          "enum": \[
+            "limit\_order",
+            "market\_order"
+          \],
+          "x-enumDescriptions": {
+            "limit\_order": "Order placed at a specified limit price",
+            "market\_order": "Order executed at the best available market price"
+          },
+          "example": "limit\_order"
+        },
+        "limit\_price": {
+          "type": "string",
+          "description": "Price level on which order must be triggered",
+          "example": "59000"
+        },
+        "stop\_order\_type": {
+          "type": "string",
+          "description": "Stop order type - stop loss or take profit",
+          "enum": \[
+            "stop\_loss\_order"
+          \],
+          "x-enumDescriptions": {
+            "stop\_loss\_order": "Order triggered when stop price is hit to limit losses"
+          },
+          "example": "stop\_loss\_order"
+        },
+        "stop\_price": {
+          "type": "string",
+          "description": "Stop price level for the stop order",
+          "example": "55000"
+        },
+        "paid\_commission": {
+          "type": "string",
+          "description": "Commission paid for filled order",
+          "example": "0.5432"
+        },
+        "commission": {
+          "type": "string",
+          "description": "Commission blocked for order",
+          "example": "0.5432"
+        },
+        "reduce\_only": {
+          "type": "string",
+          "description": "if set, will only close positions. New orders will not be placed",
+          "enum": \[
+            "false",
+            "true"
+          \],
+          "x-enumDescriptions": {
+            "false": "Order can open or increase a position",
+            "true": "Order can only reduce or close an existing position"
+          },
+          "default": false,
+          "example": false
+        },
+        "client\_order\_id": {
+          "type": "string",
+          "description": "custom id provided by user when creating order (max 32 length)",
+          "example": "my\_signal\_34521712"
+        },
+        "state": {
+          "type": "string",
+          "description": "Order Status",
+          "enum": \[
+            "open",
+            "pending",
+            "closed",
+            "cancelled"
+          \],
+          "x-enumDescriptions": {
+            "open": "Order is active and resting in the orderbook",
+            "pending": "Order is waiting for its trigger condition to be met",
+            "closed": "Order has been fully filled",
+            "cancelled": "Order was cancelled before being fully filled"
+          },
+          "example": "open"
+        },
+        "created\_at": {
+          "type": "string",
+          "description": "Created at unix timestamp of the order in micro seconds",
+          "example": "1725865012000000"
+        },
+        "product\_id": {
+          "type": "integer",
+          "description": "Product id of the ordered product",
+          "example": 27
+        },
+        "product\_symbol": {
+          "type": "string",
+          "description": "Product symbol of the ordered product",
+          "example": "BTCUSD"
+        }
+      }
+    },
+    "ArrayOfOrders": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Order"
+      }
+    },
+    "CreateOrderRequest": {
+      "type": "object",
+      "description": "A create order object",
+      "required": \[
+        "product\_id",
+        "product\_symbol",
+        "size",
+        "side",
+        "order\_type"
+      \],
+      "properties": {
+        "product\_id": {
+          "type": "integer",
+          "description": "Only one of either product\_id or product\_symbol must be sent.",
+          "example": 27
+        },
+        "product\_symbol": {
+          "type": "string",
+          "description": "Only one of either product\_id or product\_symbol must be sent.",
+          "example": "BTCUSD"
+        },
+        "limit\_price": {
+          "type": "string",
+          "description": "Price level for limit orders",
+          "example": "59000"
+        },
+        "size": {
+          "type": "integer",
+          "description": "Order size",
+          "example": 10
+        },
+        "side": {
+          "type": "string",
+          "description": "Buy order or Sell order",
+          "enum": \[
+            "buy",
+            "sell"
+          \],
+          "x-enumDescriptions": {
+            "buy": "Buy order on the product",
+            "sell": "Sell order on the product"
+          },
+          "example": "buy"
+        },
+        "order\_type": {
+          "type": "string",
+          "description": "Limit order(limit\_price must be defined) or Market order",
+          "enum": \[
+            "limit\_order",
+            "market\_order"
+          \],
+          "x-enumDescriptions": {
+            "limit\_order": "Order placed at a specified limit price",
+            "market\_order": "Order executed at the best available market price"
+          },
+          "default": "market\_order",
+          "example": "limit\_order"
+        },
+        "stop\_order\_type": {
+          "type": "string",
+          "description": "Stop order type - stop loss or take profit",
+          "enum": \[
+            "stop\_loss\_order",
+            "take\_profit\_order"
+          \],
+          "x-enumDescriptions": {
+            "stop\_loss\_order": "Order triggered when stop price is hit to limit losses",
+            "take\_profit\_order": "Order triggered when take profit price is hit to lock in gains"
+          },
+          "example": "stop\_loss\_order"
+        },
+        "stop\_price": {
+          "type": "string",
+          "description": "Stop loss price level if the order is stop order",
+          "example": "56000"
+        },
+        "trail\_amount": {
+          "type": "string",
+          "description": "Use trail amount if you want a trailing stop order. Required if stop price is empty.",
+          "example": "50"
+        },
+        "stop\_trigger\_method": {
+          "type": "string",
+          "description": "Stop order trigger method - mark\_price/last\_traded\_price/spot\_price",
+          "enum": \[
+            "mark\_price", "last\_traded\_price", "spot\_price"
+          \],
+          "x-enumDescriptions": {
+            "mark\_price": "Order triggered against the mark price",
+            "last\_traded\_price": "Order triggered against the last traded price",
+            "spot\_price": "Order triggered against the spot index price"
+          },
+          "default": "mark\_price",
+          "example": "last\_traded\_price"
+        },
+        "bracket\_stop\_trigger\_method": {
+          "type": "string",
+          "description": "stop order trigger method for bracket orders - mark\_price/last\_traded\_price/spot\_price",
+          "enum": \[
+            "mark\_price",
+            "last\_traded\_price",
+            "spot\_price"
+          \],
+          "x-enumDescriptions": {
+            "mark\_price": "Bracket order triggered against the mark price",
+            "last\_traded\_price": "Bracket order triggered against the last traded price",
+            "spot\_price": "Bracket order triggered against the spot index price"
+          },
+          "default": "mark\_price",
+          "example": "last\_traded\_price"
+        },
+        "bracket\_stop\_loss\_limit\_price": {
+          "type": "string",
+          "description": "Bracket order stop loss limit price",
+          "example": "57000"
+        },
+        "bracket\_stop\_loss\_price": {
+          "type": "string",
+          "description": "Bracket order stop loss trigger price",
+          "example": "56000"
+        },
+        "bracket\_trail\_amount": {
+          "type": "string",
+          "description": "use bracket trail amount if you want a trailing stop order. Required if bracket stop price is empty",
+          "example": "50"
+        },
+        "bracket\_take\_profit\_limit\_price": {
+          "type": "string",
+          "description": "Bracket order take profit limit price",
+          "example": "62000"
+        },
+        "bracket\_take\_profit\_price": {
+          "type": "string",
+          "description": "take profit trigger price for bracket order",
+          "example": "61000"
+        },
+        "time\_in\_force": {
+          "type": "string",
+          "description": "GTC/IOC order type",
+          "enum": \[
+            "gtc",
+            "ioc"
+          \],
+          "x-enumDescriptions": {
+            "gtc": "Good-till-cancelled; order stays open until filled or cancelled",
+            "ioc": "Immediate-or-cancel; unfilled portion is cancelled immediately"
+          },
+          "example": "gtc"
+        },
+        "mmp": {
+          "type": "string",
+          "description": "MMP level for the order - disabled/mmp1/mmp2/mmp3/mmp4/mmp5",
+          "enum": \[
+            "disabled",
+            "mmp1",
+            "mmp2",
+            "mmp3",
+            "mmp4",
+            "mmp5"
+          \],
+          "example": "disabled"
+        },
+        "post\_only": {
+          "type": "string",
+          "description": "Post only order",
+          "enum": \[
+            "true",
+            "false"
+          \],
+          "x-enumDescriptions": {
+            "true": "Order is rejected if it would take liquidity from the orderbook",
+            "false": "Order is allowed to take liquidity from the orderbook"
+          },
+          "default": false,
+          "example": false
+        },
+        "reduce\_only": {
+          "type": "string",
+          "description": "if set, will only close positions. New orders will not be placed",
+          "enum": \[
+            "true",
+            "false"
+          \],
+          "x-enumDescriptions": {
+            "true": "Order can only reduce or close an existing position",
+            "false": "Order can open or increase a position"
+          },
+          "default": false,
+          "example": false
+        },
+        "client\_order\_id": {
+          "type": "string",
+          "description": "custom id provided by user when creating order (max 32 length)",
+          "example": "my\_signal\_345212"
+        },
+        "cancel\_orders\_accepted": {
+          "type": "string",
+          "description": "if set, will cancel all existing orders for the product",
+          "enum": \[
+            "true",
+            "false"
+          \],
+          "x-enumDescriptions": {
+            "true": "User accepts that existing orders for this product may be cancelled to free margin",
+            "false": "Existing orders should not be cancelled to free margin"
+          },
+          "default": false,
+          "example": false
+        }
+      }
+    },
+    "BatchCreateOrder": {
+      "type": "object",
+      "description": "A create order object",
+      "required": \[
+        "size",
+        "side",
+        "order\_type"
+      \],
+      "properties": {
+        "limit\_price": {
+          "type": "string",
+          "description": "Price level for limit orders",
+          "example": "59000"
+        },
+        "size": {
+          "type": "integer",
+          "description": "Order size",
+          "example": 10
+        },
+        "side": {
+          "type": "string",
+          "description": "Buy order or Sell order",
+          "enum": \[
+            "buy",
+            "sell"
+          \],
+          "x-enumDescriptions": {
+            "buy": "Buy order on the product",
+            "sell": "Sell order on the product"
+          },
+          "example": "buy"
+        },
+        "order\_type": {
+          "type": "string",
+          "description": "Limit order(limit\_price must be defined) or Market order",
+          "enum": \[
+            "limit\_order",
+            "market\_order"
+          \],
+          "x-enumDescriptions": {
+            "limit\_order": "Order placed at a specified limit price",
+            "market\_order": "Order executed at the best available market price"
+          },
+          "default": "market\_order",
+          "example": "limit\_order"
+        },
+        "time\_in\_force": {
+          "type": "string",
+          "description": "GTC/IOC order type",
+          "enum": \[
+            "gtc",
+            "ioc"
+          \],
+          "x-enumDescriptions": {
+            "gtc": "Good-till-cancelled; order stays open until filled or cancelled",
+            "ioc": "Immediate-or-cancel; unfilled portion is cancelled immediately"
+          },
+          "example": "gtc"
+        },
+        "mmp": {
+          "type": "string",
+          "description": "MMP level for the order - disabled/mmp1/mmp2/mmp3/mmp4/mmp5",
+          "enum": \[
+            "disabled",
+            "mmp1",
+            "mmp2",
+            "mmp3",
+            "mmp4",
+            "mmp5"
+          \],
+          "example": "disabled"
+        },
+        "post\_only": {
+          "type": "string",
+          "description": "Post only order",
+          "enum": \[
+            "true",
+            "false"
+          \],
+          "x-enumDescriptions": {
+            "true": "Order is rejected if it would take liquidity from the orderbook",
+            "false": "Order is allowed to take liquidity from the orderbook"
+          },
+          "default": false,
+          "example": false
+        },
+        "client\_order\_id": {
+          "type": "string",
+          "description": "custom id provided by user when creating order (max 32 length)",
+          "example": "my\_signal\_34521712"
+        }
+      }
+    },
+    "BatchCreateOrdersRequest": {
+      "type": "object",
+      "oneOf": \[
+        {
+          "required": \["product\_id"\]
+        },
+        {
+          "required": \["product\_symbol"\]
+        }
+      \],
+      "properties": {
+        "product\_id": {
+          "type": "integer",
+          "description": "Only one of either product\_id or product\_symbol must be sent.",
+          "example": 27
+        },
+        "product\_symbol": {
+          "type": "string",
+          "description": "Only one of either product\_id or product\_symbol must be sent.",
+          "example": "BTCUSD"
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatchCreateOrder"
+          }
+        }
+      }
+    },
+    "ArrayOfCreateOrderRequest": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/CreateOrderRequest"
+      }
+    },
+    "EditOrderRequest": {
+      "type": "object",
+      "description": "edit order object",
+      "required": \[
+        "id",
+        "product\_id",
+        "product\_symbol",
+        "size"
+      \],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "existing order id to be edited",
+          "example": 34521712
+        },
+        "product\_id": {
+          "type": "integer",
+          "description": "Only one of either product\_id or product\_symbol must be sent.",
+          "example": 27
+        },
+        "product\_symbol": {
+          "type": "string",
+          "description": "Only one of either product\_id or product\_symbol must be sent.",
+          "example": "BTCUSD"
+        },
+        "limit\_price": {
+          "type": "string",
+          "description": "Price level for limit orders",
+          "example": "59000"
+        },
+        "size": {
+          "type": "integer",
+          "description": "total size after editing order",
+          "example": 15
+        },
+        "mmp": {
+          "type": "string",
+          "description": "MMP level for the order - disabled/mmp1/mmp2/mmp3/mmp4/mmp5",
+          "enum": \[
+            "disabled",
+            "mmp1",
+            "mmp2",
+            "mmp3",
+            "mmp4",
+            "mmp5"
+          \],
+          "example": "disabled"
+        },
+        "post\_only": {
+          "type": "string",
+          "description": "Post only order",
+          "enum": \[
+            "true",
+            "false"
+          \],
+          "x-enumDescriptions": {
+            "true": "Order is rejected if it would take liquidity from the orderbook",
+            "false": "Order is allowed to take liquidity from the orderbook"
+          },
+          "default": false,
+          "example": false
+        },
+        "stop\_price": {
+          "type": "string",
+          "description": "price to trigger stop order",
+          "example": "56000"
+        },
+        "trail\_amount": {
+          "type": "string",
+          "description": "Use trail amount if you want a trailing stop order. Required if stop price is empty.",
+          "example": "50"
+        }
+      }
+    },
+    "BatchEditOrder": {
+      "type": "object",
+      "description": "edit order object",
+      "required": \[
+        "id",
+        "size",
+        "order\_type"
+      \],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "existing order id to be edited",
+          "example": 34521712
+        },
+        "limit\_price": {
+          "type": "string",
+          "description": "Price level for limit orders",
+          "example": "59000"
+        },
+        "size": {
+          "type": "integer",
+          "description": "total size after editing order",
+          "example": 15
+        },
+        "mmp": {
+          "type": "string",
+          "description": "MMP level for the order - disabled/mmp1/mmp2/mmp3/mmp4/mmp5",
+          "enum": \[
+            "disabled",
+            "mmp1",
+            "mmp2",
+            "mmp3",
+            "mmp4",
+            "mmp5"
+          \],
+          "example": "disabled"
+        },
+        "post\_only": {
+          "type": "string",
+          "description": "Post only order",
+          "enum": \[
+            "false",
+            "true"
+          \],
+          "x-enumDescriptions": {
+            "false": "Order is allowed to take liquidity from the orderbook",
+            "true": "Order is rejected if it would take liquidity from the orderbook"
+          },
+          "default": false,
+          "example": false
+        }
+      }
+    },
+    "BatchEditOrdersRequest": {
+      "type": "object",
+      "oneOf": \[
+        {
+          "required": \["product\_id"\]
+        },
+        {
+          "required": \["product\_symbol"\]
+        }
+      \],
+      "properties": {
+        "product\_id": {
+          "type": "integer",
+          "description": "Only one of either product\_id or product\_symbol must be sent.",
+          "example": 27
+        },
+        "product\_symbol": {
+          "type": "string",
+          "description": "Only one of either product\_id or product\_symbol must be sent.",
+          "example": "BTCUSD"
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatchEditOrder"
+          }
+        }
+      }
+    },
+    "CreateBracketOrderRequest": {
+      "type": "object",
+      "description": "bracket order object",
+      "required": \[
+        "product\_id",
+        "product\_symbol"
+      \],
+      "properties": {
+        "product\_id": {
+          "type": "integer",
+          "description": "Only one of either product\_id or product\_symbol must be sent.",
+          "example": 27
+        },
+        "product\_symbol": {
+          "type": "string",
+          "description": "Only one of either product\_id or product\_symbol must be sent.",
+          "example": "BTCUSD"
+        },
+        "stop\_loss\_order": {
+          "type": "object",
+          "properties": {
+            "order\_type": {
+              "type": "string",
+              "description": "Limit order(limit\_price must be defined) or Market order",
+              "enum": \["limit\_order", "market\_order"\],
+              "x-enumDescriptions": {
+                "limit\_order": "Stop loss is placed as a limit order at the specified limit price",
+                "market\_order": "Stop loss is placed as a market order at the best available price"
+              },
+              "default": "market\_order",
+              "example": "limit\_order"
+            },
+            "stop\_price": {
+              "type": "string",
+              "description": "Stop loss price level",
+              "example": "56000"
+            },
+            "trail\_amount": {
+              "type": "string",
+              "description": "Use trail amount if you want a trailing stop order. Required if stop price is empty.",
+              "example": "50"
+            },
+            "limit\_price": {
+              "type": "string",
+              "description": "required for limit orders",
+              "example": "55000"
+            }
+          }
+        },
+        "take\_profit\_order": {
+          "type": "object",
+          "properties": {
+            "order\_type": {
+              "type": "string",
+              "description": "Limit order(limit\_price must be defined) or Market order",
+              "enum": \["limit\_order", "market\_order"\],
+              "x-enumDescriptions": {
+                "limit\_order": "Take profit is placed as a limit order at the specified limit price",
+                "market\_order": "Take profit is placed as a market order at the best available price"
+              },
+              "default": "market\_order",
+              "example": "limit\_order"
+            },
+            "stop\_price": {
+              "type": "string",
+              "description": "Stop price level",
+              "example": "65000"
+            },
+            "limit\_price": {
+              "type": "string",
+              "description": "required for limit orders",
+              "example": "64000"
+            }
+          }
+        },
+        "bracket\_stop\_trigger\_method": {
+          "type": "string",
+          "description": "stop order trigger method for bracket orders- mark\_price/last\_traded\_price/spot\_price",
+          "enum": \[
+            "mark\_price",
+            "last\_traded\_price",
+            "spot\_price"
+          \],
+          "x-enumDescriptions": {
+            "mark\_price": "Bracket order triggered against the mark price",
+            "last\_traded\_price": "Bracket order triggered against the last traded price",
+            "spot\_price": "Bracket order triggered against the spot index price"
+          },
+          "default": "mark\_price",
+          "example": "last\_traded\_price"
+        }
+      }
+    },
+    "EditBracketOrderRequest": {
+      "type": "object",
+      "description": "bracket order object",
+      "required": \[
+        "id",
+        "product\_id",
+        "product\_symbol"
+      \],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "required": true,
+          "description": "Order ID for which bracket params are being updated",
+          "example": 34521712
+        },
+        "product\_id": {
+          "type": "integer",
+          "description": "Only one of either product\_id or product\_symbol must be sent.",
+          "example": 27
+        },
+        "product\_symbol": {
+          "type": "string",
+          "description": "Only one of either product\_id or product\_symbol must be sent.",
+          "example": "BTCUSD"
+        },
+        "bracket\_stop\_loss\_limit\_price": {
+          "type": "string",
+          "description": "stop loss limit price for bracket order",
+          "example": "55000"
+        },
+        "bracket\_stop\_loss\_price": {
+          "type": "string",
+          "description": "stop loss trigger price for bracket order",
+          "example": "56000"
+        },
+        "bracket\_take\_profit\_limit\_price": {
+          "type": "string",
+          "description": "take profit limit price for bracket order",
+          "example": "65000"
+        },
+        "bracket\_take\_profit\_price": {
+          "type": "string",
+          "description": "take profit trigger price for bracket order",
+          "example": "64000"
+        },
+        "bracket\_trail\_amount": {
+          "type": "string",
+          "description": "trail amount of bracket order",
+          "example": "50"
+        },
+        "bracket\_stop\_trigger\_method": {
+          "type": "string",
+          "description": "stop order trigger method for bracket orders- mark\_price/last\_traded\_price/spot\_price",
+          "enum": \[
+            "mark\_price",
+            "last\_traded\_price",
+            "spot\_price"
+          \],
+          "x-enumDescriptions": {
+            "mark\_price": "Bracket order triggered against the mark price",
+            "last\_traded\_price": "Bracket order triggered against the last traded price",
+            "spot\_price": "Bracket order triggered against the spot index price"
+          },
+          "default": "mark\_price",
+          "example": "last\_traded\_price"
+        }
+      }
+    },
+    "BatchDeleteOrder": {
+      "type": "object",
+      "description": "A delete order object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "use bracket trail amount if you want a trailing stop order. Required if bracket stop price is empty",
+          "example": 13452112
+        },
+        "client\_order\_id": {
+          "type": "string",
+          "description": "custom id provided by user when creating order (max 32 length)",
+          "example": "my\_signal\_34521712"
+        }
+      }
+    },
+    "DeleteOrderRequest": {
+      "type": "object",
+      "description": "A delete order object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "use bracket trail amount if you want a trailing stop order. Required if bracket stop price is empty",
+          "example": 13452112
+        },
+        "client\_order\_id": {
+          "type": "string",
+          "description": "custom id provided by user when creating order (max 32 length)",
+          "example": "my\_signal\_34521712"
+        },
+        "product\_id": {
+          "type": "integer",
+          "description": "product\_id of the product in the order",
+          "example": 27
+        }
+      }
+    },
+    "CancelAllFilterObject": {
+      "type": "object",
+      "description": "Cancel all request filter object",
+      "properties": {
+        "product\_id": {
+          "type": "integer",
+          "description": "Only one of either product\_id or product\_symbol must be sent.",
+          "example": 27
+        },
+        "contract\_types": {
+          "type": "string",
+          "description": "comma separated list of desired contract types",
+          "example": "perpetual\_futures,put\_options,call\_options"
+        },
+        "cancel\_limit\_orders": {
+          "type": "string",
+          "description": "set true to cancel open limit orders",
+          "enum": \[
+            "true",
+            "false"
+          \],
+          "x-enumDescriptions": {
+            "true": "Include open limit orders in the cancellation",
+            "false": "Exclude open limit orders from the cancellation"
+          },
+          "example": false
+        },
+        "cancel\_stop\_orders": {
+          "type": "string",
+          "description": "set as true to cancel stop orders",
+          "enum": \[
+            "true",
+            "false"
+          \],
+          "x-enumDescriptions": {
+            "true": "Include open stop orders in the cancellation",
+            "false": "Exclude open stop orders from the cancellation"
+          },
+          "example": false
+        },
+        "cancel\_reduce\_only\_orders": {
+          "type": "string",
+          "description": "set as true to cancel reduce only orders",
+          "enum": \[
+            "true",
+            "false"
+          \],
+          "x-enumDescriptions": {
+            "true": "Include open reduce-only orders in the cancellation",
+            "false": "Exclude open reduce-only orders from the cancellation"
+          },
+          "example": false
+        }
+      }
+    },
+    "BatchDeleteOrdersRequest": {
+      "type": "object",
+      "oneOf": \[
+        {
+          "required": \["product\_id"\]
+        },
+        {
+          "required": \["product\_symbol"\]
+        }
+      \],
+      "properties": {
+        "product\_id": {
+          "type": "integer",
+          "description": "Only one of either product\_id or product\_symbol must be sent.",
+          "example": 27
+        },
+        "product\_symbol": {
+          "type": "string",
+          "description": "Only one of either product\_id or product\_symbol must be sent.",
+          "example": "BTCUSD"
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatchDeleteOrder"
+          }
+        }
+      }
+    },
+    "Position": {
+      "type": "object",
+      "description": "A position object",
+      "properties": {
+        "user\_id": {
+          "type": "integer"
+        },
+        "size": {
+          "type": "integer",
+          "description": "Position size, negative for short and positive for long"
+        },
+        "entry\_price": {
+          "type": "string"
+        },
+        "margin": {
+          "type": "string"
+        },
+        "liquidation\_price": {
+          "type": "string"
+        },
+        "bankruptcy\_price": {
+          "type": "string"
+        },
+        "adl\_level": {
+          "type": "integer"
+        },
+        "product\_id": {
+          "type": "integer"
+        },
+        "product\_symbol": {
+          "type": "string"
+        },
+        "commission": {
+          "type": "string",
+          "description": "commissions blocked in the position"
+        },
+        "realized\_pnl": {
+          "type": "string",
+          "description": "Net realized pnl since the position was opened"
+        },
+        "realized\_funding": {
+          "type": "string",
+          "description": "Net realized funding since the position was opened"
+        }
+      }
+    },
+    "ArrayOfPositions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Position"
+      }
+    },
+    "Fill": {
+      "type": "object",
+      "description": "A fill object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "size": {
+          "type": "integer"
+        },
+        "fill\_type":{
+          "type": "string",
+          "enum": \[
+            "normal",
+            "adl",
+            "liquidation",
+            "settlement",
+            "otc"
+          \],
+          "x-enumDescriptions": {
+            "normal": "Regular fill from matching against the orderbook",
+            "adl": "Fill from auto-deleveraging to balance counterparty exposure",
+            "liquidation": "Fill resulting from forced liquidation of a position",
+            "settlement": "Fill generated at contract settlement or expiry",
+            "otc": "Off-exchange (over-the-counter) fill"
+          }
+        },
+        "side": {
+          "type": "string",
+          "enum": \[
+            "buy",
+            "sell"
+          \],
+          "x-enumDescriptions": {
+            "buy": "Buy order on the product",
+            "sell": "Sell order on the product"
+          }
+        },
+        "price": {
+          "type": "string",
+          "description": "Price at which the fill happened, BigDecimal sent as string"
+        },
+        "role": {
+          "type": "string",
+          "enum": \[
+            "taker",
+            "maker"
+          \],
+          "x-enumDescriptions": {
+            "taker": "Fill where the user removed liquidity from the orderbook",
+            "maker": "Fill where the user added liquidity to the orderbook"
+          }
+        },
+        "commission": {
+          "type": "string",
+          "description": "Commission paid on this fill, negative value means commission was earned because of maker role"
+        },
+        "created\_at": {
+          "type": "string"
+        },
+        "product\_id": {
+          "type": "integer"
+        },
+        "product\_symbol": {
+          "type": "string"
+        },
+        "order\_id": {
+          "type": "string",
+          "description": "Will be order\_id(Integer) in most cases. Will be UUID string of order when fill\_type is settlement"
+        },
+        "settling\_asset\_id": {
+          "type": "integer"
+        },
+        "settling\_asset\_symbol": {
+          "type": "string"
+        },
+        "meta\_data": {
+          "$ref": "#/definitions/FillMetaData"
+        }
+      }
+    },
+    "ArrayOfFills": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Fill"
+      }
+    },
+    "FillMetaData": {
+      "type": "object",
+      "description": "Meta data inside fill",
+      "properties": {
+        "commission\_deto": {
+          "type": "string"
+        },
+        "commission\_deto\_in\_settling\_asset": {
+          "type": "string"
+        },
+        "effective\_commission\_rate": {
+          "type": "string"
+        },
+        "liquidation\_fee\_deto": {
+          "type": "string"
+        },
+        "liquidation\_fee\_deto\_in\_settling\_asset": {
+          "type": "string"
+        },
+        "order\_price": {
+          "type": "string"
+        },
+        "order\_size": {
+          "type": "string"
+        },
+        "order\_type": {
+          "type": "string"
+        },
+        "order\_unfilled\_size": {
+          "type": "string"
+        },
+        "tfc\_used\_for\_commission": {
+          "type": "string"
+        },
+        "tfc\_used\_for\_liquidation\_fee": {
+          "type": "string"
+        },
+        "total\_commission\_in\_settling\_asset": {
+          "type": "string"
+        },
+        "total\_liquidation\_fee\_in\_settling\_asset": {
+          "type": "string"
+        }
+      }
+    },
+    "OrderLeverage": {
+      "type": "object",
+      "description": "Order Leverage for a product",
+      "properties": {
+        "leverage": {
+          "type": "string",
+          "description": "Leverage of all open orders for this product",
+          "example": 10
+        },
+        "order\_margin": {
+          "type": "string",
+          "description": "Margin blocked in open orders for this product",
+          "example": "563.2"
+        },
+        "product\_id": {
+          "type": "integer",
+          "description": "Product id of the ordered product",
+          "example": 27
+        }
+      }
+    },
+    "L2Orderbook": {
+      "type": "object",
+      "description": "L2 orderbook",
+      "properties": {
+        "buy": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "depth": {
+                "type": "string",
+                "description": "sum of size till that price level"
+              },
+              "price": {
+                "type": "string"
+              },
+              "size": {
+                "type": "integer",
+                "description": "for derivatives -> number of contracts, for spot -> amount in underlying"
+              }
+
+            }
+          }
+        },
+        "last\_updated\_at":{
+          "type": "integer"
+        },
+        "sell": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "depth": {
+                "type": "string",
+                "description": "sum of size till that price level"
+              },
+              "price": {
+                "type": "string"
+              },
+              "size": {
+                "type": "integer",
+                "description": "for derivatives -> number of contracts, for spot -> amount in underlying"
+              }
+            }
+          }
+        },
+        "symbol": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "buy": \[
+          {
+          "depth": "983",
+          "price": "9187.5",
+          "size": 205640
+          }
+        \],
+        "last\_updated\_at":1654589595784000,
+        "sell": \[
+          {
+          "depth": "1185",
+          "price": "9188.0",
+          "size": 113752
+          }
+        \]
+        ,"symbol":"BTCUSD"
+      }
+    },
+    "Trades": {
+      "type": "object",
+      "description": "trades of a symbol",
+      "properties": {
+        "trades": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "side": {
+                "type": "string",
+                "enum": \[
+                  "buy",
+                  "sell"
+                \],
+                "x-enumDescriptions": {
+                  "buy": "Trade where the aggressor was a buyer",
+                  "sell": "Trade where the aggressor was a seller"
+                }
+              },
+              "size": {
+                "type": "integer"
+              },
+              "price": {
+                "type": "string"
+              },
+              "timestamp": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Wallet": {
+      "type": "object",
+      "description": "Wallet Data for each asset.",
+      "properties": {
+        "asset\_id": {
+          "type": "integer",
+          "description": "Id for assets like BTC"
+        },
+        "asset\_symbol": {
+          "type": "string",
+          "description": "Symbol for assets like BTC"
+        },
+        "available\_balance": {
+          "type": "string",
+          "description": "Balance available for trading"
+        },
+        "available\_balance\_for\_robo": {
+          "type": "string",
+          "description": "Balance available for robo trading"
+        },
+        "balance": {
+          "type": "string",
+          "description": "Total wallet balance"
+        },
+        "blocked\_margin": {
+          "type": "string",
+          "description": "Total blocked margin including commissions for all modes"
+        },
+        "commission": {
+          "type": "string",
+          "description": "Commissions blocked in Isolated Mode"
+        },
+        "cross\_asset\_liability": {
+          "type": "string",
+          "description": "Asset liability in Cross margin mode"
+        },
+        "cross\_commission": {
+          "type": "string",
+          "description": "Commision blocked in Cross margin mode"
+        },
+        "cross\_locked\_collateral": {
+          "type": "string",
+          "description": "collateral blocked in Cross margin mode"
+        },
+        "cross\_order\_margin": {
+          "type": "string",
+          "description": "margin blocked for open orders in Cross margin mode"
+        },
+        "cross\_position\_margin": {
+          "type": "string",
+          "description": "margin blocked for open positions in Cross margin mode"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Wallet Id"
+        },
+        "interest\_credit": {
+          "type": "string",
+          "description": "Total interest credited"
+        },
+        "order\_margin": {
+          "type": "string",
+          "description": "margin blocked for open positions in isolated mode"
+        },
+        "pending\_referral\_bonus": {
+          "type": "string",
+          "description": "Pending referral bonus"
+        },
+        "pending\_trading\_fee\_credit": {
+          "type": "string",
+          "description": "Credit of trading fee pending"
+        },
+        "portfolio\_margin": {
+          "type": "string",
+          "description": "Total margin blocked including commissions in portfolio margin mode"
+        },
+        "position\_margin": {
+          "type": "string",
+          "description": "Margin blocked in open positions in isolated mode"
+        },
+        "trading\_fee\_credit": {
+          "type": "string",
+          "description": "Credit of trading fee"
+        },
+        "unvested\_amount": {
+          "type": "string",
+          "description": "Amount currently unvested"
+        },
+        "user\_id": {
+          "type": "integer",
+          "description": "User Id linked to this wallet"
+        }
+      }
+    },
+    "WalletPayload": {
+      "type": "object",
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/WalletMetaData"
+        },
+        "result": {
+          "$ref": "#/definitions/ArrayOfWallets"
+        },
+        "success": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "WalletMetaData": {
+      "type": "object",
+      "description": "Meta data for robo trading",
+      "properties": {
+        "net\_equity": {
+          "description": "Net equity for robo trading",
+          "type": "string"
+        },
+        "robo\_trading\_equity": {
+          "description": "trading equity for robo trading",
+          "type": "string"
+        }
+      }
+    },
+    "ArrayOfWallets": {
+      "type": "array",
+      "description": "Array of wallet for every asset",
+      "items": {
+        "$ref": "#/definitions/Wallet"
+      }
+    },
+    "AssetTransferSubaccountReq": {
+      "type": "object",
+      "properties": {
+        "transferrer\_user\_id": {
+          "type": "string",
+          "description": "Debit account"
+        },
+        "transferee\_user\_id": {
+          "type": "string",
+          "description": "Credit account"
+        },
+        "asset\_symbol": {
+          "type": "string",
+          "description": "Asset to transfer"
+        },
+        "amount": {
+          "type": "big\_decimal",
+          "description": "Amount to transfer. Only postive values allowed."
+        }
+      }
+    },
+    "SubaccountTransferHistory": {
+      "type": "object",
+      "properties": {
+        "subaccount\_user\_id": {
+          "type": "string",
+          "description": "subaccount user id"
+        },
+        "before": {
+          "type": "string",
+          "description": "before cursor for pagination"
+        },
+        "after": {
+          "type": "string",
+          "description": "after cursor for pagination"
+        },
+        "page\_size": {
+          "type": "big\_decimal",
+          "description": "records per page",
+          "default": 10
+        }
+      }
+    },
+    "TransactionTypes": {
+      "type": "string",
+      "properties": {
+        "transaction\_type": {
+          "type": "string",
+          "enum": \[
+            "cashflow",
+            "deposit",
+            "withdrawal",
+            "commission",
+            "conversion",
+            "funding",
+            "settlement",
+            "liquidation\_fee",
+            "spot\_trade",
+            "withdrawal\_cancellation",
+            "referral\_bonus",
+            "sub\_account\_transfer",
+            "commission\_rebate",
+            "promo\_credit",
+            "trading\_credits",
+            "trading\_credits\_forfeited",
+            "trading\_credits\_paid",
+            "trading\_fee\_credits\_paid\_liquidation\_fee",
+            "trading\_credits\_reverted",
+            "interest\_credit",
+            "external\_deposit",
+            "credit\_line",
+            "trading\_competition",
+            "fund\_deposit",
+            "fund\_withdrawal",
+            "fund\_wallet\_deposit",
+            "fund\_wallet\_withdrawal",
+            "fund\_reward",
+            "trade\_farming\_reward",
+            "interest\_credit",
+            "revert",
+            "raf\_bonus",
+            "fill\_appropriation",
+            "incident\_compensation"
+          \],
+          "x-enumDescriptions": {
+            "cashflow": "Generic cash credit or debit on the wallet",
+            "deposit": "Funds deposited into the wallet",
+            "withdrawal": "Funds withdrawn from the wallet",
+            "commission": "Trading commission charged on a fill",
+            "conversion": "Currency or asset conversion entry",
+            "funding": "Perpetual funding payment exchanged between long and short",
+            "settlement": "Wallet entry generated at contract settlement",
+            "liquidation\_fee": "Fee charged when a position is liquidated",
+            "spot\_trade": "Wallet entry from a spot trade",
+            "withdrawal\_cancellation": "Reversal of a previously requested withdrawal",
+            "referral\_bonus": "Bonus credited from the referral program",
+            "sub\_account\_transfer": "Transfer between a main account and a subaccount",
+            "commission\_rebate": "Rebate paid back on previously charged commission",
+            "promo\_credit": "Promotional credit added to the wallet",
+            "trading\_credits": "Trading credits granted to the user",
+            "trading\_credits\_forfeited": "Trading credits forfeited (e.g. on expiry)",
+            "trading\_credits\_paid": "Trading credits applied toward trading fees",
+            "trading\_fee\_credits\_paid\_liquidation\_fee": "Trading credits applied toward a liquidation fee",
+            "trading\_credits\_reverted": "Reversal of previously applied trading credits",
+            "interest\_credit": "Interest credited on the wallet balance",
+            "external\_deposit": "Deposit from an external/off-exchange source",
+            "credit\_line": "Credit line adjustment on the wallet",
+            "trading\_competition": "Wallet entry related to a trading competition",
+            "fund\_deposit": "Deposit into a managed fund",
+            "fund\_withdrawal": "Withdrawal from a managed fund",
+            "fund\_wallet\_deposit": "Deposit into the fund wallet",
+            "fund\_wallet\_withdrawal": "Withdrawal from the fund wallet",
+            "fund\_reward": "Reward credited from a managed fund",
+            "trade\_farming\_reward": "Reward credited from the trade farming program",
+            "revert": "Reversal of a prior wallet transaction",
+            "raf\_bonus": "Refer-a-friend bonus credited to the wallet",
+            "fill\_appropriation": "Adjustment from appropriation of a fill",
+            "incident\_compensation": "Compensation credited due to an incident"
+          }
+        }
+      }
+    },
+    "Transaction": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "amount": {
+          "type": "string",
+          "description": "amount credited/debited in this transaction (+ for credited, - for debited)"
+        },
+        "balance": {
+          "type": "string",
+          "description": "net wallet balance after this transaction"
+        },
+        "transaction\_type": {
+          "$ref": "#/definitions/TransactionTypes"
+        },
+        "meta\_data": {
+          "type": "object"
+        },
+        "product\_id": {
+          "type": "integer"
+        },
+        "asset\_id": {
+          "type": "integer"
+        },
+        "asset\_symbol": {
+          "type": "integer"
+        },
+        "created\_at": {
+          "type": "string"
+        }
+      }
+    },
+    "ArrayOfTransactions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "SubaccountTransferLog": {
+      "type": "object",
+      "properties": {
+        "transferrer\_user\_id": {
+          "type": "string",
+          "description": "User id of the account debited with the asset."
+        },
+        "transferee\_user\_id": {
+          "type": "string",
+          "description": "User id of the account credited with the asset."
+        },
+        "asset\_symbol": {
+          "type": "string",
+          "description": "Asset symbol transferred."
+        },
+        "amount": {
+          "type": "big\_decimal",
+          "description": "Amount transferred."
+        },
+        "created\_at": {
+          "type": "string",
+          "description": "transfer creation date and time"
+        },
+        "transferee\_user": {
+          "type": "object",
+          "description": "User details"
+        },
+        "transferrer\_user":{
+          "type": "object",
+          "description": "User details"
+        }
+      }
+    },
+    "ArrayOfSubaccountTransferLog": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/SubaccountTransferLog"
+      }
+    },
+    "greeks": {
+      "type": "object",
+      "properties": {
+        "delta": {
+          "type": "string",
+          "description": "The rate of change of the option price with respect to changes in the underlying asset price. A measure of sensitivity to the asset price movement.",
+          "example": "0.25"
+        },
+        "gamma": {
+          "type": "string",
+          "description": "The rate of change of delta with respect to changes in the underlying asset price. A measure of the curvature of the option’s price sensitivity to the asset price.",
+          "example": "0.10"
+        },
+        "rho": {
+          "type": "string",
+          "description": "The rate of change of the option price with respect to changes in the risk-free interest rate. A measure of interest rate sensitivity.",
+          "example": "0.05"
+        },
+        "theta": {
+          "type": "string",
+          "description": "The rate of change of the option price with respect to time, often referred to as time decay. A measure of how the option's price declines as expiration approaches.",
+          "example": "-0.02"
+        },
+        "vega": {
+          "type": "string",
+          "description": "The rate of change of the option price with respect to changes in the volatility of the underlying asset. A measure of volatility sensitivity.",
+          "example": "0.15"
+        }
+      },
+      "description": "The Greeks represent different factors that influence the pricing of options. These are key measures for assessing risk and managing option positions."
+    },
+    "price\_band": {
+      "type": "object",
+      "properties": {
+        "lower\_limit": {
+          "type": "string",
+          "description": "The minimum price limit for the product. It defines the lowest allowable price before triggering a price band constraint.",
+          "example": "61120.45"
+        },
+        "upper\_limit": {
+          "type": "string",
+          "description": "The maximum price limit for the product. It defines the highest allowable price before triggering a price band constraint.",
+          "example": "72300.00"
+        }
+      },
+      "description": "The price band defines the permissible price range for a product. The lower and upper limits represent the boundaries within which the product's price can fluctuate."
+    },
+    "quotes": {
+      "type": "object",
+      "properties": {
+        "ask\_iv": {
+          "type": "string",
+          "description": "The implied volatility (IV) for the ask price. Represents the market's expectation of the future volatility of the underlying asset.",
+          "example": "0.25"
+        },
+        "ask\_size": {
+          "type": "string",
+          "description": "The size of the ask order, representing the quantity of the asset available for sale at the ask price.",
+          "example": "100"
+        },
+        "best\_ask": {
+          "type": "string",
+          "description": "The best (lowest) ask price available in the market for the asset.",
+          "example": "150.00"
+        },
+        "best\_bid": {
+          "type": "string",
+          "description": "The best (highest) bid price available in the market for the asset.",
+          "example": "148.00"
+        },
+        "bid\_iv": {
+          "type": "string",
+          "description": "The implied volatility (IV) for the bid price. Represents the market's expectation of future volatility for the bid side of the order book.",
+          "example": "0.22"
+        },
+        "bid\_size": {
+          "type": "string",
+          "description": "The size of the bid order, representing the quantity of the asset that buyers are willing to purchase at the bid price.",
+          "example": "50"
+        }
+      },
+      "description": "The 'quotes' object contains the latest bid and ask prices, their respective implied volatilities (IV), and order sizes for an asset. It provides key market data for understanding liquidity and pricing."
+    },
+    "Ticker": {
+      "type": "object",
+      "properties": {
+        "close": {
+          "type": "integer",
+          "description": "The closing price of the last trade for the product.",
+          "example": 67321
+        },
+        "contract\_type": {
+          "type": "string",
+          "description": "Comma-separated list of contract types, such as futures, perpetual\_futures, call\_options, put\_options.",
+          "example": "futures"
+        },
+        "greeks": {
+          "$ref": "#/definitions/greeks",
+          "description": "The Greek values for options associated with the ticker, including delta, gamma, vega, theta, and rho."
+        },
+        "high": {
+          "type": "number",
+          "description": "The highest price reached during the trading session.",
+          "example": 68500.50
+        },
+        "low": {
+          "type": "number",
+          "description": "The lowest price reached during the trading session.",
+          "example": 66300.25
+        },
+        "ltp\_change\_24h": {
+          "type": "string",
+          "description": "The percentage change in the last traded price over the last 24 hours.",
+          "example": "0.7061"
+        },
+        "mark\_price": {
+          "type": "string",
+          "description": "The market price of the product, reflecting the most recent transaction.",
+          "example": "67000.00"
+        },
+        "mark\_vol": {
+          "type": "string",
+          "description": "The market volume at the most recent trade price.",
+          "example": "500"
+        },
+        "oi": {
+          "type": "string",
+          "description": "The open interest, or the number of outstanding contracts, for the product.",
+          "example": "15000"
+        },
+        "oi\_value": {
+          "type": "string",
+          "description": "The value of the open interest in the base currency.",
+          "example": "1000000"
+        },
+        "oi\_value\_symbol": {
+          "type": "string",
+          "description": "The symbol representing the currency of the open interest value.",
+          "example": "USD"
+        },
+        "oi\_value\_usd": {
+          "type": "string",
+          "description": "The open interest value converted to USD.",
+          "example": "1050000"
+        },
+        "open": {
+          "type": "number",
+          "description": "The opening price at the start of the trading session.",
+          "example": 67000.00
+        },
+        "price\_band": {
+          "$ref": "#/definitions/price\_band",
+          "description": "The price band within which the product’s price can fluctuate during the trading session."
+        },
+        "product\_id": {
+          "type": "number",
+          "description": "A unique identifier for the product.",
+          "example": 123456
+        },
+        "quotes": {
+          "$ref": "#/definitions/quotes",
+          "description": "The latest bid and ask prices, sizes, and implied volatilities for the product."
+        },
+        "size": {
+          "type": "number",
+          "description": "The size of the most recent order executed in the market.",
+          "example": 100
+        },
+        "spot\_price": {
+          "type": "string",
+          "description": "The current spot price of the underlying asset.",
+          "example": "67000.00"
+        },
+        "strike\_price": {
+          "type": "string",
+          "description": "The strike price for options contracts associated with the product.",
+          "example": "68000.00"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "The ticker symbol for the product.",
+          "example": "BTCUSD"
+        },
+        "timestamp": {
+          "type": "number",
+          "description": "The timestamp of the last trade or update to the ticker.",
+          "example": 1609459200
+        },
+        "turnover": {
+          "type": "number",
+          "description": "The total turnover (value traded) for the product during the trading session.",
+          "example": 5000000
+        },
+        "turnover\_symbol": {
+          "type": "string",
+          "description": "The symbol representing the currency in which the turnover is measured.",
+          "example": "USD"
+        },
+        "turnover\_usd": {
+          "type": "number",
+          "description": "The turnover value converted to USD.",
+          "example": 5200000
+        },
+        "volume": {
+          "type": "integer",
+          "description": "The total trading volume for the product during the trading session.",
+          "example": 25000
+        }
+      },
+      "description": "The 'Ticker' object provides real-time trading data for a specific product, including prices, volumes, open interest, and Greek values (for options). This data is essential for analyzing market trends and asset performance."
+    },
+    "ArrayOfTickers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Ticker"
+      }
+    },
+    "PaginationMeta": {
+      "type": "object",
+      "properties": {
+        "after": {
+          "type": "string",
+          "description": "after cursor for pagination; becomes null if page after the current one does not exist",
+          "example": "g3QAAAACZAAKY3JlYXRlZF9hdHQAAAAN"
+        },
+        "before": {
+          "type": "string",
+          "description": "before cursor for pagination; becomes null if page before the current one does not exist",
+          "example": "a2PQRSACZAAKY3JlYXRlZF3fnqHBBBNZL"
+        }
+      }
+    },
+    "OHLCData": {
+      "type": "object",
+      "description": "A ohlc object",
+      "properties": {
+        "time": {
+          "type": "integer"
+        },
+        "open": {
+          "type": "number"
+        },
+        "high": {
+          "type": "number"
+        },
+        "low": {
+          "type": "number"
+        },
+        "close": {
+          "type": "number"
+        },
+        "volume": {
+          "type": "number"
+        }
+      }
+    },
+    "ArrayOfOHLCData": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/OHLCData"
+      }
+    },
+    "SparklineData": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        },
+        "description": "array of timestamp and closing value"
+      },
+      "example": {"ETHUSD": \[\[1594214051,0.00003826\],\[1594214051,0.00003826\]\],"MARK:BTCUSD": \[\[1594215270,0.00003826\]\]}
+    },
+    "Stats":{
+      "type": "object",
+      "properties": {
+        "last\_30\_days\_volume": {
+          "type": "integer",
+          "description": "sum of turnover usd in the last 30 days"
+        },
+        "last\_7\_days\_volume": {
+          "type": "integer",
+          "description": "sum of turnover usd in the last 7 days"
+        },
+        "total\_volume": {
+          "type": "integer",
+          "description": "sum of turnover usd in the last 24 hours"
+        }
+      }
+    },
+    "MMPConfigUpdateRequest": {
+      "type": "object",
+      "description": "MMP config for an underlying",
+      "properties": {
+        "asset": {
+          "type": "string",
+          "required": true
+        },
+        "window\_interval": {
+          "type": "integer",
+          "description": "Window interval in seconds"
+        },
+        "freeze\_interval": {
+          "type": "integer",
+          "description": "MMP freeze interval in seconds. Setting this to zero will require a manual reset once mmp is triggered."
+        },
+        "trade\_limit": {
+          "type": "string",
+          "description": "Notional trade limit for mmp to trigger (in USD)"
+        },
+        "delta\_limit": {
+          "type": "string",
+          "description": "Delta Adjusted notional trade limit for mmp to trigger (in USD)"
+        },
+        "vega\_limit": {
+          "type": "string",
+          "description": "vega traded limit for mmp to trigger (in USD)"
+        },
+        "mmp": {
+          "type": "string",
+          "description": "Specify mmp flag for the config update",
+          "enum": \[
+            "mmp1",
+            "mmp2",
+            "mmp3",
+            "mmp4",
+            "mmp5"
+          \]
+        }
+      }
+    },
+    "MMPResetRequest": {
+      "type": "object",
+      "description": "MMP config for an underlying",
+      "properties": {
+        "asset": {
+          "type": "string",
+          "required": true
+        },
+        "mmp": {
+          "type": "string",
+          "description": "specify mmp flag to reset",
+          "enum": \[
+            "mmp1",
+            "mmp2",
+            "mmp3",
+            "mmp4",
+            "mmp5"
+          \]
+        }
+      }
+    },
+    "ChangeMarginModeRequest": {
+      "type": "object",
+      "description": "Request to change the margin mode for a main or subaccount.",
+      "properties": {
+        "margin\_mode": {
+          "type": "string",
+          "description": "The target margin mode: 'isolated' or 'portfolio'.",
+          "enum": \["isolated", "portfolio"\],
+          "x-enumDescriptions": {
+            "isolated": "Margin is allocated per position; loss on one position cannot draw from others",
+            "portfolio": "Portfolio margin is shared across positions to net out risk"
+          },
+          "required": true,
+          "example": "isolated"
+        },
+        "subaccount\_user\_id": {
+          "type": "string",
+          "description": "The user ID of the account. Provide the main user ID for the main account or the respective subaccount user ID.",
+          "required": true,
+          "example": "5112346"
+        }
+      }
+    },
+    "UserPreference":  {
+      "type": "object",
+      "description": "User trading preferences",
+      "properties": {
+        "user\_id": {
+          "type": "integer",
+          "example": 57354187,
+          "description": "Unique identifier for the user"
+        },
+        "default\_auto\_topup": {
+          "type": "boolean",
+          "example": true,
+          "description": "Default auto top-up setting for newly acquired positions (only for isolated mode)"
+        },
+        "mmp\_config": {
+          "type": \["object", "null"\],
+          "example": null,
+          "description": "Config object for market maker protection (only for MMP-enabled accounts)"
+        },
+        "deto\_for\_commission": {
+          "type": "boolean",
+          "example": false,
+          "description": "Flag to determine whether to pay commissions in DETO"
+        },
+        "vip\_level": {
+          "type": "integer",
+          "example": 0,
+          "description": "VIP level for this account. Customers get better fee discounting for higher VIP levels"
+        },
+        "vip\_discount\_factor": {
+          "type": "string",
+          "example": "0.00",
+          "description": "Discount factor based on the VIP level"
+        },
+        "volume\_30d": {
+          "type": "string",
+          "example": "1060.675333",
+          "description": "30-day trading volume for the user"
+        },
+        "email\_preferences": {
+          "type": "object",
+          "description": "Email preferences for different events",
+          "properties": {
+            "adl": { "type": "boolean", "example": true },
+            "liquidation": { "type": "boolean", "example": true },
+            "margin\_topup": { "type": "boolean", "example": false },
+            "marketing": { "type": "boolean", "example": true },
+            "order\_cancel": { "type": "boolean", "example": true },
+            "order\_fill": { "type": "boolean", "example": true },
+            "stop\_order\_trigger": { "type": "boolean", "example": true }
+          }
+        },
+        "notification\_preferences": {
+          "type": "object",
+          "description": "Notification preferences for different events",
+          "properties": {
+            "adl": { "type": "boolean", "example": true },
+            "liquidation": { "type": "boolean", "example": true },
+            "margin\_topup": { "type": "boolean", "example": false },
+            "marketing": { "type": "boolean", "example": true },
+            "order\_cancel": { "type": "boolean", "example": false },
+            "order\_fill": { "type": "boolean", "example": true },
+            "price\_alert": { "type": "boolean", "example": true },
+            "stop\_order\_trigger": { "type": "boolean", "example": true }
+          }
+        },
+        "price\_alert\_assets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": \["BTC", "ETH"\],
+          "description": "Assets for which price alerts are set"
+        },
+        "enabled\_portfolios": {
+          "type": "object",
+          "example": {},
+          "description": "Enabled portfolios for the user"
+        },
+        "interest\_credit": {
+          "type": "boolean",
+          "example": false,
+          "description": "Whether the user is receiving interest credits"
+        }
+      }
+    },
+    "EditUserPreference": {
+      "type": "object",
+      "description": "Edit User Preference Object",
+      "properties": {
+        "default\_auto\_topup": {
+          "type": "boolean",
+          "example": true,
+          "description": "Default auto top-up setting for newly acquired positions"
+        },
+        "showMarketOrdersForOptionsInBracket": {
+          "type": "boolean",
+          "example": true,
+          "description": "Flag to display market orders for options in bracket orders"
+        },
+        "interest\_credit": {
+          "type": "boolean",
+          "example": false,
+          "description": "Whether the user is receiving interest credits"
+        },
+        "email\_preferences": {
+          "type": "object",
+          "description": "Email preferences for different events",
+          "properties": {
+            "adl": {
+              "type": "boolean",
+              "example": true
+            },
+            "liquidation": {
+              "type": "boolean",
+              "example": true
+            },
+            "order\_fill": {
+              "type": "boolean",
+              "example": true
+            },
+            "stop\_order\_trigger": {
+              "type": "boolean",
+              "example": true
+            },
+            "order\_cancel": {
+              "type": "boolean",
+              "example": true
+            },
+            "marketing": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "notification\_preferences": {
+          "type": "object",
+          "description": "Notification preferences for different events",
+          "properties": {
+            "adl": {
+              "type": "boolean",
+              "example": false
+            },
+            "liquidation": {
+              "type": "boolean",
+              "example": true
+            },
+            "order\_fill": {
+              "type": "boolean",
+              "example": true
+            },
+            "stop\_order\_trigger": {
+              "type": "boolean",
+              "example": true
+            },
+            "price\_alert": {
+              "type": "boolean",
+              "example": true
+            },
+            "marketing": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        }
+      }
+    },
+
+    "User": {
+      "type": "object",
+      "description": "Represents a user account with personal and account-related details.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique user identifier, which can be an integer or string.",
+          "example": "98765432"
+        },
+        "email": {
+          "type": "string",
+          "description": "User's email address.",
+          "example": "rajtrader2342@gmail.com"
+        },
+        "account\_name": {
+          "type": "string",
+          "description": "The main account or subaccount name.",
+          "example": "Main"
+        },
+        "first\_name": {
+          "type": "string",
+          "description": "User's first name.",
+          "example": "Rajesh"
+        },
+        "last\_name": {
+          "type": "string",
+          "description": "User's last name.",
+          "example": "Sharma"
+        },
+        "dob": {
+          "type": "string",
+          "format": "date",
+          "description": "Date of birth in YYYY-MM-DD format.",
+          "example": "1985-08-25"
+        },
+        "country": {
+          "type": "string",
+          "description": "User's country of residence.",
+          "example": "India"
+        },
+        "phone\_number": {
+          "type": "string",
+          "description": "User's phone number with country code.",
+          "example": "9876543210"
+        },
+        "margin\_mode": {
+          "type": "string",
+          "description": "The user's margin mode, which can be 'isolated' or 'portfolio'.",
+          "example": "isolated"
+        },
+        "pf\_index\_symbol": {
+          "type": "string",
+          "description": "Portfolio index symbol if the account is in portfolio margin mode.",
+          "example": ".DEXBTUSD"
+        },
+        "is\_sub\_account": {
+          "type": "boolean",
+          "description": "Indicates if the user account is a sub-account.",
+          "example": false
+        },
+        "is\_kyc\_done": {
+          "type": "boolean",
+          "description": "Indicates if the user's KYC verification is completed.",
+          "example": true
+        }
+      }
+    },
+    "ChangeMarginModeResponse": {
+      "type": "object",
+      "description": "Response returned after changing the user's margin mode",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the user(user\_id) whose margin mode was updated",
+          "example": "5112346"
+        },
+        "margin\_mode": {
+          "type": "string",
+          "description": "The updated margin mode. Possible values: isolated, portfolio, or cross",
+          "example": "isolated"
+        }
+      }
+    },
+    "CreateHeartbeat": {
+      "type": "object",
+      "description": "Create Heartbeat Request Object",
+      "properties": {
+        "heartbeat\_id": {
+          "type": "string",
+          "description": "Unique identifier for the heartbeat"
+        },
+        "impact": {
+          "type": "string",
+          "enum": \["low", "medium", "high"\],
+          "x-enumDescriptions": {
+            "low": "Low-impact heartbeat; missed beats trigger minimal protective action",
+            "medium": "Medium-impact heartbeat; missed beats trigger standard protective action",
+            "high": "High-impact heartbeat; missed beats trigger the strongest protective action"
+          },
+          "description": "Impact level"
+        },
+        "contract\_types": {
+          "type": "array",
+          "description": "Array of contract types to monitor",
+          "items": {
+            "type": "string"
+          }
+        },
+        "underlying\_assets": {
+          "type": "array",
+          "description": "Array of underlying assets to monitor",
+          "items": {
+            "type": "string"
+          }
+        },
+        "product\_symbols": {
+          "type": "array",
+          "description": "Array of specific product symbols to monitor",
+          "items": {
+            "type": "string"
+          }
+        },
+        "config": {
+          "type": "array",
+          "description": "Array of action configurations",
+          "items": {
+            "$ref": "#/definitions/HeartbeatConfig"
+          }
+        }
+      },
+      "required": \["heartbeat\_id", "impact", "config"\]
+    },
+    "HeartbeatConfig": {
+      "type": "object",
+      "description": "Heartbeat Configuration Object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": \["cancel\_orders", "spreads"\],
+          "x-enumDescriptions": {
+            "cancel\_orders": "Cancel the user's open orders when the heartbeat goes unhealthy",
+            "spreads": "Widen quote spreads when the heartbeat goes unhealthy"
+          },
+          "description": "Action to take when heartbeat expires"
+        },
+        "unhealthy\_count": {
+          "type": "integer",
+          "description": "Number of unhealthy heartbeats before action"
+        },
+        "tag": {
+          "type": "string",
+          "description": "Tag for the action (e.g., 'mmp')"
+        }
+      },
+      "required": \["action", "unhealthy\_count"\]
+    },
+    "HeartbeatResponse": {
+      "type": "object",
+      "description": "Heartbeat Response Object",
+      "properties": {
+        "heartbeat\_id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "HeartbeatAck": {
+      "type": "object",
+      "description": "Heartbeat Acknowledgment Request Object",
+      "properties": {
+        "heartbeat\_id": {
+          "type": "string",
+          "description": "Heartbeat identifier"
+        },
+        "ttl": {
+          "type": "integer",
+          "description": "Time to live in milliseconds"
+        }
+      },
+      "required": \["heartbeat\_id", "ttl"\]
+    },
+    "HeartbeatAckResponse": {
+      "type": "object",
+      "description": "Heartbeat Acknowledgment Response Object",
+      "properties": {
+        "process\_enabled": {
+          "type": "string",
+          "description": "Acknowledgement status (true/false)"
+        },
+        "heartbeat\_timestamp": {
+          "type": "string",
+          "description": "Expiry timestamp after which actions will be triggered"
+        }
+      }
+    },
+    "ArrayOfHeartbeats": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Heartbeat"
+      }
+    },
+    "Heartbeat": {
+      "type": "object",
+      "description": "Heartbeat Object",
+      "properties": {
+        "heartbeat\_id": {
+          "type": "string"
+        },
+        "impact": {
+          "type": "string"
+        },
+        "contract\_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "underlying\_assets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "product\_symbols": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "config": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/HeartbeatConfig"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "last\_ack": {
+          "type": "string"
+        },
+        "next\_ack\_required\_by": {
+          "type": "string"
+        }
+      }
+    },
+    "ArrayOfSubaccouns": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/User"
+      }
+    },
+    "RateLimitQuotaResponse": {
+      "type": "object",
+      "properties": {
+        "current\_quota": {
+          "type": "integer",
+          "example": 42
+        },
+        "remaining\_time\_in\_milliseconds": {
+          "type": "integer",
+          "example": 120632
+        }
+      }
+    }
+  }
+}

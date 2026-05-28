@@ -1,0 +1,59 @@
+---
+title: "Top Trader Long/Short Ratio (Accounts)"
+url: https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Top-Long-Short-Account-Ratio
+kind: rate_limits
+category: docs
+source: binance
+scraped_at: 2026-05-28T18:59:01.540Z
+---
+# Top Trader Long/Short Ratio (Accounts)
+
+> Source: https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Top-Long-Short-Account-Ratio
+
+# Top Trader Long/Short Ratio (Accounts)
+
+## API Description
+
+The proportion of net long and net short accounts to total accounts of the top 20% users with the highest margin balance. Each account is counted once only. Long Account % = Accounts of top traders with net long positions / Total accounts of top traders with open positions Short Account % = Accounts of top traders with net short positions / Total accounts of top traders with open positions Long/Short Ratio (Accounts) = Long Account % / Short Account %
+
+## HTTP Request
+
+GET `/futures/data/topLongShortAccountRatio`
+
+## Request Weight
+
+**1**
+
+## Request Parameters
+
+| Name | Type | Mandatory | Description |
+| --- | --- | --- | --- |
+| symbol | STRING | YES |  |
+| period | ENUM | YES | "5m","15m","30m","1h","2h","4h","6h","12h","1d" |
+| limit | LONG | NO | default 30, max 500 |
+| startTime | LONG | NO |  |
+| endTime | LONG | NO |  |
+
+> -   If startTime and endTime are not sent, the most recent data is returned.
+> -   Only the data of the latest 30 days is available.
+
+## Response Example
+
+```json
+[
+  {
+    "pair": "BTCUSD",
+    "longShortRatio": "1.8105",
+    "longAccount": "0.6442",
+    "shortAccount": "0.3558",
+    "timestamp": 1591261042378
+  },
+  {
+    "pair": "BTCUSD",
+    "longShortRatio": "1.1110",
+    "longAccount": "0.5263",
+    "shortAccount": "0.4737",
+    "timestamp": 1592870400000
+  }
+]
+```

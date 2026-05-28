@@ -41,7 +41,12 @@ build/Release
 node_modules/
 docs/
 .build/
-knowledge_base/
+knowledge_base/chunks
+knowledge_base/compiled
+knowledge_base/execution_runtime
+knowledge_base/registry
+knowledge_base/specs
+knowledge_base/websocket
 _schemas/
 jspm_packages/
 
